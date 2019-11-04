@@ -1,0 +1,53 @@
+/* Footer Styles -------------------- */
+footer {
+ 
+  a,
+  .link-text,
+  a:link {
+    color:$white;
+    text-decoration:underline;
+    &:hover {
+      color:$white;
+      text-decoration:none;
+    }
+  }
+  .h5 {
+    font-size:1rem;
+    color:$secondary;
+    font-weight:bold;
+  }
+  .ride-hashtag {
+    font-size:2.1rem;
+  }
+}
+.footer-social-icon {
+border:3px solid $white;
+height:50px;
+width:50px;
+border-radius:50%;
+-moz-border-radius:50%;
+-webkit-border-radius:50%;
+&:hover {
+  color:$primary !important;
+  background-color:$white;
+  @include transition($btn-transition);
+}
+svg {
+  font-size: 1.75rem;
+}
+}
+.primary-footer-links {
+  font-size:1.35rem;
+
+}
+.middle-footer-container {
+  margin-bottom:1rem;
+}
+.bottom-footer-container {
+  p {
+    font-size:1.2rem;
+  }
+}
+.list-unstyled {
+  margin-bottom:0;
+}

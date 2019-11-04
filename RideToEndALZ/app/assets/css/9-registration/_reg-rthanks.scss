@@ -1,0 +1,18 @@
+.part-center-container {
+  display: none;
+}
+
+#fr_thanks_page {
+  .section-footer {
+    @include make-col-ready();
+    @include media-breakpoint-up(md) {
+      @extend .offset-md-3;
+      @include make-col(6);
+    }
+  }
+  @include media-breakpoint-down(sm) {
+    #part_ctr_container_step {
+      font-size: 1.2rem;
+    }
+  }
+}

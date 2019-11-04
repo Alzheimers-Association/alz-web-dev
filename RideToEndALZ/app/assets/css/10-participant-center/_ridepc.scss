@@ -1,0 +1,221 @@
+/* Ride PC Styles -------------------- */
+.view-container a {
+  text-decoration:underline;
+}
+.view-container a.button,
+.view-container .nav-tabs a {
+  text-decoration:none;
+}
+// hide radio buttons when used in btn group toggle
+[data-toggle=buttons]>.btn>input[type=radio], [data-toggle=buttons]>.btn>input[type=checkbox] {
+  display: none;
+}
+#pc-container {
+  h2 {
+    font-size: 2rem;
+    font-weight:500;
+  }
+}
+@include media-breakpoint-up(md) {
+  .pc__module-content {
+    padding-left:3rem;
+  }
+}
+
+.pc-news-container {
+  border-bottom:2px solid #bababa;
+  background: rgba(255,255,255,1);
+  background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 90%, rgba(230,230,230,1) 100%);
+  background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255,255,255,1)), color-stop(90%, rgba(255,255,255,1)), color-stop(100%, rgba(230,230,230,1)));
+  background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 90%, rgba(230,230,230,1) 100%);
+  background: -o-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 90%, rgba(230,230,230,1) 100%);
+  background: -ms-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 90%, rgba(230,230,230,1) 100%);
+  background: linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 90%, rgba(230,230,230,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e6e6e6', GradientType=0 );
+
+  h1 {
+    color:$secondary;
+    text-transform:uppercase;
+    font-size:2.1rem;
+    font-weight:800;
+  }
+  p {
+    font-size:1.3rem;
+  }
+}
+.todo-box {
+  position:relative;
+  height: 300px;
+  border:3px solid $primary;
+  h5 {
+    padding:1rem 1rem 0 1rem;
+  }
+  .stepdesc {
+    padding:0 1rem;
+    margin-bottom:0;
+  }
+  .todo-btn-container {
+    position: absolute;
+    z-index:20;
+    bottom: 0;
+    width: 100%;
+    text-transform:uppercase;
+  }
+  svg.fa-check-circle {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    margin-top:33%;
+    z-index: 10;
+  }
+}
+@media (max-width: 991px) {
+  #pc-container .js--steps-to-success {
+    .col-md-3 {
+      -webkit-box-flex: 0;
+      -ms-flex: 0 0 50%;
+      flex: 0 0 50%;
+      max-width: 50%;
+    }
+  }
+  .pc__header-share {
+    &.col-md-3 {
+      -webkit-box-flex: 0;
+      -ms-flex: 0 0 50%;
+      flex: 0 0 50%;
+      max-width: 50%;
+      margin: 0 auto;
+    }
+  }
+}
+@media (max-width: 500px) {
+  #pc-container .js--steps-to-success {
+    .col-md-3 {
+      -webkit-box-flex: 0;
+      -ms-flex: 0 0 100%;
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+  }
+  .pc__header-share {
+    &.col-md-3 {
+      -webkit-box-flex: 0;
+      -ms-flex: 0 0 100%;
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+  }
+}
+.ptype-message {
+  p {
+    font-size:1.3rem;
+  }
+  a {
+    text-decoration:underline;
+  }
+}
+.popover {
+  box-shadow:0 1.25rem 1.5rem rgba(0, 0, 0, 0.4);
+}
+.my-ride-container {
+  .svg-clock {
+    max-height: 50px;
+  }  
+  .svg-contact {
+    max-height: 40px;
+  }  
+  .svg-location {
+    max-height: 65px;
+  }
+  .edit-reg-info-btn {
+    font-size:1.5rem !important;
+    margin-top:-2px;
+  }
+}
+.bg-grey {
+  background-color:#f5f5f5;
+}
+.fb-did-you-know-container {
+  p {
+    font-size:1.3rem;
+  }
+}
+.dollar-icon-container {
+  height:50px;
+  width:50px;
+  background: $teal;
+  padding: 2px;
+  font-size: 2rem;
+  border-radius:8px;
+  .fa-dollar-sign {
+    color:#fff;
+  }
+}
+.facebook-icon-container {
+  height:50px;
+  width:50px;
+  padding: 2px;
+  font-size: 2rem;
+  border-radius:8px;
+  background: #3e5b92;
+  .fa-facebook-f {
+    color:#fff;
+  }
+}
+table.dataTable thead .sorting:after,
+table.dataTable thead .sorting_asc:after,
+table.dataTable thead .sorting_desc:after  {
+  content: '';
+  display:none !important;
+}
+
+  .reg-question-container {
+    input,
+    select { 
+      &.form-control.col-md-6 {
+        margin-right: 15px !important;
+        margin-left: 15px !important;
+      }
+    }
+  }
+.ui-helper-hidden-accessible {
+  display:none;
+}
+.message-body .message-body-text {
+  font-size:1rem !important;
+  font-family: "HouschkaAltPro", "Helvetica Neue", Arial, sans-serif !important;
+}
+
+.dialog-wrapper {
+  a.action-link,
+  a.action-link:link {
+    color:$primary;
+    font-weight:bold;
+    text-decoration:underline;
+  }
+}
+// .sorting {
+//  .fa-sort-amount-down,
+//  .fa-sort-amount-up {
+//    display:none;
+//  }
+// }
+// .sorting_desc {
+//   .fa-sort,
+//   .fa-sort-amount-down {
+//     display:none;
+//   }
+//   .fa-sort-amount-up {
+//     display:inline-block;
+//   }
+// }
+// .sorting_asc {
+//   .fa-sort,
+//   .fa-sort-amount-up {
+//     display:none;
+//   }
+//   .fa-sort-amount-down {
+//     display:inline-block;
+//   }
+// }

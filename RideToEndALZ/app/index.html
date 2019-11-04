@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="This is a boilerplate for a Bootstrap 4.0.0 project">
+  <meta name="keywords" content="HTML, CSS, JS, Sass, JavaScript, framework, bootstrap, front-end, frontend, web development">
+  <meta name="author" content="Henrik H. Boelsmand">
+  <title>Ride for ALZ</title>
+  <link rel="shortcut icon" href="favicon.ico">
+
+  <!-- build:css assets/css/plugins.min.css -->
+  <link rel="stylesheet" href="assets/css/plugins.css" type="text/css">
+  <!-- endbuild -->
+
+  <!-- build:css assets/css/main.min.css -->
+  <link rel="stylesheet" href="assets/css/main.css" type="text/css">
+  <!-- endbuild -->
+  <!-- build:css assets/css/registration.min.css -->
+  <link rel="stylesheet" href="assets/css/registration.css" type="text/css">
+  <!-- endbuild -->
+  <!-- build:css assets/css/participant-center.min.css -->
+  <!-- <link rel="stylesheet" href="assets/css/participant-center.css" type="text/css"> -->
+  <!-- endbuild -->
+
+  <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js" integrity="sha384-xymdQtn1n3lH2wcu0qhcdaOpQwyoarkgLVxC/wZ5q7h9gHtxICrpcaSUfygqZGOe"
+    crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" integrity="sha256-0rguYS0qgS6L4qVzANq4kjxPLtvnp5nn2nB5G1lWRv4="
+    crossorigin="anonymous"></script>
+</head>
+
+<!-- pushy-open-right -->
+
+<body class="pg_ride_homepage user-logged-in">
+
+  <!-- Pushy Menu -->
+  <nav class="pushy pushy-right navbar nav-sidebar bg-darkpurple d-block">
+    <div class="pushy-header text-right">
+      <button class="navbar-toggler navbar-toggler-right menu-btn p-0 border-0 text-right" type="button" data-toggle="off-canvas"
+        aria-controls="sideMenuContainer" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-times-circle text-secondary" aria-hidden="true"></i>
+      </button>
+    </div>
+    <div id="sideMenuContainer" class="pushy-content align-top align-items-start">
+
+      <!-- BEGIN LOGGED OUT  -->
+      <div class="js__logged-out js__logged-out-sidebar">
+
+        <div class="js__side-login-container">
+          <p>Log In</p>
+          <div class="js__login-error-container alert alert-danger d-none" role="alert">
+            <span class="" aria-hidden="true"></span>
+            <span class="sr-only">Error:</span>
+            <i class="fas fa-exclamation-triangle" aria-hidden="true"></i>
+            <span class="js__login-error-message"></span>
+          </div>
+
+          <form class="js__side-login-form">
+            <div class="form-group">
+              <label class="sr-only" for="loginUsername">Username</label>
+              <input type="text" name="user_name" id="loginUsername" class="form-control" placeholder="Username" aria-describedby="loginUsernameHelpBlock"
+                data-parsley-trigger="change" data-parsley-minlength="5" data-parsley-maxlength="60" data-parsley-minlength-message="Your username must be at least 5 characters long."
+                data-parsley-maxlength-message="Your username must be at fewer than 60 characters long." data-parsley-required-message="Username is required"
+                data-parsley-required="true" required>
+            </div>
+            <div class="form-group">
+              <label class="sr-only" for="loginPassword">Password</label>
+              <input type="password" name="user_password" id="loginPassword" class="form-control" placeholder="Password" aria-describedby="loginPasswordHelpBlock"
+                data-parsley-trigger="change" data-parsley-minlength="5" data-parsley-maxlength="20" data-parsley-minlength-message="Your password must be at least 5 characters long."
+                data-parsley-maxlength-message="Your password must be at fewer than 20 characters long." data-parsley-required-message="Password is required"
+                data-parsley-required="true" required>
+            </div>
+            <button type="submit" class="button btn-secondary btn-block">Submit</button>
+          </form>
+          <ul class="nav flex-column mt-2">
+            <li class="nav-item pushy-link">
+              <a class="nav-link" href="#">Forgot your password?</a>
+            </li>
+            <li class="nav-item pushy-link">
+              <a class="nav-link" href="#">Need Help?</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- END LOGGED OUT -->
+
+      <!-- BEGIN LOGGED IN -->
+      <div class="js__logged-in" style="display:none;">
+        <span class="sidebar-welcome-message text-white my-1">Welcome,
+          <span class="js__first-name"></span>!</span>
+        <div class="js__has-events"></div>
+        <ul class="nav flex-column sidebar-nav-footer">
+          <li class="nav-item pushy-link">
+            <a class="nav-link" href="ConsProfileUser?dispMode=edit&amp;pw_id=12165">Edit My Profile</a>
+          </li>
+          <li class="nav-item pushy-link">
+            <a class="nav-link js__log-out-link" href="#">Log Out</a>
+          </li>
+        </ul>
+      </div>
+      <!-- END LOGGED IN -->
+
+    </div>
+  </nav>
+  <!-- END pushy nav sidebar -->
+  <!-- Site Overlay -->
+  <div class="site-overlay"></div>
+
+  <header class="content-container bg-dark">
+    <div class="container nav-container">
+      <div class="row">
+        <div class="col-lg-10 order-lg-12">
+          <!-- IE test -->
+          <!-- <div class="top-teal-bar bg-secondary"> -->
+              <div class="top-teal-bar bg-secondary justify-content-end d-flex">
+            <!-- <svg class="tri-top-left d-none d-lg-block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 42 64" fill='#4a0d66'>
+              <path d="M0,64,42,0H0Z" />
+            </svg> -->
+            <img class="tri-top-left d-none d-lg-flex" src="assets/images/triangle-top-left.svg" alt="" >
+            <!-- IE test -->
+            <!-- <nav class="utility-nav utility-nav-left navbar-expand-lg py-0 d-inline-block"> -->
+
+            <nav class="utility-nav utility-nav-left navbar navsbar-expand-lg py-0  d-none d-lg-flex">
+                <!-- IE test -->
+                <!-- <ul class="navbar-na text-uppercase hw-bar"> -->
+
+              <ul class="navbar-nav text-uppercase hw-bar">
+                <li class="nav-item nav-right">
+                  <span class="nav-link">
+                    <a href="SPageServer/?pagename=ride_search&amp;search_type=general">Find a Participant</a>
+                  </span>
+                </li>
+              </ul>
+            </nav>
+            <!-- <svg class="tri-bottom-right d-none d-lg-flex" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 64" fill='#FFFFFF'>
+              <path d="M0,64,32,0V64Z" />
+            </svg> -->
+            <img class="tri-bottom-right d-none d-lg-block" src="assets/images/triangle-bottom-right.svg" alt="" >
+
+            <nav class="utility-nav utility-nav-right navbar navbar-expand-lg navbar-light p-0">
+
+              <!-- BEGIN LOGGED OUT -->
+              <span class="js__logged-out">
+              <ul class="navbar-nav text-uppercase hw-bar hw-bar-white d-none d-lg-flex">
+                <li class="nav-item">
+                  <span class="nav-link">
+                    <a class="menu-btn" href="#">Log In
+                      <i class="fas fa-caret-right"></i>
+                    </a>
+                  </span>
+                </li>
+              </ul>
+            </span>
+              <!-- END LOGGED OUT -->
+
+              <!-- BEGIN LOGGED IN -->
+              <ul class="navbar-nav text-uppercase hw-bar hw-bar-white js__logged-in font-weight-bold" style="display:none;">
+                  <li class="nav-item nav-left">
+                      <span class="nav-link">Welcome,
+                        <span class="js__first-name"></span>!</span>
+                    </li>
+                    <li class="nav-item nav-right">
+                      <span class="nav-link">
+                        <a class="menu-btn" href="#">Ride Hub
+                            <i class="fas fa-caret-right d-lg-none"></i>
+                        </a>
+                      </span>
+                    </li>
+                    <li class="nav-item text-secondary d-none d-lg-flex"> | </li>
+                    <li class="nav-item nav-right d-none d-lg-flex">
+                      <span class="nav-link">
+                        <a class="js__log-out-link" href="#">Log Out
+                          <i class="fas fa-caret-right"></i>
+                        </a>
+                      </span>
+                    </li>
+              </ul>
+              <!-- END LOGGED IN -->
+
+            </nav>
+          </div>
+          <!-- IE test -->
+          <!-- <nav class="primary-nav navbar-expand-lg bg-black py-0"> -->
+              <nav class="primary-nav navbar navbar-expand-lg bg-black justify-content-between py-0">
+            <!-- <svg class="tri-top-left d-none d-lg-flex" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 42 64" fill='#4a0d66'>
+              <path d="M0,64,42,0H0Z" />
+            </svg> -->
+            <img class="tri-top-left d-none d-lg-flex" src="assets/images/triangle-top-left.svg" alt="" >
+            <button class="navbar-toggler bg-black p-4 collapsed" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+              aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+              <img class="banner-logo float-left" src="assets/images/ride_logo_white.png" alt="Ride to End ALZ" height="80">
+              <i class="fas fa-bars text-white fa-2x"></i>
+              <i class="fas fa-times text-white float-right fa-2x"></i>
+            </button>
+            <div class="navbar-collapse collapse" id="navbarCollapse">
+              <div class="mobile-menu-header col-12 bg-primary text-white p-3 d-lg-none font-weight-bold">
+
+              <!-- BEGIN LOGGED IN -->
+                <div class="js__logged-in text-uppercase" style="display:none;">
+                  <em class="d-none d-lg-flex">Welcome,
+                    <span class="js__first-name"></span>
+                  </em>
+                  <br class="d-none d-lg-flex">
+                  <a class="menu-btn d-none d-lg-flex" href="#">Ride Hub</a>
+                  <span class="text-secondary d-none d-lg-flex">|</span>
+                  <a class="d-lg-none" href="SPageServer/?pagename=ride_search&amp;search_type=general">Find a Participant</a>
+                  <br class="d-lg-none">
+                  <a class="js__log-out-link" href="#">Log Out
+                    <i class="fas fa-caret-right"></i>
+                  </a>
+                </div>
+              <!-- BEGIN LOGGED IN -->
+
+              <!-- BEGIN LOGGED OUT -->
+                <div class="js__logged-out text-uppercase">
+                  <a href="SPageServer/?pagename=ride_search&amp;search_type=general">Find a Participant</a>
+                  <br>
+                  <a class="menu-btn" href="#">Log In
+                    <i class="fas fa-caret-right"></i>
+                  </a>
+                </div>
+              <!-- END LOGGED OUT -->
+
+              </div>
+              <ul class="navbar-nav ml-auto text-uppercase font-weight-bold hw-bar hw-bar-black">
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="false">
+                    About
+                    <span class="d-sm-none float-right">
+                      <i class="fas fa-plus"></i>
+                      <i class="fas fa-minus"></i>
+                    </span>
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="aboutDropdown">
+                    <!-- <span class="pointer"></span> -->
+                    <a class="dropdown-item" href="#">About the Ride </a>
+                    <a class="dropdown-item" href="#">Fundraising</a>
+                    <a class="dropdown-item" href="#">Training</a>
+                    <a class="dropdown-item" href="#">Travel Planner</a>
+                    <a class="dropdown-item" href="SPageServer/?pagename=ride_survey">Request More Information</a>
+                    <a class="dropdown-item" href="#">Team Up</a>
+                    <a class="dropdown-item" href="#">Crew and Volunteer</a>
+                    <a class="dropdown-item" href="#">Sponsors</a>
+                    <a class="dropdown-item" href="#">Contact Us</a>
+                  </div>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="locationsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="false">
+                    Locations
+                    <span class="d-sm-none float-right">
+                      <i class="fas fa-plus"></i>
+                      <i class="fas fa-minus"></i>
+                    </span>
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="locationsDropdown">
+                    <a class="dropdown-item" href="TR?fr_id=11914&amp;pg=entry">Austin, TX</a>
+                    <a class="dropdown-item" href="#">Minneapolis, MN</a>
+                    <a class="dropdown-item" href="#">Davis, CA</a>
+                  </div>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="whyDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Why We Ride
+                    <span class="d-sm-none float-right">
+                      <i class="fas fa-plus"></i>
+                      <i class="fas fa-minus"></i>
+                    </span>
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="whyDropdown">
+                    <a class="dropdown-item" href="#">100% to Alzheimer's Research</a>
+                    <a class="dropdown-item" href="#">Your Fundraising Impact</a>
+                  </div>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="SPageServer/?pagename=ride_faq">FAQ</a>
+                </li>
+                <li class="nav-item nav-btn d-lg-none">
+                  <a class="button btn-secondary btn-block" href="SPageServer/?pagename=ride_search&amp;search_type=donate">Donate</a>
+                </li>
+                <li class="nav-item nav-btn d-none d-lg-inline">
+                  <a class="button btn-white btn-block" href="SPageServer/?pagename=ride_search&amp;search_type=donate">Donate</a>
+                </li>
+                <li class="nav-item nav-btn">
+                  <a class="button btn-secondary btn-block" href="#" role="button" data-toggle="modal" data-target="#registerModal">Register
+                  </a>
+                </li>
+
+              </ul>
+            </div>
+          </nav>
+          <!-- dummy div for menu bottom border -->
+          <div class="hw-bar hw-bar-teal d-none d-lg-block"></div>
+
+        </div>
+<!-- IE test -->
+        <!-- <div class="col-lg-2 order-lg-1 "> -->
+            <div class="col-lg-2 order-lg-1 d-sm-flex align-items-center justify-xl-content-center">
+          <a class="navbar-brand my-3 mx-0" href="SPageServer/?pagename=ride_homepage">
+            <img class="banner-logo" src="assets/images/ride_logo_white.png" alt="Ride to End ALZ" height="103">
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- END container -->
+  </header>
+  <main class="content-container" role="main">
+<!-- DELETE section above -->
+
+        <!-- BEGIN hero section -->
+      <div class="hero-header-container">
+          <div class="jumbotron text-center text-white">
+            <h1>
+              <span class="display-4">GIVE US YOUR ALL,</span>
+              <span class="display-3">AND WE WILL, TOO.</span>
+            </h1>
+            <p class="lead">100% of dollars raised for Ride to End ALZ support research efforts.</p>
+            <div class="row d-flex justify-content-center">
+              <div class="col-md-3">
+                <a class="button btn-secondary btn-lg btn-block" href="#" role="button" data-toggle="modal" data-target="#registerModal" onClick="ga('send', 'event', 'ride landing', 'click', 'banner-register');">REGISTER</a>
+              </div>
+              <div class="col-md-3">
+                <a class="button btn-outline-light btn-lg btn-block" href="SPageServer/?pagename=ride_search&search_type=donate" role="button" onClick="ga('send', 'event', 'ride landing', 'click', 'banner-donate');">DONATE</a>
+              </div>
+            </div>
+            <div class="hero-link-container row d-flex justify-content-center">
+              <div class="col-md-3">
+                <a href="SPageServer/?pagename=ride_about" onClick="ga('send', 'event', 'ride landing', 'click', 'banner-learn-more');">Learn More</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- END hero section -->
+        <span class="horizontal-divider"></span>
+
+ <!-- BEGIN Join Us section -->
+ <section id="what_is_ride" class="what-is-ride-container text-center">
+   <div class="container">
+     <div class="row">
+       <div class="col-10 offset-1">
+          <h2 class="h3">
+              The Ride to End ALZ is much more than a bike ride.
+          </h2>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eligendi, saepe corporis obcaecati quasi, cumque autem accusamus accusantium repellendus aliquam sed animi ipsum eaque numquam aspernatur magni consequatur itaque vel! Provident.
+          </p>
+       </div>
+     </div>
+     <div class="row">
+        <div class="col-10 offset-1">
+           <h2 class="h3">
+               Right now, there is no shortage of ideas in Alzheimer's research &mdash; only dollars. But you can help change that.
+           </h2>
+           <p>
+              Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. 
+           </p>
+        </div>
+      </div>
+   </div>
+ 
+  
+  </section>
+  <!-- END Join Us section -->
+
+    <!-- BEGIN Join Us section -->
+    <section id="join_us" class="join-us-container text-center">
+      <h2>
+          <span class="d-lg-none">JOIN US</span>
+        <span class="d-none d-lg-inline-block">SELECT YOUR RIDE</span>
+      </h2>
+      <div class="container mt-5">
+        <div class="card-deck justify-content-center">
+            [[S51:reus_ride_2018_join_us]]
+        </div>
+      </div>
+    </section>
+    <!-- END Join Us section -->
+
+    <!-- BEGIN Search section -->
+    <section id="landing_search" class="landing-search-container text-center bg-secondary text-white stripe-overlay">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-5 offset-md-2 search-participant-container">
+            <h3>FIND A PARTICIPANT</h3>
+            <form class="js__redirect-participant-search-form">
+                <div class="d-flex flex-wrap flex-md-nowrap">
+                  <label class="sr-only" for="participantFirstName">First Name</label>
+                  <input id="participantFirstName" type="text" class="col-md-5 form-control form-control-lg mr-lg-1" placeholder="FIRST NAME" style="height:60px;">
+                  <label class="sr-only" for="participantLastName">Last Name</label>
+                  <div class="d-flex w-100">
+                  <input id="participantLastName" type="text" class="col-md-5 form-control form-control-lg ml-lg-1 search-last-name flex-grow-1" placeholder="LAST NAME">
+                  <button type="submit" class="btn btn-lg btn-primary search-participant-button" onClick="ga('send', 'event', 'ride landing', 'click', 'find-participant');">
+                    <span class="sr-only">Search</span>
+                    <i class="fas fa-search"></i>
+                  </button>
+                </div>
+                </div>
+              </form>
+          </div>
+
+          <div class="col-md-4 search-team-container">
+            <h3>FIND A TEAM</h3>
+            <form class="js__redirect-team-search-form">
+              <div class="d-flex">
+                <label class="sr-only" for="teamName">Team Name</label>
+                <input type="text" class="form-control form-control-lg mb-2" id="teamName" placeholder="TEAM NAME">
+                <button type="submit" class="btn btn-lg btn-primary mb-2" onClick="ga('send', 'event', 'ride landing', 'click', 'find-team');">
+                  <span class="sr-only">Search</span>
+                  <i class="fas fa-search"></i>
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- END Search section -->
+
+    <!-- DELETE section below -->
+    <!-- BEGIN How It Works section -->
+    <section id="how_it_works" class="how-it-works-container">
+        <h2 class="text-center text-primary">How It Works</h2>
+        <div class="how-steps py-5 stripe-overlay">
+          <div class="container">
+            <div class="card-deck">
+              <div class="card d-flex">
+                  <img class="m-auto" src="assets/images/icon_avatar.svg" alt="Avatar image" width="85" height="85">
+                <div class="card-body">
+                  <h3 class="card-title text-uppercase">1. REGISTER</h3>
+                  <p class="card-text">Choose a ride location and commit to making a difference. We’ll be here to support you from the moment you register until you cross the finish line.  </p>
+                </div>
+                <span class="diagonal-divider d-none d-lg-block"></span>
+              </div>
+              <div class="card d-flex">
+                  <img class="m-auto" src="assets/images/icon_money.svg" alt="Dollar symbol icon"  width="85" height="85">
+                <div class="card-body">
+                  <h3 class="card-title text-uppercase">2. RAISE $ FOR RESEARCH</h3>
+                  <p class="card-text">We’ll provide tools to make fundraising easy, and 100 percent of the dollars  you raise will go toward efforts to discover methods of treatment and prevention for Alzheimer’s.</p>
+                </div>
+                <span class="diagonal-divider d-none d-lg-block"></span>
+              </div>
+              <div class="card d-flex">
+                  <img class="m-auto" src="assets/images/icon_bike.svg" alt="Bike icon"  width="85" height="85">
+                <div class="card-body">
+                  <h3 class="card-title text-uppercase">3. GO THE DISTANCE!</h3>
+                  <p class="card-text">
+                      You are driven by determination to end this disease. Your participation helps moves us toward the first survivor of Alzheimer’s.
+                  </p>
+                </div>
+              </div>
+            </div>
+  
+          </div>
+        </div>
+  
+        <div class="container">
+          <div class="row d-flex justify-content-center">
+            <div class="col-md-12 text-center py-4">
+              <p class="lead">
+                There are three ways you can be involved with our mission:
+              </p>
+            </div>
+          </div>
+  <div class="stripe-overlay">
+          <nav class="nav nav-tabs nav-justified border-0" id="nav-tab" role="tablist">
+            <a class="nav-item nav-link text-uppercase d-flex align-items-center justify-content-center active" id="nav-rider-tab" data-toggle="tab"
+              href="#nav-rider" role="tab" aria-controls="nav-rider" aria-expanded="true" onClick="ga('send', 'event', 'ride landing', 'click', 'rider-tab');">Rider</a>
+            <a class="nav-item nav-link text-uppercase d-flex align-items-center justify-content-center" id="nav-crew-tab" data-toggle="tab"
+              href="#nav-crew" role="tab" aria-controls="nav-crew" aria-expanded="false" onClick="ga('send', 'event', 'ride landing', 'click', 'crew-tab');">Crew</a>
+            <a class="nav-item nav-link nav-item-volunteer text-uppercase d-flex align-items-center justify-content-center" id="nav-volunteer-tab"
+              data-toggle="tab" href="#nav-volunteer" role="tab" aria-controls="nav-volunteer" aria-expanded="false" onClick="ga('send', 'event', 'ride landing', 'click', 'volunteer-tab');">Volunteer</a>
+          </nav>
+          <div class="tab-content text-center p-4" id="nav-tabContent">
+            <div class="tab-pane  active show" id="nav-rider" role="tabpanel" aria-labelledby="nav-rider-tab" aria-expanded="true">
+              <p>Show your commitment to end Alzheimer’s from your aerobars. Whether a casual cyclist or an avid enthusiast, this fully supported, one-day ride offers multiple route options. Select a distance that pushes you to perform your best, while raising funds and awareness to advance Alzheimer’s research.
+              </p>
+              <p>
+                <a class="text-uppercase" href="SPageServer/?pagename=ride_learn_more" onClick="ga('send', 'event', 'ride landing', 'click', 'rider-learn-more');">Learn More
+                  <i class="fas fa-caret-right"></i>
+                </a>
+              </p>
+            </div>
+            <div class="tab-pane" id="nav-crew" role="tabpanel" aria-labelledby="nav-crew-tab" aria-expanded="false">
+              <p>
+                  You don’t have to be on two wheels to be at the heart of the action!. From route marshalls to bike mechanics, our volunteer crew members make ride day a success.</p>
+              <p>
+                <a class="text-uppercase" href="SPageServer/?pagename=ride_about" onClick="ga('send', 'event', 'ride landing', 'click', 'crew-learn-more');">Learn More
+                  <i class="fas fa-caret-right"></i>
+                </a>
+              </p>
+            </div>
+            <div class="tab-pane" id="nav-volunteer" role="tabpanel" aria-labelledby="nav-volunteer-tab">
+              <p>We need you! From planning ride day logistics to cheering on fast-peddling participants, it takes a special group of volunteers to make Bike to End ALZ happen.   </p>
+              <p class="font-italic">
+                <a class="text-uppercase" href="SPageServer/?pagename=ride_about" onClick="ga('send', 'event', 'ride landing', 'click', 'volunteer-learn-more');">Learn More
+                  <i class="fas fa-caret-right"></i>
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
+          <div class="row d-flex justify-content-center">
+            <div class="col-md-12 text-center py-2">
+              <p class="lead">
+                <i>Not sure? Let us share more details...</i>
+              </p>
+            </div>
+          </div>
+  
+          <div class="row d-flex justify-content-center mb-4">
+            <div class="col-lg-4 col-md-6 col-sm-8">
+              <a class="button btn-secondary btn-lg text-uppercase" href="SPageServer/?pagename=ride_survey" role="button" onClick="ga('send', 'event', 'ride landing', 'click', 'rfi');">Request More Info</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    <section id="our_research" class="our-research-container text-white text-center stripe-overlay">
+      <div class="container">
+        <h2 class="text-center">
+          <span class="headline-number d-md-inline-block pr-1">100
+            <span class="headline-symbol">%</span>
+          </span>
+          <span class="headline-text d-md-inline-block pl-1">Goes to
+            <br>Research</span>
+        </h2>
+        <div class="row">
+          <div class="col-md-12">
+            <p>
+                Right now, there is no shortage of ideas in Alzheimer’s research &mdash; only dollars. But you can help change that. 100 percent of the funds you raise will go toward the Association’s efforts to discover methods of treatment and prevention for Alzheimer's and other dementias. 
+            </p>
+          </div>
+        </div>
+        <div class="row d-flex justify-content-center py-4">
+          <div class="col-md-6">
+            <a class="button btn-outline-light btn-lg text-uppercase" href="SPageServer/?pagename=ride_about">Find Out More</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="become_sponsor" class="become-sponsor-container text-center">
+      <div class="container has-sponsors">
+        <span class="h4">Special thanks to our</span>
+        <h2 class="text-primary">Corporate Sponsors</h2>
+        <div class="row mt-3">
+          <div class="col-md-4 d-flex align-items-center justify-content-center">
+            <img class="card-img" src="assets/images/sponsor_edward_jones.png" alt="Ride to End ALZ">
+
+          </div>
+          <div class="col-md-4 d-flex align-items-center justify-content-center">
+            <img class="card-img" src="assets/images/sponsor_bjs.png" alt="Ride to End ALZ">
+
+          </div>
+
+          <div class="col-md-4 d-flex align-items-center justify-content-center">
+            <!-- <img class="card-img" width="140" height="140" src="" alt="Card image"> -->
+            <img class="card-img" src="assets/images/sponsor_pharmacy.png" alt="Ride to End ALZ">
+
+          </div>
+        </div>
+        <div class="row d-flex justify-content-center my-4">
+          <div class="col-md-12">
+            <a class="button btn-secondary btn-lg text-uppercase" href="SPageServer/?pagename=ride_sponsors" role="button">Corporate Sponsorship</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="container no-sponsors">
+        <h2 class="text-primary">Become a Sponsor</h2>
+        <div class="row">
+          <div class="col-md-12 text-primary">
+            <p>
+                Since our founding in 1980, the Alzheimer's Association has built signature events with a national footprint. When you sponsor Ride to End ALZ, you reach the hundreds of thousands of people supporting our mission.
+            </p>
+          </div>
+        </div>
+ <div class="row d-flex justify-content-center my-4">
+          <div class="col-md-12">
+            <a class="button btn-secondary btn-lg text-uppercase" href="SPageServer/?pagename=ride_sponsors" role="button">Become a <br class="d-sm-none">Corporate Sponsor</a>
+          </div>
+        </div>
+      </div>
+
+
+    </section>
+
+
+
+
+    <!-- Register Modal -->
+    <div class="modal fade register-modal" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="registerModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content text-center">
+          <div class="modal-header">
+            <h5 class="modal-title text-primary m-auto pt-3" id="registerModalLabel">Choose a Location:</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true" class="text-primary">
+                <i class="fas fa-times"></i>
+              </span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="active-rides">
+              <div class="card text-center">
+                <a class="" href="TR?fr_id=11914&amp;pg=entry">
+                  <div class="text-center">
+                    <h3 class="card-title">
+                      <span class="location-name h4">Austin</span>
+                      <span class="location-date h5">Dec 10
+                        <i class="fas fa-caret-right"></i>
+                      </span>
+                    </h3>
+                  </div>
+                </a>
+              </div>
+              <div class="card text-center">
+                <a class="" href="#">
+                  <div class="text-center">
+                    <h3 class="card-title">
+                      <span class="location-name h4">Minneapolis</span>
+                      <span class="location-date h5">Feb 10
+                        <i class="fas fa-caret-right"></i>
+                      </span>
+                    </h3>
+                  </div>
+                </a>
+              </div>
+
+              <div class="card text-center">
+                <a class="" href="#">
+                  <div class="text-center">
+                    <h3 class="card-title">
+                      <span class="location-name h4">Seattle</span>
+                      <span class="location-date h5">Mar 23
+                        <i class="fas fa-caret-right"></i>
+                      </span>
+                    </h3>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </main>
+
+    <span class="horizontal-divider"></span>
+
+    <!-- FOOTER -->
+    <footer class="pt-5 bg-primary">
+      <div class="container top-footer-container">
+        <div class="row">
+          <div class="col-12 text-center">
+            <a class="navbar-brand my-3 mx-0" href="SPageServer/?pagename=ride_homepage">
+              <img class="banner-logo" src="assets/images/ride_logo_white.png" alt="Ride to End ALZ" height="103">
+            </a>
+          </div>
+        </div>
+        <div class="row mt-3">
+          <div class="col-12 col-md text-center text-white primary-footer-links">
+              <a href="#" data-toggle="modal" data-target="#registerModal">Register</a> |
+            <a href="SPageServer/?pagename=ride_search&amp;search_type=donate">Donate</a> |
+            <a href="SPageServer/?pagename=ride_search&amp;search_type=general">Find a Participant</a>
+              <!-- BEGIN LOGGED IN -->
+            <span class="menu-btn js__logged-in" style="display:none;"> |
+              <a href="#">Visit Ride Hub</a>
+            </span>
+              <!-- END LOGGED IN -->
+
+          </div>
+        </div>
+        <div class="row mt-3 text-white d-flex align-items-center justify-content-center">
+          <div class="col-3 col-sm-2 col-lg-1 d-flex align-items-center justify-content-center">
+            <a href="#" class="d-flex footer-social-icon align-items-center justify-content-center">
+              <span class="sr-only">Share on Facebook</span>
+              <i class="fab fa-facebook-f"></i>
+            </a>
+          </div>
+          <div class="col-3 col-sm-2 col-lg-1 d-flex align-items-center justify-content-center">
+            <a href="#" class="d-flex footer-social-icon align-items-center justify-content-center">
+              <span class="sr-only">Share on Twitter</span>
+              <i class="fab fa-twitter"></i>
+            </a>
+          </div>
+          <div class="col-3 col-sm-2 col-lg-1 d-flex align-items-center justify-content-center">
+            <a href="#" class="d-flex footer-social-icon align-items-center justify-content-center">
+              <span class="sr-only">Share on Instagram</span>
+              <i class="fab fa-instagram"></i>
+            </a>
+          </div>
+          <div class="col-3 col-sm-2 col-lg-1 d-flex align-items-center justify-content-center">
+            <a href="#" class="d-flex footer-social-icon align-items-center justify-content-center">
+              <span class="sr-only">Share on YouTube</span>
+              <i class="fab fa-youtube"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="row text-center mt-3">
+          <div class="col">
+            <span class="ride-hashtag text-white">
+              <span class="text-secondary">#</span>RideToEndALZ</span>
+          </div>
+        </div>
+      </div>
+      <hr class="border border-darkpurple">
+      <!-- BEGIN footer links -->
+      <div class="container middle-footer-container mt-3 pt-3 pb-2">
+        <div class="row">
+          <div class="col-6 col-md-3">
+            <h2 class="h5">ABOUT</h2>
+            <ul class="list-unstyled text-small">
+              <li>
+                <a class="link-text" href="#">About the Ride</a>
+              </li>
+              <li>
+                <a class="link-text" href="#">Fundraising</a>
+              </li>
+              <li>
+                <a class="link-text" href="#">Training</a>
+              </li>
+              <li>
+                <a class="link-text" href="#">Travel Planner</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-6 col-md-3 order-2 order-md-1">
+            <ul class="list-unstyled text-small">
+              <li>
+                <a class="link-text" href="#">Team Up</a>
+              </li>
+              <li>
+                <a class="link-text" href="#">Volunteer & Crew</a>
+              </li>
+              <li>
+                <a class="link-text" href="SPageServer/?pagename=ride_sponsors">Sponsors</a>
+              </li>
+              <li>
+                <a class="link-text" href="SPageServer/?pagename=ride_survey">Request More Info</a>
+              </li>
+              <li>
+                <a class="link-text" href="#">Contact Us</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-6 col-md-3 order-1 order-md-3">
+            <h2 class="h5">LOCATIONS</h2>
+            <ul class="list-unstyled text-small">
+              <li>
+                <a class="link-text" href="TR?fr_id=11914&amp;pg=entry">Austin, TX</a>
+              </li>
+              <li>
+                <a class="link-text" href="#">Minneapolis, MN</a>
+              </li>
+              <li>
+                <a class="link-text" href="#">Seattle, WA</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-6 col-md-3 order-3 order-md-4">
+            <h2 class="h5">WHY WE RIDE</h2>
+            <ul class="list-unstyled text-small">
+              <li>
+                <a class="link-text" href="#">100% to Research</a>
+              </li>
+              <li>
+                <a class="link-text" href="#">Your Fundraising Impact</a>
+              </li>
+              <li>
+                &nbsp;
+              </li>
+              <li>
+                <a class="link-text" href="SPageServer/?pagename=ride_faq">
+                  <strong>FAQ</strong>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- END footer links -->
+      <!-- BEGIN bottom footer -->
+      <div class="bottom-footer-container container-fluid text-center bg-darkpurple pt-4 pb-3">
+        <div class="row">
+          <div class="col-12 col-md text-white">
+            <img alt="Alzheimer's Association: the brains behind saving yours" src="assets/images/alz-logo-footer.png">
+            <p class="mt-4">1 (800) 272 3900
+              <br>Alzheimer's Association Home Office 225 N. Michigan Ave., Fl. 17, Chicago, IL 60601
+              <br>Alzheimer's Association is a not-for-profit 501(c)(3) organization.</p>
+            <p class="mt-1">Copyright &copy; 2018 Alzheimer's Association&reg;. All rights reserved.</p>
+          </div>
+        </div>
+      </div>
+      <!-- END bottom footer -->
+      <div class="utility-footer-container container">
+        <div class="row mt-3">
+          <div class="col-12 col-md text-center text-white">
+            <p>
+              <a href="http://www.alz.org/walk">ALZ.org</a> |
+              <a href="#">About ALZ</a> |
+              <a href="http://blog.alz.org/">ALZ Blog</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+
+
+
+  <!-- build:js assets/js/vendor/plugins.min.js -->
+  <script src="assets/js/vendor/jquery-2.2.4.min.js"></script>
+  <script src="assets/js/vendor/popper.min.js"></script>
+  <script src="assets/js/vendor/bootstrap.min.js"></script>
+  <script src="assets/js/vendor/luminate-extend-1.8.1.js"></script>
+  <script src="assets/js/vendor/pushy.min.js"></script>
+  <!-- endbuild -->
+  <script>
+    // document.getElementsByTagName('html')[0].setAttribute('lang', 'en');
+    luminateExtend({
+      apiKey: 'ALZADARDA',
+      path: {
+        nonsecure: 'http://act.alz.org/site/',
+        secure: 'https://act.alz.org/site/'
+      },
+      srcCode: '[[S80:src]]',
+      subSrcCode: '[[S80:subsrc]]'
+    });
+
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/parsley.js/2.8.1/parsley.min.js"></script>
+  <!-- assets/js/main-<!TIMESTAMP!>.js -->
+  <!-- build:js assets/js/main.js -->
+  <script src="assets/js/main.js"></script>
+  <!-- endbuild -->
+  <!-- build:js assets/js/registration.js -->
+  <script src="assets/js/registration.js"></script>
+  <!-- endbuild -->
+  <!-- build:js assets/js/survey.js -->
+  <script src="assets/js/survey.js"></script>
+  <!-- endbuild -->
+  <!-- build:js assets/js/participant-center.js -->
+  <!-- <script src="assets/js/participant-center.js"></script> -->
+  <!-- endbuild -->
+
+</body>
+
+</html>

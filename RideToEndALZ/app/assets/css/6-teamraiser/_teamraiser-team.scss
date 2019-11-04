@@ -1,0 +1,66 @@
+.pg_team {
+  .tr-page-container {
+    display:none;
+  }
+  div.team-progress-container {
+    border:0;
+  }
+  .tr-headline {
+    small {
+      font-weight:800;
+    }
+  }
+  .team-top {
+  @include gradient-directional($start-color: transparent, $end-color: #d7ebe8, $deg: 180deg) 
+  // @include gradient-y-three-colors($start-color: transparent, $mid-color: $white, $color-stop: 50%, $end-color: #d7ebe8)   
+  }
+  .fundraiser-progress-container {
+    background:transparent;
+  }
+  .participant-team-search {
+    .participant-name {
+      border-top:2px solid $secondary;
+      border-left:2px solid $secondary;
+      border-bottom:2px solid $secondary;
+    }
+  }
+  .results-table {
+    > {
+      :nth-child(even){
+      @include gradient-directional($start-color: #ededed, $end-color: #f8f8f8, $deg: 0deg) 
+      }
+    }
+
+  }
+.my-ride-container {
+  p {
+    font-size:1.2rem;
+  }
+}
+  .teammate-details {
+    font-size: 1.3rem;
+    font-weight:bold;
+    a {
+      text-decoration:underline;
+      &.button {
+        text-decoration:none;
+        // height:100%;
+        margin-top:auto;
+        margin-bottom:auto;
+      }
+    }
+    @include media-breakpoint-down(md) {
+      a {
+      &.btn-lg {
+        font-size: 1.3rem;
+      }    
+    }
+  }
+    .amt-raised {
+      color:#686868;
+    }
+  }
+
+
+
+}

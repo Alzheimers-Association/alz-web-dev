@@ -1,0 +1,29 @@
+0000000000000000000000000000000000000000 f3619fb9c4f5332df96b2e9a6c2393da7159a700 eoyleralz <eoyler@alz.org> 1538425428 -0500	commit (initial): :space_invader: Added .gitattributes & .gitignore files
+f3619fb9c4f5332df96b2e9a6c2393da7159a700 fefe19232ac99e3e1bd9a3a98cc488a4bf95de5c eoyleralz <eoyler@alz.org> 1538425744 -0500	commit: V1
+fefe19232ac99e3e1bd9a3a98cc488a4bf95de5c 833c8371146c99e59b694d6f53ed3213081c013c eoyleralz <eoyler@alz.org> 1538487831 -0500	commit: V1.01
+833c8371146c99e59b694d6f53ed3213081c013c 991045258504c853e20a0288e88a9bc1c09142a7 eoyleralz <eoyler@alz.org> 1538493585 -0500	commit: V1.02
+991045258504c853e20a0288e88a9bc1c09142a7 2604287e4e732cc6fd6cfb6474ec7d6335e6f90d eoyleralz <eoyler@alz.org> 1538497662 -0500	commit: V1.03
+2604287e4e732cc6fd6cfb6474ec7d6335e6f90d 2fa19c0ea388faf87057cbb45778bd20be1fb63a eoyleralz <eoyler@alz.org> 1538583534 -0500	commit: V1.04
+2fa19c0ea388faf87057cbb45778bd20be1fb63a 0a034b53341aeb8878d501356b4b19aaacba01e5 eoyleralz <eoyler@alz.org> 1538660530 -0500	pull --progress --prune origin: Fast-forward
+0a034b53341aeb8878d501356b4b19aaacba01e5 6b7208740011c250142419b3e86d2e79b6314d76 eoyleralz <eoyler@alz.org> 1538668181 -0500	pull --progress --prune origin: Fast-forward
+6b7208740011c250142419b3e86d2e79b6314d76 c3a4b212d10461145b23b5b5b7714258e794fb69 eoyleralz <eoyler@alz.org> 1538700707 -0500	commit: V1.07
+c3a4b212d10461145b23b5b5b7714258e794fb69 383400033e8534e2c059bc6fdb3767c847e0e173 eoyleralz <eoyler@alz.org> 1538700718 -0500	pull --progress --rebase --prune origin: checkout 383400033e8534e2c059bc6fdb3767c847e0e173
+383400033e8534e2c059bc6fdb3767c847e0e173 798830cd837d7d45ab7620a405b0ec74e1b3d16d eoyleralz <eoyler@alz.org> 1538700719 -0500	pull --progress --rebase --prune origin: V1.07
+798830cd837d7d45ab7620a405b0ec74e1b3d16d 798830cd837d7d45ab7620a405b0ec74e1b3d16d eoyleralz <eoyler@alz.org> 1538700719 -0500	rebase finished: returning to refs/heads/master
+798830cd837d7d45ab7620a405b0ec74e1b3d16d e6b98b50ce6c2426cf0f65c722708b2c3bc24585 eoyleralz <eoyler@alz.org> 1539009020 -0500	pull --progress --rebase --prune origin: Fast-forward
+e6b98b50ce6c2426cf0f65c722708b2c3bc24585 d7a79b1f32e6c56a775c436861720cecacb39346 eoyleralz <eoyler@alz.org> 1539020821 -0500	pull --progress --rebase --prune origin: Fast-forward
+d7a79b1f32e6c56a775c436861720cecacb39346 3e664e61e0280a7a76dcea3f028f9d0391837218 eoyleralz <eoyler@alz.org> 1539265276 -0500	pull --progress --rebase --prune origin: Fast-forward
+3e664e61e0280a7a76dcea3f028f9d0391837218 2f671accdec72b6feb1545676b20908826a384b4 eoyleralz <eoyler@alz.org> 1539611154 -0500	pull --progress --rebase --prune origin: Fast-forward
+2f671accdec72b6feb1545676b20908826a384b4 93a2f87378b6610e352d6de3743ce4b0e2f26eb4 eoyleralz <eoyler@alz.org> 1539611327 -0500	commit: faq.html
+93a2f87378b6610e352d6de3743ce4b0e2f26eb4 1b6b2b552885aab6d0b4a939206e633faeffe00c eoyleralz <eoyler@alz.org> 1539611348 -0500	commit: reg css
+1b6b2b552885aab6d0b4a939206e633faeffe00c 3843fc21f3422bb40532011a4153d844e209b1ba eoyleralz <eoyler@alz.org> 1539723138 -0500	pull --progress --rebase --prune origin: Fast-forward
+3843fc21f3422bb40532011a4153d844e209b1ba a340bae0d45187c0b9f163bba081f4b0692c71cc eoyleralz <eoyler@alz.org> 1539898044 -0500	pull --progress --rebase --prune origin: Fast-forward
+a340bae0d45187c0b9f163bba081f4b0692c71cc 9d1639119124d8f65ccb3476387900edc7088eed eoyleralz <eoyler@alz.org> 1539917984 -0500	commit: CSS updates
+9d1639119124d8f65ccb3476387900edc7088eed 713a0ca33a56a594a550b60330ba8a4d0009efa3 eoyleralz <eoyler@alz.org> 1541093564 -0500	pull --progress --rebase --prune origin: Fast-forward
+713a0ca33a56a594a550b60330ba8a4d0009efa3 c34ca4d4a30f48414432e30490e2e32749a590e1 eoyleralz <eoyler@alz.org> 1546530752 -0600	pull --no-rebase --progress origin: Fast-forward
+c34ca4d4a30f48414432e30490e2e32749a590e1 1707b443377a40c0919a535e86f63d536bdc5d2a eoyleralz <eoyler@alz.org> 1547504678 -0600	pull --progress --rebase --prune origin: Fast-forward
+1707b443377a40c0919a535e86f63d536bdc5d2a 7a5c53d921f2e2f6e168ae39a29029690d05eb9c eoyleralz <eoyler@alz.org> 1549319086 -0600	pull --progress --rebase --prune origin: Fast-forward
+7a5c53d921f2e2f6e168ae39a29029690d05eb9c 165682e45aa7a1b9622e0f269050c7db60bd873e Eric Oyler <eoyler@alz.org> 1559182752 -0500	pull --progress origin: Fast-forward
+165682e45aa7a1b9622e0f269050c7db60bd873e 910b4e87ce6ac52c087825400513952baec8a3e0 Eric Oyler <eoyler@alz.org> 1568746702 -0500	pull --progress origin: Fast-forward
+910b4e87ce6ac52c087825400513952baec8a3e0 fb6e38d16ee89b6968ba702a32c1c467cc0066cb Eric Oyler <eoyler@alz.org> 1568756865 -0500	commit: fix Register URL on entry.html
+fb6e38d16ee89b6968ba702a32c1c467cc0066cb 943f1dd8cac2afe662c48baee1301d9aa429d6f1 Eric Oyler <eoyler@alz.org> 1572878778 -0600	commit: Update Boundless domain

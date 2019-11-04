@@ -1,0 +1,43 @@
+.pg_personal {
+  .tr-page-container {
+    display:none;
+  }
+.badge-ptype {
+  font-weight:bold;
+  color:$black;
+}
+
+.honoree {
+  color:$body-color;
+  font-size:  1.5rem;
+}
+
+@include media-breakpoint-down(md) {
+// .fundraiser-progress-container {
+//   .button {
+//     width:100%;
+//   }
+// }
+.tr-story-text {
+  max-height: 230px;
+  overflow: hidden;
+}
+.fade-anchor-container {
+  @include gradient-directional($start-color: transparent, $end-color: $white, $deg: 180deg) 
+  display: block;
+  height: 230px;
+  padding-top: 220px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  text-align: center;
+  -webkit-transition: background 150ms ease-in;
+  transition: background 150ms ease-in;
+}
+
+}
+
+
+
+}

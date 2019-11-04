@@ -1,0 +1,48 @@
+
+/* Brand Colors */
+$primaryColor: #004B8D;
+$bodyColor: #888;
+$linkColor: $primaryColor;
+$hoverColor: $primaryColor;
+$greyColor: #d7d7d7;
+$darkGrey: #a4a4ae;
+$ltGrey: #f2f2f2;
+
+/* Typography */
+$defaultFontSize: 16px;
+$defaultFontFamily: Verdana, Helvetica, Arial, sans-serif;
+$defaultFontColor: #000;
+
+$labelFontSize: $defaultFontSize;
+$labelFontFamily: $defaultFontFamily;
+
+$requiredAsteriskColor: #EC008C;
+$errorAlertColor: #a94442;
+$errorAlertLinkColor: #843534;
+$errorAlertBkdColor: #f2dede;
+$errorAlertBorderColor: #ebccd1;
+
+
+/* Survey Inputs */
+$inputFontSize: $defaultFontSize;
+$inputColor: $defaultFontColor;
+$inputBkdColor: #fff;
+$inputBkdColorDisabled: #eee;
+$inputFocusBorderColor:$primaryColor;
+$inputFocusBorderShadow:rgba(0,75,141,.6);
+$inputHeight: 34px;
+$inputLineHeight: 1.42857143;
+$inputPadding: 6px 12px;
+$inputPlaceholderColor:#999;
+$inputBorderColor:#000;
+$inputBorderRadius:3px;
+$formGroupBottomMargin:45px;
+
+/* Buttons */
+$btnRadius: 3px;
+$btnDefaultColor:#fff;
+$btnDefaultBackground: #EC008C;
+$btnDefaultBorder: #EC008C;
+$btnPrimaryColor:#EC008C;
+$btnPrimaryBackground: $primaryColor;
+$btnPrimaryBorder: $primaryColor;

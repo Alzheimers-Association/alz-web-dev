@@ -1,0 +1,178 @@
+#reg_payment_page {
+  #fr_payment_form {
+    @include make-col-ready();
+    @include make-col(12);
+    @include media-breakpoint-up(md) {
+      @include make-col(6);
+    }
+  }
+
+  #btn_prev {
+    display: none;
+  }
+  #btn_next {
+    width:100%;
+  }
+  div.form-row {
+    margin: 0;
+  }
+  .payment-type-selection-container {
+    text-align:center;
+  }
+  span.option-amount, span.option-value {
+    float:none;
+    text-align:center;
+  }
+  div.label-value-block-container {
+    border: 2px solid $secondary;
+    border-radius: 0;
+    font-weight: 800;
+    background-color: #fff;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 1.5rem;
+    p {
+      margin: 0;
+    }
+    @include make-col-ready();
+    @include make-col(12);
+    @include media-breakpoint-up(md) {
+      @include make-col(4);
+    }
+  } // #responsive_payment_typecc_number_row,
+  #responsive_payment_typecc_cvv_row,
+  #responsive_payment_typecc_exp_date_row {
+    margin: 0;
+    @extend .row;
+  }
+
+  
+  #fr_payment_form {
+    margin: 0 auto;
+    .section-footer {
+      @extend .row;
+    }
+    div.form-row div.form-content {
+      width: 100%;
+    }
+    .payment-type-selection-container h3 {
+      font-size: 1.2rem;
+      font-family: $font-size-base;
+    }
+    div.payment-field-container {
+      span.internal-payment,
+      span.external-payment {
+        background: transparent;
+        width: 40%;
+        border: none;
+        @include media-breakpoint-down(md) {
+          width: 100%;
+          max-width: 100%;
+        }
+      }
+      span.payment-type-option {
+        margin-right: 0;
+        -moz-border-radius: 4px;
+        -webkit-border-radius: 4px;
+        width: 100%;
+        color: $body-color !important;
+        background-color: #e2e2e2;
+        max-width: 200px;
+        border-radius: 4px;
+        margin-bottom: 0;
+        font-weight: 400;
+        text-align: center;
+        cursor: pointer;
+        background-image: none;
+        border: 1px solid transparent;
+        white-space: nowrap;
+        padding: 6px 12px;
+        font-size: 1.4rem;
+        line-height: 1.428571429;
+        border-radius: 4px;
+        @include media-breakpoint-down(md) {
+          width: 100%;
+          max-width: 100%;
+        }
+      }
+      span.payment-type-option {
+        label {
+          margin-bottom: 0;
+        }
+        a:link {
+          color: $body-color;
+          font-family: $font-family-base;
+        }
+        &:hover {
+          background-image: none;
+          color: $white !important;
+          background-color: $secondary !important
+        }
+        &.selected {
+          background-image: none;
+          background: none;
+          background-color: $secondary;
+          a:link {
+            color: $white !important;
+          }
+          &:hover {
+            color: $white !important;
+          }
+        }
+      }
+    }
+  }
+
+  #billing_info_name div.form-row,
+  #billing_title_row,
+  #billing_suffix_row,
+  #billing_addr_city_row,
+  #billing_addr_state_row,
+  #billing_addr_county_row,
+  #billing_addr_zip_row {
+    display: block;
+    width:100%;
+  }
+
+  
+  
+    #billing_addr_street1_row input,
+    #billing_addr_street2_row input {
+      width: 100%;
+    }
+    div.form-row div.form-content>select,
+    div.form-row div.form-content>input {
+      margin-top: 0;
+    }
+
+  #responsive_payment_typecc_type_row {
+    legend {
+      @extend label;
+      text-align:center;
+      @include make-col-ready();
+      @include make-col(12);
+    }
+    .radio-array-list {
+      text-align: center;
+      @include make-col-ready();
+      @include make-col(12);
+    }
+  }
+  #reg_payment_page div.form-row div.form-content>select {
+    height: calc(2.25rem + 2px);
+  }
+}
+
+.app_tr_registration {
+  div.responsive {
+    #fr_payment_form {
+    select#responsive_payment_typecc_exp_date_MONTH,
+    select#responsive_payment_typecc_exp_date_YEAR {
+      display: inline-block;
+      max-width:49.5% !important;
+      @include make-col-ready();
+      @include make-col(6);
+    }
+  }
+  }
+}

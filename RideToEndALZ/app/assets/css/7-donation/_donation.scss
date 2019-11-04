@@ -1,0 +1,919 @@
+.app_id_9 {
+
+
+#ProcessForm {
+  float: left;
+  margin-right: 40px;
+  max-width: 640px;
+  width: 100%;
+}
+div.responsive .donation-form-container button.step-button,
+.donation-form-container #pstep_finish {
+  max-width:inherit;
+  text-align:center;
+  float:none;
+  font-size: 1.6rem;
+    font-weight: bold;
+
+}
+div.donation-level-input-container, div.generic-repeat-label-checkbox-container {
+  padding:0;
+}
+.donation-form-content {
+  input[type=checkbox]{
+    margin-top: 0.5rem;
+  }
+}
+.payment-type-selection-container {
+  h3 {
+    display:none;
+  }
+}
+// ##########################
+// legacy styles
+// ##########################
+
+.content {
+  max-width: 953px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.donation-form-sidebar {
+  display: block;
+  float: right;
+  max-width: 220.94px;
+  width: 100%;
+}
+
+.onbehalf-module {
+  width: 222px;
+}
+
+.onbehalf-header {
+  background-color: #4a0d66;
+  padding: 10px;
+}
+
+.onbehalf-header-content {
+  color: #fff;
+  font-size: 14px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.onbehalf-header-name {
+  color: #fff;
+  font-size: 22px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.onbehalf-image {
+  // [[?x21x::x[[S80:proxyType]]x::
+  // TODO - hide behalf image if a company donation??
+		// display:none;
+	// ::]]
+  height: 150px;
+  width: 222px;
+  overflow: hidden;
+}
+
+.onbehalf-image img {
+	max-width: 100%;
+}
+ 
+
+.onbehalf-content {
+  // TODO - hide behalf image if donation completed??
+
+	// [[?[[S8]]::completed::
+	// display:none;
+	// ::]]
+  background-color: #ede6ef;
+  border: 1px solid #cfcfcf;
+  color: #333333;
+  font-size: 13px;
+  line-height: 16px;
+  padding: 15px 10px;
+}
+
+.difference-module {
+  border: 1px solid #cfcfcf;
+  background-color: #ede6ef;
+  margin-top: 35px;
+  padding: 20px;
+}
+
+.difference-headline {
+  color: #4a0d66;
+  font-size: 18px;
+  text-align: center;
+}
+
+.difference-content {
+  color: #333333;
+  font-size: 13px;
+  line-height: 20px;
+  margin-top: 15px;
+  text-align: center;
+}
+
+div.donation-form-container.responsive {
+  background-color: #f6f6f6;
+  border: 1px solid #cfcfcf;
+  border-radius: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -o-border-radius: 0;
+  color: #4f4f4f;
+  float: left;
+  margin-right: 40px;
+  max-width: 640px;
+  width: 100% !important;
+}
+
+h2.section-header-container {
+  border-top: none;
+  border-bottom: 3px solid #4a0d66;
+  clear: both;
+  color: #4a0d66;
+  font-weight: 300;
+  font-size:2rem;
+  margin-top: 10px;
+  margin-bottom:10px;
+  padding-bottom: 5px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.donFormIntroSpan {
+  color: #4f4f4f;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.4px;
+  margin: 20px 0;
+}
+
+#level_standard_row .field-required, #level_standard_row .aural-only,
+#level_standard_row .FormLabelText, .donation-level-user-entered label,
+label[for="tr_recognition_namerec_namename"],
+#donor_email_opt_in_Row .check-box-form-label-text, .payment-field-container#payment_cc_container h3,
+.payment-type-selections#responsive_payment_typepay_typeradio_payment_types .internal-payment,
+.payment-type-selections#responsive_payment_typepay_typeradio_payment_types .external-payment {
+  display: none;
+}
+
+div.donation-level-general-ask, 
+div.html-caption-container { 
+  padding: 4px 10px; 
+  // margin: 4px 30px; 
+  max-width:100%;
+}
+
+div.donation-level-user-entered {
+  margin-top: 0;
+}
+
+#level_standardexpanded42265amount, #tr_recognition_namerec_namename {
+  color: #4f4f4f;
+  font-size: 13px;
+  font-style: italic;
+}
+
+.donation-level-container:last-child .donation-level-label-input-container input {
+  margin-top: 12px;
+}
+
+#level_standard_row {
+  margin: 4px 30px;
+}
+
+.donor-recognition-header {
+  font-size: 16px;
+  font-weight: normal;
+  margin-left: 30px;
+  margin-right: 30px;
+  padding-bottom: 10px;
+}
+
+#tr_show_gift_to_publicname, #tr_recognition_nameanonymousname {
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  height: initial;
+  width: initial;
+}
+
+.tr-recognition-name-view, #tr_show_gift_to_public_row, #donor_matching_employer_Row {
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+// div.responsive input[id="tr_recognition_namerec_namename"],
+// div.responsive .donation-level-user-entered input {
+//   border-radius: 0;
+//   -webkit-border-radius: 0;
+//   -moz-border-radius: 0;
+//   -o-border-radius: 0;
+//   height: 28px;
+//   max-width: 525px !important;
+//   width: 100%;
+// }
+
+div.responsive input[id="tr_recognition_namerec_namename"] {
+  margin-left: 22px;
+}
+
+.matching-gifts {
+  font-size: 14px;
+  margin: 20px 0;
+}
+
+#donor_matching_employer_Row .form-input-label-block {
+  padding-bottom: 5px;
+}
+
+label[for="donor_matching_employersearchname"] {
+  font-size: 14px;
+}
+
+#donor_matching_employersearchBtn {
+  background-color: #e9e9e9;
+  background-image: none;
+  border: 1px solid #d7d7d7;
+  border-radius: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -o-border-radius: 0;
+  box-shadow: none;
+  color: #686868;
+  font-size: 13px;
+  height: 40px;
+  margin-left: 10px;
+  width: 154px;
+}
+
+div.responsive input[id="donor_matching_employersearchname"] {
+  border-radius: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -o-border-radius: 0;
+  height: 28px;
+  max-width: 381px !important;
+  width: 100%;
+}
+
+#donor_matching_employer_match_information #giftMatch .form-input-label-block,
+#donor_matching_employer_match_information #giftMatch div {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+#billing_first_name_row, #billing_last_name_row, #billing_addr_street1_row,
+#billing_addr_street2_row, #billing_addr_city_row, #billing_addr_state_row,
+#billing_addr_country_row, #billing_addr_zip_row {
+  display: inline-block;
+  // float: left;
+  // margin-top: 20px;
+  margin: 5px;
+  width: 45%;
+}
+
+#billing_addr_state_row {
+  display: inline-block;
+  margin-right: 0 !important;
+}
+
+#billing_first_name_row, #billing_addr_street1_row, #billing_addr_city_row,
+#billing_addr_country_row {
+  margin-right: 5px;
+  margin-left: 30px;
+}
+
+#tr_recognition_namerec_name_row .form-content, #billing_first_name_row .form-content, #billing_last_name_row .form-content,
+#donor_email_address_row .form-content, #billing_addr_street1_row .form-content, #billing_addr_street2_row .form-content,
+#billing_addr_city_row .form-content, #billing_addr_state_row .form-content, #billing_addr_country_row .form-content,
+#billing_addr_zip_row .form-content, #responsive_payment_typepay_typeradio_row .form-content,
+#donor_matching_employer_Row .form-content, #responsive_payment_typecc_number_row .form-content,
+#responsive_payment_typecc_exp_date_row .form-content, #responsive_payment_typecc_cvv_row .form-content {
+  width: 100%;
+}
+
+#billing_first_namename, #billing_last_namename, #donor_email_addressname,
+#billing_addr_street1name, #billing_addr_street2name, #billing_addr_cityname,
+#billing_addr_zipname, #responsive_payment_typecc_numbername, #responsive_payment_typecc_cvvname {
+  // background-color: #fff;
+  // border-radius: 0;
+  // -webkit-border-radius: 0;
+  // -moz-border-radius: 0;
+  // -o-border-radius: 0;
+  // height: 28px;
+  // margin-top: 5px;
+  // max-width: 260px !important;
+  // width: 100% !important;
+
+}
+
+.custom-field-container {
+  margin-left: 30px;
+}
+.donation-form-container {
+  select::-ms-expand{
+    display:none !important;
+  }
+}
+
+// 
+#donate_double_dropdown_dropdown,
+#billing_addr_state, 
+#billing_addr_country {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+   -ms-appearance: none;
+    -o-appearance: none;
+       appearance: none;
+  text-indent: 1px;
+  text-overflow: '';
+  background-color: #fff;
+  background-image: url('https://act.alz.org/images/content/pagebuilder/select-arrow.png');
+  background-repeat: no-repeat;
+  background-position: right;
+  border: 1px solid #d9d6cf;
+  border-radius: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -o-border-radius: 0;
+  -webkit-box-shadow: inset 3px 3px 3px #f0f0f0;
+  -moz-box-shadow: inset 3px 3px 3px #f0f0f0;
+  box-shadow: inset 3px 3px 3px #f0f0f0;
+  height: 40px;
+  margin-top: 5px;
+  max-width: 276px;
+  width: 100% !important;
+
+  // background-color: $white;
+  // border-radius: inherit;
+  // height: inherit;
+  // margin-top:inherit;
+  // max-width: inherit;
+  // width: inherit;
+  // @extend .custom-select;
+  // @extend .form-control;
+
+}
+
+#donate_double_dropdown_dropdown {
+  font-size: 14px;
+  padding-left: 10px;
+}
+
+#billing_addr_country {
+  color: #4f4f4f;
+  font-size: 14px;
+  padding-left: 10px;
+}
+
+#billing_addr_country_row {
+  clear: both;
+}
+
+label {
+  color: #4f4f4f;
+  font-size: 14px;
+}
+
+#donor_email_opt_in_Row {
+  // display: inline-block;
+  // width: 42%;
+  display: inline-block;
+  margin: 5px;
+  width: 45%;
+  // display: inline;
+  // float: left;
+  // margin-top: 7px;
+  // margin-left: 30px;
+  // width: 46%;
+}
+
+#donor_email_opt_in_Row .form-content {
+  width: 100%;
+  margin-top: 30px !important;
+}
+
+#donor_email_opt_inname {
+  display: inline-block;
+  float: left;
+  height: initial;
+  width: initial;
+}
+
+#donor_email_address_row {
+  display: inline;
+  float: left;
+  margin-top: 7px;
+  margin-left: 30px;
+  margin-right:5px;
+  width: 45%;
+}
+
+label[for="donor_email_opt_inname"] {
+  display: inline-block;
+  float: left;
+  width: 93%;
+}
+
+.payment-type-element-container {
+  margin: 20px 30px;
+}
+
+.payment-type-selection-container.payment-field-container h3 {
+  color: #4f4f4f;
+  font-size: 14px;
+  font-weight: normal;
+}
+
+div.responsive select.payment-type-dropdown {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+   -ms-appearance: none;
+    -o-appearance: none;
+       appearance: none;
+  text-indent: 1px;
+  text-overflow: '';
+  background-color: #fff;
+  background-image: url('https://act.alz.org/images/content/pagebuilder/select-arrow.png');
+  background-repeat: no-repeat;
+  background-position: right;
+  border: 1px solid #d9d6cf;
+  border-radius: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -o-border-radius: 0;
+  -webkit-box-shadow: inset 3px 3px 3px #f0f0f0;
+  -moz-box-shadow: inset 3px 3px 3px #f0f0f0;
+  box-shadow: inset 3px 3px 3px #f0f0f0;
+  color: #4f4f4f;
+  font-size: 14px;
+  height: 40px;
+  margin-top: 5px;
+  max-width: 50% !important;
+  padding-left: 10px;
+  width: 100% !important;
+}
+@include media-breakpoint-down(md) {
+  div.responsive select.payment-type-dropdown {
+    max-width: 100% !important;
+  }
+}
+.payment-type-selection-container.payment-field-container #responsive_payment_typepay_typeradio_row {
+  margin: 0;
+}
+
+#responsive_payment_typecc_number_row, #responsive_payment_typecc_exp_date_row, #responsive_payment_typecc_cvv_row {
+  display: inline-block;
+  float: left;
+  margin-top: 0;
+}
+
+#responsive_payment_typecc_number_row {
+  margin-right: 10px;
+  width: 48%;
+}
+
+
+#responsive_payment_typecc_exp_date_row {
+  margin-right: 10px;
+  position: relative;
+  width: 35%;
+}
+
+#responsive_payment_typecc_cvv_row {
+  width: 12%;
+}
+
+.form-row.form-date#responsive_payment_typecc_exp_date_row .form-content label[for="responsive_payment_typecc_exp_date_MONTH"] .label-text span {
+  bottom: -25px;
+  /* display: none !important; */
+  left: 0;
+  position: absolute;
+}
+
+#responsive_payment_typecc_exp_date_MONTH, 
+#responsive_payment_typecc_exp_date_YEAR {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+   -ms-appearance: none;
+    -o-appearance: none;
+       appearance: none;
+  text-indent: 1px;
+  text-overflow: '';
+  background-color: #fff;
+  background-image: url('https://act.alz.org/images/content/pagebuilder/select-arrow.png');
+  background-repeat: no-repeat;
+  background-position: right;
+  border: 1px solid #d9d6cf;
+  border-radius: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -o-border-radius: 0;
+  -webkit-box-shadow: inset 3px 3px 3px #f0f0f0;
+  -moz-box-shadow: inset 3px 3px 3px #f0f0f0;
+  box-shadow: inset 3px 3px 3px #f0f0f0;
+  color: #4f4f4f;
+  font-size: 14px;
+  height: 40px;
+  margin-top: 5px;
+  max-width: 83px !important;
+  padding-left: 10px;
+  width: 100% !important;
+}
+
+#responsive_payment_typecc_exp_date_MONTH {
+  margin-right: 10px;
+}
+
+.cvv-image {
+  vertical-align: bottom;
+}
+
+#responsive_payment_typecc_cvvname {
+  background-color: #fff;
+  border-radius: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -o-border-radius: 0;
+  // height: 28px;
+  max-width: 50.41px !important;
+  width: 100% !important;
+}
+
+div.button-container {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+.button-sub-container {
+  margin: 0 auto;
+  text-align: center;
+  width: 100%;
+}
+
+div.responsive button.step-button.action-button.finish-step#pstep_finish {
+  // background-color: #fff;
+  // background-image: none;
+  // border: none;
+  // border-radius: 2px;
+  // -webkit-border-radius: 2px;
+  // -moz-border-radius: 2px;
+  // -o-border-radius: 2px;
+  // box-shadow: none;
+  // -webkit-box-shadow: none;
+  // -moz-box-shadow: none;
+  // -o-box-shadow: none;
+  // color: #4a0d66;
+  // float: none;
+  // font-size: 18px;
+  // font-weight: 300;
+  // height: 41.81px;
+  // max-width: 214.06px;
+  // text-transform: uppercase;
+  // width: 100%;
+}
+
+div.responsive button.step-button.action-button.finish-step#pstep_finish.disabled {
+  background-color: #ccc;
+  color: #666;
+}
+
+
+.donation-footer-info {
+  color: #818181;
+  font-size: 12px;
+  line-height: 20px;
+  margin: 40px 30px 30px 30px;
+}
+
+.bbb {
+  margin: 0 auto;
+  text-align: center;
+  width: 100%;
+}
+
+.donation-level-input-container input[type="radio"] {
+  display: none;
+}
+
+.donation-level-input-container.donor-entered-amt input[type="radio"] {
+  display: block;
+}
+
+.donation-level-input-container label {
+  background-color: #fff;
+  background-image: url('https://act.alz.org/images/content/pagebuilder/donation-buttons.png');
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  border: 1px solid #cfcfcf;
+  border-radius: 3px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -o-border-radius: 4px;
+  color: #4a0d66;
+  display: block;
+  font-size: 18px;
+  font-weight: bold;
+  height: 42px;
+  width: 103px;
+}
+
+.donation-level-input-container label.active {
+  background-position: 0 -50px;
+  color: #fff;
+}
+
+.donation-level-input-container.donor-entered-amt label {
+  background-color: #f6f6f6;
+  background-image: none;
+  border: none;
+  border-radius: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -o-border-radius: 0;
+  height: initial;
+  width: 100%;
+}
+
+.donation-level-label-container {
+  padding: 4px 42px;
+}
+
+.donation-level-container {
+  display: inline-block;
+  float: left;
+}
+
+// .donation-level-container.donor-entered-amt-container {
+//   display: block;
+//   float: none;
+// }
+
+div.donation-level-container {
+  // margin-right: 36px;
+  margin-top:0;
+  margin-bottom:0;
+}
+
+.donor-entered-amt-container, .donor-entered-amt-container .form-content,
+.donor-entered-amt-container .donor-entered-amt, .donation-level-user-entered {
+  width: 100%;
+}
+
+// .donation-level-user-entered input {
+//   height: 28px;
+//   max-width: 525px !important;
+//   width: 100%;
+// }
+
+.donation-level-user-entered {
+  max-width: 541px;
+}
+
+label[for="donor_email_opt_inname"] {
+    display: inline !important;
+    float:none;
+    width: 93%;
+}
+
+
+
+
+
+
+@media only screen and (max-width: 992px) {
+/*  .donation-form-sidebar {
+    display: none;
+  }*/
+  
+    .content {
+      margin: 0 auto;
+      max-width: 692px;
+      width: 100%;
+     }
+
+  .donation-form-sidebar, .onbehalf-module {
+	float:none;
+	width: 100%;
+	max-width: 692px;
+	}
+	.onbehalf-image, .difference-module {
+		display:none;
+	}
+
+	div.donation-form-container.responsive {
+		margin-top: 20px;
+		background-color: transparent;
+		border: none;
+	}
+	
+}
+
+@media only screen and (max-width: 767px) {
+  .content {
+/*    padding: 0;*/
+	padding: 20px 0 0 0;
+  }
+
+  .mobile div.donation-form-container.responsive {
+    background-color: #fff;
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  .donation-form-content {
+    padding: 10px;
+  }
+
+  div.donation-level-input-container {
+    padding: 0 !important;
+  }
+
+  .donation-level-container {
+    margin-bottom: 0 !important;
+    margin-top: 0 !important;
+  }
+
+  .donation-level-input-container {
+    height: 44px;
+  }
+
+  .donation-level-user-entered {
+    max-width: 360px;
+  }
+
+  &.mobile div.html-caption-container {
+    width: 100% !important;
+  }
+
+  div.donation-level-container {
+    margin-right: 40px;
+  }
+
+  #tr_recognition_namerec_name_row, #tr_recognition_namerec_name_row .form-content,
+  #tr_recognition_nameanonymous_row, #tr_recognition_nameanonymous_row .form-content,
+  .don-standard-levels, #level_standard_row, .donFormIntroSpan, .donor-recognition-header,
+  .tr-recognition-name-view, #tr_show_gift_to_public_row, #donor_matching_employer_Row
+  #level_standard_row .form-content, .matching-gifts, #donor_matching_employer_Row {
+    margin: 0 auto;
+  }
+
+  .donation-level-container.donor-entered-amt-container {
+    margin-right: 0;
+  }
+#donor-entered-amt-container {
+  margin-top:40px;
+}
+  div.responsive .donation-level-user-entered input {
+    max-width: 284px !important;
+  }
+
+  .donation-level-user-entered {
+    max-width: 259px;
+  }
+
+  .donor-recognition-header {
+    padding: 0;
+  }
+
+  #tr_recognition_namerec_namename {
+    margin-bottom: 0;
+    margin-left:0;
+    // max-width: 260px !important;
+  }
+
+  div.responsive input[id="donor_matching_employersearchname"], label[for="donor_email_opt_inname"] {
+    max-width: 260px !important;
+  }
+  #donate_double_dropdown_dropdown,
+  #billing_first_name_row,
+  #billing_last_name_row,
+  #billing_addr_street1_row,
+  #billing_addr_street2_row,
+  #billing_addr_city_row,
+  #billing_addr_state_row,
+  #billing_addr_country_row,
+  #billing_addr_zip_row,
+  #donor_email_address_row,
+  #donor_email_opt_in_Row {
+    display: block;
+    float: none;
+    // margin: 0 10px;
+    margin:0;
+    width: 100%;
+    max-width:100%;
+  }
+.custom-field-container {
+  margin-left:0;
+}
+  #billing_first_name_row .form-content, #billing_last_name_row .form-content, #billing_addr_street1_row .form-content,
+  #billing_addr_street2_row .form-content, #billing_addr_city_row .form-content, #billing_addr_state_row .form-content,
+  #billing_addr_country_row .form-content, #billing_addr_zip_row .form-content, #donor_email_address_row .form-content {
+    margin-bottom: 0;
+  }
+
+  #donor_email_opt_in_Row .form-content {
+    margin-top: 0 !important;
+  }
+
+  // #billing_addr_state, #billing_addr_country {
+  //   margin-bottom: 20px;
+  // }
+
+  .payment-type-element-container {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .mobile div.payment-field-container div.payment-type-selections {
+    width: 100%;
+  }
+
+  #responsive_payment_typecc_number_row {
+    margin: 0;
+    width: 100%;
+  }
+
+  #responsive_payment_typecc_exp_date_row {
+    margin-top: 0;
+    margin-bottom: 0;
+    width: 67%;
+    margin-left:1px;
+  }
+
+  #responsive_payment_typecc_cvv_row {
+    margin-top: 0;
+    margin-bottom: 0;
+    width: 22%;
+  }
+
+  #responsive_payment_typecc_exp_date_row .form-content,
+  #responsive_payment_typecc_cvv_row .form-content {
+    margin-top: 0;
+  }
+
+  .payment-type-element-container {
+    margin-bottom: 0;
+  }
+  .mobile div.button-sub-container,
+  .mobile div.responsive button.step-button {
+    width:100%;
+    max-width:100%;
+  }
+  .donation-footer-info {
+    margin: 20px 10px;
+  }
+
+  .mobile div.payment-field-container #responsive_payment_typepay_typeradio_row {
+    text-align: left;
+  }
+  
+  .mobile div.button-sub-container {
+	  margin-top: 30px;
+  }
+}
+
+#logospace { z-index: 1; }
+#sb-body, #sb-loading { background-color: #fff; }
+#sb-title, #sb-title-inner { -moz-border-radius: 10px 10px 0 0; -webkit-border-radius: 10px 10px 0 0; border-radius: 10px 10px 0 0; height: auto; }
+#sb-title-inner {
+  background-color: #683b90;
+  padding: 15px;
+}
+#sb-wrapper-inner { -moz-border-radius: 0 0 10px 10px; -webkit-border-radius: 0 0 10px 10px; border-radius: 0 0 10px 10px; }
+#sb-player.html {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  height: 100%;
+  overflow: auto;
+  padding: 20px 15px;
+}
+#sb-player img { vertical-align: top; }
+#sb-player ul {
+  border: 1px solid #ccc;
+  list-style-type: none;
+  margin-bottom: 10px;
+  margin-left: 0;
+}
+#sb-player li { padding: 3px; }
+#sb-player p {
+  bottom: 0;
+  color: #999;
+  display: inline-block;
+  position: static;
+}
+
+#tr_recognition_nameanonymous_row { display: none; }
+div.responsive div.page-error.ErrorMessage > span.field-error-text { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; width: 100%; }
+#pstep_finish { display: none; }
+.displayed { display: block !important; }
+}

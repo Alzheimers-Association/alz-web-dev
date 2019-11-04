@@ -1,0 +1,149 @@
+.pg_company {
+  .tr-page-container {
+    display:none;
+  }
+  .roster-details {
+    font-size: 1.3rem;
+    a {
+      font-weight: bold;
+      text-decoration: underline;
+      &.button {
+        text-decoration: none;
+        margin-top: auto;
+        margin-bottom: auto;
+      }
+    }
+    .roster-name {
+      color: $primary;
+    }
+    .num-members {
+      color: #686868;
+      font-size: 1rem;
+    }
+    .amt-raised {
+      color: #686868;
+      font-weight: bold;
+    }
+    @include media-breakpoint-down(md) {
+      a {
+        &.btn-lg {
+          font-size: 1.3rem;
+        }
+      }
+    }
+  }
+  .accordion {
+    .btn-link {
+      border: none;
+      &:hover,
+      &:active {
+        text-decoration:none;
+      }
+    }
+  }
+.company-bottom {
+  .fa-plus-square {
+    display: none;
+  }
+  .fa-minus-square {
+    display: inline-block;
+  }
+  .collapsed {
+    width:100%;
+    text-align:left;
+    .fa-plus-square {
+      display: inline-block;
+    }
+    .fa-minus-square {
+      display: none;
+    }
+  }
+}
+
+  .view-all-link {
+    a {
+      text-decoration: underline;
+    }
+  }
+  @include media-breakpoint-up(md) {
+    .company-participants {
+      border-right: 2px solid $secondary;
+      padding-right: 1.5rem;
+    }
+    .company-donations {
+      border-left: 2px solid $secondary;
+      padding-left: 1.5rem;
+    }
+    .accordion {
+      .collapse {
+        display:block;
+      }
+      svg {
+        display:none !important;
+      }
+      .btn-link {
+        text-transform: uppercase;
+        color: $body-color;
+        &:hover {
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
+
+.pg_natl_co_teams,
+.pg_natl_co_parts {
+.content {
+  width:100%;
+}
+  div#national_top_teams_responsive div.list-component-row,
+  div.responsive div.list-row {
+    filter: none;
+    -ms-filter: none;
+    background-image: none;
+    border: none;
+    border-bottom: 1px solid #dcddde;
+    padding-left: 0;
+  height:auto;
+}
+.list-component-cell-title-text {
+  font-weight:bold;
+}
+div.list-component-container #filter_search {
+  height:38px;
+}
+div.national-top-events-container div.list-component-row div > span.list-component-cell-data-text,
+div.national-top-parts-container div.list-component-row div > span.list-component-cell-data-text,
+div#national_top_teams_responsive div.list-component-row div > span.list-component-cell-data-text {
+  font-size: 1rem !important;
+  float: none !important;
+  color: $body-color !important;
+}
+
+div.responsive a:visited, 
+div.responsive a:link {
+    color:$primary; 
+    text-decoration: underline;
+    outline: 0;
+    font-weight: bold;
+}
+div.list-component-container #filter_search {
+  width:auto;
+  margin-top: 5px;
+  height:36px;
+}
+div.list-component-container #filter_text {
+  background-color: $white;
+  border-radius: inherit;
+  height: inherit;
+  margin-top: inherit;
+  max-width: inherit;
+  width: inherit;
+  @extend .form-control;
+  margin-top: 5px;
+  width: 100% !important;
+  max-width: 100%;
+}
+  
+}

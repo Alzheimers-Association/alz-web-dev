@@ -1,0 +1,129 @@
+
+  .colored-social-icons {
+    a {
+      height: 30px;
+      width: 30px;
+      border-radius: 50%;
+      -moz-border-radius: 50%;
+      -webkit-border-radius: 50%;
+      margin-left: 0.25rem;
+      margin-right: 0.25rem;
+      color:#fff !important;
+      &:hover{
+        color:#fff !important;
+      }
+    }
+    svg {
+      font-size: 1.2rem;
+    }
+    .icon-facebook {
+      background: #3e5b92;
+    }
+    .icon-twitter {
+      background: #2aaae3;
+    }
+    .icon-google {
+      background: #ff0000;
+    }
+    .icon-pinterest {
+      background: #c52222;
+    }
+    .icon-linkedin {
+      background: #0079b9;
+    }
+    .icon-mail {
+      background: #8e8e8e;
+    }
+  }
+
+.pg_personal,
+.pg_team,
+.pg_company {
+  // shared styles among TR internal pages
+  h1 {
+    font-size: 2.2rem;
+    font-weight: 800;
+    border: none;
+  }
+  h3 {
+    text-transform: uppercase;
+    border-bottom: 2px solid #ccc;
+  }
+  .tr-subheadline {
+    font-size: 1.5rem;
+    a {
+      color: $primary;
+      text-decoration: underline;
+    }
+  }
+  .page-edit-link {
+    color: $primary;
+    font-size: 1.2rem;
+    a {
+      color: $primary;
+      text-decoration: underline;
+    }
+  }
+  .tr-story-text {
+    p,
+    a,
+    span {
+      font-size: 1.2rem;
+      color: $body-color;
+    }
+  }
+
+  .event-details {
+    h4 {
+      color: #686868; 
+      font-size: 1.3rem;
+    }
+    p {
+      font-size:1.2rem;
+    }
+    a {
+      color: $primary;
+      text-decoration: underline;
+      display: block;
+    }
+  }
+  .tr-page-links {
+    a {
+      color: $primary;
+      text-decoration: underline;
+      font-style: italic;
+    }
+    .list-group {
+      border: 0;
+    }
+    .list-group-item {
+    font-size: 1.3rem;
+      border: 0;
+      padding: 0.5rem 0 0.5rem 1.25rem;
+    }
+  }
+  // .fundraiser-progress-container {
+  //   .progress-header {
+  //     margin-top: 4rem;
+  //   }
+  //   small {
+  //     color: $body-color;
+  //     font-size: 1.3rem;
+  //   }
+  //   .h2 {
+  //     font-size: 1.75rem;
+  //   }
+  //   .progress {
+  //     height: 60px;
+  //   }
+  // }
+  .fb_iframe_widget_fluid_desktop, .fb_iframe_widget_fluid_desktop span, .fb_iframe_widget_fluid_desktop iframe,
+  .fb-comments > span {
+    width:100% !important;
+  }
+@include media-breakpoint-down(sm) {
+.interior-header {
+  display:none;
+}
+}
+}

@@ -1,0 +1,47 @@
+.faq-container {
+  .card {
+    border: 0;
+  }
+  .card-header {
+    background: transparent;
+    border:0;
+    padding:0.25rem 1.25rem;
+    &:first-child {
+      border-radius: 0;
+    }
+    svg {
+      position: absolute;
+      left: 0;
+      top: .65em;
+    }
+  }
+  .card-body {
+    font-size:1.4 rem;
+    color: #212121;
+  }
+  .list-group-item {
+    padding:0 1.25rem;
+    border:0;
+    &.faq-panel {
+      margin: 0.25rem 0;
+      border: 2px solid $primary;
+      &:last-child {
+      border: 2px solid $primary;
+      }
+    }
+  }
+  .fa-plus-square {
+    display: none;
+  }
+  .fa-minus-square {
+    display: inline-block;
+  }
+  .collapsed {
+    .fa-plus-square {
+      display: inline-block;
+    }
+    .fa-minus-square {
+      display: none;
+    }
+  }
+}

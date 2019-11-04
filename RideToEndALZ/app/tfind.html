@@ -1,0 +1,657 @@
+<!--removeIf(production)-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="description" content="This is a boilerplate for a Bootstrap 4.0.0 project">
+  <meta name="keywords" content="HTML, CSS, JS, Sass, JavaScript, framework, bootstrap, front-end, frontend, web development">
+  <meta name="author" content="Henrik H. Boelsmand">
+  <title>Ride for ALZ</title>
+  <link rel="shortcut icon" href="favicon.ico">
+
+  <link rel="stylesheet" href="assets/css/plugins.css" type="text/css">
+
+  <link rel="stylesheet" href="assets/css/main.css" type="text/css">
+
+  <link rel="stylesheet" href="assets/css/registration.css" type="text/css">
+
+  <link rel="stylesheet" href="assets/css/participant-center.css" type="text/css">
+
+  <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js" integrity="sha384-xymdQtn1n3lH2wcu0qhcdaOpQwyoarkgLVxC/wZ5q7h9gHtxICrpcaSUfygqZGOe"
+    crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" integrity="sha256-0rguYS0qgS6L4qVzANq4kjxPLtvnp5nn2nB5G1lWRv4="
+    crossorigin="anonymous"></script>
+</head>
+
+<!-- pushy-open-right -->
+
+  <body class="user-logged-out app_id_27 app_teamraiser app_tr_registration pg_utype" data-fr-id="11914" data-df-id="38730">
+
+  <!-- Pushy Menu -->
+  <nav class="pushy pushy-right navbar nav-sidebar bg-darkpurple d-block">
+    <div class="pushy-header text-right">
+      <button class="navbar-toggler navbar-toggler-right menu-btn p-0 border-0 text-right" type="button" data-toggle="off-canvas"
+        aria-controls="sideMenuContainer" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-times-circle text-secondary" aria-hidden="true"></i>
+      </button>
+    </div>
+    <div id="sideMenuContainer" class="pushy-content align-top align-items-start">
+
+      <!-- BEGIN LOGGED OUT  -->
+      <div class="js__logged-out js__logged-out-sidebar">
+
+        <div class="js__side-login-container">
+          <p>Log In</p>
+          <div class="js__login-error-container alert alert-danger d-none" role="alert">
+            <span class="" aria-hidden="true"></span>
+            <span class="sr-only">Error:</span>
+            <i class="fas fa-exclamation-triangle" aria-hidden="true"></i>
+            <span class="js__login-error-message"></span>
+          </div>
+
+          <form class="js__side-login-form">
+            <div class="form-group">
+              <label class="sr-only" for="loginUsername">Username</label>
+              <input type="text" name="user_name" id="loginUsername" class="form-control form-control-lg" placeholder="Username" aria-describedby="loginUsernameHelpBlock"
+                data-parsley-trigger="change" data-parsley-minlength="5" data-parsley-maxlength="60" data-parsley-minlength-message="Your username must be at least 5 characters long."
+                data-parsley-maxlength-message="Your username must be at fewer than 60 characters long." data-parsley-required-message="Username is required"
+                data-parsley-required="true" required>
+            </div>
+            <div class="form-group">
+              <label class="sr-only" for="loginPassword">Password</label>
+              <input type="password" name="user_password" id="loginPassword" class="form-control form-control-lg" placeholder="Password"
+                aria-describedby="loginPasswordHelpBlock" data-parsley-trigger="change" data-parsley-minlength="5" data-parsley-maxlength="20"
+                data-parsley-minlength-message="Your password must be at least 5 characters long." data-parsley-maxlength-message="Your password must be at fewer than 20 characters long."
+                data-parsley-required-message="Password is required" data-parsley-required="true" required>
+            </div>
+            <button type="submit" class="button btn-secondary btn-lg btn-block">SUBMIT</button>
+          </form>
+          <ul class="nav flex-column mt-2">
+            <li class="nav-item pushy-link">
+              <a class="nav-link js__show-retrieve-login" href="#">Forgot your password?</a>
+            </li>
+            <li class="nav-item pushy-link">
+              <a class="nav-link" href="#">Need Help?</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- END LOGGED OUT -->
+
+      <!-- BEGIN LOGGED IN -->
+      <div class="js__logged-in" style="display:none;">
+        <span class="sidebar-welcome-message text-white my-1">Welcome,
+          <span class="js__first-name"></span>!</span>
+        <div class="js__has-events"></div>
+        <ul class="nav flex-column sidebar-nav-footer">
+          <li class="nav-item pushy-link">
+            <a class="nav-link" href="ConsProfileUser?dispMode=edit&amp;pw_id=12165">Edit My Profile</a>
+          </li>
+          <li class="nav-item pushy-link">
+            <a class="nav-link js__log-out-link" href="#">Log Out</a>
+          </li>
+        </ul>
+      </div>
+      <!-- END LOGGED IN -->
+
+    </div>
+  </nav>
+  <!-- END pushy nav sidebar -->
+  <!-- Site Overlay -->
+  <div class="site-overlay"></div>
+
+  <header class="content-container bg-dark">
+    <div class="container nav-container">
+      <div class="row">
+        <div class="col-lg-10 order-lg-12">
+          <div class="top-teal-bar bg-secondary justify-content-end d-flex">
+            <svg class="tri-top-left d-none d-lg-block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 42 64" fill='#4a0d66'>
+              <path d="M0,64,42,0H0Z" />
+            </svg>
+            <nav class="utility-nav utility-nav-left navbar navbar-expand-lg py-0  d-none d-lg-flex">
+              <ul class="navbar-nav text-uppercase hw-bar">
+                <li class="nav-item nav-right">
+                  <span class="nav-link">
+                    <a class="menu-btn" href="#">Find a Participant</a>
+                  </span>
+                </li>
+              </ul>
+            </nav>
+            <svg class="tri-bottom-right d-none d-lg-flex" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 64" fill='#FFFFFF'>
+              <path d="M0,64,32,0V64Z" />
+            </svg>
+            <nav class="utility-nav utility-nav-right navbar navbar-expand-lg navbar-light p-0">
+
+              <!-- BEGIN LOGGED OUT -->
+              <span class="js__logged-out">
+                <ul class="navbar-nav text-uppercase hw-bar hw-bar-white d-none d-lg-flex">
+                  <li class="nav-item">
+                    <span class="nav-link">
+                      <a class="menu-btn" href="#">Log In
+                        <i class="fas fa-caret-right"></i>
+                      </a>
+                    </span>
+                  </li>
+                </ul>
+              </span>
+              <!-- END LOGGED OUT -->
+
+              <!-- BEGIN LOGGED IN -->
+              <ul class="navbar-nav text-uppercase hw-bar hw-bar-white js__logged-in font-weight-bold" style="display:none;">
+                <li class="nav-item nav-left">
+                  <span class="nav-link">Welcome,
+                    <span class="js__first-name"></span>!</span>
+                </li>
+                <li class="nav-item nav-right">
+                  <span class="nav-link">
+                    <a class="menu-btn" href="#">Ride Hub
+                      <i class="fas fa-caret-right d-lg-none"></i>
+                    </a>
+                  </span>
+                </li>
+                <li class="nav-item text-secondary d-none d-lg-flex"> | </li>
+                <li class="nav-item nav-right d-none d-lg-flex">
+                  <span class="nav-link">
+                    <a class="js__log-out-link" href="#">Log Out
+                      <i class="fas fa-caret-right"></i>
+                    </a>
+                  </span>
+                </li>
+              </ul>
+              <!-- END LOGGED IN -->
+
+            </nav>
+          </div>
+          <nav class="primary-nav navbar navbar-expand-lg bg-black justify-content-between py-0">
+            <svg class="tri-top-left d-none d-lg-block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 42 64" fill='#4a0d66'>
+              <path d="M0,64,42,0H0Z" />
+            </svg>
+
+            <button class="navbar-toggler bg-black p-4 collapsed" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+              aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+              <img class="banner-logo float-left" src="assets/images/ride_logo_white.png" alt="Ride to End ALZ" height="80">
+              <i class="fas fa-bars text-white fa-2x"></i>
+              <i class="fas fa-times text-white float-right fa-2x"></i>
+            </button>
+            <div class="navbar-collapse collapse" id="navbarCollapse">
+              <div class="mobile-menu-header col-12 bg-primary text-white p-3 d-lg-none font-weight-bold">
+
+                <!-- BEGIN LOGGED IN -->
+                <div class="js__logged-in text-uppercase" style="display:none;">
+                  <em class="d-none d-lg-flex">Welcome,
+                    <span class="js__first-name"></span>
+                  </em>
+                  <br class="d-none d-lg-flex">
+                  <a class="menu-btn d-none d-lg-flex" href="#">Ride Hub</a>
+                  <span class="text-secondary d-none d-lg-flex">|</span>
+                  <a class="d-lg-none" href="#">Find a Participant</a>
+                  <br class="d-lg-none">
+                  <a class="js__log-out-link" href="#">Log Out
+                    <i class="fas fa-caret-right"></i>
+                  </a>
+                </div>
+                <!-- BEGIN LOGGED IN -->
+
+                <!-- BEGIN LOGGED OUT -->
+                <div class="js__logged-out text-uppercase">
+                  <a href="#">Find a Participant</a>
+                  <br>
+                  <a class="menu-btn" href="#">Log In
+                    <i class="fas fa-caret-right"></i>
+                  </a>
+                </div>
+                <!-- END LOGGED OUT -->
+
+              </div>
+              <ul class="navbar-nav ml-auto text-uppercase font-weight-bold hw-bar hw-bar-black">
+                <li class="event-location">
+                  <span class="nav-link">
+                    <i class="fas fa-map-pin"></i> Minneapolis, MN
+                    <!-- [[E47:[[S334:fr_id]]:fr_info:1:event_location_city]],&nbsp;[[E47:[[S334:fr_id]]:fr_info:1:event_location_state]] -->
+                  </span>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="false">
+                    About
+                    <span class="d-sm-none float-right">
+                      <i class="fas fa-plus"></i>
+                      <i class="fas fa-minus"></i>
+                    </span>
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="aboutDropdown">
+                    <!-- <span class="pointer"></span> -->
+                    <a class="dropdown-item" href="#">About the Ride </a>
+                    <a class="dropdown-item" href="#">Fundraising</a>
+                    <a class="dropdown-item" href="#">Training</a>
+                    <a class="dropdown-item" href="#">Travel Planner</a>
+                    <a class="dropdown-item" href="#">Request More Information</a>
+                    <a class="dropdown-item" href="#">Team Up</a>
+                    <a class="dropdown-item" href="#">Crew and Volunteer</a>
+                    <a class="dropdown-item" href="#">Sponsors</a>
+                    <a class="dropdown-item" href="#">Contact Us</a>
+                  </div>
+                </li>
+
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="whyDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Why We Ride
+                    <span class="d-sm-none float-right">
+                      <i class="fas fa-plus"></i>
+                      <i class="fas fa-minus"></i>
+                    </span>
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="whyDropdown">
+                    <a class="dropdown-item" href="#">100% to Alzheimer's Research</a>
+                    <a class="dropdown-item" href="#">Your Fundraising Impact</a>
+                  </div>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">FAQ</a>
+                </li>
+                <li class="nav-item nav-btn d-lg-none">
+                  <a class="button btn-secondary btn-block" href="#">Donate</a>
+                </li>
+                <li class="nav-item nav-btn d-none d-lg-inline">
+                  <a class="button btn-white btn-block" href="#">Donate</a>
+                </li>
+                <li class="nav-item nav-btn">
+                  <a class="button btn-secondary btn-block" href="#" role="button" data-toggle="modal" data-target="#registerModal">Register
+                  </a>
+                </li>
+
+              </ul>
+            </div>
+          </nav>
+          <!-- dummy div for menu bottom border -->
+          <div class="hw-bar hw-bar-teal d-none d-lg-block"></div>
+
+        </div>
+
+        <div class="col-lg-2 order-lg-1 d-sm-flex align-items-center justify-xl-content-center">
+          <a class="navbar-brand m-3" href="#">
+            <img class="banner-logo" src="assets/images/ride_logo_white.png" alt="Ride to End ALZ" height="103">
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- END container -->
+  </header>
+
+  <main class="content-container" role="main">
+    <div class="bg-primary interior-header">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 registration-header text-uppercase h3 text-white text-right my-3">
+            <strong>Register For</strong> 2018 Ride to End ALZ -
+            <a href="#">Minneapolis, MN</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--endRemoveIf(production)-->
+
+    <!-- BEGIN TFIND Registration Top -->
+
+<!-- BEGIN reg options section -->
+    <div class="reg-options js__reg-options-container" style="display:none;">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 offset-md-2 text-center">
+            <h1 class="reg-headline">
+              How Will You Register?</h1>
+          </div>
+        </div>
+
+        <div class="row my-3">
+          <div class="col-sm-10 col-md-6 col-lg-4 offset-sm-2 offset-md-3 offset-lg-4">
+
+            <div class="reg-option my-4 reg-start-team">
+              <a href="TRR/?pg=tfind&amp;fr_id=[[S80:trID]]&amp;fr_tm_opt=new&amp;s_regType=startTeam&amp;s_hideTeamDetails=true[[?xx::x[[S1:first_name]]x::&amp;skip_login_page=true::]]" class="button btn-secondary btn-block text-left reg-option-link js__show-start-team">START A TEAM
+                <span class="reg-icon float-right d-flex align-items-center justify-content-center">
+                  <i class="fas fa-users"></i>
+                </span>
+              </a>
+              <span class="reg-option-text small">Whether you want to ride, crew or volunteer, starting a team is a great way to experience the Ride!</span>
+            </div>
+            <div class="reg-option my-4 reg-join-team">
+              <a href="TRR/?pg=tfind&amp;fr_id=[[S80:trID]]&amp;fr_tm_opt=existing&amp;s_regType=joinTeam[[?xx::x[[S1:first_name]]x::&amp;skip_login_page=true::]]" class="button btn-secondary btn-block text-left reg-option-link js__show-team-join">JOIN A TEAM
+                <span class="reg-icon float-right d-flex align-items-center justify-content-center">
+                  <i class="fas fa-user-plus"></i>
+                </span>
+              </a>
+              <span class="reg-option-text small">Gear up and register as a member of an existing Ride team.</span>
+            </div>
+
+            <div class="reg-option my-4 reg-individual">
+              <a href="TRR/?pg=tfind&amp;fr_id=[[S80:trID]]&amp;fr_tm_opt=none&amp;s_regType=individual[[?xx::x[[S1:first_name]]x::&amp;skip_login_page=true::]]" class="button btn-secondary btn-block text-left reg-option-link js__reg-individual"><span class=class="d-none d-sm-inline-block d-md-none d-lg-none">PARTICIPATE AS AN&nbsp;</span>INDIVIDUAL
+                <span class="reg-icon float-right d-flex align-items-center justify-content-center">
+                  <i class="fas fa-user"></i>
+                </span>
+              </a>
+              <span class="reg-option-text small">Choose this option if you would like to participate as a rider, crew or volunteer without being associated with a team.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+<!-- END reg options section -->
+<!-- BEGIN reg join team section -->
+    <div class="join-team-section">
+        <div class="container">
+          <div class="join-team-container js__join-team-container" style="display:none;">
+          <div class="row">
+            <div class="col-md-8 offset-md-2 text-center">
+              <h1 class="reg-headline">
+                Join a Team</h1>
+            </div>
+          </div>
+          <div class="row">
+              <div class="reg-text mt-3 col-md-6 offset-md-3"><p>Search for an existing Team by Team name, Team association, or Team member.</p></div>
+          </div>
+          <div class="row my-3">
+              <div class="col-md-4 col-sm-6 offset-md-4 offset-sm-3">
+                      <form class="js__reg-team-search-form">
+                        <div class="form-group">
+                          <label class="" for="regTeamName">Team Name</label>
+                          <input type="text" name="user_name" id="regTeamName" class="form-control" aria-describedby="regTeamNameHelpBlock">
+                        </div>
+                        <div class="form-group">
+                          <label class="" for="regCompanyId">Team's Group/Company</label>
+                          <select name="regCompanyId" id="regCompanyId" class="form-control js__reg-company-name">
+                            <option selected="selected" value="">Choose from existing list</option>
+                          </select>
+                        </div>
+
+                        <label class="" for="">Team Member</label>
+                        <div class="form-group">
+                            <label class="sr-only" for="regTeamMemberFirst">Team Member First Name</label>
+                            <input type="text" name="user_password" id="regTeamMemberFirst" class="form-control" placeholder="First Name" aria-describedby="regTeamMemberFirstHelpBlock">
+                          </div>
+                          <div class="form-group">
+                              <label class="sr-only" for="regTeamMemberLast">Team Member Last Name</label>
+                              <input type="text" name="user_password" id="regTeamMemberLast" class="form-control" placeholder="Last Name" aria-describedby="regTeamMemberLastHelpBlock">
+                            </div>
+                            <div class="form-group text-center">
+                              <button type="submit" class="button btn-secondary">SEARCH FOR A TEAM</button>
+                            </div>
+                     
+                      </form>
+            </div>
+         
+            <div class="search-results-container reg-team-search-results js__search-results col-md-6 offset-md-3">
+                <div class="js__error-team-search help-block alert alert-danger text-center mt-2" style="display:none;"></div>
+  
+                    <div class="js__loading py-4 text-center  text-primary" style="display:none;"><i class="fas fa-cog fa-2x fa-spin"></i><br>
+                      Loading...
+                    </div>
+                  <div class="results-table py-4 js__search-results-container" style="display:none;"></div>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+<!-- END reg join team section -->
+
+    <!-- END TFIND Registration Bottom -->
+
+    <!--removeIf(production)-->
+
+    <!-- Modal -->
+    <div class="modal fade register-modal" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="registerModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content text-center">
+          <div class="modal-header">
+            <h5 class="modal-title text-primary m-auto pt-3" id="registerModalLabel">Choose a Location:</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true" class="text-primary">
+                <i class="fas fa-times"></i>
+              </span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="card-deck justify-content-center flex-column">
+              <div class="card text-center">
+                <a class="" href=#>
+                  <div class="d-flex align-items-center justify-content-center">
+                    <h3 class="card-title">
+                      <span class="location-name h4">Austin</span>
+                      <span class="location-date h5">Jan 26
+                        <i class="fas fa-caret-right"></i>
+                      </span>
+                    </h3>
+                  </div>
+                </a>
+              </div>
+              <div class="card text-center">
+                <a class="" href=#>
+                  <div class="d-flex align-items-center justify-content-center">
+                    <h3 class="card-title">
+                      <span class="location-name h4">Minneapolis</span>
+                      <span class="location-date h5">Feb 10
+                        <i class="fas fa-caret-right"></i>
+                      </span>
+                    </h3>
+                  </div>
+                </a>
+              </div>
+
+              <div class="card text-center">
+                <a class="" href=#>
+                  <div class="d-flex align-items-center justify-content-center">
+                    <h3 class="card-title">
+                      <span class="location-name h4">Seattle</span>
+                      <span class="location-date h5">Mar 23
+                        <i class="fas fa-caret-right"></i>
+                      </span>
+                    </h3>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <span class="horizontal-divider"></span>
+
+
+
+
+  <!-- FOOTER -->
+  <footer class="pt-5 bg-primary">
+    <div class="container top-footer-container">
+      <div class="row">
+        <div class="col-12 text-center">
+          <a class="navbar-brand" href="#">
+            <img class="banner-logo" src="assets/images/ride_logo_white.png" alt="Ride to End ALZ" height="103">
+          </a>
+        </div>
+      </div>
+      <div class="row mt-3">
+        <div class="col-12 col-md text-center text-white primary-footer-links">
+          <a href="#">Register</a> |
+          <a href="#">Donate</a> |
+          <a href="#">Find a Participant</a>
+          <!-- BEGIN LOGGED IN -->
+          <span class="menu-btn js__logged-in" style="display:none;"> |
+            <a href="#">Visit Ride Hub</a>
+          </span>
+          <!-- END LOGGED IN -->
+
+        </div>
+      </div>
+      <div class="row mt-3 text-white d-flex align-items-center justify-content-center">
+        <div class="col-3 col-sm-2 col-lg-1 d-flex align-items-center justify-content-center">
+          <a href="#" class="d-flex footer-social-icon align-items-center justify-content-center">
+            <span class="sr-only">Share on Facebook</span>
+            <i class="fab fa-facebook-f"></i>
+          </a>
+        </div>
+        <div class="col-3 col-sm-2 col-lg-1 d-flex align-items-center justify-content-center">
+          <a href="#" class="d-flex footer-social-icon align-items-center justify-content-center">
+            <span class="sr-only">Share on Twitter</span>
+            <i class="fab fa-twitter"></i>
+          </a>
+        </div>
+        <div class="col-3 col-sm-2 col-lg-1 d-flex align-items-center justify-content-center">
+          <a href="#" class="d-flex footer-social-icon align-items-center justify-content-center">
+            <span class="sr-only">Share on Instagram</span>
+            <i class="fab fa-instagram"></i>
+          </a>
+        </div>
+        <div class="col-3 col-sm-2 col-lg-1 d-flex align-items-center justify-content-center">
+          <a href="#" class="d-flex footer-social-icon align-items-center justify-content-center">
+            <span class="sr-only">Share on YouTube</span>
+            <i class="fab fa-youtube"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="row text-center mt-3">
+        <div class="col">
+          <span class="ride-hashtag text-white">
+            <span class="text-secondary">#</span>RideToEndALZ</span>
+        </div>
+      </div>
+    </div>
+    <hr class="border border-darkpurple">
+    <!-- BEGIN footer links -->
+    <div class="container middle-footer-container mt-3 pt-3 pb-2">
+      <div class="row">
+        <div class="col-6 col-md-3">
+          <h2 class="h5">ABOUT</h2>
+          <ul class="list-unstyled text-small">
+            <li>
+              <a class="link-text" href="#">About the Ride</a>
+            </li>
+            <li>
+              <a class="link-text" href="#">Fundraising</a>
+            </li>
+            <li>
+              <a class="link-text" href="#">Training</a>
+            </li>
+            <li>
+              <a class="link-text" href="#">Travel Planner</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-3 order-2 order-md-1">
+          <ul class="list-unstyled text-small">
+            <li>
+              <a class="link-text" href="#">Team Up</a>
+            </li>
+            <li>
+              <a class="link-text" href="#">Volunteer & Crew</a>
+            </li>
+            <li>
+              <a class="link-text" href="#">Sponsors</a>
+            </li>
+            <li>
+              <a class="link-text" href="#">Request More Info</a>
+            </li>
+            <li>
+              <a class="link-text" href="#">Contact Us</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-3 order-1 order-md-3">
+          <h2 class="h5">LOCATIONS</h2>
+          <ul class="list-unstyled text-small">
+            <li>
+              <a class="link-text" href="#">Austin, TX</a>
+            </li>
+            <li>
+              <a class="link-text" href="#">Minneapolis, MN</a>
+            </li>
+            <li>
+              <a class="link-text" href="#">Seattle, WA</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-3 order-3 order-md-4">
+          <h2 class="h5">WHY WE RIDE</h2>
+          <ul class="list-unstyled text-small">
+            <li>
+              <a class="link-text" href="#">100% to Research</a>
+            </li>
+            <li>
+              <a class="link-text" href="#">Your Fundraising Impact</a>
+            </li>
+            <li>
+              &nbsp;
+            </li>
+            <li>
+              <a class="link-text" href="#">
+                <strong>FAQ</strong>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- END footer links -->
+    <!-- BEGIN bottom footer -->
+    <div class="bottom-footer-container container-fluid text-center bg-darkpurple pt-4 pb-3">
+      <div class="row">
+        <div class="col-12 col-md text-white">
+          <img alt="Alzheimer's Association: the brains behind saving yours" src="assets/images/alz-logo-footer.png">
+          <p class="mt-4">1 (800) 272 3900
+            <br>Alzheimer's Association Home Office 225 N. Michigan Ave., Fl. 17, Chicago, IL 60601
+            <br>Alzheimer's Association is a not-for-profit 501(c)(3) organization.</p>
+          <p class="mt-1">Copyright &copy; 2018 Alzheimer's Association&reg;. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+    <!-- END bottom footer -->
+    <div class="utility-footer-container container">
+      <div class="row mt-3">
+        <div class="col-12 col-md text-center text-white">
+          <p>
+            <a href="http://www.alz.org/walk">ALZ.org</a> |
+            <a href="#">About ALZ</a> |
+            <a href="#">ALZ Blog</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+
+  <script src="assets/js/vendor/jquery-2.2.4.min.js"></script>
+  <script src="assets/js/vendor/popper.min.js"></script>
+  <script src="assets/js/vendor/bootstrap.min.js"></script>
+  <script src="assets/js/vendor/luminate-extend-1.8.1.js"></script>
+  <script src="assets/js/vendor/pushy.min.js"></script>
+  <script>
+    // document.getElementsByTagName('html')[0].setAttribute('lang', 'en');
+    luminateExtend({
+      apiKey: 'ALZADARDA',
+      path: {
+        nonsecure: 'http://act.alz.org/site/',
+        secure: 'https://act.alz.org/site/'
+      },
+      srcCode: '[[S80:src]]',
+      subSrcCode: '[[S80:subsrc]]'
+    });
+
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/parsley.js/2.8.1/parsley.min.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/registration.js"></script>
+
+
+</body>
+
+</html>
+<!--endRemoveIf(production)-->

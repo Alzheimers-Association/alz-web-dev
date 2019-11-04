@@ -1,0 +1,2039 @@
+<!--removeIf(production)-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="description" content="This is a boilerplate for a Bootstrap 4.0.0 project">
+  <meta name="keywords" content="HTML, CSS, JS, Sass, JavaScript, framework, bootstrap, front-end, frontend, web development">
+  <meta name="author" content="Henrik H. Boelsmand">
+  <title>Ride for ALZ</title>
+  <link rel="shortcut icon" href="favicon.ico">
+
+  <link rel="stylesheet" href="assets/css/plugins.css" type="text/css">
+
+  <link rel="stylesheet" href="assets/css/main.css" type="text/css">
+
+  <link rel="stylesheet" href="assets/css/participant-center.css" type="text/css">
+
+  <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js" integrity="sha384-xymdQtn1n3lH2wcu0qhcdaOpQwyoarkgLVxC/wZ5q7h9gHtxICrpcaSUfygqZGOe"
+    crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" integrity="sha256-0rguYS0qgS6L4qVzANq4kjxPLtvnp5nn2nB5G1lWRv4="
+    crossorigin="anonymous"></script>
+</head>
+
+<!-- pushy-open-right -->
+
+<body class="pg_ride_faq user-logged-in">
+
+  <!-- Pushy Menu -->
+  <nav class="pushy pushy-right navbar nav-sidebar bg-dark d-block">
+    <!-- <nav class="pushy pushy-right bg-dark"> -->
+    <div class="pushy-header text-right">
+      <button class="navbar-toggler navbar-toggler-right menu-btn p-0 border-0 text-right" type="button" data-toggle="off-canvas"
+        aria-controls="sideMenuContainer" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-times-circle text-secondary" aria-hidden="true"></i>
+        <!-- <i class="fas fa-times-circle text-secondary bg-white rounded-circle" aria-hidden="true"></i> -->
+      </button>
+    </div>
+    <div id="sideMenuContainer" class="pushy-content align-top align-items-start">
+
+      <!-- BEGIN logged out content -->
+
+      <div class="js__logged-out js__logged-out-sidebar">
+
+        <div class="js__side-login-container">
+          <p>Log In</p>
+
+          <div class="js__login-error-container alert alert-danger d-none" role="alert">
+            <span class="" aria-hidden="true"></span>
+            <span class="sr-only">Error:</span>
+            <i class="fas fa-exclamation-triangle" aria-hidden="true"></i>
+            <span class="js__login-error-message"></span>
+          </div>
+
+          <form class="js__side-login-form">
+            <div class="form-group">
+              <label class="sr-only" for="loginUsername">Username</label>
+              <input type="text" name="user_name" id="loginUsername" class="form-control" placeholder="Username"
+                aria-describedby="loginUsernameHelpBlock" data-parsley-trigger="change" data-parsley-minlength="5"
+                data-parsley-maxlength="60" data-parsley-minlength-message="Your username must be at least 5 characters long."
+                data-parsley-maxlength-message="Your username must be at fewer than 60 characters long."
+                data-parsley-required-message="Username is required" data-parsley-required="true" required>
+            </div>
+            <div class="form-group">
+              <label class="sr-only" for="loginPassword">Password</label>
+              <input type="password" name="user_password" id="loginPassword" class="form-control" placeholder="Password"
+                aria-describedby="loginPasswordHelpBlock" data-parsley-trigger="change" data-parsley-minlength="5"
+                data-parsley-maxlength="20" data-parsley-minlength-message="Your password must be at least 5 characters long."
+                data-parsley-maxlength-message="Your password must be at fewer than 20 characters long."
+                data-parsley-required-message="Password is required" data-parsley-required="true" required>
+            </div>
+            <button type="submit" class="btn btn-secondary btn-block">Submit</button>
+          </form>
+
+
+          <ul class="nav flex-column">
+            <li class="nav-item pushy-link">
+              <a class="nav-link" href="#">Forgot your password?</a>
+            </li>
+            <li class="nav-item pushy-link">
+              <a class="nav-link" href="#">Need Help?</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- END logged out content -->
+      <!-- BEGIN logged in content -->
+      <div class="js__logged-in" style="display:none;">
+        <!-- <div class="js__logged-in js__logged-in-sidebar"> -->
+        <p>Welcome,
+          <span class="js__first-name"></span>!</p>
+        <div class="js__has-events">
+
+          <!-- END multiple-events -->
+        </div>
+        <ul class="nav flex-column">
+          <li class="nav-item pushy-link">
+            <a class="nav-link" href="ConsProfileUser?dispMode=edit&amp;pw_id=12165">Edit My Profile</a>
+          </li>
+          <li class="nav-item pushy-link">
+            <a class="nav-link js__log-out-link" href="#">Log Out</a>
+
+          </li>
+        </ul>
+      </div>
+      <!-- END logged in content -->
+    </div>
+  </nav>
+  <!-- END pushy nav sidebar -->
+  <!-- Site Overlay -->
+  <div class="site-overlay"></div>
+
+  <header class="content-container bg-dark">
+    <div class="container nav-container">
+      <div class="row">
+        <div class="col-md-10 order-md-12">
+          <div class="d-flex top-teal-bar bg-secondary justify-content-end">
+            <svg class="tri-top-left d-none d-md-block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 42 64" fill='#4a0d66'>
+              <path d="M0,64,42,0H0Z" />
+            </svg>
+            <!-- landing_search -->
+            <nav class="utility-nav navbar navbar-expand-md p-0 ">
+              <ul class="navbar-nav text-uppercase hw-bar js__logged-out">
+                <li class="nav-item nav-right">
+                  <span class="nav-link">
+                    <a class="menu-btn" href="#">Find a Participant</a>
+                  </span>
+                </li>
+              </ul>
+              <ul class="navbar-nav text-uppercase hw-bar js__logged-in" style="display:none;">
+                <li class="nav-item nav-left">
+                  <span class="nav-link">Welcome,
+                    <span class="js__first-name"></span>!</span>
+                </li>
+                <li class="nav-item nav-right">
+                  <span class="nav-link">
+                    <a class="menu-btn" href="#">Ride Hub
+                      <i class="fas fa-caret-right"></i>
+                    </a>
+                  </span>
+                </li>
+              </ul>
+            </nav>
+            <svg class="tri-bottom-right d-none d-md-flex" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 64" fill='#FFFFFF'>
+              <path d="M0,64,32,0V64Z" />
+            </svg>
+            <nav class="utility-nav navbar navbar-expand-md navbar-light p-0 d-none d-md-flex">
+              <ul class="navbar-nav text-uppercase bg-white hw-bar hw-bar-white js__logged-out">
+                <li class="nav-item">
+                  <span class="nav-link">
+                    <a class="menu-btn" href="#">Log In
+                      <i class="fas fa-caret-right"></i>
+                    </a>
+                  </span>
+                </li>
+              </ul>
+              <ul class="navbar-nav text-uppercase bg-white hw-bar hw-bar-white js__logged-in" style="display:none;">
+                <li class="nav-item">
+                  <span class="nav-link">
+                    <a class="js__log-out-link" href="#">Log Out
+                      <i class="fas fa-caret-right"></i>
+                    </a>
+                  </span>
+                </li>
+              </ul>
+            </nav>
+          </div>
+          <nav class="primary-nav navbar navbar-expand-md bg-black justify-content-between py-0">
+            <svg class="tri-top-left d-none d-md-block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 42 64" fill='#4a0d66'>
+              <path d="M0,64,42,0H0Z" />
+            </svg>
+
+            <button class="navbar-toggler bg-black p-4 collapsed" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+              aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+              <img class="banner-logo float-left" src="assets/images/ride_logo_white.png" alt="Ride to End ALZ" height="80">
+              <!-- <span class="navbar-toggler-icon"></span> -->
+              <i class="fas fa-bars text-white fa-3x"></i>
+              <i class="fas fa-times text-white float-right fa-2x"></i>
+            </button>
+            <div class="navbar-collapse collapse" id="navbarCollapse">
+              <div class="mobile-menu-header col-12 bg-primary text-white p-3 d-md-none">
+                <div class="js__logged-in" style="display:none;">
+                  <em>Welcome,
+                    <span class="js__first-name"></span>
+                  </em>
+                  <br>
+                  <a href="#">Ride Hub</a>
+                  <span class="text-secondary">|</span>
+                  <a href="#">Log Out</a>
+                </div>
+                <div class="js__logged-out">
+                  <em>Welcome,
+                    <span class="js__first-name"></span>
+                  </em>
+                  <a href="#">Find a Participant</a>
+                  <span class="text-secondary">|</span>
+                  <a href="#">Log In
+                    <i class="fas fa-caret-right"></i>
+                  </a>
+                </div>
+              </div>
+              <ul class="navbar-nav ml-auto text-uppercase hw-bar hw-bar-black">
+                <li class="nav-item event-location">
+                  <span class="nav-link text-secondary">
+                    <i class="fas fa-map-pin"></i> Minneapolis, MN
+                  </span>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    About
+                    <span class="d-sm-none float-right">
+                      <i class="fas fa-plus"></i>
+                      <i class="fas fa-minus"></i>
+                    </span>
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="aboutDropdown">
+                    <!-- <span class="pointer"></span> -->
+                    <a class="dropdown-item" href="#">About Ride </a>
+                    <a class="dropdown-item" href="#">Fundraising</a>
+                    <a class="dropdown-item" href="#">Training</a>
+                    <a class="dropdown-item" href="#">Travel Planner</a>
+                    <a class="dropdown-item" href="#">Request More Information</a>
+                    <a class="dropdown-item" href="#">Team Up</a>
+                    <a class="dropdown-item" href="#">Crew and Volunteer</a>
+                    <a class="dropdown-item" href="#">Sponsors</a>
+                    <a class="dropdown-item" href="#">Contact Us</a>
+                  </div>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="locationsDropdown" role="button" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    Locations
+                    <span class="d-sm-none float-right">
+                      <i class="fas fa-plus"></i>
+                      <i class="fas fa-minus"></i>
+                    </span>
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="locationsDropdown">
+                    <a class="dropdown-item" href="#">Austin, TX</a>
+                    <a class="dropdown-item" href="#">Minneapolis, MN</a>
+                    <a class="dropdown-item" href="#">Davis, CA</a>
+                  </div>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="whyDropdown" role="button" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    Why We Ride
+                    <span class="d-sm-none float-right">
+                      <i class="fas fa-plus"></i>
+                      <i class="fas fa-minus"></i>
+                    </span>
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="whyDropdown">
+                    <a class="dropdown-item" href="#">100% to Alzheimer's Research</a>
+                    <a class="dropdown-item" href="#">Your Fundraising Impact</a>
+                  </div>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">FAQ</a>
+                </li>
+                <li class="nav-item">
+                  <a class="btn btn-secondary btn-block" href="#" role="button" data-toggle="modal" data-target="#registerModal">Register
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="btn btn-secondary btn-block" href="#">Donate</a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+          <!-- dummy div for menu bottom border -->
+          <div class="hw-bar hw-bar-teal d-none d-md-block"></div>
+        </div>
+
+        <div class="col-md-2 order-md-1">
+          <a class="navbar-brand" href="#">
+            <img class="banner-logo" src="assets/images/ride_logo_white.png" alt="Ride to End ALZ" height="103">
+          </a>
+        </div>
+
+      </div>
+    </div>
+    <!-- END container -->
+
+  </header>
+
+  <main class="content-container content" role="main">
+    <!--endRemoveIf(production)-->
+
+
+    <!-- BEGIN FAQ section -->
+    <section id="faq" class="faq-container">
+
+      <div class="row justify-content-center">
+        <div class="col-md-12 text-center">
+          <h1>FAQ</h1>
+        </div>
+      </div>
+
+      <div id="faqSearch" class="container js__faq-container mt-1">
+        <div class="row justify-content-center">
+          <div class="col-md-6">
+            <form class="js__faq-search-form">
+              <div class="d-flex">
+                <label class="sr-only" for="faq_search_form">FAQ Search Term</label>
+                <input type="text" id="faq_search_form" class="form-control form-control-lg mb-2 search" placeholder="Search FAQs...">
+                <span class="clear-search-icon js__clear-faq-search" style="display:none;">
+                  <a href="#">
+                    <i class="fa fa-times-circle fa-2x"></i> <span class="sr-only">Clear Filters</span></a></span>
+                <button type="submit" class="btn btn-lg btn-primary mb-2">
+                  <i class="fas fa-search"></i>
+                  <span class="sr-only">Submit</span>
+                </button>
+
+              </div>
+            </form>
+
+
+          </div>
+        </div>
+
+        <div class="row justify-content-center">
+          <div class="col-md-10 md-offset-1 faq-container">
+            <div class="js__no-faq-results alert alert-danger text-center" role="alert" style="display:none">
+              <span>Sorry. Your search did not return any FAQs.</span>
+            </div>
+            <!-- BEGIN FAQ accordions -->
+            <ul class="list list-group list-group-flush faq-headline">
+              <li class="list-group-item faq-headline">
+                <h2 class="h4 mt-4">General FAQ:</h2>
+              </li>
+              <li class="list-group-item faq-panel">
+                <div class="card">
+                  <div class="card-header">
+                    <button class="btn btn-link collapsed faq-title">
+                      What is Ride to End ALZ?
+                    </button>
+                    <span class="keywords sr-only">what ride cycling route distance location</span>
+                  </div>
+                  <div class="collapse">
+                    <div class="card-body">
+                      Ride to End ALZ is a fully supported, one-day fundraising event for novice cyclists, weekend
+                      warriors and avid enthusiasts. Choose from multiple route options that challenge you to go the
+                      distance to fight Alzheimer's.
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="list-group-item faq-panel">
+                <div class="card">
+                  <div class="card-header">
+                    <button class="btn btn-link collapsed faq-title">
+                      Where does Ride to End ALZ take place?
+                    </button>
+                    <span class="keywords sr-only">location city state route austin texas tx fort collins colorado co</span>
+                  </div>
+                  <div class="collapse">
+                    <div class="card-body">
+                      Ride will take place in <a href="http://act.alz.org/site/TR?fr_id=11946&pg=entry" target="_blank">Austin,
+                        Texas</a> and <a href="http://act.alz.org/site/TR?fr_id=11947&pg=entry" target="_blank">Fort
+                        Collins, Colorado</a> in the Spring of 2019.
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="list-group-item faq-panel">
+                <div class="card">
+                  <div class="card-header">
+                    <button class="btn btn-link collapsed faq-title">
+                      When is Ride to End ALZ?
+                    </button>
+                    <span class="keywords sr-only">when date time austin texas tx fort collins colorado co</span>
+                  </div>
+                  <div class="collapse">
+                    <div class="card-body">
+                      Visit the homepage for <a href="http://act.alz.org/site/TR?fr_id=11946&pg=entry" target="_blank">Austin,
+                        Texas</a> and/or <a href="http://act.alz.org/site/TR?fr_id=11947&pg=entry" target="_blank">Fort
+                        Collins, Colorado</a> for dates and details.
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+              <li class="list-group-item faq-panel">
+                <div class="card">
+                  <div class="card-header">
+                    <button class="btn btn-link collapsed faq-title">
+                      What are the age requirements?
+                    </button>
+                    <span class="keywords sr-only">age requirement year participate participation ride</span>
+                  </div>
+
+                  <div class="collapse">
+                    <div class="card-body">
+                      All participants must be 13 years of age to participate.
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="list-group-item faq-panel">
+                <div class="card">
+                  <div class="card-header">
+                    <button class="btn btn-link collapsed faq-title">
+                      How long is the route?
+                    </button>
+                    <span class="keywords sr-only">long route distance option miles</span>
+                  </div>
+                  <div class="collapse">
+                    <div class="card-body">
+                      Riders will be able to choose from multiple route options, ranging from 20 - 75 miles.
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="list-group-item faq-panel">
+                <div class="card">
+                  <div class="card-header">
+                    <button class="btn btn-link collapsed faq-title">
+                      How do I register?
+                    </button>
+                    <span class="keywords sr-only">how register registration where</span>
+                  </div>
+                  <div class="collapse">
+                    <div class="card-body">
+                      To register, visit <a href="http://www.alz.org/ride" target="_blank">www.alz.org/ride</a> and
+                      click "register".
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="list-group-item faq-panel">
+                <div class="card">
+                  <div class="card-header">
+                    <button class="btn btn-link collapsed faq-title">
+                      I want to register. Is there a fundraising commitment? </button>
+                    <span class="keywords sr-only">fundraising package benefit</span>
+                  </div>
+                  <div class="collapse">
+                    <div class="card-body">
+                      Yes, there is a required fundraising minimum for each rider. 100 percent of the dollars you raise
+                      will go toward Alzheimer's research. <a href="https://act.alz.org/site/SPageServer/?pagename=ride_fundraising_packages"
+                        target="_blank">View our fundraising commitment levels here</a>.
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="list-group-item faq-panel">
+                <div class="card">
+                  <div class="card-header">
+                    <button class="btn btn-link collapsed faq-title">
+                      How much is it to register?
+                    </button>
+                    <span class="keywords sr-only">cost register registration fee donation</span>
+                  </div>
+                  <div class="collapse">
+                    <div class="card-body">
+                      The registration donation is $150 for riders, $50 for crew and free for volunteers.
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="list-group-item faq-panel">
+                <div class="card">
+                  <div class="card-header">
+                    <button class="btn btn-link collapsed faq-title">
+                      What do I get in return for my participation?
+                    </button>
+                    <span class="keywords sr-only">fundraising package benefit</span>
+                  </div>
+                  <div class="collapse">
+                    <div class="card-body">
+                      The most important thing you get in return is knowledge that you've done something big in the
+                      fight against Alzheimer's. Beyond that, each fundraising package comes with its own benefits.
+                      View our <a href="https://act.alz.org/site/SPageServer/?pagename=ride_fundraising_packages"
+                        target="_blank">fundraising packages here</a>.
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="list-group-item faq-panel">
+                <div class="card">
+                  <div class="card-header">
+                    <button class="btn btn-link collapsed faq-title">
+                      Will I have support with fundraising and training?
+                    </button>
+                    <span class="keywords sr-only">support fundraising training concierge service</span>
+                  </div>
+                  <div class="collapse">
+                    <div class="card-body">
+                      From the moment you register until you cross the finish line, our Concierge Services team will
+                      support you.
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="list-group-item faq-panel">
+                <div class="card">
+                  <div class="card-header">
+                    <button class="btn btn-link collapsed faq-title">
+                      What kind of support can I expect on the road during the event?
+                    </button>
+                    <span class="keywords sr-only">support services crew volunteer</span>
+                  </div>
+                  <div class="collapse">
+                    <div class="card-body">
+                      Ride is fully supported which means route directional arrows, police support, rest stops and
+                      sweep vehicles. Plus our amazing crew and volunteers will be cheering you along from start to
+                      finish.
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="list-group-item faq-panel">
+                <div class="card">
+                  <div class="card-header">
+                    <button class="btn btn-link collapsed faq-title">
+                      What is the fundraising deadline and what happens if I don't meet it?
+                    </button>
+                    <span class="keywords sr-only">fundraising deadline meet minimum dsp delayed self pledge</span>
+                  </div>
+                  <div class="collapse">
+                    <div class="card-body">
+                      If you have not met your required fundraising minimum by Ride day, you will voluntarily complete
+                      our Delayed Self Pledge Form (DSPF) which will allow you 30 days after Ride to meet your
+                      fundraising minimum. If, after 30 days, you have still not met your requirement we will charge
+                      your credit card provided on the DSPF.
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="list-group-item faq-panel">
+                <div class="card">
+                  <div class="card-header">
+                    <button class="btn btn-link collapsed faq-title">
+                      If I cancel my registration, what happens to my donations?
+                    </button>
+                    <span class="keywords sr-only">cancel registration donation</span>
+                  </div>
+                  <div class="collapse">
+                    <div class="card-body">
+                      Donations are non-refundable and non-transferable. All donations go toward research efforts to
+                      discover methods of treatment and prevention for Alzheimer’s disease.
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="list-group-item faq-panel">
+                <div class="card">
+                  <div class="card-header">
+                    <button class="btn btn-link collapsed faq-title">
+                      Where is the Opening Ceremony, Start &amp; Finish Lines?
+                    </button>
+                    <span class="keywords sr-only">opening ceremony start finish line</span>
+                  </div>
+                  <div class="collapse">
+                    <div class="card-body">
+                      Visit the homepage for <a href="http://act.alz.org/site/TR?fr_id=11946&pg=entry" target="_blank">Austin,
+                        Texas</a> and/or <a href="http://act.alz.org/site/TR?fr_id=11947&pg=entry" target="_blank">Fort
+                        Collins, Colorado</a> for dates and details.
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="list-group-item faq-panel">
+                <div class="card">
+                  <div class="card-header">
+                    <button class="btn btn-link collapsed faq-title">
+                      Will food be provided?
+                    </button>
+                    <span class="keywords sr-only">food health services dinner lunch drink breakfast snacks beverage</span>
+                  </div>
+                  <div class="collapse">
+                    <div class="card-body">
+                      Yes. We provide a light breakfast, lunch, snacks and beverages on Ride day. We also provide
+                      dinner and drinks at the Opening Ceremony.
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="list-group-item faq-panel">
+                <div class="card">
+                  <div class="card-header">
+                    <button class="btn btn-link collapsed faq-title">
+                      Will there be vegetarian food options?
+                    </button>
+                    <span class="keywords sr-only">food veggie vegetarian vegan gluten</span>
+                  </div>
+                  <div class="collapse">
+                    <div class="card-body">
+                      While we cannot accommodate all food preferences and sensitivities, we do provide a vegetarian
+                      meal option.
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="list-group-item faq-panel">
+                <div class="card">
+                  <div class="card-header">
+                    <button class="btn btn-link collapsed faq-title">
+                      What travel information do I need to know?
+                    </button>
+                    <span class="keywords sr-only">fly plane travel</span>
+                  </div>
+                  <div class="collapse">
+                    <div class="card-body">
+                      We will provide travel information including transportation options and directions to the event
+                      site closer to your Ride day.
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="list-group-item faq-panel">
+                <div class="card">
+                  <div class="card-header">
+                    <button class="btn btn-link collapsed faq-title">
+                      What if inclement weather is expected on Ride day?
+                    </button>
+                    <span class="keywords sr-only">rain storm weather</span>
+                  </div>
+                  <div class="collapse">
+                    <div class="card-body">
+                      Ride takes place rain or shine, however, cancellation may occur if the safety of riders is in
+                      question.
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="list-group-item faq-panel">
+                <div class="card">
+                  <div class="card-header">
+                    <button class="btn btn-link collapsed faq-title">
+                      Are pets allowed?
+                    </button>
+                    <span class="keywords sr-only">pet allow dogs cats animals</span>
+                  </div>
+                  <div class="collapse">
+                    <div class="card-body">
+                      Sorry, no pets allowed.
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+
+              <li class="list-group-item faq-headline">
+                <h2 class="h4 mt-4">Rider FAQ:</h2>
+              </li>
+              <li class="list-group-item faq-panel">
+                <div class="card">
+                  <div class="card-header">
+                    <button class="btn btn-link collapsed faq-title">
+                      Do I need to be an experienced cyclist to participate?
+                    </button>
+                    <span class="keywords sr-only">KEYWORD</span>
+                  </div>
+                  <div class="collapse">
+                    <div class="card-body">
+                      Not at all! We welcome riders of all fitness and skill levels.
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="list-group-item faq-panel">
+                <div class="card">
+                  <div class="card-header">
+                    <button class="btn btn-link collapsed faq-title">
+                      Not at all! We welcome riders of all fitness and skill levels.
+                    </button>
+                    <span class="keywords sr-only">KEYWORD</span>
+                  </div>
+                  <div class="collapse">
+                    <div class="card-body">
+                      Visit the Austin, Texas or Fort Collins, Colorado web page for more information on each city's
+                      route.
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="list-group-item faq-panel">
+                <div class="card">
+                  <div class="card-header">
+                    <button class="btn btn-link collapsed faq-title">
+                      Do I have to commit to certain mileage?
+                    </button>
+                    <span class="keywords sr-only">KEYWORD</span>
+                  </div>
+                  <div class="collapse">
+                    <div class="card-body">
+                      When you register for the event, you'll select your anticipated route and mileage. You can change
+                      it before the event and even on Ride day if needed.
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="list-group-item faq-panel">
+                <div class="card">
+                  <div class="card-header">
+                    <button class="btn btn-link collapsed faq-title">
+                      Is there a minimum age to participate?
+                    </button>
+                    <span class="keywords sr-only">KEYWORD</span>
+                  </div>
+                  <div class="collapse">
+                    <div class="card-body">
+                      You must be 13 years of age to participate.
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="list-group-item faq-panel">
+                <div class="card">
+                  <div class="card-header">
+                    <button class="btn btn-link collapsed faq-title">
+                      Do I need to wear a helmet and carry a water bottle on my bike?
+                    </button>
+                    <span class="keywords sr-only">KEYWORD</span>
+                  </div>
+                  <div class="collapse">
+                    <div class="card-body">
+                      Yes, for safety reasons, all riders must wear a helmet and carry a water bottle or hydration
+                      pack.
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="list-group-item faq-panel">
+                <div class="card">
+                  <div class="card-header">
+                    <button class="btn btn-link collapsed faq-title">
+                      Can I ride a tandem bicycle?
+                    </button>
+                    <span class="keywords sr-only">KEYWORD</span>
+                  </div>
+                  <div class="collapse">
+                    <div class="card-body">
+                      Yes, but each rider on the tandem bicycle must register separately and each rider is responsible
+                      for meeting their required fundraising minimum.
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="list-group-item faq-panel">
+                <div class="card">
+                  <div class="card-header">
+                    <button class="btn btn-link collapsed faq-title">
+                      Can I ride with an infant, child or dog?
+                    </button>
+                    <span class="keywords sr-only">KEYWORD</span>
+                  </div>
+                  <div class="collapse">
+                    <div class="card-body">
+                      No, under no circumstances may you ride with an infant, child or dog trailer attached to your
+                      bicycle.
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="list-group-item faq-panel">
+                <div class="card">
+                  <div class="card-header">
+                    <button class="btn btn-link collapsed faq-title">
+                      What support is offered to me as a participant?
+                    </button>
+                    <span class="keywords sr-only">KEYWORD</span>
+                  </div>
+                  <div class="collapse">
+                    <div class="card-body">
+                      From the moment you register until you cross the finish line, our Concierge Services team will
+                      support you with training plans and expert tips and coaching to reach your fundraising goal.
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="list-group-item faq-panel">
+                <div class="card">
+                  <div class="card-header">
+                    <button class="btn btn-link collapsed faq-title">
+                      How do I get started with my fundraising?
+                    </button>
+                    <span class="keywords sr-only">KEYWORD</span>
+                  </div>
+                  <div class="collapse">
+                    <div class="card-body">
+                      Our online tools located in your Ride Hub make it easy to get started immediately after you
+                      register. In addition, our Concierge Services team will reach out to offer you tips and coaching.
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="list-group-item faq-panel">
+                <div class="card">
+                  <div class="card-header">
+                    <button class="btn btn-link collapsed faq-title">
+                      How much training should I do?
+                    </button>
+                    <span class="keywords sr-only">KEYWORD</span>
+                  </div>
+                  <div class="collapse">
+                    <div class="card-body">
+                      Every rider starts at a different fitness level, so training will be different for each
+                      participant. We provide sample training plans and will work with you to develop a training plan
+                      that's right for you.
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="list-group-item faq-panel">
+                <div class="card">
+                  <div class="card-header">
+                    <button class="btn btn-link collapsed faq-title">
+                      Will there be support or rest stops along the route?
+                    </button>
+                    <span class="keywords sr-only">KEYWORD</span>
+                  </div>
+                  <div class="collapse">
+                    <div class="card-body">
+                      We will have fully stocked (and fun!) rest stops every 10-20 miles along with route support and
+                      first aid.
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="list-group-item faq-panel">
+                <div class="card">
+                  <div class="card-header">
+                    <button class="btn btn-link collapsed faq-title">
+                      How will I know where to go?
+                    </button>
+                    <span class="keywords sr-only">KEYWORD</span>
+                  </div>
+                  <div class="collapse">
+                    <div class="card-body">
+                      We provide a well-marked route with directional arrows, signage and route support.
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="list-group-item faq-panel">
+                <div class="card">
+                  <div class="card-header">
+                    <button class="btn btn-link collapsed faq-title">
+                      What is the best way to connect with other participants?
+                    </button>
+                    <span class="keywords sr-only">KEYWORD</span>
+                  </div>
+                  <div class="collapse">
+                    <div class="card-body">
+                      Once you register you will have free access to our exclusive online Ride Community. The Ride
+                      Community allows you to easily connect with other participants.
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="list-group-item faq-panel">
+                <div class="card">
+                  <div class="card-header">
+                    <button class="btn btn-link collapsed faq-title">
+                      What do I need to bring on Ride?
+                    </button>
+                    <span class="keywords sr-only">KEYWORD</span>
+                  </div>
+                  <div class="collapse">
+                    <div class="card-body">
+                      We will provide you with a list of suggested items to bring with you after registration.
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="list-group-item faq-panel">
+                <div class="card">
+                  <div class="card-header">
+                    <button class="btn btn-link collapsed faq-title">
+                      What kind of bicycle do I need?
+                    </button>
+                    <span class="keywords sr-only">KEYWORD</span>
+                  </div>
+                  <div class="collapse">
+                    <div class="card-body">
+                      You can use whatever bike you are comfortable riding on!
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="list-group-item faq-panel">
+                <div class="card">
+                  <div class="card-header">
+                    <button class="btn btn-link collapsed faq-title">
+                      Can I rent a bike for Ride?
+                    </button>
+                    <span class="keywords sr-only">KEYWORD</span>
+                  </div>
+                  <div class="collapse">
+                    <div class="card-body">
+                      Yes, bike rental information will be provided after registration. Please note, you will be
+                      responsible to pay for your bike rental.
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="list-group-item faq-panel">
+                <div class="card">
+                  <div class="card-header">
+                    <button class="btn btn-link collapsed faq-title">
+                      What is the cancellation policy?
+                    </button>
+                    <span class="keywords sr-only">KEYWORD</span>
+                  </div>
+                  <div class="collapse">
+                    <div class="card-body">
+                      Notify Ride staff immediately if you know you can't participate with us by emailing <a href="emailto:ride@alz.org">ride@alz.org</a>.
+                      You will not be responsible for meeting your fundraising commitment level if you do not ride with
+                      us on Ride day.
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="list-group-item faq-panel">
+                <div class="card">
+                  <div class="card-header">
+                    <button class="btn btn-link collapsed faq-title">
+                      Will there be vegetarian food options?
+                    </button>
+                    <span class="keywords sr-only">KEYWORD</span>
+                  </div>
+                  <div class="collapse">
+                    <div class="card-body">
+                      While we cannot accommodate all food preferences and sensitivities, we do provide a vegetarian
+                      meal option.
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="list-group-item faq-panel">
+                <div class="card">
+                  <div class="card-header">
+                    <button class="btn btn-link collapsed faq-title">
+                      What if inclement weather is expected on Ride day?
+                    </button>
+                    <span class="keywords sr-only">KEYWORD</span>
+                  </div>
+                  <div class="collapse">
+                    <div class="card-body">
+                      Ride takes place rain or shine, however, cancellation may occur if the safety of riders is in
+                      question.
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="list-group-item faq-panel">
+                <div class="card">
+                  <div class="card-header">
+                    <button class="btn btn-link collapsed faq-title">
+                      Are the roads along the route closed to cyclists only?
+                    </button>
+                    <span class="keywords sr-only">KEYWORD</span>
+                  </div>
+                  <div class="collapse">
+                    <div class="card-body">
+                      No, the route is open to motorists and cyclists, however, we work with local police and
+                      jurisdictions to select routes that are safe.
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+
+
+
+              <li class="list-group-item faq-headline">
+                <h2 class="h4 mt-4">Team FAQ:</h2>
+              </li>
+              <li class="list-group-item faq-panel">
+                <div class="card">
+                  <div class="card-header">
+                    <button class="btn btn-link collapsed faq-title">
+                      What are teams?
+                    </button>
+                    <span class="keywords sr-only">KEYWORD</span>
+                  </div>
+                  <div class="collapse">
+                    <div class="card-body">
+                      A team is a group of two or more participants.
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="list-group-item faq-panel">
+                <div class="card">
+                  <div class="card-header">
+                    <button class="btn btn-link collapsed faq-title">
+                      What is the benefit of being on a team?
+                    </button>
+                    <span class="keywords sr-only">KEYWORD</span>
+                  </div>
+                  <div class="collapse">
+                    <div class="card-body">
+                      There are many benefits, including team spirit and making your Ride experience even more fun!
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="list-group-item faq-panel">
+                <div class="card">
+                  <div class="card-header">
+                    <button class="btn btn-link collapsed faq-title">
+                      How do I start a team?
+                    </button>
+                    <span class="keywords sr-only">KEYWORD</span>
+                  </div>
+                  <div class="collapse">
+                    <div class="card-body">
+                      You can start a team at the time of registration, or if you are already registered, contact Ride
+                      staff to set up your team today.
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="list-group-item faq-panel">
+                <div class="card">
+                  <div class="card-header">
+                    <button class="btn btn-link collapsed faq-title">
+                      How can I join an existing team?
+                    </button>
+                    <span class="keywords sr-only">KEYWORD</span>
+                  </div>
+                  <div class="collapse">
+                    <div class="card-body">
+                      You can join an existing team at the time of registration, or if you are already registered,
+                      contact Ride staff to join a team.
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="list-group-item faq-panel">
+                <div class="card">
+                  <div class="card-header">
+                    <button class="btn btn-link collapsed faq-title">
+                      How can I create or join a team after I have already registered as an individual?
+                    </button>
+                    <span class="keywords sr-only">KEYWORD</span>
+                  </div>
+                  <div class="collapse">
+                    <div class="card-body">
+                      You may contact Ride staff for assistance.
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="list-group-item faq-panel">
+                <div class="card">
+                  <div class="card-header">
+                    <button class="btn btn-link collapsed faq-title">
+                      I'm participating alone. How can I find a team to join?
+                    </button>
+                    <span class="keywords sr-only">KEYWORD</span>
+                  </div>
+                  <div class="collapse">
+                    <div class="card-body">
+                      After you register you will have access to our online Ride Community where you can connect with
+                      other participants and find a team.
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="list-group-item faq-panel">
+                <div class="card">
+                  <div class="card-header">
+                    <button class="btn btn-link collapsed faq-title">
+                      Can I be a member of more than one team?
+                    </button>
+                    <span class="keywords sr-only">KEYWORD</span>
+                  </div>
+                  <div class="collapse">
+                    <div class="card-body">
+                      Our website allows you to officially identify yourself as a member of one team.
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="list-group-item faq-panel">
+                <div class="card">
+                  <div class="card-header">
+                    <button class="btn btn-link collapsed faq-title">
+                      Can a donation be made to the entire team?
+                    </button>
+                    <span class="keywords sr-only">KEYWORD</span>
+                  </div>
+                  <div class="collapse">
+                    <div class="card-body">
+                      We do not allow online team donations, however, all donations made to individual participants
+                      will be reflected in the overall team fundraising total.
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="list-group-item faq-panel">
+                <div class="card">
+                  <div class="card-header">
+                    <button class="btn btn-link collapsed faq-title">
+                      Can team members share, split or pool donations?
+                    </button>
+                    <span class="keywords sr-only">KEYWORD</span>
+                  </div>
+                  <div class="collapse">
+                    <div class="card-body">
+                      Each donation made online is made to a specific individual and cannot be split among team
+                      members. If you mail a check for entry, however, you may specify how the money should be split
+                      among team members using this form (INCLUDE LINK TO FORM). Example: If a friend writes a check
+                      for $500 to be credited to your team of two riders, please specify that you would like the total
+                      to be split so that each rider is credited with $250 on your individual offline donation form.
+                      Email <a href="mailto:ride@alz.org">ride@alz.org</a> with questions.
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="list-group-item faq-panel">
+                <div class="card">
+                  <div class="card-header">
+                    <button class="btn btn-link collapsed faq-title">
+                      What is the fundraising minimum for a team?
+                    </button>
+                    <span class="keywords sr-only">KEYWORD</span>
+                  </div>
+                  <div class="collapse">
+                    <div class="card-body">
+                      Each rider is responsible for reaching their fundraising commitment level. Teams do not have a
+                      collective fundraising minimum. Whether or not a rider is on a team, they are still required to
+                      meet their individual fundraising commitment level. Email <a href="mailto:ride@alz.org">ride@alz.org</a>
+                      with questions.
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="list-group-item faq-panel">
+                <div class="card">
+                  <div class="card-header">
+                    <button class="btn btn-link collapsed faq-title">
+                      How do I add members to my team?
+                    </button>
+                    <span class="keywords sr-only">KEYWORD</span>
+                  </div>
+                  <div class="collapse">
+                    <div class="card-body">
+                      Send a request to <a href="mailto:ride@alz.org">ride@alz.org</a>.
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="list-group-item faq-panel">
+                <div class="card">
+                  <div class="card-header">
+                    <button class="btn btn-link collapsed faq-title">
+                      Can I change the name of my team?
+                    </button>
+                    <span class="keywords sr-only">KEYWORD</span>
+                  </div>
+                  <div class="collapse">
+                    <div class="card-body">
+                      Yes, send a request to <a href="mailto:ride@alz.org">ride@alz.org</a>.
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="list-group-item faq-panel">
+                <div class="card">
+                  <div class="card-header">
+                    <button class="btn btn-link collapsed faq-title">
+                      Can we have more than one Team Captain?
+                    </button>
+                    <span class="keywords sr-only">KEYWORD</span>
+                  </div>
+                  <div class="collapse">
+                    <div class="card-body">
+                      You may assign up to three Team Captains.
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="list-group-item faq-panel">
+                <div class="card">
+                  <div class="card-header">
+                    <button class="btn btn-link collapsed faq-title">
+                      Can I change the captain of my team?
+                    </button>
+                    <span class="keywords sr-only">KEYWORD</span>
+                  </div>
+                  <div class="collapse">
+                    <div class="card-body">
+                      Yes, send a request to <a href="mailto:ride@alz.org">ride@alz.org</a>.
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="list-group-item faq-panel">
+                <div class="card">
+                  <div class="card-header">
+                    <button class="btn btn-link collapsed faq-title">
+                      Can volunteers be on a team, or just riders?
+                    </button>
+                    <span class="keywords sr-only">KEYWORD</span>
+                  </div>
+                  <div class="collapse">
+                    <div class="card-body">
+                      A team can consist of any and all participant types.
+                    </div>
+                  </div>
+                </div>
+              </li>
+
+
+              <li class="list-group-item faq-headline">
+                <h2 class="h4 mt-4">Donation FAQ:</h2>
+              </li>
+              <li class="list-group-item faq-panel">
+                <div class="card">
+                  <div class="card-header">
+                    <button class="btn btn-link collapsed faq-title">
+                      What is the fundraising requirement?
+                    </button>
+                    <span class="keywords sr-only">KEYWORD</span>
+                  </div>
+                  <div class="collapse">
+                    <div class="card-body">
+                      Riders can select from <a href="https://act.alz.org/site/SPageServer/?pagename=ride_fundraising_packages">three
+                        different fundraising commitment levels</a> with varying benefits.
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="list-group-item faq-panel">
+                <div class="card">
+                  <div class="card-header">
+                    <button class="btn btn-link collapsed faq-title">
+                      Where do the funds go from Ride?
+                    </button>
+                    <span class="keywords sr-only">KEYWORD</span>
+                  </div>
+                  <div class="collapse">
+                    <div class="card-body">
+                      100 percent of your donations are restricted to Alzheimer's research through the Alzheimer's
+                      Association.
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="list-group-item faq-panel">
+                <div class="card">
+                  <div class="card-header">
+                    <button class="btn btn-link collapsed faq-title">
+                      How do I make a donation online?
+                    </button>
+                    <span class="keywords sr-only">KEYWORD</span>
+                  </div>
+                  <div class="collapse">
+                    <div class="card-body">
+                      Click the "Donate" button on the top of this page and follow the prompts.
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="list-group-item faq-panel">
+                <div class="card">
+                  <div class="card-header">
+                    <button class="btn btn-link collapsed faq-title">
+                      How do I use an offline donation form to make a donation by check?
+                    </button>
+                    <span class="keywords sr-only">KEYWORD</span>
+                  </div>
+                  <div class="collapse">
+                    <div class="card-body">
+                      To donate offline, visit your friend or family member's personal page, go to <a href="http://alz.org/ride">alz.org/ride</a>,
+                      click "Donate" and search for your friend. Then, download the personalized offline donation form
+                      from their page.
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="list-group-item faq-panel">
+                <div class="card">
+                  <div class="card-header">
+                    <button class="btn btn-link collapsed faq-title">
+                      What do I do if a donor hands me a check?
+                    </button>
+                    <span class="keywords sr-only">KEYWORD</span>
+                  </div>
+                  <div class="collapse">
+                    <div class="card-body">
+                      Download your personalized offline donation form (found on your fundraising page) and mail it in
+                      with the check.
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="list-group-item faq-panel">
+                <div class="card">
+                  <div class="card-header">
+                    <button class="btn btn-link collapsed faq-title">
+                      What do I do if a donor addressed their donation check to me?
+                    </button>
+                    <span class="keywords sr-only">KEYWORD</span>
+                  </div>
+                  <div class="collapse">
+                    <div class="card-body">
+                      If a donor has written you a check as a donation toward Ride, you may sign it over to the
+                      "Alzheimer's Association Ride to End ALZ" and mail it in using an offline donation form.
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="list-group-item faq-panel">
+                <div class="card">
+                  <div class="card-header">
+                    <button class="btn btn-link collapsed faq-title">
+                      Can I send in donations for more than one participant in one envelope?
+                    </button>
+                    <span class="keywords sr-only">KEYWORD</span>
+                  </div>
+                  <div class="collapse">
+                    <div class="card-body">
+                      Yes, but you must follow the 1:1 rule. Every check must have an offline donation form attached to
+                      it so we know who to assign the donation to.
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="list-group-item faq-panel">
+                <div class="card">
+                  <div class="card-header">
+                    <button class="btn btn-link collapsed faq-title">
+                      Is the Alzheimer's Association a 501(c)(3)?
+                    </button>
+                    <span class="keywords sr-only">KEYWORD</span>
+                  </div>
+                  <div class="collapse">
+                    <div class="card-body">
+                      Yes.
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="list-group-item faq-panel">
+                <div class="card">
+                  <div class="card-header">
+                    <button class="btn btn-link collapsed faq-title">
+                      Is my donation tax deductible and if so, when will I receive a tax receipt?
+                    </button>
+                    <span class="keywords sr-only">KEYWORD</span>
+                  </div>
+                  <div class="collapse">
+                    <div class="card-body">
+                      Yes. If you made a donation online, you will receive an email receipt immediately. If you make a
+                      donation by check, you will receive a paper acknowledgment in the mail.
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="list-group-item faq-panel">
+                <div class="card">
+                  <div class="card-header">
+                    <button class="btn btn-link collapsed faq-title">
+                      How does the Alzheimer's Association handle tax acknowledgment receipts for cash donations?
+                    </button>
+                    <span class="keywords sr-only">KEYWORD</span>
+                  </div>
+                  <div class="collapse">
+                    <div class="card-body">
+                      "If you would like a tax acknowledgment receipt, you must make a donation by credit card or check
+                      donation. We do not accept cash donations. Please do not send cash through the mail.
+                      <br><br>
+                      If you are a rider who has received a cash donation, there are two options for applying the cash
+                      donation to Ride: <br>
+                      1) You may keep the cash and make an online credit card donation to yourself for the same amount.
+                      If you use this option, you will become the official donor and you will receive a tax
+                      acknowledgment receipt at the email address that you provide. Do NOT substitute the cash donor’s
+                      name or address for your own when you make the credit card donation on your card.
+                      <br><br>
+
+                      2) You may keep the cash and make a donation by personal check for the same amount. You will then
+                      mail the check in along with a completed offline donation form. You may put the original donor's
+                      information and email address on the offline donation form so they get the financial credit and
+                      tax acknowledgment receipt emailed to them."
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="list-group-item faq-panel">
+                <div class="card">
+                  <div class="card-header">
+                    <button class="btn btn-link collapsed faq-title">
+                      Does Ride accept matching gift donations and if so, how do I apply?
+                    </button>
+                    <span class="keywords sr-only">KEYWORD</span>
+                  </div>
+                  <div class="collapse">
+                    <div class="card-body">
+                      Yes, Ride accepts matching gift funds, insofar as your donation complies with your employer's
+                      matching gift policy. To have your donation matched, check your employer's matching gift policy
+                      and process. When applying for the matching funds to be sent to the Alzheimer's Association,
+                      please specify that you would like your donation credited to Ride to End ALZ, and specify the
+                      location of your ride and the name of the rider who should receive the credit. Please note that
+                      matching funds can take weeks or months to process and appear on our website.
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="list-group-item faq-panel">
+                <div class="card">
+                  <div class="card-header">
+                    <button class="btn btn-link collapsed faq-title">
+                      How do I know if my company will match donations made to the Alzheimer's Association?
+                    </button>
+                    <span class="keywords sr-only">KEYWORD</span>
+                  </div>
+                  <div class="collapse">
+                    <div class="card-body">
+                      To find out if your employer matches donations made to the Alzheimer's Association, please visit
+                      <a rhef="http://www.matchinggifts.com/alz/" target="_blank">http://www.matchinggifts.com/alz/</a>
+                      and enter the company name. Note that the donor is responsible for following up with their
+                      employer to apply for the matching funds, according to the company's policy.
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="list-group-item faq-panel">
+                <div class="card">
+                  <div class="card-header">
+                    <button class="btn btn-link collapsed faq-title">
+                      Who can I contact with questions about making a donation?
+                    </button>
+                    <span class="keywords sr-only">KEYWORD</span>
+                  </div>
+                  <div class="collapse">
+                    <div class="card-body">
+                      Send questions to <a href="mailto:ride@alz.org">ride@alz.org</a>.
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="list-group-item faq-panel">
+                <div class="card">
+                  <div class="card-header">
+                    <button class="btn btn-link collapsed faq-title">
+                      If a participant cancels their registration and does not participate, what happens to the
+                      donations they have received?
+                    </button>
+                    <span class="keywords sr-only">KEYWORD</span>
+                  </div>
+                  <div class="collapse">
+                    <div class="card-body">
+                      Donations are non-refundable and non-transferable but will still go to the cause.
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="list-group-item faq-panel">
+                <div class="card">
+                  <div class="card-header">
+                    <button class="btn btn-link collapsed faq-title">
+                      When do you stop collecting donations for Ride?
+                    </button>
+                    <span class="keywords sr-only">KEYWORD</span>
+                  </div>
+                  <div class="collapse">
+                    <div class="card-body">
+                      Donation pages stay open for 30 days after Ride.
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="list-group-item faq-panel">
+                <div class="card">
+                  <div class="card-header">
+                    <button class="btn btn-link collapsed faq-title">
+                      I mailed in a donation, but it's not listed in my Ride Hub. Who do I contact?
+                    </button>
+                    <span class="keywords sr-only">KEYWORD</span>
+                  </div>
+                  <div class="collapse">
+                    <div class="card-body">
+                      Please complete a <a href="https://act.alz.org/site/SPageServer/?pagename=ride_website_help"
+                        target="_blank">website support ticket</a> and we will get back to you within 48 hours.
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <!-- <li class="list-group-item faq-panel">
+                      <div class="card">
+                        <div class="card-header">
+                          <button class="btn btn-link collapsed faq-title">
+                              Can I make a donor-advised fund donation?
+                          </button>
+                          <span class="keywords sr-only">KEYWORD</span>
+                        </div>
+                        <div class="collapse">
+                          <div class="card-body">
+                              Yes, to donate via a donor-advised fund, navigate to the fundraising page of the rider you'd like to credit, and click "Donate." Then choose "Donor-Advised Fund" at the top of the form. From here, you'll be prompted to log into your donor-advised fund provider portal and complete your donation. Please note that you will not receive a tax receipt for DAF Donations, as the tax benefit is provided by your DAF provider. 
+                          </div>
+                        </div>
+                      </div>
+                    </li> -->
+
+
+
+              <li class="list-group-item faq-headline">
+                <h2 class="h4 mt-4">Website FAQ:</h2>
+              </li>
+              <li class="list-group-item faq-panel">
+                <div class="card">
+                  <div class="card-header">
+                    <button class="btn btn-link collapsed faq-title">
+                      What is my Ride Hub and personal page?
+                    </button>
+                    <span class="keywords sr-only">KEYWORD</span>
+                  </div>
+                  <div class="collapse">
+                    <div class="card-body">
+                      Inside your Ride Hub, you will find tools to help you meet and exceed your Ride goals. You will
+                      be able to edit your personal fundraising page and share your story with friends and family.
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="list-group-item faq-panel">
+                <div class="card">
+                  <div class="card-header">
+                    <button class="btn btn-link collapsed faq-title">
+                      How do sign into my Ride Hub?
+                    </button>
+                    <span class="keywords sr-only">KEYWORD</span>
+                  </div>
+                  <div class="collapse">
+                    <div class="card-body">
+                      Click on the "Log In" link and enter your username and password that you selected at the time of
+                      registration.
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="list-group-item faq-panel">
+                <div class="card">
+                  <div class="card-header">
+                    <button class="btn btn-link collapsed faq-title">
+                      I'm having trouble logging in. Who can help me?
+                    </button>
+                    <span class="keywords sr-only">KEYWORD</span>
+                  </div>
+                  <div class="collapse">
+                    <div class="card-body">
+                      If you're having trouble with our website, please fill out our <a href="https://act.alz.org/site/SPageServer/?pagename=ride_website_help"
+                        target="_blank">website support form</a>.
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="list-group-item faq-panel">
+                <div class="card">
+                  <div class="card-header">
+                    <button class="btn btn-link collapsed faq-title">
+                      How do I edit my profile?
+                    </button>
+                    <span class="keywords sr-only">KEYWORD</span>
+                  </div>
+                  <div class="collapse">
+                    <div class="card-body">
+                      Visit <a href="http://alz.org/ride">alz.org/ride</a>, and click "Log In" in the top right corner
+                      (or "Ride Hub" if you are already logged in). Once logged in, a menu will slide out on the right.
+                      Click the "Edit My Profile" option near the bottom of your screen.
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="list-group-item faq-panel">
+                <div class="card">
+                  <div class="card-header">
+                    <button class="btn btn-link collapsed faq-title">
+                      How do I create a Facebook Fundraiser?
+                    </button>
+                    <span class="keywords sr-only">KEYWORD</span>
+                  </div>
+                  <div class="collapse">
+                    <div class="card-body">
+                      We suggest that you edit your personal page to make it more personal. Log in to your Ride Hub at
+                      <a href="http://alz.org/ride">alz.org/ride</a> with your username and password. Select "My Page"
+                      and scroll down to edit and save your story.
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="list-group-item faq-panel">
+                <div class="card">
+                  <div class="card-header">
+                    <button class="btn btn-link collapsed faq-title">
+                      How do I fundraise using the mobile app?
+                    </button>
+                    <span class="keywords sr-only">KEYWORD</span>
+                  </div>
+                  <div class="collapse">
+                    <div class="card-body">
+                      Log in to your Ride Hub at <a href="http://alz.org/ride">alz.org/ride</a> with your username and
+                      password. Select "Dashboard" and select Step #4 under the "Reach Your Goal" section.
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="list-group-item faq-panel">
+                <div class="card">
+                  <div class="card-header">
+                    <button class="btn btn-link collapsed faq-title">
+                      How do I log into Ride Community?
+                    </button>
+                    <span class="keywords sr-only">KEYWORD</span>
+                  </div>
+                  <div class="collapse">
+                    <div class="card-body">
+                      First, log in to your Ride Hub at <a href="http://alz.org/ride">alz.org/ride</a> with your
+                      username and password. Select "Community" to be directed to our exclusive online Ride Community.
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="list-group-item faq-panel">
+                <div class="card">
+                  <div class="card-header">
+                    <button class="btn btn-link collapsed faq-title">
+                      I have a personal page by default. Do I have to change it?
+                    </button>
+                    <span class="keywords sr-only">KEYWORD</span>
+                  </div>
+                  <div class="collapse">
+                    <div class="card-body">
+                      We suggest that you edit your personal page to make it more personal. Log in to your Ride Hub at
+                      <a href="http://alz.org/ride">alz.org/ride</a> with your username and password. Select "My Page"
+                      and scroll down to edit and save your story.
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="list-group-item faq-panel">
+                <div class="card">
+                  <div class="card-header">
+                    <button class="btn btn-link collapsed faq-title">
+                      How can I see who has donated to me?
+                    </button>
+                    <span class="keywords sr-only">KEYWORD</span>
+                  </div>
+                  <div class="collapse">
+                    <div class="card-body">
+                      Log in to your Ride Hub at <a href="http://alz.org/ride">alz.org/ride</a> with your username and
+                      password. Select "My Progress" to see who has supported you.
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="list-group-item faq-panel">
+                <div class="card">
+                  <div class="card-header">
+                    <button class="btn btn-link collapsed faq-title">
+                      How can I see who is on my team?
+                    </button>
+                    <span class="keywords sr-only">KEYWORD</span>
+                  </div>
+                  <div class="collapse">
+                    <div class="card-body">
+                      Log in to your Ride Hub at <a href="http://alz.org/ride">alz.org/ride</a> with your username and
+                      password. Select "My Team" and scroll down to see your team roster.
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="list-group-item faq-panel">
+                <div class="card">
+                  <div class="card-header">
+                    <button class="btn btn-link collapsed faq-title">
+                      How can I contact my team members?
+                    </button>
+                    <span class="keywords sr-only">KEYWORD</span>
+                  </div>
+                  <div class="collapse">
+                    <div class="card-body">
+                      If you are on a team, log in to your Ride Hub and visit the Email section. Near the bottom of the
+                      page, click the link to "send email through your Ride Hub." Go to the Contacts tab and use the
+                      filters on the left to identify your team members. Select all of your team members, and click
+                      "Email."
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="list-group-item faq-panel">
+                <div class="card">
+                  <div class="card-header">
+                    <button class="btn btn-link collapsed faq-title">
+                      How do I change my team name?
+                    </button>
+                    <span class="keywords sr-only">KEYWORD</span>
+                  </div>
+                  <div class="collapse">
+                    <div class="card-body">
+                      Email <a href="mailto:ride@alz.org">ride@alz.org</a> to request a team name change. If you would
+                      like to change teams, or leave a team, log in to your Ride Hub and click the edit icon next to
+                      your Team Name in the top left corner.
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="list-group-item faq-panel">
+                <div class="card">
+                  <div class="card-header">
+                    <button class="btn btn-link collapsed faq-title">
+                      How do I edit my team's goal?
+                    </button>
+                    <span class="keywords sr-only">KEYWORD</span>
+                  </div>
+                  <div class="collapse">
+                    <div class="card-body">
+                      Log in to your Ride Hub and find the "Team Progress" bar on the Dashboard. Under the progress
+                      bar, click the edit icon next to "Our Goal."
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="list-group-item faq-panel">
+                <div class="card">
+                  <div class="card-header">
+                    <button class="btn btn-link collapsed faq-title">
+                      What is the difference between making my personal page private or public?
+                    </button>
+                    <span class="keywords sr-only">KEYWORD</span>
+                  </div>
+                  <div class="collapse">
+                    <div class="card-body">
+                      We do not recommend making your personal page private. A private personal page will not show up
+                      when a friend or family member performs a search on our website. Keeping your page public allows
+                      you to be found by friends and family who want to support your journey and donate to your Ride.
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="list-group-item faq-panel">
+                <div class="card">
+                  <div class="card-header">
+                    <button class="btn btn-link collapsed faq-title">
+                      How do I turn in check donations I've received from others?
+                    </button>
+                    <span class="keywords sr-only">KEYWORD</span>
+                  </div>
+                  <div class="collapse">
+                    <div class="card-body">
+                      Log in to your Ride Hub, select "My Page" and then select the "View My Page" button. Scroll down
+                      and under "My Donors" you will see a Donate via Mail link. That will allow you to download your
+                      offline donation form. Send in any checks or offline donations with this form.
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="list-group-item faq-panel">
+                <div class="card">
+                  <div class="card-header">
+                    <button class="btn btn-link collapsed faq-title">
+                      Can someone help me set up my personal page?
+                    </button>
+                    <span class="keywords sr-only">KEYWORD</span>
+                  </div>
+                  <div class="collapse">
+                    <div class="card-body">
+                      We sure can! Email <a href="mailto:ride@alz.org">ride@alz.org</a> for assistance.
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="list-group-item faq-panel">
+                <div class="card">
+                  <div class="card-header">
+                    <button class="btn btn-link collapsed faq-title">
+                      I am having trouble with the website. Can you help me?
+                    </button>
+                    <span class="keywords sr-only">KEYWORD</span>
+                  </div>
+                  <div class="collapse">
+                    <div class="card-body">
+                      We sure can! Please fill out the <a href="https://act.alz.org/site/SPageServer/?pagename=ride_website_help"
+                        target="_blank">website support form</a> and someone will get back to you within 48 hours.
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- END FAQ section -->
+
+
+
+    <!--removeIf(production)-->
+  </main>
+
+
+  <!-- Modal -->
+  <div class="modal fade register-modal" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="registerModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content text-center">
+        <div class="modal-header">
+          <h5 class="modal-title text-primary m-auto pt-3" id="registerModalLabel">Choose a Location:</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true" class="text-primary">
+              <i class="fas fa-times"></i>
+            </span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="card-deck justify-content-center flex-column">
+            <div class="card text-center">
+              <a class="" href=#>
+                <div class="d-flex align-items-center justify-content-center">
+                  <h3 class="card-title">
+                    <span class="location-name h4">Austin</span>
+                    <span class="location-date h5">Jan 26
+                      <i class="fas fa-caret-right"></i>
+                    </span>
+                  </h3>
+                </div>
+              </a>
+            </div>
+            <div class="card text-center">
+              <a class="" href=#>
+                <div class="d-flex align-items-center justify-content-center">
+                  <h3 class="card-title">
+                    <span class="location-name h4">San Francisco</span>
+                    <span class="location-date h5">Feb 10
+                      <i class="fas fa-caret-right"></i>
+                    </span>
+                  </h3>
+                </div>
+              </a>
+            </div>
+
+            <div class="card text-center">
+              <a class="" href=#>
+                <div class="d-flex align-items-center justify-content-center">
+                  <h3 class="card-title">
+                    <span class="location-name h4">Seattle</span>
+                    <span class="location-date h5">Mar 23
+                      <i class="fas fa-caret-right"></i>
+                    </span>
+                  </h3>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="py-5 bg-primary">
+    <div class="container top-footer-container">
+      <div class="row">
+        <div class="col-12 text-center">
+          <a class="navbar-brand" href="#">
+            <img class="banner-logo" src="assets/images/ride_logo_white.png" alt="Ride to End ALZ" height="103">
+          </a>
+        </div>
+      </div>
+      <div class="row mt-3">
+        <div class="col-12 col-md text-center">
+          <h4>
+            <a href="#">Register</a> |
+            <a href="#">Donate</a> |
+            <a href="#">Find a Participant</a>
+          </h4>
+        </div>
+      </div>
+      <div class="row justify-content-center mt-3">
+        <div class="col-1">
+          <a href="#" class="d-flex footer-social-icon align-items-center justify-content-center">
+            <i class="fab fa-facebook-f fa-2x"></i>
+          </a>
+        </div>
+        <div class="col-1">
+          <a href="#" class="d-flex footer-social-icon align-items-center justify-content-center">
+            <i class="fab fa-twitter fa-2x"></i>
+          </a>
+        </div>
+        <div class="col-1">
+          <a href="#" class="d-flex footer-social-icon align-items-center justify-content-center">
+            <i class="fab fa-instagram fa-2x"></i>
+          </a>
+        </div>
+        <div class="col-1">
+          <a href="#" class="d-flex footer-social-icon align-items-center justify-content-center">
+            <i class="fab fa-youtube fa-2x"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="row text-center mt-3">
+        <div class="col">
+          <h6 class="h4 text-white">
+            <span class="text-secondary">#</span>RideToEndALZ</h6>
+        </div>
+      </div>
+    </div>
+    <!-- BEGIN footer links -->
+    <div class="container middle-footer-container">
+      <div class="row">
+        <div class="col-md-3">
+          <h5>ABOUT</h5>
+          <ul class="list-unstyled text-small">
+            <li>
+              <a class="link-text" href="#">About Ride</a>
+            </li>
+            <li>
+              <a class="link-text" href="#">Fundraising</a>
+            </li>
+            <li>
+              <a class="link-text" href="#">Training</a>
+            </li>
+            <li>
+              <a class="link-text" href="#">Travel Planner</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <ul class="list-unstyled text-small">
+            <li>
+              <a class="link-text" href="#">Team Up</a>
+            </li>
+            <li>
+              <a class="link-text" href="#">Volunteer & Crew</a>
+            </li>
+            <li>
+              <a class="link-text" href="#">Sponsors</a>
+            </li>
+            <li>
+              <a class="link-text" href="#">Request More Info</a>
+            </li>
+            <li>
+              <a class="link-text" href="#">Contact Us</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <h5>LOCATIONS</h5>
+          <ul class="list-unstyled text-small">
+            <li>
+              <a class="link-text" href="#">Austin, TX</a>
+            </li>
+            <li>
+              <a class="link-text" href="#">Minneapolis, MN</a>
+            </li>
+            <li>
+              <a class="link-text" href="#">Seattle, WA</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <h5>WHY WE RIDE</h5>
+          <ul class="list-unstyled text-small">
+            <li>
+              <a class="link-text" href="#">100% to Research</a>
+            </li>
+            <li>
+              <a class="link-text" href="#">Your Fundraising Impact</a>
+            </li>
+            <li>
+              &nbsp;
+            </li>
+            <li>
+              <a class="link-text" href="#">
+                <strong>FAQ</strong>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- END footer links -->
+    <!-- BEGIN bottom footer -->
+    <div class="bottom-footer-container text-center bg-darkpurple">
+      <div class="row">
+        <div class="col-12 col-md text-white">
+          <img alt="Alzheimer's Association: the brains behind saving yours" src="http://act.alz.org/2015longestday/images/alz_footer_logo.png">
+          <p class="mt-4">1 (800) 272 3900
+            <br>Alzheimer's Association Home Office 225 N. Michigan Ave., Fl. 17, Chicago, IL 60601
+            <br>Alzheimer's Association is a not-for-profit 501(c)(3) organization.</p>
+          <p class="mt-1">Copyright &copy; 2018 Alzheimer's Association&reg;. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+    <!-- END bottom footer -->
+    <div class="utility-footer-container container">
+      <div class="row mt-3">
+        <div class="col-12 col-md text-center text-white">
+          <p>
+            <a href="http://www.alz.org/walk">ALZ.org</a> |
+            <a href="#">About ALZ</a> |
+            <a href="#">ALZ Blog</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+
+  <script src="assets/js/vendor/jquery-2.2.4.min.js"></script>
+  <script src="assets/js/vendor/popper.min.js"></script>
+  <script src="assets/js/vendor/bootstrap.min.js"></script>
+  <script src="assets/js/vendor/luminate-extend-1.8.1.js"></script>
+  <script src="assets/js/vendor/pushy.min.js"></script>
+  <!-- TODO - add list.js to wrapper conditional to only fire on FAQ page -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
+
+  <script>
+    // document.getElementsByTagName('html')[0].setAttribute('lang', 'en');
+    luminateExtend({
+      apiKey: 'ALZADARDA',
+      path: {
+        nonsecure: 'http://act.alz.org/site/',
+        secure: 'https://act.alz.org/site/'
+      }
+    });
+
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/parsley.js/2.8.1/parsley.min.js"></script>
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
+<!--endRemoveIf(production)-->

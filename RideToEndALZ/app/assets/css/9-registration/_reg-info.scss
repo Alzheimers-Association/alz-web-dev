@@ -1,0 +1,271 @@
+  // div.registration-page-container
+  div#registration_options_page div#user_name_pword_container {
+    width: 100%;
+  }
+
+  div.registration-page-container {
+    #F2fRegContact {
+      margin: 0 auto;
+      .sectdter {
+        @extend .row;
+        @extend .mx-0;
+      }
+      .reg-interest-container {
+      div.form-content {
+        .input-container {
+          display:block;
+          @extend .form-check;
+          input[type="radio"],
+          input[type="checkbox"] {
+            @extend .form-check-input;
+          }
+          label {
+            @extend .form-check-label;
+            cursor: pointer;
+          }
+          .survey-question-label {
+            font-weight:bold;
+            text-transform:uppercase;
+          }
+        }
+        > .input-container {
+          padding-left:0;
+        }
+      }
+    }
+
+    }
+    #reg_instr_container,
+    #employment_info_header_container,
+    #email_optin,
+    .survey-question-number,
+    #previous_step {
+      display: none;
+    }
+    div#emergency_contact_container {
+      float: none;
+    }
+
+
+    #emergency_contact_title_container {
+      text-align: center;
+    }
+    h2#emergency_contact_title_container,
+    h2.sub-section-header,
+    h2#password_hdr_container {
+      font-size: 1.8rem;
+      font-weight: normal;
+      text-align: center;
+      color: $primary;
+      margin-top: 3rem;
+      text-transform: none;
+    }
+    .survey-caption-container h2.sub-section-header {
+      text-transform: uppercase;
+    }
+    #cons_info_component_contact_info_section {
+      h2.sub-section-header {
+        display: none;
+      }
+    }
+    .guidelines-question-container {
+      .survey-caption-container {
+        p {
+          color: $primary;
+        }
+      }
+    }
+    .terms-question-container {
+      div.sub-section-header {
+        text-transform: uppercase;
+      }
+    }
+    .indented-field-group,
+    div#employment_information_container div#occupation_container,
+    div#employment_information_container div#employer_container {
+      margin-left: 0;
+    }
+    div.sub-section-body {
+      padding: 0;
+    }
+    div#reg_options_cons_info_extension div.sub-section-body {
+      display:none;
+    }
+    div.field-group-header,
+    div.sub-section-header {
+      @extend .my-2;
+    }
+    #cons_birth_date_date {
+      @extend .d-flex;
+    }
+    li.input-container,
+    div#gift_notice_optin {
+      @extend .form-check;
+      input[type="radio"],
+      input[type="checkbox"] {
+        @extend .form-check-input;
+      }
+      label {
+        @extend .form-check-label;
+      }
+    }
+    div#gift_notice_optin {
+      width: 100%;
+    }
+    div#cons_info_component_container div#personal_info_section_one,
+    div#cons_info_component_container div#personal_info_section_two,
+    div#cons_info_component_container div#contact_info_section_one,
+    div#cons_info_component_container div#contact_info_section_two,
+    div#user_name_pword_container,
+    div#privacy_opts_container,
+    div#tribute_component_section_one,
+    div#tribute_component_section_two,
+    div#emergency_contact_container,
+    div#email_optin {
+      width: 100%;
+    }
+    #personal_info_container {
+      @extend .row;
+    }
+      div#cons_info_component_container div#personal_info_section_one {
+          @extend .d-flex;
+          @extend .flex-row;
+        }
+    @include media-breakpoint-down(md) {
+      div#cons_info_component_container div#personal_info_section_one {
+display:block !important;
+    }
+  }
+    div#privacy_component_container label,
+    div#gift_notice_optin label,
+    div#email_opt_in_container label,
+    div#postal_mail_opt_in_container label,
+    div#remember_me_container label {
+      max-width: 100%;
+    }
+    div#emergency_contact_field_group {
+      margin-left: 0;
+    }
+    .cons_dob {
+      font-weight:bold;
+      text-transform:uppercase;
+    }
+    select {
+      // div.responsive select {
+      &#cons_birth_date_MONTH,
+      &#cons_birth_date_DAY,
+      &#cons_birth_date_YEAR {
+        @include make-col-ready();
+        @include media-breakpoint-up(xs) {
+          @include make-col(4);
+        }
+      }
+    }
+    div#cons_info_component_container,
+    #cons_info_dob,
+    div#participant_info_container,
+    #emergency_contact_container,
+    .survey-question-container,
+    .guidelines-question-container {
+      margin: 0 auto;
+      @include make-col-ready();
+      @include media-breakpoint-up(sm) {
+        @include make-col(6);
+      }
+    }
+    .terms-questions-container {
+      margin: 0 auto;
+      @include make-col-ready();
+      @include media-breakpoint-up(md) {
+        @include make-col(8);
+      }
+    }
+    #employer_container {
+      @include make-col-ready();
+      @include make-col(12);
+    }
+    .cons-info-question-container {
+      @extend .form-group;
+    }
+    .cons-full-name-container {
+      margin-bottom: 0;
+      @include make-col-ready();
+      @include make-col(12);
+      @include media-breakpoint-up(md) {
+        @include make-col(6);
+      }
+    }
+    .input-container {
+      label {
+        display: inline;
+      }
+    }
+    #additional_questions_container {
+      .survey-question-container {
+        width: auto;
+        @extend .form-group; // .input-container {
+        //   label {
+        //     display:inline;
+        //   }
+        // }
+        .survey-date-month,
+        .survey-date-day,
+        .survey-date-year {
+          @include make-col-ready();
+          @include media-breakpoint-up(xs) {
+            @include make-col(4);
+          }
+        }
+      }
+    }
+    .indented-field-group {
+      ul {
+        @extend .d-flex;
+        @extend .justify-content-center;
+        margin: 0 auto;
+        li.input-container {
+          margin-top: 0;
+          @include make-col-ready();
+          @include make-col(6);
+          @include media-breakpoint-up(md) {
+            @include make-col(4);
+          }
+          label {
+            display: inline-block;
+            @extend .btn;
+            @extend .btn-lg;
+            @extend .btn-block;
+            font-weight: 800;
+            @include button-variant($teal, $white, $hover-background: $primary, $hover-border: $primary, $active-background: $primary, $active-border: $primary);
+          }
+        }
+      }
+    }
+    li.input-container input[type="radio"] {
+      position: absolute;
+      margin-left: -1.75rem;
+    }
+  }
+
+  .waiver-area {
+    height: 200px;
+    border: 1px solid;
+    padding: 10px;
+    margin-bottom: 20px;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+    ::-webkit-scrollbar-track {
+      -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+      border-radius: 10px;
+    }
+    ::-webkit-scrollbar-thumb {
+      border-radius: 10px;
+      -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+    }
+    p, ol, li, label {
+      font-size:1rem;
+    }
+  }

@@ -1,0 +1,646 @@
+<!--removeIf(production)-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="description" content="This is a boilerplate for a Bootstrap 4.0.0 project">
+  <meta name="keywords" content="HTML, CSS, JS, Sass, JavaScript, framework, bootstrap, front-end, frontend, web development">
+  <meta name="author" content="Henrik H. Boelsmand">
+  <title>Ride for ALZ</title>
+  <link rel="shortcut icon" href="favicon.ico">
+
+  <link rel="stylesheet" href="assets/css/plugins.css" type="text/css">
+
+  <link rel="stylesheet" href="assets/css/main.css" type="text/css">
+
+  <link rel="stylesheet" href="assets/css/participant-center.css" type="text/css">
+
+  <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js" integrity="sha384-xymdQtn1n3lH2wcu0qhcdaOpQwyoarkgLVxC/wZ5q7h9gHtxICrpcaSUfygqZGOe"
+    crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" integrity="sha256-0rguYS0qgS6L4qVzANq4kjxPLtvnp5nn2nB5G1lWRv4="
+    crossorigin="anonymous"></script>
+</head>
+
+<!-- pushy-open-right -->
+
+<body class="pg_ride_search user-logged-in">
+
+  <!-- Pushy Menu -->
+  <nav class="pushy pushy-right navbar nav-sidebar bg-dark d-block">
+    <!-- <nav class="pushy pushy-right bg-dark"> -->
+    <div class="pushy-header text-right">
+      <button class="navbar-toggler navbar-toggler-right menu-btn p-0 border-0 text-right" type="button" data-toggle="off-canvas"
+        aria-controls="sideMenuContainer" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-times-circle text-secondary" aria-hidden="true"></i>
+        <!-- <i class="fas fa-times-circle text-secondary bg-white rounded-circle" aria-hidden="true"></i> -->
+      </button>
+    </div>
+    <div id="sideMenuContainer" class="pushy-content align-top align-items-start">
+
+      <!-- BEGIN logged out content -->
+
+      <div class="js__logged-out js__logged-out-sidebar">
+
+        <div class="js__side-login-container">
+          <p>Log In</p>
+
+          <div class="js__login-error-container alert alert-danger d-none" role="alert">
+            <span class="" aria-hidden="true"></span>
+            <span class="sr-only">Error:</span>
+            <i class="fas fa-exclamation-triangle" aria-hidden="true"></i>
+            <span class="js__login-error-message"></span>
+          </div>
+
+          <form class="js__side-login-form">
+            <div class="form-group">
+              <label class="sr-only" for="loginUsername">Username</label>
+              <input type="text" name="user_name" id="loginUsername" class="form-control" placeholder="Username" aria-describedby="loginUsernameHelpBlock"
+                data-parsley-trigger="change" data-parsley-minlength="5" data-parsley-maxlength="60" data-parsley-minlength-message="Your username must be at least 5 characters long."
+                data-parsley-maxlength-message="Your username must be at fewer than 60 characters long." data-parsley-required-message="Username is required"
+                data-parsley-required="true" required>
+            </div>
+            <div class="form-group">
+              <label class="sr-only" for="loginPassword">Password</label>
+              <input type="password" name="user_password" id="loginPassword" class="form-control" placeholder="Password" aria-describedby="loginPasswordHelpBlock"
+                data-parsley-trigger="change" data-parsley-minlength="5" data-parsley-maxlength="20" data-parsley-minlength-message="Your password must be at least 5 characters long."
+                data-parsley-maxlength-message="Your password must be at fewer than 20 characters long." data-parsley-required-message="Password is required"
+                data-parsley-required="true" required>
+            </div>
+            <button type="submit" class="btn btn-secondary btn-block">Submit</button>
+          </form>
+
+
+          <ul class="nav flex-column">
+            <li class="nav-item pushy-link">
+              <a class="nav-link" href="#">Forgot your password?</a>
+            </li>
+            <li class="nav-item pushy-link">
+              <a class="nav-link" href="#">Need Help?</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- END logged out content -->
+      <!-- BEGIN logged in content -->
+      <div class="js__logged-in" style="display:none;">
+        <!-- <div class="js__logged-in js__logged-in-sidebar"> -->
+        <p>Welcome,
+          <span class="js__first-name"></span>!</p>
+        <div class="js__has-events">
+
+          <!-- END multiple-events -->
+        </div>
+        <ul class="nav flex-column">
+          <li class="nav-item pushy-link">
+            <a class="nav-link" href="ConsProfileUser?dispMode=edit&amp;pw_id=12165">Edit My Profile</a>
+          </li>
+          <li class="nav-item pushy-link">
+            <a class="nav-link js__log-out-link" href="#">Log Out</a>
+
+          </li>
+        </ul>
+      </div>
+      <!-- END logged in content -->
+    </div>
+  </nav>
+  <!-- END pushy nav sidebar -->
+  <!-- Site Overlay -->
+  <div class="site-overlay"></div>
+
+  <header class="content-container bg-dark">
+    <div class="container nav-container">
+      <div class="row">
+        <div class="col-md-10 order-md-12">
+          <div class="d-flex top-teal-bar bg-secondary justify-content-end">
+            <svg class="tri-top-left d-none d-md-block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 42 64" fill='#4a0d66'>
+              <path d="M0,64,42,0H0Z" />
+            </svg>
+            <!-- landing_search -->
+            <nav class="utility-nav navbar navbar-expand-md p-0 ">
+              <ul class="navbar-nav text-uppercase hw-bar js__logged-out">
+                <li class="nav-item nav-right">
+                  <span class="nav-link">
+                    <a class="menu-btn" href="#">Find a Participant</a>
+                  </span>
+                </li>
+              </ul>
+              <ul class="navbar-nav text-uppercase hw-bar js__logged-in" style="display:none;">
+                <li class="nav-item nav-left">
+                  <span class="nav-link">Welcome,
+                    <span class="js__first-name"></span>!</span>
+                </li>
+                <li class="nav-item nav-right">
+                  <span class="nav-link">
+                    <a class="menu-btn" href="#">Ride Hub
+                      <i class="fas fa-caret-right"></i>
+                    </a>
+                  </span>
+                </li>
+              </ul>
+            </nav>
+            <svg class="tri-bottom-right d-none d-md-flex" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 64" fill='#FFFFFF'>
+              <path d="M0,64,32,0V64Z" />
+            </svg>
+            <nav class="utility-nav navbar navbar-expand-md navbar-light p-0 d-none d-md-flex">
+              <ul class="navbar-nav text-uppercase bg-white hw-bar hw-bar-white js__logged-out">
+                <li class="nav-item">
+                  <span class="nav-link">
+                    <a class="menu-btn" href="#">Log In
+                      <i class="fas fa-caret-right"></i>
+                    </a>
+                  </span>
+                </li>
+              </ul>
+              <ul class="navbar-nav text-uppercase bg-white hw-bar hw-bar-white js__logged-in" style="display:none;">
+                <li class="nav-item">
+                  <span class="nav-link">
+                    <a class="js__log-out-link" href="#">Log Out
+                      <i class="fas fa-caret-right"></i>
+                    </a>
+                  </span>
+                </li>
+              </ul>
+            </nav>
+          </div>
+          <nav class="primary-nav navbar navbar-expand-md bg-black justify-content-between py-0">
+            <svg class="tri-top-left d-none d-md-block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 42 64" fill='#4a0d66'>
+              <path d="M0,64,42,0H0Z" />
+            </svg>
+
+            <button class="navbar-toggler bg-black p-4 collapsed" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+              aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+              <img class="banner-logo float-left" src="assets/images/ride_logo_white.png" alt="Ride to End ALZ" height="80">
+              <!-- <span class="navbar-toggler-icon"></span> -->
+              <i class="fas fa-bars text-white fa-3x"></i>
+              <i class="fas fa-times text-white float-right fa-2x"></i>
+            </button>
+            <div class="navbar-collapse collapse" id="navbarCollapse">
+              <div class="mobile-menu-header col-12 bg-primary text-white p-3 d-md-none">
+                <div class="js__logged-in" style="display:none;">
+                  <em>Welcome,
+                    <span class="js__first-name"></span>
+                  </em>
+                  <br>
+                  <a href="#">Ride Hub</a>
+                  <span class="text-secondary">|</span>
+                  <a href="#">Log Out</a>
+                </div>
+                <div class="js__logged-out">
+                  <em>Welcome,
+                    <span class="js__first-name"></span>
+                  </em>
+                  <a href="#">Find a Participant</a>
+                  <span class="text-secondary">|</span>
+                  <a href="#">Log In
+                    <i class="fas fa-caret-right"></i>
+                  </a>
+                </div>
+              </div>
+              <ul class="navbar-nav ml-auto text-uppercase hw-bar hw-bar-black">
+                <li class="nav-item event-location">
+                  <span class="nav-link text-secondary">
+                    <i class="fas fa-map-pin"></i> Minneapolis, MN
+                  </span>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="false">
+                    About
+                    <span class="d-sm-none float-right">
+                      <i class="fas fa-plus"></i>
+                      <i class="fas fa-minus"></i>
+                    </span>
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="aboutDropdown">
+                    <!-- <span class="pointer"></span> -->
+                    <a class="dropdown-item" href="#">About the Ride </a>
+                    <a class="dropdown-item" href="#">Fundraising</a>
+                    <a class="dropdown-item" href="#">Training</a>
+                    <a class="dropdown-item" href="#">Travel Planner</a>
+                    <a class="dropdown-item" href="#">Request More Information</a>
+                    <a class="dropdown-item" href="#">Team Up</a>
+                    <a class="dropdown-item" href="#">Crew and Volunteer</a>
+                    <a class="dropdown-item" href="#">Sponsors</a>
+                    <a class="dropdown-item" href="#">Contact Us</a>
+                  </div>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="locationsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="false">
+                    Locations
+                    <span class="d-sm-none float-right">
+                      <i class="fas fa-plus"></i>
+                      <i class="fas fa-minus"></i>
+                    </span>
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="locationsDropdown">
+                    <a class="dropdown-item" href="#">Austin, TX</a>
+                    <a class="dropdown-item" href="#">Minneapolis, MN</a>
+                    <a class="dropdown-item" href="#">Davis, CA</a>
+                  </div>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="whyDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Why We Ride
+                    <span class="d-sm-none float-right">
+                      <i class="fas fa-plus"></i>
+                      <i class="fas fa-minus"></i>
+                    </span>
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="whyDropdown">
+                    <a class="dropdown-item" href="#">100% to Alzheimer's Research</a>
+                    <a class="dropdown-item" href="#">Your Fundraising Impact</a>
+                  </div>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">FAQ</a>
+                </li>
+                <li class="nav-item">
+                  <a class="btn btn-secondary btn-block" href="#" role="button" data-toggle="modal" data-target="#registerModal">Register
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="btn btn-secondary btn-block" href="#">Donate</a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+          <!-- dummy div for menu bottom border -->
+          <div class="hw-bar hw-bar-teal d-none d-md-block"></div>
+        </div>
+
+        <div class="col-md-2 order-md-1">
+          <a class="navbar-brand" href="#">
+            <img class="banner-logo" src="assets/images/ride_logo_white.png" alt="Ride to End ALZ" height="103">
+          </a>
+        </div>
+
+      </div>
+    </div>
+    <!-- END container -->
+
+  </header>
+
+  <main class="content-container content" role="main">
+    <!--endRemoveIf(production)-->
+
+    <!-- BEGIN Search section -->
+    <section id="ride_search" class="ride-search-container">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 offset-md-2">
+            <h1 class="text-center js__search-headline">Search</h1>
+            <p>To make a donation, search for a participant to donate on behalf of. You can find participants by name, or search by their Team or Company name.</p>
+          </div>
+        </div>
+
+        <!-- BEGIN search tabs -->
+        <div class="col-md-10 offset-md-1 js__search-tabs-container">
+          <nav class="nav nav-tabs nav-justified border-0 js__search-tabs" id="search-tabs" role="tablist">
+            <a class="nav-item nav-link text-uppercase d-flex align-items-center justify-content-center active" id="participant-search-tab"
+              data-toggle="tab" href="#participant-search-container" role="tab" aria-controls="participant-search-container" aria-expanded="true">Participant</a>
+            <a class="nav-item nav-link text-uppercase d-flex align-items-center justify-content-center" id="team-search-tab" data-toggle="tab"
+              href="#team-search-container" role="tab" aria-controls="team-search-container" aria-expanded="false">Team</a>
+            <a class="nav-item nav-link text-uppercase d-flex align-items-center justify-content-center" id="company-search-tab"
+              data-toggle="tab" href="#company-search-container" role="tab" aria-controls="company-search-container" aria-expanded="false">Company</a>
+          </nav>
+          <div class="tab-content text-center py-4 d-flex justify-content-center" id="nav-tabContent">
+
+            <!-- BEGIN participant tab content -->
+            <div class="tab-pane active show col-md-8" id="participant-search-container" role="tabpanel" aria-labelledby="participant-search-container"
+              aria-expanded="true">
+              <form class="js__participant-search-form">
+
+                <p class="text-white">SEARCH: NAME</p>
+                <div class="d-flex flex-wrap flex-md-nowrap">
+                  <label class="sr-only" for="participantFirstName">First Name</label>
+                  <input id="participantFirstName" type="text" class="col-md-5 form-control form-control-lg border-0 mb-2 mb-md-0 mr-lg-1" style="height:60px;" placeholder="FIRST NAME">
+                  <label class="sr-only" for="participantLastName">Last Name</label>
+                  <div class="d-flex w-100">
+                  <input id="participantLastName" type="text" class="col-md-5 form-control form-control-lg flex-grow-1 search-last-name border-0 ml-lg-1" placeholder="LAST NAME">
+                  <button type="submit" class="btn btn-lg btn-primary">
+                    <span class="sr-only">Search</span>
+                    <i class="fas fa-search"></i>
+                  </button>
+                  </div>
+                </div>
+
+              </form>
+              <div class="js__error-participant-search help-block alert alert-danger text-center mt-2" style="display:none;"></div>
+
+            </div>
+            <!-- END participant tab content -->
+            <!-- BEGIN team tab content -->
+            <div class="tab-pane col-md-6" id="team-search-container" role="tabpanel" aria-labelledby="team-search-container" aria-expanded="false">
+              <form class="js__team-search-form">
+                <p class="text-white">SEARCH: TEAMS</p>
+                <div class="d-flex">
+                  <label class="sr-only" for="teamName">Team Name</label>
+                  <input type="text" class="form-control form-control-lg mb-2" id="teamName" placeholder="TEAM NAME">
+                  <button type="submit" class="btn btn-lg btn-primary mb-2">
+                      <span class="sr-only">Search</span>
+                    <i class="fas fa-search"></i>
+                  </button>
+                </div>
+              </form>
+              <div class="js__error-team-search help-block alert alert-danger text-center mt-2" style="display:none;"></div>
+            </div>
+            <!-- END team tab content -->
+            <!-- BEGIN company tab content -->
+            <div class="tab-pane col-md-6" id="company-search-container" role="tabpanel" aria-labelledby="company-search-container">
+              <form class="js__company-search-form">
+                <p class="text-white">SEARCH: COMPANIES</p>
+                <div class="d-flex">
+                  <label class="sr-only" for="companyName">Company Name</label>
+                  <input type="text" class="form-control form-control-lg mb-2" id="companyName" placeholder="COMPANY NAME">
+                  <button type="submit" class="btn btn-lg btn-primary mb-2">
+                      <span class="sr-only">Search</span>
+                      <i class="fas fa-search"></i>
+                  </button>
+                </div>
+              </form>
+              <div class="js__error-company-search help-block alert alert-danger text-center mt-2" style="display:none;"></div>
+            </div>
+            <!-- END company tab content -->
+          </div>
+        </div>
+        <!-- END search tabs -->
+        <div class="col-md-10 offset-md-1 text-center js__refine-search-container" style="display:none;">
+          <p>
+            <a href="#" class="btn btn-secondary js__refine-search">Refine Search <i class="fas fa-search"></i></a>
+          </p>
+        </div>
+
+        <!-- BEGIN search results container -->
+        <div class="search-results-container js__search-results col-md-8 offset-md-2">
+            
+            <div class="js__loading py-4 text-center  text-primary" style="display:none;"><i class="fas fa-cog fa-2x fa-spin"></i><br>
+              Loading...
+            </div>
+          <div id="participant_results" class="results-table py-4 js__search-results-container" style="display:none;"></div>
+        </div>
+        <!-- END search results container -->
+        <div class="row d-flex justify-content-center">
+          <div class="col-md-12 text-center py-4">
+            <p class="lead">
+              <i>Not finding what you're looking for?</i>
+            </p>
+          </div>
+        </div>
+
+        <div class="row d-flex justify-content-center">
+          <div class="col-md-3">
+            <a class="btn btn-secondary btn-lg btn-block text-uppercase" href="SPageServer/?pagename=ride_contact_us" role="button">Contact Us</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+    <!-- END Search section -->
+
+
+
+    <!--removeIf(production)-->
+  </main>
+
+
+  <!-- Modal -->
+  <div class="modal fade register-modal" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="registerModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content text-center">
+        <div class="modal-header">
+          <h5 class="modal-title text-primary m-auto pt-3" id="registerModalLabel">Choose a Location:</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true" class="text-primary">
+              <i class="fas fa-times"></i>
+            </span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="card-deck justify-content-center flex-column">
+            <div class="card text-center">
+              <a class="" href=#>
+                <div class="d-flex align-items-center justify-content-center">
+                  <h3 class="card-title">
+                    <span class="location-name h4">Austin</span>
+                    <span class="location-date h5">Jan 26
+                      <i class="fas fa-caret-right"></i>
+                    </span>
+                  </h3>
+                </div>
+              </a>
+            </div>
+            <div class="card text-center">
+              <a class="" href=#>
+                <div class="d-flex align-items-center justify-content-center">
+                  <h3 class="card-title">
+                    <span class="location-name h4">San Francisco</span>
+                    <span class="location-date h5">Feb 10
+                      <i class="fas fa-caret-right"></i>
+                    </span>
+                  </h3>
+                </div>
+              </a>
+            </div>
+
+            <div class="card text-center">
+              <a class="" href=#>
+                <div class="d-flex align-items-center justify-content-center">
+                  <h3 class="card-title">
+                    <span class="location-name h4">Seattle</span>
+                    <span class="location-date h5">Mar 23
+                      <i class="fas fa-caret-right"></i>
+                    </span>
+                  </h3>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="py-5 bg-primary">
+    <div class="container top-footer-container">
+      <div class="row">
+        <div class="col-12 text-center">
+          <a class="navbar-brand" href="#">
+            <img class="banner-logo" src="assets/images/ride_logo_white.png" alt="Ride to End ALZ" height="103">
+          </a>
+        </div>
+      </div>
+      <div class="row mt-3">
+        <div class="col-12 col-md text-center">
+          <h4>
+            <a href="#">Register</a> |
+            <a href="#">Donate</a> |
+            <a href="#">Find a Participant</a>
+          </h4>
+        </div>
+      </div>
+      <div class="row justify-content-center mt-3">
+        <div class="col-1">
+          <a href="#" class="d-flex footer-social-icon align-items-center justify-content-center">
+            <i class="fab fa-facebook-f fa-2x"></i>
+          </a>
+        </div>
+        <div class="col-1">
+          <a href="#" class="d-flex footer-social-icon align-items-center justify-content-center">
+            <i class="fab fa-twitter fa-2x"></i>
+          </a>
+        </div>
+        <div class="col-1">
+          <a href="#" class="d-flex footer-social-icon align-items-center justify-content-center">
+            <i class="fab fa-instagram fa-2x"></i>
+          </a>
+        </div>
+        <div class="col-1">
+          <a href="#" class="d-flex footer-social-icon align-items-center justify-content-center">
+            <i class="fab fa-youtube fa-2x"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="row text-center mt-3">
+        <div class="col">
+          <h6 class="h4 text-white">
+            <span class="text-secondary">#</span>RideToEndALZ</h6>
+        </div>
+      </div>
+    </div>
+    <!-- BEGIN footer links -->
+    <div class="container middle-footer-container">
+      <div class="row">
+        <div class="col-md-3">
+          <h5>ABOUT</h5>
+          <ul class="list-unstyled text-small">
+            <li>
+              <a class="link-text" href="#">About the Ride</a>
+            </li>
+            <li>
+              <a class="link-text" href="#">Fundraising</a>
+            </li>
+            <li>
+              <a class="link-text" href="#">Training</a>
+            </li>
+            <li>
+              <a class="link-text" href="#">Travel Planner</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <ul class="list-unstyled text-small">
+            <li>
+              <a class="link-text" href="#">Team Up</a>
+            </li>
+            <li>
+              <a class="link-text" href="#">Volunteer & Crew</a>
+            </li>
+            <li>
+              <a class="link-text" href="#">Sponsors</a>
+            </li>
+            <li>
+              <a class="link-text" href="#">Request More Info</a>
+            </li>
+            <li>
+              <a class="link-text" href="#">Contact Us</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <h5>LOCATIONS</h5>
+          <ul class="list-unstyled text-small">
+            <li>
+              <a class="link-text" href="#">Austin, TX</a>
+            </li>
+            <li>
+              <a class="link-text" href="#">Minneapolis, MN</a>
+            </li>
+            <li>
+              <a class="link-text" href="#">Seattle, WA</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <h5>WHY WE RIDE</h5>
+          <ul class="list-unstyled text-small">
+            <li>
+              <a class="link-text" href="#">100% to Research</a>
+            </li>
+            <li>
+              <a class="link-text" href="#">Your Fundraising Impact</a>
+            </li>
+            <li>
+              &nbsp;
+            </li>
+            <li>
+              <a class="link-text" href="#">
+                <strong>FAQ</strong>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- END footer links -->
+    <!-- BEGIN bottom footer -->
+    <div class="bottom-footer-container text-center bg-darkpurple">
+      <div class="row">
+        <div class="col-12 col-md text-white">
+          <img alt="Alzheimer's Association: the brains behind saving yours" src="http://act.alz.org/2015longestday/images/alz_footer_logo.png">
+          <p class="mt-4">1 (800) 272 3900
+            <br>Alzheimer's Association Home Office 225 N. Michigan Ave., Fl. 17, Chicago, IL 60601
+            <br>Alzheimer's Association is a not-for-profit 501(c)(3) organization.</p>
+          <p class="mt-1">Copyright &copy; 2018 Alzheimer's Association&reg;. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+    <!-- END bottom footer -->
+    <div class="utility-footer-container container">
+      <div class="row mt-3">
+        <div class="col-12 col-md text-center text-white">
+          <p>
+            <a href="http://www.alz.org/walk">ALZ.org</a> |
+            <a href="#">About ALZ</a> |
+            <a href="#">ALZ Blog</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+
+  <script src="assets/js/vendor/jquery-2.2.4.min.js"></script>
+  <script src="assets/js/vendor/popper.min.js"></script>
+  <script src="assets/js/vendor/bootstrap.min.js"></script>
+  <script src="assets/js/vendor/luminate-extend-1.8.1.js"></script>
+  <script src="assets/js/vendor/pushy.min.js"></script>
+  <script>
+    // document.getElementsByTagName('html')[0].setAttribute('lang', 'en');
+    luminateExtend({
+      apiKey: 'ALZADARDA',
+      path: {
+        nonsecure: 'http://act.alz.org/site/',
+        secure: 'https://act.alz.org/site/'
+      }
+    });
+
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/parsley.js/2.8.1/parsley.min.js"></script>
+  <script src="assets/js/main.js"></script>
+ 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/holder/2.9.4/holder.min.js"></script>
+
+</body>
+
+</html>
+<!--endRemoveIf(production)-->

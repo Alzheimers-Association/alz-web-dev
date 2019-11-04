@@ -1,0 +1,232 @@
+// .app_tr_registration {
+#FriendraiserUserWaiver {
+  margin: 0 auto;
+  .section-footer {
+    // @extend .row;
+    display:block !important;
+  }
+  .btn-light-grey {
+    color: $white !important;
+    @include button-variant($gray-400, $white, $hover-background: $gray-700, $hover-border: $gray-700, $active-background: $gray-700, $active-border: $gray-700);
+  }
+}
+
+
+div.reg-summary-thanks-common-container {
+  div.label-value-block-container {
+    border: 2px solid $secondary;
+    border-radius:0;
+    font-weight: 800;
+    background-color: #fff;
+    @include make-col-ready();
+    @include make-col(12);
+    @include media-breakpoint-up(md) {
+      @include make-col(8);
+    }
+  }
+  
+  div.reg-summary-total > div,
+  #page_info2_container {
+    font-size:1.3rem;
+  }
+  div.reg-summary-event-info > div {
+    margin-right:0;
+  }
+
+  div.registration-page-container #reg_total_amt {
+    padding-right:5px;
+  }
+  .total-label {
+    margin-right: 2rem;
+  }
+  div.label-value-block-container {
+    float: right;
+  }
+  div.action-button-container {
+    float:none;
+  }
+  .reg-summary-option-info-container {
+    width:100%;
+    display:table !important;
+  }
+  div.reg-summary-address-info>div {
+    padding: 0;
+  }
+  div.action-button-container {
+    text-align:right;
+    width:auto;
+    margin-bottom:0.75rem 0;
+  }
+  div.reg-summary-name-info {
+    background-color: $white;
+    border: 0;
+    padding: 1rem 0;
+  }
+  
+  div.reg-summary-address-info {
+    width:33.33333%;
+    vertical-align:top;
+    padding-top:15px;
+  }
+  
+  div.reg-summary-event-info {
+   width:66.66666%;
+   padding:10px;
+  }
+
+  div.reg-summary-name-info span.contact-info-first,
+  div.reg-summary-name-info span.contact-info-name {
+    display: inline;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: $body-color;
+  }
+  
+  div.reg-summary-address-info {
+    border-right: 0;
+  }
+  
+  .reg-summary-edit-link {
+    a {
+      color: $secondary !important;
+    }
+  }
+  
+  div.reg-summary-total>div {
+    padding-right: 0;
+  }
+  
+  div.reg-summary-part-type,
+  div.reg-summary-additional-gift {
+    background-color: #ececec !important;
+  }
+  
+  div.reg-summary-total>div {
+    font-weight: 800;
+  }
+
+}
+
+
+
+@include media-breakpoint-down(md) {
+  div.reg-summary-thanks-common-container {
+    div.reg-summary-address-info,
+    div.reg-summary-event-info {
+      width:100%;
+      display:block;
+    }
+    div.reg-summary-address-info {
+      border-bottom:0;
+      border-top:1px solid $body-color;
+      border-right:1px solid $body-color;
+      border-left:1px solid $body-color;
+    }
+    div.reg-summary-event-info {
+      border-top:0;
+      border-bottom:1px solid $body-color;
+      border-right:1px solid $body-color !important;
+      border-left:1px solid $body-color;
+    }
+  }
+  div.action-button-container {
+    float:none;
+  }
+  #FriendraiserUserWaiver {
+    .btn-secondary {
+      width:100%;
+    }
+  }
+}
+
+//   .ObjTitle {
+//       @extend .h2;
+//   }
+//   div.reg-summary-thanks-common-container {
+//     div.reg-summary-name-info,
+//     div.reg-summary-address-info,
+//     div.reg-summary-event-info,
+//     div.reg-summary-event-info > div{
+//       background-color:#fff;
+//       border:none;
+//       padding:0;
+//       width:100%;
+//       display:inline;
+//     }
+//   }
+//   .reg-summary-edit-link a{
+//     text-decoration:underline;
+//   }
+//   div.registration-page-container div.label-value-block-container {
+//     font-weight:bold;
+//     font-size:normal;
+//     background-color:#fff;
+//     border:none;
+//   }
+//   #reg_summary_body_container .manageable-content,
+//   .left-decorator {
+//     display:none;
+//   }
+//   div.reg-summary-thanks-common-container {
+//     div.reg-summary-name-info span.contact-info-name {
+//       color:$body-color;
+//     }
+//     div.reg-summary-name-info span.contact-info-first,
+//     div.reg-summary-name-info span.contact-info-name {
+//       color:$body-color;
+//       display:inline;
+//       font-size:$font-size-lg;  
+//       font-weight:bold;
+//     }
+//     div.reg-summary-event-info > div {
+//       padding:0;
+//     }
+//     div.action-button-container {
+//       width:100%
+//     }
+//     div.reg-summary-total {
+//       background-color:#fff;
+//       text-align:left;
+//       font-weight:bold;
+//       @extend .pt-3;
+//       .total-label {
+//         text-align:left;
+//       }
+//       .total-amount {
+//         float:right;
+//       }
+//       > div {
+//         padding:0;
+//       }
+//     }
+//   }
+//   div.responsive button.step-button {
+//     &.cancel-step {
+//       color: $primary;
+//       border:none !important;
+//       &:hover {
+//         background-color:transparent !important;
+//         border:none !important;
+//         color: $primary;
+//       }
+//     }
+//   }
+//     div.reg-summary-address-info {
+//       color:$body-color;
+//       border:none;
+//       background:$white;
+//         &.mobile-hidden {
+//           display:inline-block;
+//         }
+//     }
+div.reg-summary-event-info {
+  @include make-col-ready();
+  @include media-breakpoint-up(xs) {
+    @include make-col(12);
+  }
+  @include media-breakpoint-up(md) {
+    @include make-col(4);
+  }
+}
+
+// }

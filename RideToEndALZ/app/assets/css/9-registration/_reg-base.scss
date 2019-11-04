@@ -1,0 +1,243 @@
+.content {
+  width:100%;
+  max-width:100%;
+}
+.app_id_27 {
+  .interior-header {
+    margin-bottom:3rem;
+  }
+  main.content-container {
+    padding-bottom: 3rem;
+  }
+  div.responsive a.next-step, div.responsive button.next-step, div.responsive button.finish-step {
+    float:none;
+  }
+}
+
+.registration-header {
+  font-size: 1.6rem;
+  font-weight: 100;
+  strong {
+    font-weight: 800;
+  }
+  a {
+    text-decoration: underline;
+    &:hover {
+      color: $white;
+      text-decoration: none;
+    }
+  }
+}
+
+h1.reg-headline,
+.section-header-text,
+#title_container {
+  font-size: 2.5rem;
+  color:$primary;
+  text-transform:none;
+  border:0;
+  font-weight: 400;
+}
+h2.reg-sub-headline {
+  font-size: 2rem;
+  color:$primary;
+  text-transform:uppercase;
+  border:0;
+  font-weight: 400;
+  margin: 2rem 0 1rem;
+}
+.app_tr_registration {
+  // input overrides
+  div.responsive {
+    width: inherit;
+    input {
+      vertical-align: middle;
+    }
+    input[type="text"],
+    input[type="tel"],
+    input[type="email"],
+    input[type="number"],
+    input[type="password"],
+    textarea,
+    select {
+      box-shadow: none;
+      @extend .form-control;
+      height: calc(2.25rem + 2px);
+    }
+    textarea,
+    input,
+    select,
+    option {
+      max-width: 100% !important;
+    }
+    a.step-button,
+    button.step-button,
+    input.step-button {
+      width: 100%;
+      // width: 50%;
+      margin: 0 auto;
+      text-transform: uppercase;
+      font-weight: 800;
+      font-size:1.6rem;
+      @include media-breakpoint-down(md) {
+        width: 100%;
+      }
+      &.btn-primary {
+        @extend .btn-primary;
+      }
+    }
+    div.ErrorMessage.page-error {
+      margin: 0 auto;
+    }
+    div.ErrorMessage.page-error>span.field-error-text {
+      width: auto;
+    }
+  }
+  // .section-header-text {
+  //   color: $primary;
+  //   @extend .h1;
+  // }
+  div.registration-page-container div.section-container {
+    color: $body-color;
+  }
+  div.registration-page-container div.sub-section-header,
+  div.registration-page-container div.sub-section-container {
+    border: none;
+    background-color: $white;
+  }
+  div.registration-page-container div.sub-section-header {
+    padding: 0;
+    margin: 0;
+  }
+  input[type="checkbox"],
+  .don-no-gift input {
+    @extend .form-check-input;
+  }
+  .donation-level-row-label-no-gift,
+  label[for="fr_show_public_gift"],
+    {
+    @extend .form-check-label;
+  }
+  .progress-bar-container {
+    display: none;
+  }
+  .campaign-banner-container,
+  div.registration-page-container div.section-container {
+    border: none;
+    margin: 0;
+  }
+  .campaign-banner-container {
+    display: none;
+  }
+  div.registration-page-container div.section-body,
+  div.registration-page-container div.section-header,
+  div.registration-page-container div.section-sub-header, // div.registration-page-container #team_find_section_footer,
+  div.registration-page-container div.section-footer {
+    background-color: #fff;
+    border: none;
+    padding: 0;
+  }
+  div.registration-page-container div.section-footer {
+    margin-top:3rem;
+    @extend .col-md-12;
+  }
+  div.registration-page-container div.section-header {
+    text-align: center;
+  }
+  div.required-indicator-legend {
+    text-align: center;
+    padding: 0;
+  }
+  div.responsive div.form-content {
+    // margin-bottom: 0;
+    @extend .form-group;
+    @extend .mx-0;
+  }
+  div.registration-page-container div.section-footer {
+    clear: both;
+    margin-right:0;
+    @extend .d-flex; // @extend .row;
+  }
+  .header-container {
+    width: 100%;
+  }
+  .bold-label {
+    font-size: 1.25rem;
+    font-weight: 600;
+  }
+  label {
+    text-transform: uppercase;
+    font-weight: 800;
+  }
+}
+
+.reg-text {
+  p {
+    font-size: 1.3rem;
+    color: $body-color;
+  }
+}
+// http://jsfiddle.net/nmu8H/2530/
+input[type='radio'] {
+  -webkit-appearance:none;
+  width:20px;
+  height:20px;
+  border-radius:50%;
+  outline:none;
+  box-shadow:30px 30px #DEE2E6 inset;
+  width: 1rem;
+  height: 1rem;
+  content: "";
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 50% 50%;
+}
+input[type='radio']:before {
+  content:'';
+  display:block;
+  margin: 15% auto;    
+  // margin: 15% auto;    
+  border-radius:50%;    
+  width: .75rem;
+height: .75rem;
+content: "";
+background-repeat: no-repeat;
+background-position: center center;
+background-size: 50% 50%;
+}
+
+input[type='radio']:checked:before {
+  background:$secondary;
+}
+div.responsive span.field-required {
+  display: inline-block;
+  zoom: 1;
+  height: 9px;
+  width: 9px;
+   background-image: url('https://secure2.convio.net/adardadev/images/required.png');
+  background-repeat: no-repeat;
+  vertical-align: top;
+  margin-top: 2px;
+}
+
+@include media-breakpoint-down(sm) {
+  
+  .app_id_27 {
+    .interior-header {
+    background-color:$black !important;
+      margin-bottom:1.5rem;
+    }
+    main.content-container {
+      padding-bottom: 1.5rem;
+    }
+  }
+  .registration-header {
+    font-size: 1.2rem;
+    text-align:center !important;
+
+    strong,
+    a {
+      display:block;
+    }
+  }
+}

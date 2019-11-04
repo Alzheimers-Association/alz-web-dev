@@ -1,0 +1,20 @@
+.pg_ride_search {
+  
+  .search-result-details {
+    a {
+      text-decoration:underline;
+      color: $primary;
+    }
+  }
+  @include media-breakpoint-up(md) {
+    .search-last-name {
+      max-width: 68%;
+    }
+  }
+  @include media-breakpoint-down(md) {
+    .nav-item {
+      font-weight:normal;
+      font-size:0.89rem;
+    }
+  }
+}

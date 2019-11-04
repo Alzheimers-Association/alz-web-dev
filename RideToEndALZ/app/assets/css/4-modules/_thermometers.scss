@@ -1,0 +1,218 @@
+
+  // Progress Styles
+  .fundraiser-progress-container {
+    .h2 {
+      font-weight: bold;
+      color: $primary;
+      display:block;
+      font-size:3rem;
+      margin-bottom:0;
+    }
+    .progress-header,
+    .progress-wrap {
+      position: relative;
+    }
+
+    .fundraiser-stats {
+      hr {
+        height:4px;
+        max-width:80%;
+      }
+    }
+ 
+    .progress-wrap {
+      border:2px solid $primary;
+    }
+    .progress {
+      height: 69px;
+      .progress-bar {
+        height: 70px;
+        border-bottom: 0;
+        background: radial-gradient(at top left, $primary, $secondary);
+      }
+    }
+    .progress-marker {
+      width: 2px;
+      height: 5px;
+      position: absolute;
+      background: $primary;
+      bottom: 0;
+    }
+    .percent-raised {
+      color:$secondary;
+      font-size:2rem;
+      margin-left:1rem;
+      font-style:italic;
+      font-weight:bold;
+      &.invert-percent-raised {
+        margin-left:-90px;
+        padding-right:10px;
+        // position:absolute;
+        // top: 0.5rem;
+        // right: 1rem;
+        color:$white;
+      }
+      &.progress-goal-met {
+        color:$white;
+        position:absolute;
+        top: 0.35rem;
+        right: 0.65rem;
+      }
+    }
+  } 
+  .pg_entry,
+  .pg_personal,
+  .pg_team {
+    .fundraiser-progress-container {
+      background-color: #ccc;
+  }
+}
+
+  @include media-breakpoint-up(sm) {
+  .fundraiser-progress-container {
+
+    .progress-header {
+      margin-top:6rem;
+    }
+    .fundraiser-raised,
+    .fundraiser-goal {
+      position: absolute;
+      bottom: 0;
+    }
+    .fundraiser-raised {
+      text-align:left;
+      left: 0;
+    }
+    .fundraiser-goal {
+      right: 0;
+      text-align:right;
+    }
+    }
+  }
+
+
+.pg_entry {
+  .fundraiser-progress-container {
+    small {
+      font-size: 1.8rem;
+    }
+    .fundraiser-raised {
+      text-align:center;
+    }
+}
+@include media-breakpoint-down(sm) {
+  .fundraiser-progress-container {
+
+  .progress-container {
+    padding-right: 0;
+    padding-left: 0;
+  }
+  }
+}
+}
+
+.pg_personal,
+.pg_team,
+.pg_company {
+  .fundraiser-progress-container {
+    .progress-header {
+      margin-top: 4rem;
+    }
+    small {
+      color: $body-color;
+      font-size: 1.3rem;
+    }
+    .h2 {
+      font-size: 1.75rem;
+    }
+    .progress {
+      height: 60px;
+    }
+  }
+
+  @include media-breakpoint-down(md) {
+    .fundraiser-progress-container {
+      .button {
+        width:100%;
+      }
+      .fundraiser-raised,
+      .fundraiser-goal {
+        position: absolute;
+        bottom: 0;
+      }
+      .fundraiser-raised {
+        text-align:left;
+        left: 0;
+      }
+      .fundraiser-goal {
+        right: 0;
+        text-align:right;
+      }
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    .progress-donate-container {
+      padding-right: 0;
+      padding-left: 0;
+    }
+    
+  }
+
+
+}
+
+
+.pg_ridepc {
+  .fundraiser-progress-container {
+    .progress-header {
+      margin-top: 4rem;
+    }
+    .percent-raised {
+      font-size: 1.3rem;
+      line-height: 3rem;
+    }
+    small {
+      color: $body-color;
+      font-size: 1.2rem;
+    }
+    .h3 {
+      font-size: 1.3rem;
+      font-weight:800;
+    }
+    .progress {
+      height: 50px;
+      .progress-bar {
+        height: 51px;
+      }
+    }
+  }
+
+  @include media-breakpoint-down(md) {
+    .fundraiser-progress-container {
+      .button {
+        width:100%;
+      }
+      .fundraiser-raised,
+      .fundraiser-goal {
+        position: absolute;
+        bottom: 0;
+      }
+      .fundraiser-raised {
+        text-align:left;
+        left: 0;
+      }
+      .fundraiser-goal {
+        right: 0;
+        text-align:right;
+      }
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    .progress-donate-container {
+      padding-right: 0;
+      padding-left: 0;
+    }
+  }
+}

@@ -1,0 +1,234 @@
+a {
+  &.button {
+    &.reg-option-link {
+      font-size: 1.3rem;
+      font-weight:800;
+      display:block;
+      line-height: 2.6em;
+      margin:0;
+      padding:0 0 0 1rem;
+      height:55px;
+      border:0;
+      position:relative;
+      &:after {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 5px;
+        background:rgba(0,0,0,0.3);
+        content: "";
+      }
+    }
+  }
+}
+form[name="FriendraiserFind"]{
+  display:none;
+}
+.reg-icon {
+  background-color:$primary;
+  height:55px;
+  width:50px;
+}
+
+
+.app_tr_registration {
+
+  div#team_find_new_team_attributes input[type="text"],
+  div#team_find_new_team_attributes input[type="tel"],
+  div#team_find_new_team_attributes input[type="email"],
+  div#team_find_new_team_attributes input[type="password"],
+  div#team_find_new_team_company #fr_division_name .mobile div.registration-page-container select,
+  .mobile select#matchingAddresses {
+    margin-top: 0;
+  }
+  #team_find_search_button_container {
+    text-align:center;
+    @extend .mt-4;
+  }
+  div.responsive a.button {
+    &.btn-dropdown {
+      background:$white;
+      color: $body-color;
+      border:1px solid $body-color;
+      text-align:left;
+      &:after {
+       @extend .flex-column;
+        text-align:right;
+        align-self: center;
+      }
+    }
+  }
+  #team_find_page div.combo-select-input-container {
+    margin:0;
+    display: inline;
+  }
+  #team_find_page div#team_find_search_results_container {
+    background-color:#fff;
+    border: none;
+  }
+  #team_find_page div.list-component-row {
+    border-radius:0;
+    background-image:none;
+    border:none;
+    border-bottom: 1px solid $input-border-color;
+  }
+  label[for="fr_co_list_1"],
+  label[for="fr_co_list_sel"],
+  label[for="fr_co_list_2"],
+  .combo-select-input-container label[for="fr_co_list_new"] {
+    @extend .sr-only;
+  }
+  #fr_co_list_new {
+    @extend .mt-2;
+  }
+  // div#team_find_search_results_container div.list-component-cell.list-component-cell-column-join-link
+  div#team_find_search_results_container div.list-component-cell-column-join-link {
+    @include media-breakpoint-down(sm) {
+      width:100%;
+      float:none;
+      a {
+        width: 100%;
+        margin: 1rem 0;
+      }
+  }
+  }
+  .dropdown-menu {
+    width:100%;
+    margin-top:0;
+    border-top:none;
+    .dropdown-item {
+      color:$body-color;
+    }
+  }
+  
+
+    #team_find_registration_type_container,
+    #F2fRegContact,
+    #FriendraiserUserWaiver {
+      @include make-col-ready();
+      @include media-breakpoint-up(xs) {
+        @include make-col(12);
+      }
+      // @include media-breakpoint-up(md) {
+      //   @include make-col(6);
+      // }
+    }
+    #team_find_new_team_company,
+    #team_find_new_team_attributes {
+      width:100%;
+    }
+    div.responsive div.ErrorMessage.page-error,
+    form[name="FriendraiserFind"] {
+      @include make-col-ready();
+      @include media-breakpoint-up(xs) {
+        @include make-col(12);
+      }
+      @include media-breakpoint-up(md) {
+        @include make-col(10);
+      }
+    }
+
+    form[name="FriendraiserFind"] {
+      margin:0 auto;
+    }
+      #team_find_existing {
+        // @extend .offset-md-3;
+        @include make-col-ready();
+        @include make-col(12);
+
+        // @include media-breakpoint-up(md) {
+        //   @include make-col(6);
+        // }
+      }
+      #team_find_existing_team_search_container,
+      #team_find_existing_company_selection_container,
+      #team_find_search_button_container {
+        width:100%;
+        // @include make-col-ready();
+        // @include media-breakpoint-up(md) {
+        //   @include make-col(12);
+        // }
+      }
+      
+      #team_find_section_container
+      #team_find_section_body{
+        @include make-col-ready();
+        @include media-breakpoint-up(md) {
+          @extend .offset-md-3;
+          @include make-col(6);
+        }
+      }
+ 
+      #team_find_section_footer {
+        @include make-col-ready();
+        @include media-breakpoint-up(md) {
+          @extend .offset-md-4;
+          @include make-col(4);
+        }
+      }
+      // div.registration-page-container #team_find_section_footer {
+      //   @include make-col-ready();
+      //   @include media-breakpoint-up(md) {
+      //     @extend .offset-md-6;
+      //     @include make-col(3);
+      //   }
+      // }
+
+      // LABEL overrides
+      #team_find_page {
+        label,
+        .input-label {
+          // TODO - update these across registration
+          margin-left: inherit;
+          font-size: inherit;
+        }
+        #fr_division_name {
+          margin-left:0;
+        }
+      }
+
+
+      #team_find_registration_type_container {
+        text-align:center;
+        font-weight:bold;
+        font-size:1rem;
+        p {
+          font-weight:normal;
+        }
+        a {
+          color:$secondary;
+          text-decoration:underline;
+          font-size:1rem;
+        }
+      }
+
+
+
+}
+#team_find_registration_type_container {
+  display:none;
+}
+.reg-team-search-results {
+  .team-name {
+    font-size: 1.3rem;
+    font-weight:800;
+    color:$primary;
+  }
+  .captain-name {
+    font-weight:bold;
+    color:#494949;
+  }
+  .team-company-name {
+    color:#494949;
+  }
+  .button {
+    color:$white !important;
+    font-weight:bold;
+  }
+
+  .results-table > .row {
+    padding:1rem 0;
+    border-bottom:8px solid #dddddd;
+  }
+}

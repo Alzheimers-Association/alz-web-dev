@@ -1,0 +1,319 @@
+
+
+#F2fRegPartType {
+    #part_type_selection_container,
+    #discount_code_container,
+    #part_type_fundraising_goal_container {
+      margin:0 auto;
+    @include make-col-ready();
+    @include media-breakpoint-up(sm) {
+      @include make-col(6);
+      // @extend .offset-md-3;
+
+    }
+    // @include media-breakpoint-up(md) {
+    //   @include make-col(6);
+    // }
+  }
+#part_type_section_container {
+  .section-sub-header,
+  .part-type-name-value-separator,
+  .part-type-fee-text  {
+    display:none;
+  }
+}
+  .donation-level-container {
+   float:none;
+  }
+  .don-level-btn {
+    .donation-level-row-decoration-container {
+      width: 100%;
+      input[type="radio"]{
+        position: absolute;
+        left: 1.75rem;
+        top: 1rem;
+      }
+      // @include media-breakpoint-down(sm) {
+      //   input[type="radio"]{
+      //     top: 25%;
+      //   }
+      // }
+    }
+    .donation-level-row-label {
+      @extend .btn;
+      @extend .btn-lg;
+      @extend .btn-block;
+      font-weight:800;
+      @include button-variant($teal, $white, $hover-background: $primary, $hover-border: $primary, $active-background: $primary, $active-border: $primary);
+
+    }
+  }
+      @include media-breakpoint-down(sm) {
+        div.donation-level-container {
+          margin-right: 0;
+      }
+      }
+  #part_type_selection_container {
+    @extend .mt-2;
+  }
+  #sel_type_container,
+  #fund_goal_container,
+  #disc_code_container,
+  .sub-section-container .sub-section-header,
+  #emergency_contact_title_container {
+    @extend .bold-label;
+  }
+  
+  #F2fRegPartType,
+  #participation_options_page {
+    margin:0 auto;
+    .input-container {
+      clear:both;
+    }
+  }
+  
+  div.part-type-container {
+    display:none;
+    position:relative;
+    min-height: 1.5rem;
+    padding: 1rem 0 1rem 1.5rem;
+
+      .part-type-decoration-messages {
+        width:100%;
+        max-width:100%;
+        background:$secondary;
+        margin:0;
+
+      }
+      &.selected {
+      .part-type-decoration-messages {
+        background:$primary;
+        @include transition($btn-transition);
+
+       .custom-control-label::before {
+          background:$secondary;
+          border:2px solid $gray-300;
+        }
+       }
+      }
+      label {
+        height:100%;
+        width:100%;
+        margin:0;
+        padding-top: 1rem;
+        // @extend .custom-control-label;
+
+
+        // position: absolute;
+        // top: 0.25rem;
+        // left: 0;
+        // display: block;
+        // width: 1rem;
+        // height: 1rem;
+        // content: "";
+        // background-repeat: no-repeat;
+        // background-position: center center;
+        // background-size: 50% 50%;
+
+
+        &:hover {
+          cursor:pointer;
+        background:$primary;
+          @include transition($btn-transition);
+
+        }
+      }
+      input {
+        margin-top: 36px;
+        position: absolute;
+        top: 0.25rem;
+        left: -.5rem;
+        display: block;
+      }
+      .part-type-name {
+        font-size:1.4rem;
+        font-weight:500;
+        color:$white;
+      }
+      .ptype-subhead {
+        font-size:1rem;
+        font-weight:400;
+        text-transform:none;
+        color:$white;
+      }
+      .ptype-subhead,
+      .part-type-name {
+        display: inline-block;
+        padding-left:0.75rem;
+      }
+      .ptype-subhead{
+        padding-bottom: 0.5rem;
+        display: block;
+      }
+      .part-type-description-text {
+        // display:none;
+        background:#f7f7f7;
+        height:100%;
+        position:relative;
+        padding:0.75rem;
+        font-weight:400;
+        text-transform:none;
+        &:before {
+          position: absolute;
+          left: 0;
+          top: -5px;
+          width: 100%;
+          height: 5px;
+          background:rgba(0,0,0,0.3);
+          content: "";
+        }
+        br {
+          line-height:1rem;
+        }
+        ul {
+          padding-top:0.75rem;
+          font-weight:400;
+          font-size: 14px;
+        } 
+      }
+      .ptype-collapse-link {
+        text-align:center;
+        background:#186B63;
+        color:$white;
+        display:block;
+        margin: 0 -0.75rem -0.70rem -0.75rem;
+        &.collapsed {
+          .fa-caret-up {
+            display:none;
+          }
+          .fa-caret-down {
+            display:inline-block;
+          }
+        }
+        .fa-caret-up {
+          display:inline-block;
+        }
+        .fa-caret-down {
+          display:none;
+        }
+      }
+      // @include media-breakpoint-down(sm) {
+      //   input {
+      //     top: 35%;
+      //     left: 10%;
+      //   }
+      // }
+
+    &.selected {
+      // @extend .btn-primary;
+      // border-radius: 0;
+      // border: 1px solid $red;
+      background-color: $white;
+      border:0;
+      margin-top:0;
+      margin-bottom:0;
+    }
+  
+    // &.ptype-full {
+    //   &.selected {
+    //     color: #212529;
+    //   }
+    //   &:hover,
+    //   &:active {
+    //     border: 1px solid $black;
+    //     background-color:#fff;
+    //   }
+    //   &:not(:disabled):not(.disabled):active {
+    //     color: #212529;
+    //     border-color: $black;
+    //     background-color:#fff;
+    //   }
+    //   color: #212529;
+    //   background-color: #fff;
+    //   div.part-type-registrations-left {
+    //     margin-top: 0;
+    //     .part-type-registrations-full-text {
+    //       color: $primary;
+    //     }
+    //   }
+    // }
+  }
+  
+  div#part_type_fundraising_goal_container {
+    input {
+      margin-left: 0;
+    }
+    // #suggested_goal_container {
+    //   display:none;
+    // }
+  }
+  #part_type_additional_gift_container {
+  .manageable-content {
+    @extend .row;
+  }
+  }
+  
+  // .donation-level-row-container {
+  //   @extend .custom-control;
+  //   @extend .custom-radio;
+  //   input[type=radio] {
+  //     @extend .custom-control-input;
+  //   }
+  //   label {
+  //     @extend .custom-control-label;
+  //   }
+  // }
+  .donation-level-row-container input[type=radio]:checked~.custom-control-label::after {
+    background:$secondary;
+  }
+  
+  .did-you-know-text {
+    font-weight:400;
+  }
+  // &.selected {
+  //   .part-type-decoration-messages {
+  //     background:$primary;
+  //    .custom-control-label::before {
+  //       background:$secondary;
+  //       border:2px solid $gray-300;
+  //     }
+  //    }
+  //   }
+    // COLUMN overrides
+    // .donation-level-row-container {
+      .don-level-btn {
+        // @include make-col-ready();
+        // @include media-breakpoint-up(xs) {
+        //   @include make-col(6);
+        // }
+        
+      }
+    .don-no-gift {
+      // @include make-col-ready();
+      // @include media-breakpoint-up(xs) {
+      //   @include make-col(12);
+      // }
+    }
+      // .other-amount-row-container {
+      //   flex:none;
+      //   max-width:100%;
+      //   @include make-col-ready();
+      //   @include media-breakpoint-up(xs) {
+      //     @include make-col(12);
+      //   }
+      //   .donation-level-row-label {
+      //     background-color:$white;
+      //     border:none;
+      //     text-align:left;
+      //     padding-left: 0;
+      //   }
+      // }
+    
+      #part_type_section_footer {
+        @extend .row;
+        @extend .mx-0;
+      }
+}
+div#part_type_fundraising_goal_container #suggested_goal_container {
+  margin-left:0;
+}
