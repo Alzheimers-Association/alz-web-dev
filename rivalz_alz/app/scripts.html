@@ -1,0 +1,364 @@
+<script src="../ride_alz/assets/js/vendor/plugins.min.js"></script>
+
+<!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="../js/jquery.1.11.3.min.js"><\/script>');</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/luminateExtend/1.8.1/luminateExtend.min.js"></script> -->
+[[?x9x::x[[S4]]x::
+<!-- shim that allows LO's legacy jQuery calls work on the donation form -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/1.4.1/jquery-migrate.min.js" integrity="sha256-SOuLUArmo4YXtXONKz+uxIGSKneCJG4x0nVcA0pFzV0=" crossorigin="anonymous"></script>
+::]]
+<script>
+  document.getElementsByTagName('html')[0].setAttribute('lang','en');
+  luminateExtend({
+    apiKey: 'ALZADARDA', 
+    path: {
+      nonsecure: 'http://act.alz.org/site/', 
+      secure: 'https://act.alz.org/site/'
+    },
+    [[?xx::x[[E42:[[S80:evID]]:title]]x::::eventName: '[[T9:[[E42:[[S80:evID]]:title]]]]',]]
+      srcCode: '[[S80:src]]',
+      subSrcCode: '[[S80:subsrc]]'
+  });
+</script>
+<script src="../ride_alz/assets/js/main.js?v=<!TIMESTAMP!>"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/parsley.js/2.8.1/parsley.min.js"></script>
+
+[[?x27x::x[[S4]]x::
+<script src="../ride_alz/assets/js/registration.js?v=<!TIMESTAMP!>"></script>
+::]]
+
+
+[[?x9x::[[S4]]::
+<!-- Legacy donation scripts -->
+<link rel="stylesheet" type="text/css" href="https://act.alz.org/2015longestday/styles/jquery.fancybox.css?v=2.1.5" media="screen" />
+<script src="https://act.alz.org/2015longestday/scripts/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+[[?x22x::[[S80:proxyType]]::
+  <link rel="stylesheet" type="text/css" href="https://act.alz.org/js/shadowbox.css">
+  <script src="https://act.alz.org/js/shadowbox.js"></script>
+::]]
+
+<script>
+//[[?x1x9x1009x1032x1044x1046x::x[[S4]]x::
+//Y.use('jquery-noconflict', function() {
+  jQuery(document).ready(function($) {
+    // Adding placeholders
+    $('.donation-level-user-entered input').attr('placeholder', 'Other Amount');
+    $('#tr_recognition_namerec_namename').attr('placeholder', 'Example: John Smith, The Smith Family, John Smith - In Memory of Grandma Smith.');
+
+    // Adding a class to buttons
+    $('.donation-level-input-container label, .donation-level-input-container input').on('click', function(e){
+      $('.donation-level-input-container label').each(function(){
+        $(this).removeClass('active');
+      });
+
+      $(this).closest('.donation-level-input-container').find('label').addClass('active');
+    });
+
+    // Adding clearfix
+    $('#donor_email_opt_in_Row, #payment_cc_container.payment-field-container').addClass('clearfix');
+
+    // Creating a menu for payment type
+    $payment_type = $('<select class="payment-type-dropdown">[[?xtruex::x[[S80:mobilePayEnabled]]x::<option value="mobilepay" selected="selected">Pay with Blackbaud MobilePay</option><option value="Credit Card">Credit Card</option>::<option value="Credit Card" selected="selected">Credit Card</option>]]<option value="Paypal">Paypal</option></select>');
+    $payment_type_container = $('.payment-type-selections#responsive_payment_typepay_typeradio_payment_types');
+
+    $payment_type_container.append($payment_type);
+
+// make the custom select dropdown match any preselected payment method, in case of page load error, etc.
+var initialPayType = $('input[name=responsive_payment_typepay_typeradio]:checked').val();
+
+    if (initialPayType == 'paypal') {
+          $('.payment-type-dropdown').val('Paypal');
+          $('#pstep_finish').text('Donate with PayPal');
+          $("#payment_cc_container").removeClass('displayed').addClass('hidden');
+        } else if (initialPayType == "credit") {
+          $('.payment-type-dropdown').val('Credit Card');
+          $('#pstep_finish').text('Donate');
+          $("#payment_cc_container").removeClass('hidden').addClass('displayed');
+        } 
+        
+
+ $('.payment-type-dropdown').change(function (e) {
+        var selectedVal = $(this).find("option:selected").text();
+        console.log('payment selected: ', selectedVal);
+        if (selectedVal == 'Paypal') {
+          $('#responsive_payment_typepay_typeradiopaypal').click();
+          $('#pstep_finish').text('Donate with PayPal');
+          $("#payment_cc_container").removeClass('displayed').addClass('hidden');
+        } else if (selectedVal == "Credit Card") {
+          $('#responsive_payment_typepay_typeradiocredit').click();
+          $('#pstep_finish').text('Donate');
+          $("#payment_cc_container").removeClass('hidden').addClass('displayed');
+        } else if (selectedVal == "Pay with Blackbaud MobilePay") {
+          $('#pstep_finish').text('Donate with MobilePay');
+          $('#responsive_payment_typepay_typeradiomobilepay').click();
+          $("#payment_cc_container").removeClass('displayed').addClass('hidden');
+        }
+      });
+      
+    // Replacing What is this text with image
+    $help_link = $('.HelpLink');
+    $help_link.html('<i class="fas fa-question-circle"></i>');
+
+    // Changing CVV text
+    $cvv_text = $('label[for="responsive_payment_typecc_cvvname"] .FormLabelText');
+    $cvv_text.text('CVV');
+
+    // Adding a class to the donor entered container
+    $('.donation-level-user-entered').closest('.donation-level-input-container').addClass('donor-entered-amt');
+    $('.donation-level-user-entered').closest('.donation-level-container').addClass('donor-entered-amt-container');
+
+    // Adding an active class
+    $('.donation-level-input-container label, .donation-level-input-container input').on('click', function(e){
+      $('.donation-level-input-container label').each(function(){
+        $(this).removeClass('active');
+      });
+
+      $(this).closest('.donation-level-input-container').find('label').addClass('active');
+    });
+
+    // Temporary code for donation sidebar
+    $donation_sidebar = $('.donation-form-sidebar');
+    $form_content = $('.content');
+
+//    $form_content.append($donation_sidebar);
+    $form_content.children().first().before($donation_sidebar);
+
+
+	/* AJAX call to retrieve participant photo */
+if ($(window).width() > 991) {
+		var donateimage = jQuery.ajax({
+		   url: 'https://[[S29:SECURE_DOMAIN]][[S29:SECURE_PATH]]AjaxProxy?auth=[[S86:true]]&cnv_url=[[T1:http://[[S29:DOMAIN]][[S29:PATH]]TR?px=[[S120:dc:proxyId]]&pg=personal&fr_id=[[S120:dc:teamRaiserId]]&pgwrap=n]]',
+		  headers:{
+			'X-Requested-With':'Foo'
+		  }
+		});
+
+		(function($){
+		  $(function(){
+			donateimage.done(function(data){
+			if ($(data).find('#personal_page_image_div img').length > 0) {
+	//			$(data).find('#personal_page_image_div img').appendTo($('.donate-photo'));
+				$(data).find('#personal_page_image_div img').first().appendTo($('.onbehalf-image'));
+				console.log('foundimage');
+			} 
+			else {
+				console.log('did not find image, looking for script');
+				var ytScript = $(data).find('script:contains("www.youtube.com/v/")').text();
+				var ytID = ytScript.substring(ytScript.indexOf('www.youtube.com/v/')+18);
+				ytID = ytID.substring(0,ytID.indexOf('"'));
+				var ytWidth = $(window).width() > 640 ? '640' : '320';
+				var ytHeight = $(window).width() > 640 ? '480' : '240';
+//$('<a href="//www.youtube.com/v/'+ ytID +'?rel=1&autoplay=1" id="youtube-image"><img src="//img.youtube.com/vi/'+ ytID +'/0.jpg" alt="Watch Video" width="150" /></a>').appendTo($('.donate-photo'));
+				$('<a href="//www.youtube.com/v/'+ ytID +'?rel=1&autoplay=1" id="youtube-image"><img src="//img.youtube.com/vi/'+ ytID +'/0.jpg" alt="Watch Video" width="150" /></a>').appendTo($('.onbehalf-image'));
+
+	//			$('.donate-photo a#youtube-image').on('click', function(event) {
+				$('.onbehalf-image a#youtube-image').on('click', function(event) {
+					event.preventDefault();
+					$.fancybox({
+					  'padding'       : 0,
+					  'autoScale'     : false,
+					  'transitionIn'  : 'none',
+					  'transitionOut' : 'none',
+					  'width'         : ytWidth,
+					  'height'        : ytHeight,
+					  'href'          : this.href,
+					  'type'          : 'swf',
+					  'swf'           : {
+						 'wmode'        : 'transparent',
+						'allowfullscreen'   : 'true'
+					  }
+					});
+				});
+			}
+		});
+		  });
+		})(jQuery);
+}
+
+	
+// if ($(window).width() > 991) {
+// 		var donateimage = jQuery.ajax({
+// 		   url: 'https://[[S29:SECURE_DOMAIN]][[S29:SECURE_PATH]]AjaxProxy?auth=[[S86:true]]&cnv_url=[[T1:http://[[S29:DOMAIN]][[S29:PATH]]TR?team_id=[[S120:dc:proxyId]]&pg=team&fr_id=[[S120:dc:teamRaiserId]]&pgwrap=n]]',
+// 		  headers:{
+// 			'X-Requested-With':'Foo'
+// 		  }
+// 		});
+	
+// 		(function($){
+// 		  $(function(){
+// 			donateimage.done(function(data){
+// 			console.log('team image');
+// 			  $(data).find('#team_page_main_content #team_image img').appendTo($('.onbehalf-image'));
+// 			});
+// 		  });
+// 		})(jQuery);
+// }
+
+	[[?x[[S120:dc:participantName]]x::x[[S120:dc:teamName]]x::
+    [[?x22x::x[[S80:proxyType]]x::		
+    console.log('running team roster script');
+        Shadowbox.init({
+          // skip the automatic setup again, we do this later manually
+          skipSetup: true
+        });
+    ::]]
+
+(function($){
+  $(function(){
+  	/* Update session variable to differentiate team gifts in autoresponder */
+  	if ($('#ProcessForm').length > 0) {
+  		$('#ProcessForm').append($('<input type="hidden" name="s_teamGiftTrue" value="true" />'));
+  	}
+
+  	/* functionality to change from team gift to participant gift */
+	var dataString, loadTeamRoster = '';
+	var totalResults = 0;
+    dataString = 'method=getTeamMembers&team_id=[[S334:PROXY_ID]]&fr_id=[[S120:dc:teamRaiserId]]';
+    luminateExtend.api.request({
+		api: 'teamraiser', 
+		data: dataString,
+		callback: function( data ) {
+			if (data && data.getTeamMembersResponse) {
+				var teamRoster = luminateExtend.utils.ensureArray(data.getTeamMembersResponse.member);
+				totalResults=teamRoster.length;
+				if (totalResults > 0) {
+					loadTeamRoster = '<div id="teamRosterDonationList" style="display: none;"><ul>';
+					$(teamRoster).each(function() {
+						loadTeamRoster += '<li>';
+						if (this.aTeamCaptain=='true') {
+							loadTeamRoster += '<img src="../images/friendraiser/icon_TeamCaptain.png" alt="Captain" /> ';
+						}
+						loadTeamRoster += '<a href="'+
+						'https://[[S29:SECURE_DOMAIN]][[S29:SECURE_PATH]]Donation2?df_id=[[S120:dc:donFormId]]&FR_ID=[[S120:dc:teamRaiserId]]&[[S120:dc:donFormId]].donation=form1&PROXY_TYPE=20&PROXY_ID='+this.consId+
+						'">'+this.name.first+' '+this.name.last+'</a></li>';
+					});
+					loadTeamRoster += '</ul><p><img src="../images/friendraiser/icon_TeamCaptain.png" alt="Captain" /> denotes a team captain</p></div>';
+					jQuery(loadTeamRoster).insertAfter(jQuery('.onbehalf-module'));
+
+            [[?x22x::x[[S80:proxyType]]x::					
+                      $('.teamRosterPopup').on('click', function(e){
+                          e.preventDefault();
+                          Shadowbox.open({
+                            content	: $('#teamRosterDonationList').html(),
+                            player	: 'html',
+                            title	: "Donate to a member of this team",
+                            height	: 460,
+                            width	: 300
+                          });
+                          return false;
+                      });
+            ::]]
+				}
+			}	
+		}
+	});
+  });
+})(jQuery);
+	::]]
+
+
+});
+</script>
+
+::]]
+
+::]]
+
+[[?[[?xteamx::x[[S334:pg]]x::T::]][[?[[S334:pagename]]::ride_faq::T::]]::T::
+<script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
+::]]
+
+[[?xride_surveyx::x[[S334:pagename]]x::
+<script src="../ride_alz/assets/js/survey.js?v=<!TIMESTAMP!>"></script>
+::]]
+
+[[?xridepcx::x[[S334:pagename]]x::
+<!-- TODO - should script above be placed below ridepc? -->
+
+<!--[if lt IE 9]>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<![endif]-->
+<script src="../2017walk/js/slidebars.js.gz"></script>
+<!-- <script src="../2017walk/js/main.js.gz?v=1.01"></script> -->
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-placeholder/2.0.7/jquery.placeholder.min.js"></script>
+<script src="//cdn.jsdelivr.net/jquery.velocity/0.0.22/jquery.velocity.min.js"></script>
+<script src="../ridepc/js/jquery.animateNumber.min.js.gz"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/2.1.0/jquery.scrollTo.min.js"></script>
+<!-- <script src="../ridepc/js/main2.js.gz"></script>
+<script src="../ridepc/js/ride-main.js.gz"></script> -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-te/1.4.0/jquery-te.min.js"></script>
+<script type="text/javascript" src="../js/vScroll.js.gz"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.18/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.18/js/dataTables.bootstrap4.min.js"></script>
+
+
+<script src="../js/pesdk/js/PhotoEditorSDK.min.js.gz"></script>
+<script src="../js/pesdk/js/PhotoEditorReactUI.min.js.gz"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script>
+
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/sw.dyn.post4.js').then(function(registration) {
+      // Registration was successful
+      console.log('ServiceWorker registration successful with scope: ', registration.scope);
+    }).catch(function(err) {
+      // registration failed :(
+      console.log('ServiceWorker registration failed: ', err);
+    });
+  });
+}
+  var charity_id = '[[S0:FACEBOOK_FUNDRAISER_CHARITY_ID]]';
+</script>
+<script type="text/javascript">
+  (function($){
+    $(function(){
+      // scripts from reus_ridepc_modals
+      var regData = '[[T6:[[S80:reg_thanks]]]]', 
+      transId = regData.indexOf('id:') != -1 ? regData.split('id:')[1].split(',')[0] : '', 
+      regFee = regData.indexOf('fee:') != -1 ? regData.split('fee:')[1].split(',')[0] : '', 
+      additionalGift = regData.indexOf('gift:') != -1 ? regData.split('gift:')[1].split(',')[0] : '';
+
+      $('#iWalkFor').attr('src','https://act.alz.org/2017walk/img/FacebookCover_WALK2016_IWalkFor_future-sm.jpg');
+      $('#iWeCan').attr('src','https://act.alz.org/2017walk/img/FacebookCover_WALK2017_wecanend-sm.jpg');
+    });
+  })(jQuery);
+</script>
+<script src="../ride_alz/assets/js/participant-center.js?v=<!TIMESTAMP!>"></script>
+<!-- <script src="../ridepc/js/participant-center.js.gz?v=100"></script> -->
+::]]
+
+
+<!-- personalized video handlers: Start -->
+[[?xpersonalx::x[[S334:pg]]x::
+[[?[[E130:",[[E48:[[S334:fr_id]]-[[S334:px]]:cons.custom_string20]]," dup "walk17" indexof dup ",[[E48:[[S334:fr_id]]-[[S334:px]]:cons.custom_string20]]," swap "," swap nextindexof  substring]]_::_[[S334:fr_id]]_::
+<link href="http://http://act.alz.org/js/remodal.min.css" rel="stylesheet"/>
+<script src="http://http://act.alz.org/js/remodal.min.js"></script>
+<script>
+    $(document).on('opened', '.pv-modal', function () {
+    $('#pv-video')[0].play();
+    }).on('closing', '.pv-modal', function () {
+    $('#pv-video')[0].pause();
+    }).ready(function() {
+        try {
+            if($('[data-remodal-id=pv-modal]').remodal()){
+                $('a[data-remodal-target=pv-modal]').on('click', function(e){
+                    e.preventDefault();
+                });
+            }
+        }
+    catch(err) {}        
+    [[?x[[S334:play]]x::x1x::
+            $('a[data-remodal-target=pv-modal]').click();
+            ::]]
+    });
+</script>
+::]]::]]
+
+

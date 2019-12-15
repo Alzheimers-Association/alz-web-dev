@@ -1,0 +1,102 @@
+    <div class="row">
+      <div class="col-12">
+        <!-- BEGIN DEFAULT PB CONTENT-->
+        <div id="hp_content_body"> <a name="#content_body"></a>
+          <section id="introArea" class="row">
+            <div class="col-md-6">
+              <div id="gallery" class="flexslider">
+                <!-- TODO - embed reusable - reus_rivalz_homepage_gallery -->
+                <ul class="slides">
+                  <li>
+                    <img src="https://act.alz.org/images/content/pagebuilder/rivalz-2019-slide-01.jpg" alt="" />
+                  </li>
+                  <li>
+                    <img src="https://act.alz.org/images/content/pagebuilder/rivalz-2019-slide-02.jpg" alt="" />
+                  </li>
+                  <li>
+                    <img src="https://act.alz.org/images/content/pagebuilder/rivalz-2019-slide-03.jpg" alt="" />
+                  </li>
+                  <li>
+                    <img src="https://act.alz.org/images/content/pagebuilder/rivalz-2019-slide-04.jpg" alt="" />
+                  </li>
+                  <li>
+                    <img src="https://act.alz.org/images/content/pagebuilder/rivalz-2019-slide-05.jpg" alt="" />
+                  </li>
+                  <li>
+                    <img src="https://act.alz.org/images/content/pagebuilder/rivalz-2019-slide-06.jpg" alt="" />
+                  </li>
+                  <li>
+                    <img src="https://act.alz.org/images/content/pagebuilder/rivalz-2019-slide-07.jpg" alt="" />
+                  </li>
+                  <li>
+                    <img src="https://act.alz.org/images/content/pagebuilder/rivalz-2019-slide-08.jpg" alt="" />
+                  </li>
+                  <li>
+                    <img src="https://act.alz.org/images/content/pagebuilder/rivalz-2019-slide-09.jpg" alt="" />
+                  </li>
+                  <li>
+                    <img src="https://act.alz.org/images/content/pagebuilder/rivalz-2019-slide-10.jpg" alt="" />
+                  </li>
+                  <li>
+                    <img src="https://act.alz.org/images/content/pagebuilder/rivalz-2019-slide-11.jpg" alt="" />
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div id="introCopy" class="col-md-6">
+              <!-- TODO - embed reusable - reus_rivalz_homepage_news -->
+              <h1>Two Teams, One Dream</h1>
+              <p>Welcome to <strong>RivALZ</strong>, where two teams of women &mdash; divided to reflect rivalries such
+                as East vs. West or Blondes vs. Brunettes &mdash; compete in a flag football game to inspire
+                fundraising, awareness and action in the fight against Alzheimer's disease. <br />
+                <br />
+                <a class="btn btn-primary font-player" href="SPageServer?pagename=bvb_search">Sign Up Now</a></p>
+            </div>
+          </section>
+          <div class="clearfix"></div>
+        </div>
+      </div>
+    </div>
+
+    <section id="ticker" class="mb-4">
+      <div id="games">
+        <ul id="eventCarousel" class="jcarousel-skin-tango">
+        </ul>
+      </div>
+    </section>
+    <section id="homeMapDonate" class="row">
+      <div id="mapOfEvents" class="col-md-8">
+        <!-- TODO - embed reusable - reus_rivalz_map -->
+        <div id="map" style="width: 100%; height: 100%"></div>
+      </div>
+      <div id="donate_box" class="col-md-4">
+        <h2 class="font-player">Donate to a player</h2>
+        <p>Search below to find the player you’re looking for.</p>
+        <div>
+          <form action="TR?srch=1" method="post" enctype="application/x-www-form-urlencoded"
+            onsubmit="return checkForGoodSearchCriteria ();">
+            <input id="fr_search_type_participant" name="fr_search_type" type="hidden" value="participant" />
+            <div class="form-group mb-2">
+              <label for="searchFirstName" class="sr-only">First Name</label>
+              <input id="searchFirstName" class="form-control" name="searchFirstName" type="text" value="First Name"
+                onfocus="if (this.value=='First Name'){this.value='';};"
+                onblur="if (searchFirstName.value==''){this.value='First Name';};" />
+            </div>
+            <div class="form-group">
+              <label for="searchLastName" class="sr-only">Last Name</label>
+              <input id="searchLastName" class="form-control" name="searchLastName" type="text" value="Last Name"
+                onfocus="if (this.value=='Last Name'){this.value='';};"
+                onblur="if (this.value==''){this.value='Last Name';};" />
+            </div>
+            <input id="fr_find_search" class="btn btn-secondary font-player" title="Reloads page." name="fr_find_search"
+              type="button" value="Search" />
+
+            <input id="fr_id" name="fr_id" type="hidden" value="2911" />
+            <input g" name="pg" type="hidden" value="pfind" />
+            <input id="submit" name="submit" type="hidden" value="true" />
+          </form>
+        </div>
+    </section>
+
+

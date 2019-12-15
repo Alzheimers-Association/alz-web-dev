@@ -1,0 +1,18 @@
+.app_id_27 {
+  .progress-bar-container {
+    a:link {
+      text-decoration:none !important;
+    }
+  }
+  div.responsive div.ErrorMessage.page-error,
+  div.responsive div.ErrorMessage.page-error>span.field-error-text {
+    width:100%;
+  }
+  
+  div.responsive a.step-button, div.responsive button.step-button, div.responsive input.step-button {
+    min-width:100px;
+  }
+  div.part-type-container .part-type-decoration-messages {
+    max-width: 83%;
+  }
+}

@@ -1,0 +1,21 @@
+.pg_rivalz_homepage {
+  .game_date { 
+    white-space: nowrap; 
+  }
+  .leaflet-popup-content h4 { font-size: 1.25em; }
+  .leaflet-popup-content p { margin: 0 !important; }
+
+  #fr_find_search {
+    width:70%;
+    font-family: $font-family-serif; font-weight: normal; font-size:18px;
+    border-radius:5px;
+  }
+
+  @include media-breakpoint-down(md) {
+    #fr_find_search {
+      width:100%;
+    }
+  }
+
+}
+

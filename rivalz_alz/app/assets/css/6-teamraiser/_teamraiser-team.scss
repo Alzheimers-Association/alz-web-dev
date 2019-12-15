@@ -1,0 +1,144 @@
+.pg_team {
+  // .card-columns {
+  //   column-count: 2;
+  //   @include media-breakpoint-only(sm) {
+  //     column-count: 2;
+  //   }
+  //   @include media-breakpoint-only(md) {
+  //     column-count: 5;
+  //   }
+  //   @include media-breakpoint-only(lg) {
+  //     column-count: 5;
+  //   }
+  //   @include media-breakpoint-only(xl) {
+  //     column-count: 5;
+  //   }
+  // }
+  .tr-status-indicator-container {
+    display:none;
+  }
+  .photo-card {
+    min-height: 300px;
+    height: auto;
+  }
+  .text-card {
+    height: auto;
+  }
+  .roster-headline-container {
+    img {
+      vertical-align: bottom;
+    }
+  }
+  .roster-participant {
+    height:100%;
+    min-height: 170px;
+    position:relative;
+    .card-copy {
+      padding: 0 1em;
+    }
+    h3 {
+      text-transform: none;
+      font-size: 1.6em;
+    }
+    .roster-captain-badge {
+      position:absolute;
+      right:8px;
+    }
+    .roster-img-container {
+      img {
+        object-fit:cover;
+      }
+    }
+    .small {
+      color:$body-color;
+    }
+    .team-roster-participant-donate{
+      font-family: $font-family-serif; 
+      font-weight: normal; 
+      font-size:18px;
+      border-radius:0;
+      text-decoration:none !important;
+      // position:absolute;
+      // bottom:0;
+      // left:0;
+    }
+  }
+  .roster-headline-container {
+    h2 {
+      font-family: $font-family-serif; 
+      font-weight: normal; 
+      font-size:36px;
+      color:$primary;
+    }
+  }
+  #team-comments {
+    display:block;
+    clear:both;
+  }
+}
+
+//   .tr-page-container {
+//     display:none;
+//   }
+//   div.team-progress-container {
+//     border:0;
+//   }
+//   .tr-headline {
+//     small {
+//       font-weight:800;
+//     }
+//   }
+//   .team-top {
+//   @include gradient-directional($start-color: transparent, $end-color: #d7ebe8, $deg: 180deg) 
+//   // @include gradient-y-three-colors($start-color: transparent, $mid-color: $white, $color-stop: 50%, $end-color: #d7ebe8)   
+//   }
+//   .fundraiser-progress-container {
+//     background:transparent;
+//   }
+//   .participant-team-search {
+//     .participant-name {
+//       border-top:2px solid $secondary;
+//       border-left:2px solid $secondary;
+//       border-bottom:2px solid $secondary;
+//     }
+//   }
+//   .results-table {
+//     > {
+//       :nth-child(even){
+//       @include gradient-directional($start-color: #ededed, $end-color: #f8f8f8, $deg: 0deg) 
+//       }
+//     }
+
+//   }
+// .my-ride-container {
+//   p {
+//     font-size:1.2rem;
+//   }
+// }
+//   .teammate-details {
+//     font-size: 1.3rem;
+//     font-weight:bold;
+//     a {
+//       text-decoration:underline;
+//       &.button {
+//         text-decoration:none;
+//         // height:100%;
+//         margin-top:auto;
+//         margin-bottom:auto;
+//       }
+//     }
+//     @include media-breakpoint-down(md) {
+//       a {
+//       &.btn-lg {
+//         font-size: 1.3rem;
+//       }    
+//     }
+//   }
+//     .amt-raised {
+//       color:#686868;
+//     }
+//   }
+
+
+
+// }

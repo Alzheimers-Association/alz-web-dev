@@ -1,0 +1,173 @@
+// .pg_entry {
+//   .interior-header,
+//   .tr-page-container {
+//     display:none;
+//   }
+//   h2 {
+//     font-weight:400;
+//   }
+//   // Ride Details
+//   .ride-details-container {
+//     padding-bottom: 3rem;
+//     p{
+//       font-size: 1.5rem;
+//     }
+//     a {
+//       text-decoration: underline;
+//       &:hover {
+//         color:#fff; 
+//       }
+//       &.button {
+//         text-decoration: none;
+//         font-size: 1.15rem;
+//       }
+//     }
+//     svg {
+//       max-height: 50px;
+//     } // .svg-clock {
+//     //   height:46px;
+//     // }
+//     // .svg-location {
+//     //   height:54px;
+//     // }
+//     // .svg-contact {
+//     //   height:50px;
+//     // }
+//   } // Search Styles
+//   .greeting-search-container {
+//     .h4 {
+//       color: $white;
+//       margin-top: 0.5rem;
+//     }
+//     position: relative;
+//     background-color: #dfe0e1;
+//     @include media-breakpoint-up(md) {
+//       .search-last-name {
+//         max-width: 68%;
+//         // max-width: 100%;
+//       }
+//     }
+//   }
+//   .col-leaderboard {
+//     z-index: 1000;
+//   }
+
+//   .search-row {
+//     .list-group-item {
+//       border: 0;
+//       padding-top: 0.5rem;
+//       padding-bottom: 0.5rem;
+//       &:first-child {
+//         padding-top: 1.5rem;
+//       }
+//       &:last-child {
+//         padding-bottom: 1.5rem;
+//       }
+//     }
+//     .roster-name {
+//       color: $secondary;
+//       text-transform: uppercase;
+//       text-decoration: underline;
+//       font-weight: bold;
+//     }
+//     .roster-amt {
+//       display: block;
+//       text-align: right;
+//       font-style: italic;
+//     }
+//     @include media-breakpoint-up(lg) {
+//       &:before {
+//         max-width: 960px;
+//       }
+//     }
+//     @include media-breakpoint-up(xl) {
+//       &:before {
+//         max-width: 1140px;
+//       }
+//     }
+//     @include media-breakpoint-up(lg) {
+//       form {
+//         margin-top: 3rem;
+//       }
+//       &:before,
+//       &:after {
+//         background-color: $primary;
+//         content: " ";
+//         height: 80px;
+//         width: 100%;
+//       }
+//       &:before {
+//         position: absolute;
+//         // max-width: 1140px;
+//         z-index: 999;
+//         display: block; 
+//       }
+//       &:after {
+//         position:relative;
+//         bottom: 110px;
+//       }
+//     }
+
+//   }
+
+//   .fa-search {
+//     font-size: 1.8rem;
+//   }
+//   // .last-name-input {
+//   //   width: 82.7%;
+//   // }
+// }
+
+
+// @include media-breakpoint-up(md) {
+//   .pg_entry {
+//     .col-leaderboard {
+//       ul {
+//         min-height:315px;
+//         background:$white;
+//       }
+//     }
+//   }
+// }
+
+// @include media-breakpoint-down(md) {
+//   .pg_entry {
+//     .greeting-search-container {
+//       .h4 {
+//         padding: 1rem 0;
+//       }
+//       .col-leaderboard {
+//         background-color: $primary;
+//         // &:after {
+//         //   background-color: $primary;
+//         //   content: " ";
+//         //   height: 95%;
+//         //   width: 90%;
+//         //   top: 0;
+//         //   left: -5px;
+//         //   position: absolute;
+//         //   z-index: -1;
+//         // }
+//         margin-bottom:3rem;
+//       }
+//       .last-name-input {
+//         width: 70%;
+//       }
+//     }
+//     .ride-details-container {
+//       .col-md-4 {
+//         padding: 1rem 0;
+//       }
+//     }
+//   }
+// }
+
+// @include media-breakpoint-down(sm) {
+//   .pg_entry {
+//     .greeting-search-container {
+//       .last-name-input {
+//         width: 80%;
+//       }
+//     }
+//   }
+// }

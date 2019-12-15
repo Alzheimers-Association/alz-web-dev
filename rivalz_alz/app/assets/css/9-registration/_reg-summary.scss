@@ -1,0 +1,49 @@
+@media only screen and (max-width: 767px) {
+  div.reg-summary-thanks-common-container div.reg-summary-name-info {
+    width: 100%;
+  }
+
+  div.registration-page-container div.section-body {
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  div.reg-summary-thanks-common-container div.reg-summary-address-info {
+    vertical-align: top;
+  }
+}
+
+.pg_regsummary {
+  div.responsive {
+    button.next-step {
+      @extend .btn;
+      @extend .btn-primary;
+      text-align: center;
+
+      @include media-breakpoint-down(md) {
+        width: 100%;
+        float: none;
+      }
+    }
+
+    button.cancel-step {
+      @extend .btn;
+      @extend .btn-outline-dark;
+      text-align: center;
+      text-decoration: none;
+
+      @include media-breakpoint-down(md) {
+        float: none;
+        width: 100%;
+        margin-top: 15px;
+      }
+    }
+
+  }
+}
+
+@include media-breakpoint-down(md) {
+  div.reg-summary-thanks-common-container div.action-button-container {
+    width: 100%;
+  }
+}

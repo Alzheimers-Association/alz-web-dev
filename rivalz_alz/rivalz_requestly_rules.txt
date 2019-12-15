@@ -1,0 +1,56 @@
+[
+  {
+    "creationDate": 1568915953386,
+    "description": "",
+    "groupId": "",
+    "id": "Redirect_1568915953386",
+    "isFavourite": true,
+    "isSample": false,
+    "name": "ALZ RivALZ",
+    "objectType": "rule",
+    "pairs": [
+      {
+        "destination": "http://localhost:3000/assets/css/plugins.css",
+        "source": {
+          "key": "Url",
+          "operator": "Wildcard_Matches",
+          "value": "*/assets/css/plugins*min.css*"
+        }
+      },
+      {
+        "destination": "http://localhost:3000/assets/css/main.css",
+        "source": {
+          "key": "Url",
+          "operator": "Wildcard_Matches",
+          "value": "*/assets/css/main*min.css*"
+        }
+      },
+      {
+        "destination": "http://localhost:3000/assets/css/participant-center.css",
+        "source": {
+          "key": "Url",
+          "operator": "Wildcard_Matches",
+          "value": "*/assets/css/participant-center*min.css*"
+        }
+      },
+      {
+        "destination": "http://localhost:3000/assets/js/main.js",
+        "source": {
+          "key": "Url",
+          "operator": "Wildcard_Matches",
+          "value": "*/assets/js/main.js*"
+        }
+      },
+      {
+        "destination": "http://localhost:3000/assets/js/participant-center.js",
+        "source": {
+          "key": "Url",
+          "operator": "Wildcard_Matches",
+          "value": "*/assets/js/participant-center.js*"
+        }
+      }
+    ],
+    "ruleType": "Redirect",
+    "status": "Inactive"
+  }
+]

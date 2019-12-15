@@ -1,0 +1,53 @@
+// Corporate Sposnors
+.become-sponsor-container {
+  .national-sponsors-container,
+  .local-sponsors-container {
+    padding-top:2rem;
+    padding-bottom:2rem;
+  }
+  .h4 {
+    color: $primary;
+  }
+  p {
+    font-size: 1.6rem;
+    line-height: 1.8rem;
+  }
+  .card-img {
+    width:auto;
+    max-width: 280px;
+  }
+  .local-sponsor-logos {
+    width:100%;
+  }
+  .tr_sponsorship_logo {
+    // width: auto !important;
+    // height: auto !important;
+    // max-width: 280px !important;
+    width:inherit !important;
+    height:inherit !important;
+    @extend .col-md-4;
+    @extend .d-flex;
+    @extend .align-items-center;
+    @extend .justify-content-center;
+  }
+  .tr_sponsorship_logo_image {
+    position:relative;
+    max-width: inherit;
+    max-height: inherit;
+    top:inherit;
+    left:inherit;
+    display:block !important;
+    width: auto;
+    max-width: 100%;
+  }
+  @include media-breakpoint-down(md) {
+    .card-img {
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+    }
+    .button {
+      width:100%;
+      max-width:100%;
+    }
+  }
+}

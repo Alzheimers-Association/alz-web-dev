@@ -1,0 +1,3023 @@
+  /*crm-specific resets, no need to use in CMS, but should be included in COM stylesheets */
+  
+  // p, li, ol, ul, table, tr, th, td, .Explicit, a, a:link, a:visited, .FormBox {
+  //   font-family: Arial, Helvetica, sans-serif;
+  //   font-size: 1em;
+  // }
+  textarea, input, select, option, label {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1em;
+  }
+  /*end of crm specific resets*/
+  
+  // a, a:link, a:visited {
+  //   color: #65378f;
+  //   text-decoration: none;
+  // }
+  // a:hover {
+  //   color: #8c69ab;
+  //   text-decoration: none;
+  // }
+  a img {
+    border: none;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    color: #626262;
+    font-weight: bold;
+    margin: 1em 0 0.25em 0;
+  }
+  h1 a, h2 a, h3 a, h4 a, h5 a, h6 a, h1 a:visited, h2 a:visited, h3 a:visited, h4 a:visited, h5 a:visited, h6 a:visited {
+    color: #1880A5;
+    text-decoration: none;
+  }
+  h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover {
+    color: #006699;
+  }
+  h1 {
+    font-size: 1.67em;
+  }
+  h1.title {
+    margin-bottom: 1em;
+  }
+  h2 {
+    font-size: 1.5em;
+    margin: 0;
+    padding: 0;
+    text-transform: uppercase
+  }
+  .container h2 {
+    font-size:1.5em;
+  }
+  h3 {
+    font-size: 1.17em;
+    text-transform: uppercase;
+  }
+  .list-item h3 {
+    margin-top: 0;
+  }
+  h4 {
+    font-size: 1.17em;
+  }
+  h5 {
+    font-size: 1em;
+    text-transform: uppercase;
+  }
+  h6 {
+    font-size: 1em;
+  }
+  .hp_content {
+    a {
+      &,
+      &:link,
+      &:visited,
+      &:hover,
+      &:focus,
+      &:active {
+        text-decoration:underline;
+        color:#65378e;
+      }
+    }
+}
+  hr {
+    height: 0;
+    border: none;
+    border-top: 1px solid #C8DBBF;
+    margin: 1em 0;
+  }
+  p {
+    margin: 0 0 1em 0;
+  }
+  blockquote {
+    margin: 1em 0 1em 3em;
+  }
+  ul, ol {
+    margin: 0 0 1em 2em;
+  }
+  ol ul, ul ol, ul ul, ol ol {
+    margin: 0 0 0 2.5em;
+  }
+  ol ol {
+    list-style-type: lower-alpha;
+  }
+  ul ul {
+    list-style-type: square;
+  }
+  pre {
+    font-size: 1.17em;
+    margin: 1em 0;
+  }
+  .right {
+    float: right;
+    margin: 0 0 0 5px;
+  }
+  .left {
+    float: left;
+    margin: 0 5px 0 0;
+  }
+  img.right, img.left, img.thumb, .image {
+    padding: 2px;
+    border: 1px solid #ccc;
+  }
+  .image {
+    background: #efefef;
+  }
+  .caption {
+    font-size: .9em;
+  }
+  .credit {
+    font-size: .8em;
+    text-align: right;
+  }
+  img.thumb {
+    max-width: 150px;
+    max-height: 150px;
+  }
+  .clearfix:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+  }
+  html[xmlns] .clearfix {
+    display: block;
+  }
+  * html .clearfix {
+    height: 1%;
+  }
+  .clearme {
+    clear: both;
+  }
+  .hidden, .hide {
+    display: none;
+  }
+  
+  .clearfix {
+    clear: both;
+  }
+  
+  /* Wrapper Styles Start */
+  
+  body {
+    margin: 0;
+    padding: 0;
+    font: normal normal .75em Arial, sans-serif;
+    line-height: 140%;
+  /*
+    background:#4f6d14 url('https://act.alz.org/images/bvb/bg_site.jpg') 50% 0 no-repeat;
+  */
+    background:#2c4201 url('https://act.alz.org/images/bvb/bg_site.jpg') 50% 0 no-repeat;
+  }
+  
+  .accessibility_link{position:absolute; left:-9999px;}
+  
+  
+  #wrapper_outer {
+    height: auto;
+    min-height: 100%;
+    position: relative;
+  }
+  
+  #wrapper {
+    display: block;
+    width: 991px;
+    margin: 0 auto;
+    padding-bottom: 115px;
+  }
+  
+  .shadowWide {
+    background:url(https://act.alz.org/images/bvb/bg_shadowWide.png) repeat-y;
+  }
+  
+  #header {
+    height: 225px;
+    position: relative;
+  }
+  
+  #content_pattern {
+    width:970px;
+    margin-left: 12px;
+  }
+  
+  #nav_main {
+    position: absolute;
+    right: 12px; /* 20px */
+    bottom: 0px;
+  }
+  
+  /* OLD BVB NAV CSS - REFERENCE IF YOU NEED IT - DELETE THIS AFTERWARDS */
+  /*
+  #nav_main ul {
+    width: [[?[[?xxnullx2911x::x[[S80:trID]]x::T::]][[?[[S334:pagename]]::bvb_::T::]]::T::490px::600px]];
+    height: 57px;
+    margin: 0 0 30px 0;
+    padding: 0;
+    list-style: none;
+    position: relative;
+    background: url('https://act.alz.org/images/content/pagebuilder/sprite_bvb_topnav.png') 0 -57px no-repeat;
+  }
+  #nav_main ul li {
+    float: left;
+  }
+  #nav_main ul li a {
+    margin-left: 1px;
+    font: normal normal 1.3em Arial, sans-serif;
+    color: #FFFFFF;
+    text-decoration: none;
+    padding: 19px 22px 19px 21px;
+    display: block;
+    text-indent: -999em;
+  }
+  #nav_main ul li a:hover {
+    background: url('https://act.alz.org/images/content/pagebuilder/sprite_bvb_topnav.png') -1px 0 no-repeat;
+  }
+  #nav_main ul.zonemenu {
+    background-image: url('https://act.alz.org/images/content/pagebuilder/sprite_bvb_topnav_no_sponsor.png');
+  }
+  #nav_main ul.zonemenu li a:hover {
+    background-image: url('https://act.alz.org/images/content/pagebuilder/sprite_bvb_topnav_no_sponsor.png');
+  }
+  #nav_main ul #btn_about a {
+    width: 150px;
+  }
+  #nav_main ul #btn_bvbZone a {
+    width: 75px;
+    background-position: -195px 0;
+  }
+  #nav_main ul #btn_media a {
+    width: 69px;
+    background-position: -314px 0;
+  }
+  #nav_main ul #btn_play a {
+    width: 24px;
+    background-position: -427px 0;
+  }
+  #nav_main ul.zonemenu #btn_play a {
+    width: 24px;
+    background-position: -314px 0;
+  }
+  #nav_main ul #btn_donate a {
+    width: 58px;
+    background-position: -495px 0;
+  }
+  #nav_main ul.zonemenu #btn_donate a {
+    width: 58px;
+    background-position: -382px 0;
+  }
+  */
+  /* END OLD BVB NAV CSS - DELETE AFTER USE */
+  
+  #my-menu:not( .mm-menu ) {
+     display: none;
+  }
+  
+  .clearme {
+    clear: both;
+  }
+  
+  /* Header Styles Start */
+  #logospace {
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+  }
+  
+  #logospace a {
+    height: 174px;
+    width: 272px;
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    top: 20px;
+    left: 20px;
+  }
+
+  
+  #pcloginboxcontainer {
+    text-align: left;
+  }
+  
+  #pclogin {
+    cursor: pointer; float: right;
+  }
+  
+  #pcloginbox {
+    height: 0;
+    font-size: 14px;
+    font-family: arial,sans-serif;
+    margin: 0px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    right: 28px;
+    top: 0;
+    z-index: 3;
+  }
+  
+  #pcloginform {
+    background: url('https://act.alz.org/images/content/pagebuilder/walk2013-pclogin-hover-bg.png') scroll repeat-x 0 0 #8d8d8d;
+    box-shadow: 0 0 2px #333;
+    margin: -3px 0 0 5px;
+    padding: 10px 20px 10px 15px;
+    width: 283px;
+  }
+  
+  #pcloginbox p {
+    color: #fff;
+  }
+  
+  #helpLinks {
+    color: #fff;
+  }
+  
+  #alz_login a {
+    color: #65378e;
+    text-decoration: none;
+  }
+  
+  #alz_login a:hover {
+    text-decoration: underline;
+  }
+  
+  #alz_login form input[type="text"] {
+    font-size: 1.15em;
+    color: #999999;
+    padding: 9px;
+    border: 1px solid #bdbdbd;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    box-shadow: 1px 1px 2px #CCCCCC;
+    background-color: #e9e9e9;
+    background-image: url('https://act.alz.org/images/tr/login_text_bg.jpg');
+    background-repeat:repeat-x;
+    background-position: right top;
+    margin: 0px 0px 0px 7px;
+    width: 110px;
+  }
+  
+  #alz_login form input[type="password"] {
+    font-size: 1.15em;
+    color: #999999;
+    width: 120px;
+    padding: 9px;
+    border: 1px solid #bdbdbd;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    box-shadow: 1px 1px 2px #CCCCCC;
+    background-color: #e9e9e9;
+    background-image: url('https://act.alz.org/images/tr/login_text_bg.jpg');
+    background-repeat:repeat-x;
+    background-position: left top;
+    margin: 0px 0px 0px 7px;
+    position: relative;
+    left: 0;
+  }
+  
+  #alz_login form input[type="submit"] {
+    background: url('https://act.alz.org/images/content/pagebuilder/walk2013-pclogin-button.png') scroll no-repeat 0 0 transparent;
+    border: 0;
+    color: transparent;
+    cursor: pointer;
+    font-size: 0;
+    float: right;
+    height: 32px;
+    margin: 15px 0 0 7px;
+    padding: 0;
+    text-indent: -9999px;
+    width: 87px;
+  }
+  
+  #alz_login form input[type="submit"]:hover {
+    background: url('https://act.alz.org/images/content/pagebuilder/walk2013-pclogin-button-hover.png') scroll no-repeat 0 0 transparent;
+  }
+  
+  #alz_login form #headerUsernameId {
+    margin-left: 0;
+  }
+  
+  #alz_login .loggedIn {
+    color: #000;
+    font-weight:bold;
+  }
+  
+  #alz_login a.loggedIn, #alz_login a.loggedIn:link, #alz_login a.loggedIn:active, #alz_login a.loggedIn:hover, #alz_login a.loggedIn:visited {
+    color: #9853C7;
+  }
+  
+  #alz_login a#logoutLink, #alz_login a#logoutLink:link, #alz_login a#logoutLink:active, #alz_login a#logoutLink:hover, #alz_login a#logoutLink:visited {
+    font-weight: normal;
+  }
+  
+  #gigyaLinks {
+    margin-top: 10px; position: relative;
+  }
+  
+  #gigyaLinks .loginText {
+    background-color:#E7D6F5;
+    -moz-border-radius:3px;
+    border:1px solid #aaa;
+    padding:3px 5px;
+    position:absolute;
+    width:95px;
+    left:22px;
+    text-align:left;
+    display:none;
+  }
+  
+  #gigyaLinks a {
+    margin: 0;
+  }
+  
+  #alz_login a {
+    color: #fff;
+  }
+  
+  #helpLinks {
+    float: left; font-size: 0.9em; margin: 20px 0;
+  }
+  
+  #gigyaLinks div.left {
+    margin-top: 15px;
+  }
+  
+  /* Header Styles End */
+  
+  /* Footer Styles Start */
+  
+  #main-footer {
+    position: relative;
+    width: 937px;
+    margin-left: 12px;
+    padding-left: 33px;
+    padding-top: 20px;
+    padding-bottom: 10px;
+  /*  background:url(https://act.alz.org/images/bvb/bg_footer.png) repeat-x; */
+    background-color: #f4f4f4;
+    height: 72px;
+    border-top:1px solid #ccc;
+  }
+  
+  #footer-logo {
+    float: left;
+    padding-right: 40px;
+  }
+  
+  #main-footer ul {
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+  }
+  
+  #footer-links-col-1, #footer-links-col-2, #footer-links-col-3, #footer-links-col-4 {
+    position: relative;
+    width: 150px;
+    display: inline-block;
+    float: left;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    line-height: 20px;
+  }
+  
+  #footerBtm {
+    background:url(https://act.alz.org/images/bvb/footerBtm.png) no-repeat;
+    width:991px;
+    height:18px;
+    margin: 0 auto;
+  }
+  
+  /* Second Footer Styles Start */
+  #second-footer {
+    background-color: #62328f;
+    color: #ffffff;
+    box-shadow: 0px 0px 20px 3px #361855 inset;
+    width: 100%;
+    margin-top: 40px;
+  }
+  
+  #alz-info-footer {
+    width: 970px;
+    margin: 0 auto;
+    padding: 27px 0;
+  }
+  
+  #second-footer-col-5 {
+    display: block;
+    float: none;
+    width: 100%;
+    clear: both;
+    position: relative;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    line-height: 20px;
+    color: #ffffff;
+  }
+  
+  #second-footer-mission {
+    width: 620px;
+  }
+  
+  #second-footer-col-5 h5 {
+    margin: 0px;
+    font-size: 12px;
+    text-transform: uppercase;
+    color: #c687ff;
+    font-weight: 600;
+  }
+  
+  #second-footer p {
+    color: #ffffff;
+    margin: 0px;
+  }
+  
+  #second-footer-logo {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+  }
+  /* Second Footer Styles End */
+  /* Footer Styles End */
+  /* Wrapper Styles End */
+  
+  /* Body Content Styles Start */
+  // TODO - add 30px top padding to all non landing pages
+  // padding: 30px
+  
+  .body_content, .body_content .appArea {
+     width:970px;
+     margin-left: 12px;
+    }
+
+  .app_id_6,
+  .app_id_8 {
+  .body_content, .body_content .appArea {
+  /* eCommerce Specific style */
+   width:950px;
+   margin-left:12px;
+  }
+}
+  
+  .app_id_9 {
+    .body_content .appArea {
+      width: 97.5%;
+    }
+  }
+
+  
+  div.tr-page-container {
+    border-radius: 0;
+    border: 0;
+  }
+  
+  div.responsive {
+    width: 970px;
+  }
+  
+  div.tr-page-container div.header-container, div.tr-page-container div.section-sub-header.empty, div.tr-page-container div.side-bar, div.campaign-banner-container, div.tr-page-header {
+    display: none;
+  }
+  
+  div.tr-page-container div.main-content {
+    width: auto;
+  }
+  
+  div.tr-page-container #entry_page_custom_html {
+    padding: 0;
+  }
+  
+  div.custom-wysiwyg-text p {
+    white-space: normal;
+  }
+  .rivalz-page-titles-container {
+    background:$white;
+  }
+  .hp_content {
+    width: 970px;
+    margin-left: 12px;
+    background:$white;
+  }
+  
+  #ev_joinus_box {
+    position: relative;
+    // margin: 25px 20px 0 20px;
+    padding-top:35px;
+    padding-bottom:25px;
+  }
+  
+  #ev_joinus_left {
+    float: left;
+    margin-right: 22px;
+  }
+  
+  #ev_joinus_right {
+    position: relative;
+    margin-left: 500px;
+    top: 10px;
+  }
+  
+  #ev_information h1, .ev_location {
+    margin-bottom: 1em;
+  }
+  #ev_information h1 {
+    line-height: 1.2em;
+    margin-top: -.2em;
+  }
+  .ev_greeting_info_header h3 {
+    margin-top: 0px;
+  }
+  
+  #ev_information, .dethead {
+    font-size: 13px;
+  }
+  
+  
+  #editable-greeting-copy {
+    margin-right: 30px;
+  }
+  
+  .ev_signup a {
+    display:inline-block;
+    float:left;height:39px;
+    line-height:39px;
+    margin-right:15px;
+    font-size:14px;
+  }
+  .ev_signup a.btn.btn-primary:hover, .ev_signup a.btn.btn-primary:active, .ev_signup a.btn.btn-primary:focus {
+    border-bottom-width: 4px;
+    transform: translateY(1px);
+    margin-top: 1px;
+    background: #3A611F;
+    outline: none;
+    box-shadow: none;
+    border-color: #75d22d;
+  }
+  .ev_signup a.btn.btn-primary {
+    display: inline-block;
+    height: auto;
+    padding: .75em 1.5em;
+    min-height: 0px;
+    line-height: 1em;
+    color: white !important;
+    text-decoration: none;
+    background: #3A611F;
+    border: none;
+    border-bottom: 5px #75d22d solid;
+    transition: all ease .15s;
+  }
+  .field-button {
+    background-color: #3A611F !important; /* I'm so sorry */
+    border: none  !important;
+    border-bottom: 5px #75d22d solid !important;
+    transition: all ease .15s !important;
+    color: white !important;
+    border-radius: 3px !important;
+    margin-top: 0px !important;
+    text-decoration: none !important;
+    text-transform: Capitalize !important;
+  }
+  
+  .field-button:hover, field-button:active, field-button:focus {
+    background-color: #3A611F !important;
+    border: none !important;
+    border-bottom: 3px #75d22d solid !important;
+    transform: translateY(2px) !important;
+    margin-top: 2px !important;
+    outline: none !important;
+    box-shadow: none !important;
+  }
+  
+  #ev_information h1, .ev_greeting_info_header a, .dethead a, .ev_signup a {
+    color: #65378e !important;
+  }
+  
+  .ev_greeting_info_header a, .dethead a {
+    text-decoration: underline;
+  }
+  
+  #ev_image_carousel {
+    width: 474px;
+    height: auto;
+  }
+  
+  .flexslider {
+    background-color: transparent;
+  }
+  
+  ul.slides {
+    margin: 0px;
+    padding: 0px;
+  }
+  
+  .flex-container {
+    height: auto;
+  }
+  
+  .flex-control-nav {
+    display: none;
+  }
+  
+  .slides, .flex-direction-nav {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  
+  .flex-direction-nav li a.prev, .flex-direction-nav li a.next {
+    display: none;
+  }
+  
+  .flex-container:hover .flex-direction-nav li a.prev {
+    background: url('https://act.alz.org/images/content/pagebuilder/slideshow-left-arrow.png') scroll no-repeat 0 0 transparent;
+    height: 300px;
+    width: 67px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: block;
+  }
+  .flex-container:hover .flex-direction-nav li a.next {
+    background: url('https://act.alz.org/images/content/pagebuilder/slideshow-right-arrow.png') scroll no-repeat 0 0 transparent;
+    height: 300px;
+    width: 67px;
+    position: absolute;
+    left: 411px;
+    top: 0;
+    display: block;
+  }
+  
+  /* Calendar Styles Greeting Page Start */
+  
+  #calendarContainer {
+    display: inline-block;
+    position: relative;
+  }
+  
+  #calendarMenu {
+    background-color: #65378e;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    -moz-box-shadow: 1px 1px 3px #333;
+    -webkit-box-shadow: 1px 1px 3px #333;
+    box-shadow: 1px 1px 3px #333;
+    color: #fff;
+    margin-top: 10px;
+    padding: 15px;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    top: 20px;
+    width: 130px;
+    z-index: 11;
+  }
+  
+  #calendarMenu:after {
+    border-color: -moz-use-text-color rgba(255, 255, 255, 0) #65378e;
+    border-style: none dotted solid;
+    border-width: 0 8px 10px;
+    content: "";
+    height: 0;
+    right: 40px;
+    margin: 0 0 0 -16px;
+    position: absolute;
+    top: -10px;
+    width: 0;
+    z-index: 12;
+  }
+  #calendarMenu a, #calendarMenu a:link, #calendarMenu a:visited, #calendarMenu a:hover, #calendarMenu a:active { color: #fff; }
+  
+  div.donation-form-container.responsive { background: #fff; -moz-border-radius: 0; -webkit-border-radius: 0; border-radius: 0; border: 0 none; }
+  
+  .bbb {
+  float: left;
+  width: 150px;
+  }
+  
+  @media only screen and (max-width: 479px){
+    .phone-mobile-fix {display: block;}
+  }
+  /* Calendar Styles Greeting Page End */
+  
+  /* Thermometer Styles Start */
+  
+  .mtrLabel a, .mtrLabel a:link, .mtrLabel a:visited {
+      color: #94e158;
+      font-size: 16px;
+      text-transform: uppercase;
+      text-decoration: underline;
+  }
+  .mtrLabel a:hover, .mtrLabel a:active {
+      cursor: pointer;
+      text-decoration: underline;
+  }
+  #thermometerCounter_box h2.mtrLabel a {
+    display: inline-block;
+    line-height: 1.2em;
+    
+  }
+  
+  // #donate_box {
+  //   width: 247px;
+  //   padding: 0px 60px 10px 20px;
+  //   float: right;
+  // }
+  
+  // #donate_box .donateColumn {
+  //   float: left;
+  //   margin-left: 20px;
+  //   width: 40%;
+  // }
+  
+  // #donate_box .donateColumn.leftColumn {
+  //   margin-left: 0;
+  // }
+  
+  // #searchFirstName, #searchLastName, #fr_event_postal {
+  //   font-size: 1.15em;
+  //   color: #999999;
+  //   width: 88px;
+  //   padding: 9px;
+  //   border: 1px solid #bdbdbd;
+  //   -moz-border-radius: 2px;
+  //   border-radius: 2px;
+  //   box-shadow: 1px 1px 2px #CCCCCC;
+  //   margin: 0 0 15px;
+  // }
+  
+  // #searchLastName {
+  //   margin-bottom: 0;
+  // }
+  
+  #thermometerCounter_box {
+    position: relative;
+    // width: 992px;
+    height: 235px;
+    // height: 100%;
+    background: url(https://act.alz.org/images/content/pagebuilder/bg_thermometerCountdown.png) 2px 0 no-repeat;
+    margin-top: 0;
+    // margin-bottom: 30px;
+  }
+  
+  #thermometerCounter_box h2 {
+    color: #fff;
+    margin: 10px 0;
+    font-weight:bold;
+  }
+  
+  #duellingThermoms, #theCountdown {
+    float: left;
+    padding: 18px 43px;
+    color: #fff;
+  }
+  
+  #duellingThermoms {
+    color: #fff;
+    width: 605px;
+    padding: 0px 15px 18px 35px;
+  }
+  
+  .duelingmeter {
+    display: inline-block;
+    height: 45px;
+    margin-top: 20px;
+    position: relative;
+    width: 100%;
+  }
+  
+  .mtrLabel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 105px;
+    font-size: 16px;
+    text-transform: uppercase;
+  }
+  
+  .greetmtr {
+    position: absolute;
+    top: 0px;
+    left: 105px;
+    background: #480e66 url(DynImg/progress.jpg?pi=1121&percent=0) center center no-repeat;
+    width: 413px;
+    height: 45px;
+  }
+  
+  .mtrOverlay{
+    background: transparent url(https://act.alz.org/images/content/pagebuilder/greeting_meterOverlay.gif) 0 0 no-repeat;
+    width: 413px;
+    height: 45px;
+  }
+  
+  .mtrRaised {
+    position: absolute;
+    top: 15px;
+    left: 525px;
+    width: 75px;
+    font-size: 14px;
+  }
+  #vertDivide {
+    float: left;
+    margin: 0;
+    padding: 0;
+    background-color: #8550b2;
+    border-right: 1px solid #552c7a;
+    height: 150px;
+    width: 2px;
+    *width: 1px;
+  }
+  
+  #theCountdown {
+    width: 247px;
+  }
+  
+  #counter {
+    height: 45px;
+    margin-top: 25px;
+    line-height: 45px;
+    font-size: 18px;
+  }
+  
+  /* Thermometer Styles End */
+  
+  
+  /* Greeting Page Boxes Start */
+  
+  .greeting_page_boxes {
+    margin: 0 20px 40px 20px;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  #topfund_box, #news_box, #sponsors_box {
+    display: inline-block;
+    vertical-align: top;
+  }
+  
+  #topfund_box h2, #news_box h2, #sponsors_box h2 {
+    color: #333;
+    text-align: center;
+    font-size: 15px;
+    margin-bottom: 5px;
+  }
+  
+  #topfund_box, #news_box {
+    margin-right: 8.5px;
+  }
+  
+  #topfund_box a img {
+    margin-left: 89px;
+  }
+  
+  .fund_categories {
+    background-color: #dfdfdf;
+    color: #797979;
+    text-transform: uppercase;
+    font-family: "Arial Narrow", Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    height: 28px;
+  }
+  
+  .fund_categories span {
+    position: absolute;
+    margin-top: 11px;
+  }
+  .fund_categories #rank {
+    margin-left: 8px;
+  }
+  
+  .fund_categories #player_name {
+    margin-left: 48px;
+  }
+  
+  .fund_categories #funds_raised {
+    margin-left: 195px;
+  }
+  
+  div.indicator-container {
+    border: 0;
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+    padding: 0;
+  }
+  
+  div.donor-list-indicator-container {
+    margin-bottom: 0;
+  }
+  
+  .list-name-container {
+    position: absolute;
+    margin-left: 48px;
+  }
+  
+  .list-value-container {
+    margin-right: 10px;
+    color: #7b7b7b;
+    text-align: right;
+  }
+  
+  div.indicator-container a.indicator-link {
+    color: #65358f;
+    font-weight: bold;
+  }
+  
+  .indicator-list-row {
+    padding: 7px 0;
+    font-size:12px;
+  }
+  
+  #topfund_box .indicator-list-row:nth-child(1):before, #topfund_box .indicator-list-row:nth-child(2):before, #topfund_box .indicator-list-row:nth-child(3):before, #topfund_box .indicator-list-row:nth-child(4):before, #topfund_box .indicator-list-row:nth-child(5):before, #topfund_box .indicator-list-row:nth-child(6):before, #topfund_box .indicator-list-row:nth-child(7):before, #topfund_box .indicator-list-row:nth-child(8):before, #topfund_box .indicator-list-row:nth-child(9):before, #topfund_box .indicator-list-row:nth-child(10):before {
+    display: block;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #bd8be1;
+    color: #fff;
+    line-height: 20px;
+    text-align: center;
+    border-radius: 10px;
+    font-weight: bold;
+    margin-left: 10px;
+  }
+  
+  #topfund_box .indicator-list-row:nth-child(1):before {
+    content: '1';
+  }
+  
+  #topfund_box .indicator-list-row:nth-child(2):before {
+    content: '2';
+  }
+  
+  #topfund_box .indicator-list-row:nth-child(3):before {
+    content: '3';
+  }
+  
+  #topfund_box .indicator-list-row:nth-child(4):before {
+    content: '4';
+  }
+  
+  #topfund_box .indicator-list-row:nth-child(5):before {
+    content: '5';
+  }
+  #topfund_box .indicator-list-row:nth-child(6):before {
+    content: '6';
+  }
+  #topfund_box .indicator-list-row:nth-child(7):before {
+    content: '7';
+  }
+  #topfund_box .indicator-list-row:nth-child(8):before {
+    content: '8';
+  }
+  #topfund_box .indicator-list-row:nth-child(9):before {
+    content: '9';
+  }
+  #topfund_box .indicator-list-row:nth-child(10):before {
+    content: '10';
+  }
+  
+  .s42 {
+    width: 280px;
+    height: 179px;
+    border: 1px solid #838383;
+    margin-bottom: 18px;
+  }
+  
+  #newsContainer, #sponsorsContainer {
+    width: 280px;
+    height: 236px;
+    border: 1px solid #838383;
+    font-size:12px;
+
+  }
+  
+  #newsContainer {
+    overflow-y: scroll;
+    padding: 1em 1.5em;
+  }
+  
+  #newsContainer p {
+    margin: 0 0 1em;
+    font-size:12px;
+  }
+  
+  #sponsorScroller {
+    width: 220px;
+    height: 160px;
+    margin-top: 24px;
+    position: relative;
+    left: 20px;
+    margin-bottom: 5px;
+  }
+  
+  .becomeAsponsor {
+    float: right;
+    margin: 0 1em 0 0;
+  }
+  a.becomeAsponsor + br {
+    display: none;
+  }
+  
+  .viewSponsors {
+    margin-left: 10px;
+  }
+  
+  #sponsorsContainer a, #sponsorsContainer a:visited, #sponsorsContainer a:link {
+    color: #68358c;
+  }
+  
+  #sponsorsContainer:hover .flex-direction-nav li a.prev {
+    background: url('https://act.alz.org/images/content/pagebuilder/sponsor-left-arrow.png') scroll no-repeat 0 0 transparent;
+    position: absolute;
+    width: 25px;
+    height: 34px;
+    display: block;
+    top: 63px;
+    left: -30px
+  }
+  
+  #sponsorsContainer:hover .flex-direction-nav li a.next {
+    background: url('https://act.alz.org/images/content/pagebuilder/sponsor-right-arrow.png') scroll no-repeat 0 0 transparent;
+    position: absolute;
+    width: 25px;
+    height: 34px;
+    display: block;
+    top: 63px;
+    left: 225px;
+  }
+  
+  /* Greeting Page Boxes End */
+  
+  /* Team Captain Spotlight Boxes Start */
+  
+  .spotlight-boxes {
+    background-color: #d7c1e6;
+    padding: 22px 20px;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  .spotlight {
+    width: 455px;
+    height: 257px;
+    border: 1px solid #838383;
+    background-color: #fff;
+  }
+  
+  .spotlight h2 {
+    color: #333333 !important;
+    margin: 15px;
+  }
+  
+  #spotlight-box-1 {
+    float: left;
+  }
+  
+  #spotlight-box-2 {
+    margin-left: 470px;
+  }
+  
+  .spotlight-content-left {
+    float: left;
+    margin: 0 15px;
+  }
+  
+  .spotlight-content-left img {
+    margin-bottom: 5px;
+  }
+  
+  .spotlight-content-left a, .spotlight-content-left a:visited, .spotlight-content-left a:link {
+    color: #65378e !important;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 15px;
+  }
+  
+  .spotlight-content-right a, .spotlight-content-right a:visited, .spotlight-content-right a:link {
+    color: #65378e !important;
+    text-decoration: none;
+  }
+  
+  .spotlight-content-right p {
+    margin-right: 10px;
+  }
+  
+  /* Team Captain Spotlight Boxes End */
+  
+  /* Story Content Boxes Start */
+  
+  .story-content-box {
+    margin: 20px 25px;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  .story-content {
+    padding: 20px 0;
+  }
+  
+  .story-content h2 {
+    font-size: 1.5em !important;
+    padding: 0;
+    color: #65378e !important;
+    font-weight: normal !important;
+    margin-bottom: 5px !important;
+  }
+  
+  .story-content p {
+    color: #676767;
+    font-size: 13px;
+  }
+  
+  #story-content-divider {
+    border-top: 1px solid #ccc;
+  }
+  
+  /* Story Content Boxes End */
+  
+  
+  /* Body Content Styles End */
+  
+  /* Play Page Styles Start */
+  #choose-team {
+    text-align: center;
+    color: #333;
+  }
+  
+  #team-link-1, #team-link-2 {
+    background: url('https://act.alz.org/images/content/pagebuilder/join-blank-team-btn.png') no-repeat right 10px;
+    border: none;
+    color: #fff !important;
+    text-decoration: none !important;
+    font-size: 20px;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    text-shadow: -0.8px 0 #528a26, 0 0.8px #528a26, 0.8px 0 #528a26, 0 -0.8px #528a26;
+  }
+  
+  #team-link-1 {
+    margin-right: 68px;
+    padding: 30px 90px 20px 20px;
+  }
+  
+  #team-link-2 {
+    padding: 30px 100px 20px 20px;
+  }
+  
+  .team-link span {
+    font-size: 26px;
+  }
+  #team-link-1, #team-link-2 {
+    background-image: url('https://act.alz.org/images/content/pagebuilder/football_btn_bg.png') no-repeat right center;
+    background: url('https://act.alz.org/images/content/pagebuilder/football_btn_bg.png') no-repeat right center;
+    background: url('https://act.alz.org/images/content/pagebuilder/football_btn_bg.png') no-repeat right center;
+    background: url('https://act.alz.org/images/content/pagebuilder/football_btn_bg.png') no-repeat right center;
+    background: url('https://act.alz.org/images/content/pagebuilder/football_btn_bg.png') no-repeat right center;
+    background: url('https://act.alz.org/images/content/pagebuilder/football_btn_bg.png') no-repeat right center;
+    background: url('https://act.alz.org/images/content/pagebuilder/football_btn_bg.png') no-repeat right center;
+    padding: 20px 100px 20px 20px;
+    box-shadow: 1px 1px 1px 0px rgba(0, 0, 0, 0.2);
+    text-shadow: 0px 0px 6px rgba(45, 77, 21, .8);
+    text-transform: none;
+    display: inline-block;
+    vertical-align: top;
+  }
+  /* Play Page Styles End */
+  
+  /* About RivALZ Page Styles Start */
+  
+  
+  #about-rivalz {
+    margin: 25px;
+  }
+  
+  #about-rivalz h1 {
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  #about-rivalz #about-right {
+    float: right;
+    margin: 15px 0 30px 30px;
+  }
+  
+  #about-right img {
+    border: 0;
+  }
+  
+  #abt-team-btn-1, #abt-team-btn-2 {
+    border: 0 none;
+    border-radius: 3px;
+    box-shadow: none;
+    color: #fdfdfd;
+    cursor: pointer;
+    float: none;
+    font-size: 18px;
+    height: 45px;
+    line-height: 45px;
+    margin-top: 15px;
+    padding: 10px 30px;
+    width: auto;
+    background: #94e158;
+    background: -moz-linear-gradient(top, #94e158 0%, #76bc40 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#94e158), color-stop(100%,#76bc40));
+    background: -webkit-linear-gradient(top, #94e158 0%,#76bc40 100%);
+    background: -o-linear-gradient(top, #94e158 0%,#76bc40 100%);
+    background: -ms-linear-gradient(top, #94e158 0%,#76bc40 100%);
+    background: linear-gradient(to bottom, #94e158 0%,#76bc40 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#94e158', endColorstr='#76bc40',GradientType=0 );
+    box-shadow: 1px 1px 1px 0px rgba(0, 0, 0, 0.2);
+    text-shadow: 0px 0px 5px rgba(82, 138, 38, 0.75);
+  }
+  
+  #abt-team-btn-1:hover, #abt-team-btn-2:hover {
+    background: #76bc40; /* Old browsers */
+    background: -moz-linear-gradient(top,  #76bc40 0%, #94e158 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#76bc40), color-stop(100%,#94e158)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #76bc40 0%,#94e158 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #76bc40 0%,#94e158 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #76bc40 0%,#94e158 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #76bc40 0%,#94e158 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#76bc40', endColorstr='#94e158',GradientType=0 ); /* IE6-9 */
+  }
+  
+  #abt-team-btn-1 {
+    margin-right: 15px;
+  }
+  /* About RivALZ Page Styles End */
+  
+  
+  #menu:not(.mm-menu) {
+    display: block;
+  }
+  @media (max-width: 768px) {
+     #menu, .menu-button {
+        display: none !important;
+     }
+     .mm-list a.mm-subopen:before { border: 0 none; }
+     #slidemenu .touch-button {
+       display: none;
+     }
+     .mm-menu.mm-vertical .mm-list li.item-with-ul > .mm-panel {
+        display: block !important;
+     }
+     .mm-menu.mm-vertical .mm-list > li > a.mm-subopen {
+        display: none;
+     }
+     #hamburger span {
+        right: 10px;
+     }
+     #hamburger:before, #hamburger:after, #hamburger span {
+        right: 10px;
+        left: auto;
+     }
+  .progress-bar-container .progress-bar-step-text-container {
+      display: none;
+  }
+  
+  .progress-bar-container div.progress-bar-step-container {
+      width: 15%;
+  }
+  #admin_footer_container #personal-footer {
+  margin: 0 15px;
+  }
+  label[for=tr_show_gift_to_publicname] {
+      width: 80%;
+  }
+  .donation-levels div.donation-level-input-container {
+      padding: 0;
+  }
+  .bbb-text {
+      display: block;
+      float: left;
+  }
+  
+  .bbb {
+      float: none !important;
+      margin: auto;
+      margin-bottom: 20px;
+  }
+  #personalpage-top-block a#personal_sidebar_donate_button, #personalpage-top-block a#personal_team_store_button {
+      margin: 0 20px 0 0 !important;
+      height: auto !important;
+      float: none;
+      padding: 10px 0 !important;
+      min-width: 40%;
+  }
+  #personal_page_main_content #personalpage-top-block div#personal_page_image_div {
+      position: inherit;
+      height: auto;
+      display: table-header-group;
+  }
+  
+  div#personalpage-top-block {
+      display: table !important;
+      padding-top: 0;
+  }
+  #personalpage-top-block div#personal_page_image_div img {
+      margin: auto;
+  }
+  div#user_type_login_container {
+      width: 100%;
+      background: transparent;
+      border: 0;
+  }
+  
+  div#user_type_oauth_login_container {
+      width: 100%;
+  }
+  
+  .loginLinks span {
+      display: block;
+  }
+  }
+  @media (min-width: 769px) {
+     body {
+       padding-left: 0 !important;
+     }
+     #slidemenu, #hamburger {
+        display: none !important;
+     }
+  }
+  .flexnav li {
+    background-color: transparent;
+  }
+  .flexnav a {
+    cursor: pointer;
+  }
+  .flexnav > li:first-child > a {
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+  }
+  .flexnav > li:last-child > a {
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+  }
+  .flexnav > li a {
+    padding: 0px 25px;
+    height: 47px;
+    line-height: 47px;
+    background-color: #704396;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: bold;
+    border-left: 1px solid #8760a1;
+    box-sizing: border-box;
+  }
+  .flexnav > li a:hover, .flexnav > li:hover > a {
+    background-color: #9c62cc;
+    border-top: 1px solid #8a56b6;
+    border-bottom: 1px solid #8a56b6;
+    line-height: 45px;
+  }
+  .flexnav > li:first-child > a {
+    border-left: none;
+  }
+  .flexnav > li {
+    width: auto;
+  }
+  .flexnav li > ul {
+    margin-left: 0px;
+    padding-left: 0px;
+    top: 100%;
+    border-top: 4px solid transparent;
+  }
+  .flexnav li > ul li {
+    /* width: auto; */
+  }
+  .flexnav li ul {
+    width: auto;
+  }
+  .flexnav li ul li a, .flexnav ul li ul li a {
+    white-space: nowrap;
+    width: 100%;
+    background-color: #704396;
+    border-left: none;
+  }
+  .flexnav, .flexnav * {
+    position: relative;
+    z-index: 2;
+  }
+  #header {
+    height: auto;
+    min-height: 190px;
+  }
+  #logospace {
+    position: static;
+    padding: 20px 0px 0px 20px;
+  }
+  #logospace a {
+    height: auto;
+    width: auto;
+    position: static;
+  }
+  
+  #logospace a img {
+    display: block;
+  }
+  #ev_joinus_box h3 {
+    color: #222222;
+    text-transform: none;
+  }
+  #thermometerCounter_box {
+    height: 100%;
+     /* background: url(https://act.alz.org/images/content/pagebuilder/bg_thermometerCountdown2.png) 2px bottom no-repeat; */
+    background: #490e66;
+    box-shadow: 3px 3px 5px rgba(0,0,0,.3), 0 0 30px rgba(255,255,255,0.08) inset;
+  }
+  #thermometerCounter_box h2 {
+    font-size: 1.35em;
+    line-height: 30px;
+    margin: 15px 0px 10px 0px;
+  }
+  #thermometerCounter_box h2.mtrLabel {
+    display: inline-block;
+    left: unset;
+    line-height: 45px;
+    margin: 0;
+    position: relative;
+    top: unset;
+    vertical-align: middle;
+  }
+  #thermometerCounter_box h2 span {
+    font-size: 2em;
+  }
+  #vertDivide {
+    width: 1px;
+    height: 200px;
+  }
+  .spotlight h2 {
+    font-size: 15px !important;
+  }
+  div.donation-level-row-decoration-container {
+    width: 90% !important;
+  }
+  #fr_thanks_page {
+    box-sizing: border-box;
+    padding: 20px;
+  }
+  .donation-form-container #pstep_finish {
+    float: none;
+    margin: 10px auto;
+    display: block;
+  }
+  .registration-page-container {
+    padding: 20px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .jshowoff-2-controls, .jshowoff-play {
+    display: none;
+  }
+  .jshowoff-1-controls {
+    margin: 0px;
+  }
+  .jshowoff-prev {
+    background: url('https://act.alz.org/images/content/pagebuilder/sponsor-left-arrow.png') scroll no-repeat 0 0 transparent;
+    position: absolute;
+    width: 25px;
+    height: 34px;
+    display: block;
+    top: 63px;
+    left: -30px;
+    color: transparent;
+    text-indent: -9999px;
+  }
+  .jshowoff-next {
+    background: url('https://act.alz.org/images/content/pagebuilder/sponsor-right-arrow.png') scroll no-repeat 0 0 transparent;
+    position: absolute;
+    width: 25px;
+    height: 34px;
+    display: block;
+    top: 63px;
+    left: 225px;
+    color: transparent;
+    text-indent: -9999px;
+  }
+  .tr_sponsorship_logo {
+    margin: 0 0 0 8px;
+  }
+  // .tr_sponsorship_logo_image {
+  //   margin-left: -115px !important;
+  // }
+  html, body {
+    height: 100%;
+  }
+  body {
+    margin-bottom: 0px !important;
+  }
+  .mm-page {
+    height: 100%;
+    min-height: 100%;
+  /*  padding-bottom: 155px;*/
+  }
+  /*#second-footer {
+    position: absolute;
+  }*/
+  
+  .sponsors-page, .gameInfo {
+    margin: 25px;
+  }
+  
+  .sponsors-page h1, .gameInfo h1 {
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  
+  /* --------------------------------------------------------------
+   Desktop Only: >= 992px
+  -------------------------------------------------------------- */
+  @media only screen and (min-width: 992px) {
+    /* section name */
+    .flexnav .touch-button {
+        display: none;
+    }
+  
+  
+    /*****************************
+     End of Desktop Only
+    ******************************/
+  }
+  
+  iframe.seamless { width: 100%; }
+  
+
+  // redesign pfind participant/team search 
+
+// TODO - conditionalize to only run on pfind
+
+  .appArea { display: none; } /* S4=[[S4]] */
+  #newAppArea {
+    display: block;
+    margin: 10px 0px;
+    padding: 0px 10px;
+    width: auto;
+  }
+  #newAppArea h2 {
+    color: #639;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 22px;
+    font-weight: bold;
+    line-height: 1em;
+    margin: 0 0 25px;
+    width: 120px;
+    text-transform: none;
+  }
+  
+  #newAppArea > h2 {
+          padding: 20px 0 0 20px;
+  }
+  
+  
+  #newAppArea .column h2 {
+    margin: 10px auto;
+    width: auto;
+    font-size: 18px;
+  }
+  #newAppArea .column p {
+    font-style: italic;
+    font-size: 13px;
+    color: #696969;
+  }
+  #searchRegion {
+    margin-bottom: 50px;
+    width: 100%;
+    padding: 0px 50px;
+    box-sizing: border-box;
+  }
+  #newAppArea div.column {
+    float: left;
+    text-align: center;
+    width: 50%;
+  }
+  #newAppArea div#donEvent { width: 30%; }
+  #newAppArea input {
+    border: 1px solid #999;
+    box-shadow: none;
+    display: block;
+    font-size: 14px;
+    height: 25px;
+    margin: 5px auto;
+    padding: 5px 10px;
+    width: 115px;
+    background-color: #ffffff;
+  }
+  #newAppArea {
+    position: relative;
+  }
+  #newAppArea #findpage-searchagain {
+    position: absolute;
+    top: 0px;
+    left: 50%;
+    margin-left: -65px;
+    width: 130px;
+    height: 31px;
+    background: #e9e9e9 url('https://act.alz.org/https://act.alz.org/2015longestday/images/searchagainbg.png') no-repeat 100px center;
+    color: #65378e;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    line-height: 31px;
+    -moz-border-radius-bottomleft: 5px;
+    -webkit-border-bottom-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    -moz-border-radius-bottomright: 5px;
+    -webkit-border-bottom-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    padding-left: 15px;
+    box-sizing: border-box;
+    cursor: pointer;
+  }
+  #newAppArea #findpage-searchagain:hover {
+    background-color: #fff203;
+  }
+  #newAppArea #findpage-searchagain:hover:before {
+  /*
+    content: '';
+    background-color: #fff203;
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    height: 7px;
+    width: 942px;
+    display: block;
+    margin-left: -471px;
+  */
+  }
+  #newAppArea #findpage-searchagain, #newAppArea.open #findpage-searchagain {
+    display: none;
+  }
+  #newAppArea.closed #searchRegion {
+    display: none;
+  }
+  #newAppArea.closed #findpage-searchagain {
+    display: block;
+  }
+  #newAppArea .Button, a.fr_part_search_result_donate {
+  border: 0 none;
+  border-radius: 3px;
+  box-shadow: none;
+  color: #fdfdfd;
+  cursor: pointer;
+  float: none;
+  font-size: 18px;
+  height: 45px;
+  line-height: 45px;
+  margin-top: 15px;
+  padding: 0px 30px;
+  width: auto;
+  background: #94e158;
+  background: -moz-linear-gradient(top, #94e158 0%, #76bc40 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#94e158), color-stop(100%,#76bc40));
+  background: -webkit-linear-gradient(top, #94e158 0%,#76bc40 100%);
+  background: -o-linear-gradient(top, #94e158 0%,#76bc40 100%);
+  background: -ms-linear-gradient(top, #94e158 0%,#76bc40 100%);
+  background: linear-gradient(to bottom, #94e158 0%,#76bc40 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#94e158', endColorstr='#76bc40',GradientType=0 );
+  box-shadow: 1px 1px 1px 0px rgba(0, 0, 0, 0.2);
+  text-shadow: 0px 0px 5px rgba(82, 138, 38, 0.75);
+  }
+  #newAppArea .Button:hover, a.fr_part_search_result_donate:hover {
+  background: #76bc40; /* Old browsers */
+  background: -moz-linear-gradient(top,  #76bc40 0%, #94e158 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#76bc40), color-stop(100%,#94e158)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  #76bc40 0%,#94e158 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  #76bc40 0%,#94e158 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  #76bc40 0%,#94e158 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  #76bc40 0%,#94e158 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#76bc40', endColorstr='#94e158',GradientType=0 ); /* IE6-9 */
+  
+  }
+  #newAppArea a.Button, a.fr_part_search_result_donate {
+  display: inline-block;
+  }
+  a.fr_part_search_result_donate {
+  height: 35px;
+  line-height: 35px;
+  font-size: 16px;
+  margin-top: 0px;
+  }
+  h5.dividerHeading {
+    font-size: 1.2em;
+    padding-left: 5px;
+  }
+  table.lc_Table {
+  border: 1px solid #afafaf;
+  padding: 15px;
+  }
+  table.lc_Table th:nth-child(3), table.lc_Table th:nth-child(4) {
+  width: 90px !important;
+  padding: 0px !important;
+  font-size: 0px !important;
+  }
+  td.lc_Cell { border: 0; padding: 3px 5px 0px 0px; vertical-align: top; }
+  td.lc_Cell:last-child { padding-right: 0px; }
+  /*
+  .lc_Table tr:hover { background: none repeat scroll 0 0 #D9EECA; }
+  */
+  tr.lc_Row0 { 
+    background-color: #fff; 
+  }
+  tr.lc_Row1 { 
+    background-color: #eee; 
+  }
+  table.lc_Table th { background-color: #ffffff; border-bottom: none; }
+  th.lc_Heading { border-left: none; }
+  table.lc_Table th, table.lc_Table td { font-size: 1.2em; }
+  table.lc_Table p { margin: 0; }
+  #newAppArea #searchRegion {
+    overflow: hidden;
+    -moz-transition: max-height 0.75s ease;
+    -webkit-transition: max-height 0.75s ease;
+    transition: max-height 0.75s ease;
+  }
+  #newAppArea.open #searchRegion {
+    max-height: 1100px;
+  }
+  @media (min-width: 321px) and (max-width: 640px) {
+    #newAppArea .lc_Table{
+      margin: 0 0 30px;
+    }
+    #newAppArea .column {
+      margin: 0 10px !important;
+      width: 130px;
+    }
+    #newAppArea .column input, #newAppArea .column select { width: 100%; }
+  }
+  @media (min-width: 481px) and (max-width: 640px) {
+    #newAppArea .column {
+      margin: 0 5% !important;
+    }
+  }
+  @media (max-width: 320px) {
+    #newAppArea #searchRegion {
+      max-height: 1800px;
+    }
+  }
+  #newAppArea.closed #searchRegion {
+    display: block;
+    max-height: 0px;
+  }
+  #newAppArea.closed {
+    border-top: 10px solid #e9e9e9;
+    padding-top: 12px;
+    position: relative;
+  }
+  #findpage-searchagain:hover:before {
+  content: '';
+  background-color: #fff203;
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  height: 10px;
+  width: 970px;
+  display: block;
+  margin-left: -485px;
+  }
+  #donEvent, #searchTeam, #fr_find_search2 {
+    display: none !important;
+  }
+  .lc_Cell:nth-child(2) {
+  max-width: 179px;
+  text-align: center;
+  }
+  .lc_Cell .lc_Text {
+  background-color: #efefef;
+  height: 100%;
+  display: inline-block;
+  width: 100%;
+  padding: 7px 0px;
+  }
+  .lc_Row0 .lc_Cell .lc_Text {
+  background-color: #ffffff;
+  }
+  table.lc_Table .lc_Cell:first-child p, table.lc_Table .lc_Cell:last-child p {
+  padding-left: 10px;
+  height: 35px;
+  line-height: 35px;
+  }
+// TODO - END conditionalize to only run on pfind
+ 
+  ::-webkit-input-placeholder { /* WebKit browsers */
+      color: #999;
+    font-style: italic;
+  }
+  :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+      color: #999;
+    font-style: italic;
+  }
+  ::-moz-placeholder { /* Mozilla Firefox 19+ */
+      color: #999;
+    font-style: italic;
+  }
+  :-ms-input-placeholder { /* Internet Explorer 10+ */
+      color: #999;
+    font-style: italic;
+  }
+  
+  .tr-personal-page-footer > p {
+      display: none;
+  }
+  
+  .app_id_6 {
+  .body_content #s63 .appArea .ShoppingCartContents {
+      width: 95%;
+    }
+  }
+
+  .app_id_6 {
+  .body_content #s63 .appArea form .ShoppingCart {
+      width: 96%;
+    }
+  }
+  
+  .app_id_6,
+  .app_id_8 {
+    .appArea {
+    width:950px !important;
+    }
+  }
+  
+  html {
+    position: relative;
+    min-height: 100%;
+  }
+  
+  #second-footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    /* Set the fixed height of the footer here */
+    height: 115px;
+  }
+  
+  /* this fixes the dropdown showing on page load */
+  #menu .flexnav ul { display: none; }
+  
+  div.team-honor-list-name { white-space: normal; width: 65%; }
+  div.team-honor-list-value { width: 35%; }
+
+  /********
+    reus_rivalz_css_resp_2015 
+    Created by: Ryan Dunwiddie
+    Date: 4/16/15
+    Edited: 4/21/15 RD
+    Edited: 6/19/15 RD
+  *********/
+  
+  
+  * { -moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box; }
+  
+  div.responsive {width:100%;}
+  #wrapper {width:100%;max-width:991px;}
+  .shadowWide {background-size:100%;}
+  #content_pattern {width:97.578203%; margin:0 1.237113%;}
+  // .body_content {width:97.57822%!important;}
+  // .body_content #mapOfEvents {width:64.86486%; border:0; padding:0;}
+  .body_content #ev_joinus_box_normal {width:27.56756%;}
+  
+  #main-footer {  width:97.5782%;  margin:0 1.23711%;   height: auto; overflow:hidden;}
+  #footerBtm {  width:100%; margin:0 auto;  background-size:100%;}
+  #second-footer {width:100%; height:auto;}
+  #alz-info-footer {  width:100%; max-width:970px; margin: 0 auto; padding:27px 2%;}
+  #second-footer-col-5 {width: 100%;}
+  #second-footer-mission { width: 620px; width:63.9175%;}
+    .menu-button {display:none;}
+  
+  .body_content #recentNews {width:100%; max-width:385px;}
+  
+.pg_entry {
+  .body_content {
+    // margin-top:-15px;
+  }
+  .flex-direction-nav li a {
+    margin:0 !important;
+  }
+}
+.pg_personal {
+  div.FormBox,
+  div.tr-page-main-content, div#team_page_main_content {margin:20px 5% 20px 0 !important; width:90%!important; border:0;}
+}
+a#main_donate_button {
+  color:#fff;
+}
+  #facebook-comment-box {width:100%!important;}
+  .manageable-editor-window-editor {width:100%!important;}
+  .cstmTitle {margin:20px 0;}
+  #fr_rich_text_container {width:100%;}
+  
+  .body_content #ticker {width:110%;}
+  .body_content #ticker #games,
+  .body_content .jcarousel-skin-tango .jcarousel-container-horizontal,
+  .body_content .jcarousel-skin-tango .jcarousel-clip-horizontal {width:100%;}
+  .body_content .jcarousel-skin-tango .jcarousel-clip-horizontal {width:95%;}
+  .body_content #thermometer_and_share_box {width:103%;}
+  
+  .fb_ltr {width:100%;}
+  
+  .spotlight-content-right {padding:0 20px;}
+  
+  div[id*="feedback_"] {width:100%!important;}
+  .fb_iframe_widget,
+  .fb_iframe_widget span,
+  .fb_iframe_widget span iframe[style] {
+    min-width: 100% !important;
+    width: 100% !important;
+  }
+  .fb_iframe_widget span iframe div[id*="feedback_"] {width:100%!important;}
+  
+  
+  .fb-comments{width: 100% !important;}
+  .fb-comments iframe[style]{width: 100% !important;}
+  .fb-like-box{width: 100% !important;}
+  .fb-like-box iframe[style]{width: 100% !important;}
+  .fb-comments span{width: 100% !important;}
+  .fb-comments iframe span[style]{width: 100% !important;}
+  .fb-like-box span{width: 100% !important;}
+  .fb-like-box iframe span[style]{width: 100% !important;} 
+  
+  
+  
+  /* Personal Page */
+  // .personal-page #footer-wrapper {width:81.44329%;}
+  .personal-page #footer-wrapper {width:78%;}
+  @media (max-width: 767px) { 
+    #s63 div.tr-page-main-content {width:90%!important;} 
+    .pg_personal {
+      div.FormBox,
+      div.tr-page-main-content, div#team_page_main_content {
+        width: 100%!important;
+      }
+    }
+  }
+  .mobile #view_less_link {
+    display:none !important;
+  }
+  .mobile div.tr-page-container #entry_page_custom_html img {
+    display:inline !important;
+  }
+  div.tr-personal-page-footer  {width:100%;}
+  // #personal-sidebar {width:18.5567%!important;}
+  #personal-sidebar {width:22%!important;}
+  #personal-footer {width:74.94845%!important; margin:0 3.09278%;}
+  .personal-page #fr_rich_text_container {width:100%;}
+  #personalpage-top-buttons {right: 16.28865%!important;}
+  #personal-progress-area, #team-progress-area, #natlcomp-progress-area {width:100%!important;}
+  #personal_page_main_content a#personal_sidebar_join_team_button {padding:8px 16px; width:auto;}
+  #personal_page_main_content a#personal_sidebar_donate_button, 
+  #personal_page_main_content a#sidebar_donate_button, 
+  #personal_page_main_content a#personal_team_store_button {width:auto!important; height:auto; margin:0;}
+  #personal_page_main_content a#personal_team_store_button,
+  #personal_page_main_content a#personal_sidebar_donate_button {  position: absolute;
+    top: initial;
+    bottom: 10px;
+    right: 35%;
+    left:initial;
+    padding: 8px 16px;
+    height: auto;
+    margin: 0;
+  }
+  
+  #personal_page_main_content a#personal_team_store_button {  right: 5%;}
+  
+  #team_page_custom_html #team-progress-area {width:44.32989%!important; width:100%!important;}
+  #team_page #team_page_main_content {width:60.8247422%!important;}
+  .team-page #fr_rich_text_container {width:100%;}
+  
+  
+  /* eCommerce */
+  @media only screen and (max-width: 479px) {
+
+
+     .ShoppingButtonRow td {display:inline-block;}
+     form[name="ShoppingCart"] table:last-child td,
+     form[name="ShoppingCart"] .ShippingAddressLinks td {display:inline-block;}
+     form[name="ShoppingCart"] table:last-child td:last-child {display:block;}
+     form[name="ShoppingCart"] select {max-width:100%; width:100%;}
+  }
+  
+  .body_content, .body_content .appArea {
+    width:970px;
+    width:97.8809%;
+    margin: 0 1.21089%
+  }
+  .app_id_6,
+  .app_id_8 {
+  /* eCommerce Specific style */
+    .body_content, .body_content .appArea {
+      width:950px;
+      margin-left:12px;
+      width:95.86276%;
+      margin: 0 1.21089%
+    }
+  }
+
+  .app_id_9 {
+    .body_content .appArea {
+      width: 97.5%;
+    }
+  }
+  
+  
+  .hp_content {width:97.8809%;}
+  #ev_image_carousel {width:48.865979;}
+  #ev_joinus_left {margin-right:4.7311%; width:48.38709%;}
+  #ev_image_carousel {width:100%;}
+  #ev_joinus_right {width:46.23655%; margin-left:0; float:left; margin-top:0px; top:0;}
+  
+  #thermometerCounter_box {width:100%; background-size:100% 100%;}
+  #duellingThermoms {width:65.05376%;}
+  .greetmtr {width:68.37748%; width:63%;}
+  .greetmtr {background-size:contain;}
+  .mtrOverlay {width:100%;}
+  .mtrRaised {right:0; left:auto; text-align:right;}
+  .mtrOverlay {background:none;}
+  // #donate_box {width:34.8%; padding:0 6.0544% 0 2.01863%;}
+  
+  #teamA_meter .greetmtr {}
+  
+  div.tr-page-container div.main-content {width:100%;}
+  .spotlight {width:48.9247%; padding-bottom:20px; height:auto;}
+  .spotlight-boxes {overflow:hidden;}
+  #spotlight-box-2 {margin-left:15px; margin-left:1.6129%; float:left;}
+  #ev_image_carousel {max-width:450px;}
+  #ev_image_carousel img {max-width:450px; width:100%; height:auto;}
+  #ev_image_carousel li {width:100%; max-width:450px;}
+  
+  .flex-container {position:relative;}
+  .flex-container:hover .flex-direction-nav li a.next {left:auto; right:0;}
+  .flex-direction-nav li a.prev, .flex-direction-nav li a.next {height:auto;}
+  .flex-container:hover .flex-direction-nav li a.prev,
+  .flex-container:hover .flex-direction-nav li a.next {height:100%; background-size:100% 100%;}
+  
+  #about_body {padding:0 5% 30px;}
+  #column_two img {max-width:100%;}
+  
+  /* registration */
+  // div.reg-summary-thanks-common-container div.action-button-container {width:100%;}
+  div.reg-summary-thanks-common-container div.reg-summary-name-info {max-width:100%;}
+  div.reg-summary-thanks-common-container div.reg-summary-event-info,
+  div.reg-summary-thanks-common-container div.reg-summary-address-info {width:48%; word-break:break-word;}
+  
+  div#cons_info_component_container div#personal_info_section_one, div#cons_info_component_container div#personal_info_section_two, div#cons_info_component_container div#contact_info_section_one, div#cons_info_component_container div#contact_info_section_two, div#registration_options_page div#user_name_pword_container, div#registration_options_page div#privacy_opts_container, div#registration_options_page div#tribute_component_section_one, div#registration_options_page div#tribute_component_section_two, div#emergency_contact_container, div#gift_notice_optin {}
+  
+  div#email_optin {width:100%;}
+  
+  /* homepage */
+  #thermometer_and_share_box {width:100%;}
+  
+  
+  /* --------------------------------------------------------------
+   Desktop Only: >= 992px
+  -------------------------------------------------------------- */
+  @media only screen and (min-width: 992px) {
+    /* section name */
+  
+    .flexnav {max-height:none; float:left; padding:0;}
+    .flexnav .touch-button {display: none;}
+    #alz-info-footer {padding:27px 0;}
+  
+  }
+  
+  @media (min-width: 769px) {
+     body {
+       padding-left: 0 !important;
+     }
+     #slidemenu, #hamburger {
+        display: none !important;
+     }
+  }
+  
+  /* --------------------------------------------------------------
+   General Responsive Overrides: ~320px - 991px
+  -------------------------------------------------------------- */
+  @media only screen and (max-width: 991px) {
+    #s63 { padding: 0; }
+    
+    #header {height:auto!important; min-height:140px; padding-bottom:0px;}
+    #logospace {padding-left:0px;}
+    #logospace a img {margin:0px 0 0 20px!important; max-width:250px; height:auto;  }
+    .flexnav .touch-button {width:30px; height:37px;background: rgba(0, 0, 0, 0.0);}
+    .flexnav .touch-button .navicon {color:#fff; top:12px;}
+    .flexnav > li.item-with-ul > a {padding-right:30px;}
+    .flexnav li > ul li {display:block; clear:left; width:100%;}
+    .personal-page #footer-wrapperxxx {width:100%;}
+    #personal-footer {float:left; clear:none; width:90%!important; margin:0 5%;}
+    .fb-comments {width:100%!important;}
+    .fb-comments.fb_iframe_widget > span {width:100%!important;}
+    .fb_iframe_widget iframe {width:100%!important;}
+    .fb-comments div[id*="feedback_"] {width:100%!important;}
+    .fb_iframe_widget iframe div {width:100%!important;}
+    #personalpage-top-progress {padding-right:0!important;}
+    .fb-comments, .fb-comments span, .fb-comments.fb_iframe_widget span iframe {
+      width: 100% !important;}
+    .fb-comments, .fb-comments span, .fb-comments.fb_iframe_widget span iframe * {width:100%!important;}
+    div#feedback_1578ARzUHyqxJIVUf {width:100%!important;}
+  
+    #pcloginform {width:97.6%;margin:-4px 0 0 4px;}
+    #alz-info-footer {width:90%; padding:27px 0;}
+  }
+  
+  
+  @media (max-width: 768px) {
+     .hp_content { margin-left: 0; width: 100%; }
+     .mm-menu { background-color: #fff; padding-top: 21px; }
+     .mm-menu ul, .mm-menu ul ul { list-style-type: none; }
+     .mm-menu a { font-size: 12px; line-height: 12px; }
+     #menuzzz, .menu-button {
+        display: none !important;
+     }
+     .menu-button .touch-buttonzzz {display:none;}
+     .flexnav li > ul {margin-top:0;}
+  
+     .mm-list a.mm-subopen:before { border: 0 none; }
+     #slidemenu .touch-buttonzzz {
+       display: none;
+     }
+     .mm-menu.mm-vertical .mm-list li.item-with-ul > .mm-panel {
+        display: block !important;
+     }
+     .mm-menu.mm-vertical .mm-list > li > a.mm-subopenzzz {
+        display: none;
+     }
+  
+     #hamburger span {
+        right: 10px;
+     }
+  #hamburger span:before {content:'Menu'; float:left; width:80px; height:45px; color:#fff; line-height:45px;}
+  
+     #hamburger:before, #hamburger:after, #hamburger span {
+        right: 10px;
+        left: auto;
+     }
+     #team-link-1, #team-link-2 {min-width:260px; display:inline-block; margin:10px 20px;}
+     #about-rivalz #about-right {width:100%; margin:15px 0;}
+     #about-rivalz #about-right img {max-width:100%; height:auto;}
+     #abt-team-btn-1, #abt-team-btn-2 {line-height:28px; display:inline-block;}
+  
+     .personal-page #footer-wrapper {width:100%!important;}
+     .personal-page #personal-sidebar {width:100%!important;}
+     .personal-page #personal-sidebar div.vscroll-container {height:50px;}
+     .personal-page #personalpage-top-progress {position:relative; float:left; padding:0; top:0;}
+     .personal-page #personal-progress-area {margin:0;}
+     .personal-page #personal-progress-raised {margin:10px 0;}
+  
+    /* facebook comments */
+    .fb-comments, .fb-comments iframe[style], .fb-like-box, .fb-like-box iframe[style] {width: 100% !important;}
+    .fb-comments span, .fb-comments iframe span[style], .fb-like-box span, .fb-like-box iframe span[style] {width: 100% !important;}
+  
+      #main-footer {padding:20px;}
+  
+  #appAreaNoWidthClearFix { width: 100%; }
+  #login-div-content .outer-border > table { width: 100%; }
+  #login-div-content .outer-border > table > tbody > tr > td { display: block; width: 100%; }
+  #login-div-content .outer-border > table > tbody > tr > td > .right-block { float: none; padding-top: 40px; }
+  
+  div#user_type_new_participant_registration_container #next_step { margin-left: 0; }
+  div#employment_information_container div#occupation_container, div#employment_information_container div#employer_container { margin-left: 0; }
+  div.responsive div.form-content { margin-right: 0; }
+  div.responsive textarea, div.responsive input, div.responsive select, div.responsive option { max-width: 170px !important; }
+  div#cons_info_component_container div#personal_info_section_one, div#cons_info_component_container div#personal_info_section_two, div#cons_info_component_container div#contact_info_section_one, div#cons_info_component_container div#contact_info_section_two, div#registration_options_page div#user_name_pword_container, div#registration_options_page div#privacy_opts_container, div#registration_options_page div#tribute_component_section_one, div#registration_options_page div#tribute_component_section_two, div#emergency_contact_container, div#gift_notice_optin, div#email_optin { width: 100%; }
+  div.donation-level-row-decoration-container { width: 88% !important; }
+  label[for="tr_recognition_nameanonymousname"] { width: 80%; }
+  .participant-find-donate-link { margin-bottom: 10px; }
+  #find_participant div.participant-find-search-container { max-width: 100%; }
+  
+  }
+  
+  
+  /* --------------------------------------------------------------
+   Tablet Only: 768px - 991px
+  -------------------------------------------------------------- */
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
+    
+    .flexnav > li a {height:auto; padding: 0 12px; line-height:37px; font-size:13px;}
+    .flexnav > li a:hover, .flexnav > li:hover > a {line-height: 36px;}
+  
+    /*****************************
+     End of Tablet Only
+    ******************************/
+  }
+  
+  
+  /* --------------------------------------------------------------
+    Mobile All: ~320px - 800px
+  -------------------------------------------------------------- */
+  @media only screen and (max-width: 800px) {
+  
+    .flexnav li {float:left; overflow:visible;}
+    .menu-button {display:none;}
+    #menu .flexnav {overflow:visible; padding:0!important;}
+    .flexnav > li a {padding:0 15px; line-height:37px; height:auto;}
+  
+    .flexnav li ul {position:absolute; top:100%;}
+  
+     /*****************************
+     End of Mobile All
+    ******************************/
+  }
+  
+  
+  /* --------------------------------------------------------------
+    Mobile All: ~320px - 767px
+  -------------------------------------------------------------- */
+  @media only screen and (max-width: 767px) {
+  .pg_rivalz_homepage,
+  .pg_rivalz_search {
+  
+    .body_content #mapOfEvents {width:100%;}
+    .body_content #ev_joinus_box_normal {width:100%;}
+    .body_content #gallery { margin:0 auto; float:none; max-width:100%; height:auto; padding-bottom:40px;}
+    .body_content .flex-control-nav {bottom:0; left:10%;}
+    .body_content #introCopy {width:100%; margin:10px 0;float:left;}
+    .body_content #recentNews {margin:20px auto;}
+    .body_content #theHuddle {width:100%; margin:0 5%;}
+    .body_content #theHuddle #twitterShare {width:62%;}
+  }
+
+  
+  
+    a.mm-slideout {
+       box-sizing: border-box;
+       display: block;
+       width: 80px;
+       height: 45px;
+       position: absolute;
+       top: 95px;
+       z-index: 4;
+       background:#704396;
+       color:#fff;
+       border-radius:4px;
+       right:20px;
+       left:initial;
+       text-transform:uppercase;
+       text-align:center;
+    }
+  
+    html.mm-right.mm-opened a.mm-slideout {
+    -webkit-transform: translate(-440px, 0);
+    -moz-transform: translate(-440px, 0);
+    -ms-transform: translate(-440px, 0);
+    -o-transform: translate(-440px, 0);
+    transform: translate(-440px, 0);
+    -webkit-transition: -webkit-transform 0.4s ease;
+    -ms-transition: -ms-transform 0.4s ease;
+    transition: transform 0.4s ease;
+  }
+  
+    .flexnav > li:first-child > a {
+      border-top-left-radius: 0px;
+      border-bottom-left-radius: 0px;
+    }
+    .flexnav > li:last-child > a {
+      border-top-right-radius: 0px;
+      border-bottom-right-radius: 0px;
+    }
+  
+    .menu-button {display:block!important; position:absolute; bottom:0; width:96%; margin:0 2%;
+      background:#704396;
+      color:#fff;
+      font-weight:bold;
+      -webkit-border-radius: 4px;
+      border-radius: 4px;
+      text-transform:uppercase;
+      font-size:15px; 
+      width:80px;
+      font-weight:normal;
+      right:0;
+      top:initial; 
+      bottom:0;
+      text-align:center;
+  display:none!important;
+    }
+    .menu-button.active {
+      -webkit-border-radius: 4px 4px 0 0;
+      border-radius: 4px 4px 0 0;
+    }
+    #nav_main {position:relative; float:left; display:block; width:100%;
+      position:absolute;
+      right:auto;
+      left:0;
+      top:100%;
+    }
+    #menu {display:none; height:0; overflow:hidden; width:96%; margin-left:2%;    
+      background:#704396;
+    }
+    .menu-button .touch-buttonzzz {display:none;}
+    .menu-button .touch-button .navicon {color:#fff;}
+    .menu-button .touch-button.active {
+      -moz-transform: rotate(180deg);
+      -webkit-transform: rotate(180deg);
+      -o-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+      transform: rotate(180deg);
+    }
+    
+    #menu.flexnav-show {display:block; height:auto;}
+    #menu.flexnav-show .flexnav li:last-child a {
+      -webkit-border-radius: 0 0 4px 4px;
+      border-radius: 0 0 4px 4px;
+    }
+    .flexnav li {width:100%;}
+  
+  
+    a.fr_part_search_result_donate {height:auto; padding: 8px 20px;}
+    .lc_Cell .lc_Text {min-height:60px;}
+  
+    .flex-container {position:relative;}
+    #ev_joinus_left,
+    #ev_joinus_right {margin:0; width:100%;}
+    .flex-container:hover .flex-direction-nav li a.next {left:auto; right:0;}
+  
+    #duellingThermoms {padding:0 15px;}
+    .duelingmeter {height:100px; margin-top:20px; width:100%;}
+    #thermometerCounter_box h2.mtrLabel {top:0; left:0; position:absolute; width:50%; text-align: left;}
+    .greetmtr {width:100%; top:50px; left:0; clear:both;}
+    
+    #thermometerCounter_box {padding:30px;}
+  
+    #vertDivide { 
+    width:90%;
+    margin:10px 5%;
+    height:1px;
+    border-right:0px;
+    border-top:1px solid #552c7a;
+    }
+    #findFriendForm #fr_find_search {margin:15px auto!important;}
+    #duellingThermoms,
+    // #donate_box {width:auto; padding:0 20px; float:none; text-align:center; margin:0 auto; clear:both;}
+  
+    // #searchFirstName, #searchLastName {width:60%; display:block; margin:0 auto 10px auto;}
+    #topfund_box,
+    #news_box,
+    #sponsors_box {margin-bottom:20px; width:100%; height:auto; }
+    #topfund_box {margin-right:0;}
+    #topfund_box {text-align:center;}
+    #newsContainer, #sponsorsContainer {width:100%; height:auto;}
+    .spotlight {width:100%; }
+    #spotlight-box-2 { margin-left:0; margin-top:10px; float:left;}
+    #sponsorScroller {width:100%; margin-left:0; left:0;}
+    .s42 {width:100%;}
+    #topfund_box a img {margin-left:0;}
+    .fund_categories {text-align:left; position:relative;}
+    .fund_categories #funds_raised {right:0; margin:11px 8px 0 0!important;}
+    .becomeAsponsor {margin-left:10px;}
+    .mtrRaised {right:2%;}
+    .lc_Table td p a {display:inline-block; line-height:15px;}
+    #newAppArea .lc_Table{border:0; margin:0; padding:0; }
+    .spotlight-boxes {width:99.7%;}
+  
+    /* Personal Page */
+    #personal_page_main_content #personalpage-top-buttons {top:40px; left:212px!important;}
+    #personal_page_main_content a#personal_team_store_button, 
+    #personal_page_main_content a#personal_sidebar_donate_button {right:initial!important; left:212px;}
+    #personal_page_main_content a#personal_sidebar_donate_button {bottom:50px;}
+  
+  
+  
+    #team_page #team_page_main_content {width:100%!important; margin:0;}
+    
+    .team-page div.tr-page-container div.side-bar {width:99.6%!important;}
+    .team-page #fr_rich_text_container {width:100%;}
+    .team-roster-participant-donate {top:0px!important; float:right;}
+    .team-roster-participant-container.indicator-container {max-width:400px;}
+    div.team-roster-participant-name,
+    div.team-roster-participant-raised {margin-top:3px;}
+  
+    #newAppArea div.column {margin:0 auto!important; float:none; max-width:250px; width:100%;}
+  
+    div.team-list-participants {clear:both; padding-top:0px;}
+    div.team-list-captain {white-space:normal;}
+  
+  
+    #alz_login img  {max-width:100%;}
+    #pcloginbox {right:0; width:100%;}
+    #pcloginbox img {width:100%;} 
+    #pcloginbox #gigyaLinks img {width:auto;}
+    #pcloginform {padding:10px;}
+  
+  
+    #pcloginbox #gigyaLinks img {max-width:33%;}
+    #pcloginbox #gigyaLinks .right {max-width:50%;}
+    #alz_login form input[type="text"],
+    #alz_login form input[type="password"] {width:90%; margin:5px 0 0 0; padding:5px;}
+    #pcloginbox p {margin: 0 0 5px 0;}
+    #gigyaLinks {margin-top:0;}
+
+    div.required-indicator-legend {padding-right:0;}
+    div.reg-summary-thanks-common-container div.reg-summary-total {
+      margin-right:0;
+    }
+
+    #personalpage-top-block {
+      width:100%;
+    }
+
+    /*****************************
+     End of Mobile All
+    ******************************/
+  }
+  
+  
+  
+  /* --------------------------------------------------------------
+    Mobile Wide Only: 480px - 767px
+  -------------------------------------------------------------- */
+  @media only screen and (min-width: 480px) and (max-width: 767px) {
+    #second-footer-mission {width:50%; height:auto;}
+    #main-footer {padding: 20px 1.23711%;}
+    #footer-links-col-1, #footer-links-col-2, #footer-links-col-3, #footer-links-col-4 {width:125px;}
+    #second-footer-logo {max-width:50%;}
+    #second-footer-logo img {max-width:90%; position:relative; float:right;}
+  
+    .flexnav > li a { font-size:12px;}
+    .flexnav > li a:hover, .flexnav > li:hover > a {line-height: 36px;  }
+  
+    .personal-page #footer-wrapper {width:100%;}
+    .personal-page #personal-sidebar {clear:both;}
+  
+    /*****************************
+     End of Mobile Wide Only
+    ******************************/
+  }
+  
+  @media only screen and (max-width: 550px) {
+  
+    html.mm-right.mm-opened a.mm-slideout {
+    -webkit-transform:none;
+    -moz-transform:none;
+    -ms-transform: none;
+    -o-transform: none;
+    transform: none;
+    right:85%;
+  }
+  }
+  
+  
+  /* --------------------------------------------------------------
+    Mobile Narrow Only: ~320px - 479px
+  -------------------------------------------------------------- */
+  @media only screen and (max-width: 479px) {
+  
+    .phone-mobile-fix {display: block;}
+    #header {padding-bottom:20px;}
+    .menu-button {bottom:20px; left:2%; max-width:25%; top:initial;}
+    #second-footer {height:auto; position:relative; float:left; clear:both; bottom: auto;}
+    div.progress-bar-step-container {width:100%;}
+    div.progress-bar-step-number-container { width:20px; height:20px; line-height:20px;}
+    div.progress-bar-step-text-container {margin-top:0; max-width:100%;}
+    div.team-list-captain {max-width:100%;}
+    div.team-list-participants {clear:left;}
+    div.team-list-two-button-container {position:relative; float:left; width:auto; top:auto; right:auto; margin:0; clear:both; width:100%;}
+    div.team-list-two-button-container div {float:left; width:auto; }
+    div.team-list-two-button-container div a {margin:10px 20px 0 0;}
+    div.top-participant-list-row a.participant-find-donate-link {min-width:90px;}
+    .body_content #theHuddle #twitterShare {width:90%; margin:10px 4%; height:150px; overflow:hidden;}
+    .body_content #theHuddle #twitterShare #twitter-widget-0 {height:150px;}
+    
+    a.mm-slideout {top:20px; right:20px;}
+  
+    ul {margin:0 0 1em 0; padding-left:20px;}
+  
+    #header {height:auto; overflow:visible; position:relative; float:left; width:100%;}
+    #logospace {text-align: center;}
+    #logospace a img {max-width:60%; height:auto; margin: 0 0 0 20px!important;}
+    #alz_login { padding-right:0; right:0; margin-top:10px; margin-right:10px; width:70%; max-width:65%; position:relative; float:right;}
+    #abt-team-btn-1, #abt-team-btn-2 {width:100%;margin:15px 0 0 0; text-align:center;}
+       #abt-team-btn-2 {margin-bottom:15px;}
+  
+    #main-footer {padding: 20px 5%;}
+    #wrapper {padding-bottom:0px;}
+    #second-footer {margin-top:0px;}
+    #second-footer-mission {margin-bottom:20px;}
+    #second-footer-mission,
+    #second-footer-logo {width:100%; position:relative; float:left; clear:both;}
+    #second-footer-logo {text-align: center;}
+    #footer-links-col-1, #footer-links-col-2, #footer-links-col-3, #footer-links-col-4 {width:105px; line-height:12px; }
+    #main-footer li a {padding:6px 0; float:left; width:100%;}
+    #footer-logo {width:100%; margin-bottom:10px;}
+    #footer-links-col-4 {clear:both;margin-top:10px!important;}
+    #footerBtm {height:auto;}
+  
+    #main-footer .flexnav > li {width:100%;}
+    .flexnav > li a { padding: 0 10px; line-height:31px; font-size:12px;display:block;} 
+    .flexnav > li a:hover, .flexnav > li:hover > a {line-height: 36px;}
+  
+    div#gift_notice_optin {width:auto;}
+    div.top-participant-list-name {max-width: 55%; white-space: initial; width:auto;}
+    .top-participant-team-list-title {margin:15px 0;}
+  
+    #join_team_button_container {width:100%;}
+    a#personal_sidebar_donate_button, a#sidebar_donate_button, a#team_store_button, a#join_team_button { width:100%!important; padding:10px 0!important; color:#fff !important;} 
+    .mobile div.mobile-view-description {
+      height:auto;
+      overflow:visible;
+    }
+    .mobile div#team_image {
+      display:block;
+      width:100%;
+    }
+
+    #join_team_button_container a#join_team_button,
+    #join_team_button_container a#sidebar_donate_button,
+    #join_team_button_container a#team_store_button {width:100%!important; padding:10px 0!important;}
+  
+    div.part-type-container .part-type-decoration-messages {display:inline-block; max-width:75%;}
+  
+    #team-link-1, #team-link-2 {line-height:24px;}
+  
+    /* personal page */
+  
+    #personalpage-top-block {overflow:hidden;padding-top:220px; min-height:100px; margin-bottom:20px;}
+    #personal_page_main_content #personalpage-title-block {padding-left:0; position:relative; }
+    #personal_page_main_content #personalpage-top-buttons {position:relative; width:100%; top:auto; right:initial!important; float:left;left:0!important;}
+    #personal_page_main_content a#personal_sidebar_join_team_button {margin:10px auto; width:100%; padding:10px;}
+  #personal_page_main_content a#personal_team_store_button, 
+  #personal_page_main_content a#personal_sidebar_donate_button {left:0!important;float:left; width:48%; margin-right:2%;}
+  #personalpage-top-block div#personal_page_image_div {position:absolute; top:0; left:0; max-width:100%; width: auto; height:200px;}
+  #personalpage-top-block div#personal_page_image_div img {height:100%; width:auto;}
+  
+  #personal_page_main_content a#personal_team_store_button, 
+  #personal_page_main_content a#personal_sidebar_donate_button {position:relative; float:left; width:48%; margin-right:2%;left:initial!important; bottom:initial!important;}
+  
+    #entry_page_custom_html .spotlight-content-left {text-align:center; width:100%; margin:15px 0px; float:none;}
+    #entry_page_custom_html .spotlight-content blockquote {margin-left:0;}
+  
+  #about_body #column_one,
+  #about_body #column_two {width:100%; margin:0 0 10px 0;}
+  
+    /*****************************
+     End of Mobile Narrow Only
+    ******************************/
+  }
+  
+  
+  /* --------------------------------------------------------------
+    Mobile Narrow Only: ~320px 
+  -------------------------------------------------------------- */
+  @media only screen and (max-width: 320px) {
+  
+  div.responsive a.next-step, div.responsive button.next-step, div.responsive button.finish-step, div.responsive button.previous-step, div.responsive button.cancel-step {width:100%;}
+  
+    /*****************************
+     End of Mobile Narrow Only
+    ******************************/
+  }
+  
+  
+    // redesign pfind participant/team search 
+
+// TODO - conditionalize to only run on pfind
+  
+  @media (min-width: 321px) and (max-width: 640px) {
+  
+    #newAppArea .column {
+      margin: 0 10px !important;
+      width: 130px;
+    }
+    #newAppArea .column input, #newAppArea .column select { width: 100%; }
+    #newAppArea div.column {margin:0 auto!important; float:none; max-width:250px; width:100%;}
+  }
+  @media (min-width: 481px) and (max-width: 640px) {
+    #newAppArea .column {
+      margin: 0 5% !important;
+    }
+  
+  }
+  @media (max-width: 320px) {
+    #newAppArea #searchRegion {
+      max-height: 1800px;
+    }
+  }
+  
+// TODO - END conditionalize to only run on pfind
+
+
+// TODO - conditionalze to only run on  pagename
+// xbvb_homepagexbvb_homepage_2015xbvb_searchxbvb_eventListx
+
+.pg_rivalz_homepage,
+.pg_rivalz_search,
+.pg_bvb_eventList {
+  #ev_image_carousel { float: left; height: 252px; margin: 15px 30px 0 0; width: 283px; }
+  #gallery {
+    background: transparent;
+      height: 335px;
+    // margin-left: 30px;
+    // width: 453px;
+  }
+  .flex-control-nav {
+    bottom: 0;
+          display: block !important;
+    left: 100px;
+    width: 240px;
+  }
+  .flex-control-nav li { margin-top: 4px; }
+  .flex-control-nav li a {
+    background: url('https://act.alz.org/images/content/pagebuilder/carousel_event_dot.png') scroll no-repeat 0 0 transparent;
+  }
+ 
+  .flex-control-nav li a.active {
+    background: url('https://act.alz.org/images/content/pagebuilder/carousel_event_dot_active.png') scroll no-repeat 0 0 transparent;
+  }
+  .flex-direction-nav li a.prev {
+    background: url('https://act.alz.org/images/content/pagebuilder/carousel_event_left.png') scroll no-repeat 0 0 transparent;
+    bottom: -42px;
+      height: 63px;
+      left: 125px;
+      width: 37px;
+  }
+  .flex-direction-nav li a.next {
+    background: url('https://act.alz.org/images/content/pagebuilder/carousel_event_right.png') scroll no-repeat 0 0 transparent;
+    background-position: 0;
+    bottom: -18px;
+      height: 63px;
+    left: auto;
+      right: 125px;
+      width: 37px;
+  }
+}
+
+
+
+// TODO - only run on landing page
+.pg_rivalz_homepage,
+.pg_rivalz_search {
+#ticker {
+  background:url(https://act.alz.org/images/bvb/bg_ticker.png) no-repeat;
+height:74px;
+margin-left: -43px;
+padding:6px 0 0;
+overflow: hidden;
+// width:994px;
+}
+
+@include media-breakpoint-down(md) {
+  #ticker {background:url(https://act.alz.org/images/bvb/bg_ticker.png) no-repeat;
+    margin-left: -43px;
+  }
+  .body_content #ticker {
+    width:114%;
+  }
+}
+
+
+// @include media-breakpoint-down(sm) {
+//   #gallery {
+//     height:
+//   }
+// }
+
+@include media-breakpoint-down(sm) {
+  #ticker {
+    margin-left: -26px;
+  }
+}
+
+
+#ticker .arrowLeft {float:left;
+width:16px;
+padding:13px;}
+
+#ticker #games {
+  float:left; 
+  // width:800px
+}
+
+
+#ticker #games ul {margin:10px;padding:0;list-style:none;}
+
+#ticker .game {float:left;
+padding:0 10px;
+border-right:1px solid #ccc;}
+
+#ticker li {
+  font-size:12px;
+}
+#ticker a {
+  color:#65378f !important;
+}
+#ticker .game_city {
+font-weight:bold;
+height: 1.4em;
+padding:0px;
+overflow: hidden;
+text-align:left;
+width:101px;
+}
+
+.game_date {
+	text-transform: capitalize;
+}
+
+#ticker .score {font-weight:bold;}
+
+#ticker .arrowRight {float:right;
+width:21px;
+padding:13px;}
+
+/***** Carousel Styles *****/
+
+.jcarousel-skin-tango .jcarousel-container {
+padding-left:33px;}
+.jcarousel-skin-tango .jcarousel-direction-rtl {direction: rtl;}
+.jcarousel-skin-tango .jcarousel-container-horizontal {
+  // width: 970px;
+}
+.jcarousel-skin-tango .jcarousel-clip {overflow: hidden;}
+// .jcarousel-skin-tango .jcarousel-clip-horizontal {
+//   width: 900px;
+//   padding-right:15px;
+// }
+
+.jcarousel-skin-tango .jcarousel-item {
+width: 110px;
+height: 47px;}
+
+/**
+ *  Horizontal Buttons
+ */
+.jcarousel-skin-tango .jcarousel-next-horizontal {
+    position: absolute;
+    top: 13px;
+    right: 13px;
+    width: 16px;
+    height: 32px;
+    cursor: pointer;
+    background: transparent url(https://act.alz.org/images/bvb/ticker_arrowRight.png) no-repeat 0 0;
+}
+
+.jcarousel-skin-tango .jcarousel-direction-rtl .jcarousel-next-horizontal {
+    left: 5px;
+    right: auto;
+    background-image: url(https://act.alz.org/images/bvb/ticker_arrowLeft.png);
+}
+
+.jcarousel-skin-tango .jcarousel-prev-horizontal {
+    position: absolute;
+    top: 13px;
+    left: 13px;
+    width: 16px;
+    height: 32px;
+    cursor: pointer;
+    background: transparent url(https://act.alz.org/images/bvb/ticker_arrowLeft.png) no-repeat 0 0;
+}
+
+.jcarousel-skin-tango .jcarousel-direction-rtl .jcarousel-prev-horizontal {
+    left: auto;
+    right: 5px;
+    background-image: url(https://act.alz.org/images/bvb/ticker_arrowRight.png);
+}
+
+/***************************/
+
+#body_content, #body_content .appArea {width:970px;
+margin-left:12px;
+padding:10px;}
+
+#introArea { padding: 25px 20px 20px;}
+#gallery {float:left;}
+.clearfix {clear:both;}
+// #introCopy {margin-left:528px;}
+#introCopy h1 {color:#64338d;margin-bottom:10px;font-size:35px;font-family: $font-family-serif; font-weight: normal;}
+#introCopy p {clear:right;padding-top:10px;text-align:left; font-size: 16px; line-height: 1.5rem;}
+#introCopy {
+  a.btn {
+    font-size:24px;
+  }
+}
+#introCopy .boldp {font-size:12pt;text-transform:uppercase}
+
+#detail_box {float:left;}
+
+#detail_box h2, #donate_box h2 {
+color:#64338d;
+margin-bottom:10px;
+font-size:24px;
+}
+
+
+#detail_box {width:400px;
+padding:10px 0px;
+height:180px;}
+.detgroup {float:left;width:260px;margin:10px 15px 25px 0;}
+.dethead {display:inline-block;font-weight:bold;font-size:120%;margin-bottom:5px;}
+.detsignup {clear:left;}
+.detsignup a {display:inline-block;float:left;height:39px;line-height:39px;margin-right:15px;font-size:14px;}
+// #donate_box {width:247px;padding:10px;}
+
+
+#thermometer_and_share_box {
+position:relative;
+margin-left: -12px;
+width: 994px;
+height:220px;
+background: url('https://act.alz.org/images/content/pagebuilder/bg_thermometershare220.png') 2px 0 no-repeat;
+text-align:center;
+}
+#thermometer_and_share_box h2 {
+	color:#fff;
+	float: left;
+	margin: 20px 15px 0 0;
+}
+
+#thermometerArea {width:438px;}
+#thermometerArea p {color:#fff;}
+#theHuddle {
+	background-color:#65358F;
+	color: #fff;
+	float:none;
+	margin:0 auto;
+	text-align:left;
+	width:575px;
+}
+#twitterShare {
+    float: left;
+	margin: 4px;
+}
+
+#recentNews {
+width:385px;
+margin-top:30px;
+padding:18px 10px 12px;
+border-radius:5px;
+-moz-border-radius:5px;
+-webkit-border-radius:5px;
+background-color:#65358f;
+color:#fff;}
+#recentNews h2 {color:#fff;}
+#recentNews ul {
+list-style-image:url(https://act.alz.org/images/bvb/bullet_arrowPurple.png);
+margin:5px;
+padding:4px 10px;}
+#recentNews ul li {margin-bottom:10px;color:#fff;}
+#recentNews ul li a {color:#fff;}
+#recentNews ul li a:hover {color:#8c69ab;}
+
+#playerProfile_box img {float:left;
+padding:2px;
+border:1px solid #cccccc;
+background-color:#fff;
+margin:0 8px 8px 0;}
+
+#mapOfEvents, #donate_box {
+float:left;}
+a.leaflet-popup-close-button {
+  text-decoration: none !important;
+}
+#playerProfile_box h2, #eventSearch_box h2, #donate_box h2 {
+color:#64338d;
+margin-bottom:10px;}
+
+#mapOfEvents {
+	border-right:1px solid #cccccc;
+	width:625px;
+	padding:0;
+	height:300px;
+}
+#TrEventSearchForm {
+  label {
+    display:inline;
+  }
+}
+#TrEventSearchForm {
+  p, span, label, td {
+    font-size: 14px;
+  }
+}
+@include media-breakpoint-down(md) {
+  #mapOfEvents {
+    padding:1rem;
+  }
+}
+
+}
+
+// #donate_box {width:247px;
+// padding:10px;}
+
+// #donate_box .donateColumn {
+// 	float: left;
+// 	margin-left: 20px;
+// 	width: 40%;
+// }
+// #donate_box .donateColumn.leftColumn { margin-left: 0; }
+
+// #searchFirstName, #searchLastName, #fr_event_postal {
+// font-size: 1.15em;
+// color: #999999;
+// width: 88px;
+// padding: 9px;
+// border: 1px solid #bdbdbd;
+// -moz-border-radius: 2px;
+// border-radius: 2px;
+// box-shadow: 1px 1px 2px #CCCCCC;
+// background-color: #e9e9e9;
+// margin: 0 0 15px;
+// }
+
+// #searchLastName {margin-bottom:0;}
+
+// TODO - END only run on landing page

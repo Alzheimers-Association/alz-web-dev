@@ -1,0 +1,277 @@
+/* Base Styles -------------------- */
+
+/* GLOBAL STYLES
+-------------------------------------------------- */
+
+/* Padding below the footer and lighter body text */
+
+html,
+body {
+  // necessary for half-screen right bars in header
+  overflow-x: hidden;
+}
+
+body {
+  // color: #5a5a5a;
+  color: $body-color;
+  background: url(https://act.alz.org/images/content/pagebuilder/bg-rivalz-turf.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+}
+
+header {
+  border-top-left-radius:5px;
+  border-top-right-radius:5px;
+  background:#fff;
+  margin-top:10px;
+
+}
+main {
+  background:#fff;
+
+}
+
+.content {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+h2 {
+  text-transform: uppercase;
+  font-size: 3rem;
+  font-weight: 400;
+}
+
+header,
+main {
+  &.container {
+    width:95%;
+  }
+}
+
+@include media-breakpoint-down(md) {
+  .hp_content {
+    &.container {
+      width:95%;
+    }
+  }
+
+  .thermo-container {
+    width: 95%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  #thermometerCounter_box {
+    // background:#65348F;
+  }
+}
+
+@include media-breakpoint-up(md) {
+  h2 {
+    font-size: 3.5rem;
+    font-weight: 400;
+  }
+  .container {
+    padding-right:30px !important;
+    padding-left:30px !important;
+  }
+  header,
+  main {
+    &.container {
+      width:100%;
+  }
+}
+}
+
+h3 {
+  line-height:1.35;
+}
+// BEGIN testing global updates
+// h1, .h1, h2, .h2, h3, .h3 {
+//   text-transform: uppercase;
+// }
+// h1, .h1 {
+//   color: $primary;
+//   border-bottom: 1px solid #ccc;
+// }
+// h2, .h2 {
+//   color: $secondary;
+//   font-size: 2rem;
+//   font-weight:bold;
+// }
+// h3, .h3 {
+//   color: $primary;
+// }
+// h4, .h4 {
+//   color: $black;
+//   font-weight:bold;
+// }
+// END testing global updates
+.content {
+  // h1,
+  h3 {
+    margin-bottom:20px;
+  }
+  // h1 {
+  //   font-size: 2.6rem;
+  //   color: $primary;
+  //   border-bottom: 1px solid #ccc;
+  //   margin-bottom: 1.5rem;
+  // }
+  // h2 {
+  //   color: $secondary; // font-size: 2rem;
+  //   font-size: 2.25rem;
+  //   font-weight: bold;
+  //   margin-bottom: 1.2rem;
+  // }
+  // h3 {
+  //   font-size: 1.62rem;
+  //   color: $primary;
+  //   &.text-grey {
+  //     color: #686868;
+  //   }
+  // }
+  // h4 {
+  //   font-size: 1.5rem;
+  //   color: #494949;
+  //   font-weight: bold;
+  // }
+  .btn,
+  .button {
+    text-transform: uppercase;
+  }
+
+  @include media-breakpoint-up(md) {
+    p {
+      font-size: 1rem;
+      // font-size: 1.3rem;
+    }
+    .interior-header {
+      height: 30px;
+    }
+  }
+}
+.label {
+  margin-bottom:8px;
+}
+.popover {
+  z-index:3001;
+}
+// Interior Page Template Styles
+.app_id_23 {
+  .content {
+    h1 {
+      color: $body-color; 
+    } 
+    // h4 {
+    //   text-transform: uppercase;
+    // } 
+    p {
+      font-size: 1rem;
+    }
+    a,
+    a:link {
+      &:not(.btn):not(.button){
+        color:$primary;
+        text-decoration:underline;
+      }
+    }
+    .large-text {
+      p, a, ul, ol, li, span {
+        font-size:1.5rem;
+      }
+    }
+  }
+  @include media-breakpoint-down(sm) {
+    .interior-header {
+      display:none;
+    }
+    }
+}
+
+.teal-radio-container {
+  position: relative;
+  label {
+    @extend .btn;
+    @extend .btn-secondary;
+    font-size:1.6rem;
+    text-transform: uppercase;
+    padding-left: 2.25rem;
+    font-weight:800;
+  }
+  input[type='radio'] {
+    -webkit-appearance: none;
+    position: absolute;
+    left: 10px;
+    top: 1rem;
+    border-radius: 50%;
+    outline: none;
+    box-shadow: 30px 30px #DEE2E6 inset;
+    width: 1rem;
+    height: 1rem;
+    content: "";
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 50% 50%;
+  }
+  input[type='radio']:before {
+    content: '';
+    display: block;
+    margin: 10% auto;
+    // margin: 15% auto;
+    border-radius: 50%;
+    width: .75rem;
+    height: .75rem;
+    content: "";
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 50% 50%;
+  }
+  input[type='radio']:checked+label {
+    @extend .btn-primary;
+  }
+  input[type='radio']:checked:before {
+    background: $secondary;
+  }
+}
+
+
+.horizontal-divider {
+  background: $lightpurple;
+  height: 6px;
+  display: block;
+}
+
+
+.clear-search-icon {
+  position: absolute;
+  right: 85px;
+  top: 12px;
+  cursor: pointer;
+  a {
+    color: #ccc;
+  }
+}
+
+.has-success {
+  // @extend .alert;
+  // @extend .alert-success;
+  color: #155724;
+  background-color: #d4edda;
+  border-color: #c3e6cb;
+}
+.has-error {
+  // @extend .alert;
+  @extend .alert-danger;
+}
+
+.popover {
+  // border-color: #d43f3a;
+  border-radius:5px;
+}
+
+// .popover.bs-popover-bottom .arrow:after {
+//   border-bottom-color: #d9534f;
+// }
+

@@ -1,0 +1,103 @@
+/* Footer Styles -------------------- */
+footer {
+
+
+  a,
+  .link-text,
+  a:link {
+    color:$white;
+    font-family:$font-family-sans-serif;    
+    &:hover {
+      color:$white;
+    }
+  }
+  .h5 {
+    font-size:1rem;
+    color:$secondary;
+    font-weight:bold;
+  }
+  .ride-hashtag {
+    font-size:2.1rem;
+  }
+}
+
+.footer-social-icon {
+border:3px solid $white;
+height:50px;
+width:50px;
+border-radius:50%;
+-moz-border-radius:50%;
+-webkit-border-radius:50%;
+&:hover {
+  color:$primary !important;
+  background-color:$white;
+  @include transition($btn-transition);
+}
+svg {
+  font-size: 1.75rem;
+}
+}
+.primary-footer-links {
+  font-size:18px;
+  a {
+    font-weight:300;
+    text-transform:uppercase;
+    text-decoration:underline;
+    padding: 5px 10px;
+  }
+}
+.top-footer-container {
+  a {
+    font-size: 18px;
+    font-weight: 100;
+  }
+}
+.middle-footer-container {
+  margin-bottom:1rem;
+  a {
+    font-size: 16px;
+    font-weight: 100;
+  }
+}
+.bottom-footer-container {
+  p {
+    font-size:12px;
+    font-weight: 100;
+  }
+}
+.list-unstyled {
+  margin-bottom:0;
+}
+@include media-breakpoint-up(md) {
+  .top-footer-container {
+    .col-3 {
+      padding-right:0;
+      padding-left:0;
+      flex: 0 0 7.5%;
+      max-width: 7.5%;
+    }
+  }
+}
+@include media-breakpoint-down(md) {
+  .primary-footer-links {
+    a,
+    span {
+      padding:10px 0;
+    }
+  }
+  .middle-footer-container {
+    .col-md-2 {
+      padding:10px 0;
+    }
+  }
+  .bottom-footer-container {
+    text-align:center;
+  }
+}
+.middle-footer-container {
+  @include gradient-y(#3E0A55, #4A0D66, 0%, 50%) 
+}
+
+.bottom-footer-container {
+  @include gradient-y(#2B063C, #35084A, 0%, 15%) 
+}

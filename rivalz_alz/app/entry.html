@@ -1,0 +1,1073 @@
+<!--removeIf(production)-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="description" content="This is a boilerplate for a Bootstrap 4.0.0 project">
+  <meta name="keywords" content="HTML, CSS, JS, Sass, JavaScript, framework, bootstrap, front-end, frontend, web development">
+  <meta name="author" content="Henrik H. Boelsmand">
+  <title>Ride for ALZ</title>
+  <link rel="shortcut icon" href="favicon.ico">
+
+  <link rel="stylesheet" href="assets/css/plugins.css" type="text/css">
+
+  <link rel="stylesheet" href="assets/css/main.css" type="text/css">
+
+  <link rel="stylesheet" href="assets/css/participant-center.css" type="text/css">
+
+  <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js" integrity="sha384-xymdQtn1n3lH2wcu0qhcdaOpQwyoarkgLVxC/wZ5q7h9gHtxICrpcaSUfygqZGOe"
+    crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" integrity="sha256-0rguYS0qgS6L4qVzANq4kjxPLtvnp5nn2nB5G1lWRv4="
+    crossorigin="anonymous"></script>
+</head>
+
+<!-- pushy-open-right -->
+
+<body class="pg_entry user-logged-in">
+
+  <!-- Pushy Menu -->
+  <nav class="pushy pushy-right navbar nav-sidebar bg-darkpurple d-block">
+    <div class="pushy-header text-right">
+      <button class="navbar-toggler navbar-toggler-right menu-btn p-0 border-0 text-right" type="button" data-toggle="off-canvas"
+        aria-controls="sideMenuContainer" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-times-circle text-secondary" aria-hidden="true"></i>
+      </button>
+    </div>
+    <div id="sideMenuContainer" class="pushy-content align-top align-items-start">
+
+      <!-- BEGIN LOGGED OUT  -->
+      <div class="js__logged-out js__logged-out-sidebar">
+
+        <div class="js__side-login-container">
+          <p>Log In</p>
+          <div class="js__login-error-container alert alert-danger d-none" role="alert">
+            <span class="" aria-hidden="true"></span>
+            <span class="sr-only">Error:</span>
+            <i class="fas fa-exclamation-triangle" aria-hidden="true"></i>
+            <span class="js__login-error-message"></span>
+          </div>
+
+          <form class="js__side-login-form">
+            <div class="form-group">
+              <label class="sr-only" for="loginUsername">Username</label>
+              <input type="text" name="user_name" id="loginUsername" class="form-control form-control-lg" placeholder="Username" aria-describedby="loginUsernameHelpBlock"
+                data-parsley-trigger="change" data-parsley-minlength="5" data-parsley-maxlength="60" data-parsley-minlength-message="Your username must be at least 5 characters long."
+                data-parsley-maxlength-message="Your username must be at fewer than 60 characters long." data-parsley-required-message="Username is required"
+                data-parsley-required="true" required>
+            </div>
+            <div class="form-group">
+              <label class="sr-only" for="loginPassword">Password</label>
+              <input type="password" name="user_password" id="loginPassword" class="form-control form-control-lg" placeholder="Password" aria-describedby="loginPasswordHelpBlock"
+                data-parsley-trigger="change" data-parsley-minlength="5" data-parsley-maxlength="20" data-parsley-minlength-message="Your password must be at least 5 characters long."
+                data-parsley-maxlength-message="Your password must be at fewer than 20 characters long." data-parsley-required-message="Password is required"
+                data-parsley-required="true" required>
+            </div>
+            <button type="submit" class="button btn-secondary btn-lg btn-block">SUBMIT</button>
+          </form>
+          <ul class="nav flex-column mt-2">
+            <li class="nav-item pushy-link">
+              <a class="nav-link" href="#">Forgot your password?</a>
+            </li>
+            <li class="nav-item pushy-link">
+              <a class="nav-link" href="#">Need Help?</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- END LOGGED OUT -->
+
+      <!-- BEGIN LOGGED IN -->
+      <div class="js__logged-in" style="display:none;">
+        <span class="sidebar-welcome-message text-white my-1">Welcome,
+          <span class="js__first-name"></span>!</span>
+        <div class="js__has-events"></div>
+        <ul class="nav flex-column sidebar-nav-footer">
+          <li class="nav-item pushy-link">
+            <a class="nav-link" href="ConsProfileUser?dispMode=edit&amp;pw_id=12165">Edit My Profile</a>
+          </li>
+          <li class="nav-item pushy-link">
+            <a class="nav-link js__log-out-link" href="#">Log Out</a>
+          </li>
+        </ul>
+      </div>
+      <!-- END LOGGED IN -->
+
+    </div>
+  </nav>
+  <!-- END pushy nav sidebar -->
+  <!-- Site Overlay -->
+  <div class="site-overlay"></div>
+
+  <header class="content-container bg-dark">
+    <div class="container nav-container">
+      <div class="row">
+        <div class="col-lg-10 order-lg-12">
+          <div class="top-teal-bar bg-secondary justify-content-end d-flex">
+            <svg class="tri-top-left d-none d-lg-block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 42 64" fill='#4a0d66'>
+              <path d="M0,64,42,0H0Z" />
+            </svg>
+            <nav class="utility-nav utility-nav-left navbar navbar-expand-lg py-0  d-none d-lg-flex">
+              <ul class="navbar-nav text-uppercase hw-bar">
+                <li class="nav-item nav-right">
+                  <span class="nav-link">
+                    <a class="menu-btn" href="#">Find a Participant</a>
+                  </span>
+                </li>
+              </ul>
+            </nav>
+            <svg class="tri-bottom-right d-none d-lg-flex" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 64" fill='#FFFFFF'>
+              <path d="M0,64,32,0V64Z" />
+            </svg>
+            <nav class="utility-nav utility-nav-right navbar navbar-expand-lg navbar-light p-0">
+
+              <!-- BEGIN LOGGED OUT -->
+              <span class="js__logged-out">
+                <ul class="navbar-nav text-uppercase hw-bar hw-bar-white d-none d-lg-flex">
+                  <li class="nav-item">
+                    <span class="nav-link">
+                      <a class="menu-btn" href="#">Log In
+                        <i class="fas fa-caret-right"></i>
+                      </a>
+                    </span>
+                  </li>
+                </ul>
+              </span>
+              <!-- END LOGGED OUT -->
+
+              <!-- BEGIN LOGGED IN -->
+              <ul class="navbar-nav text-uppercase hw-bar hw-bar-white js__logged-in font-weight-bold" style="display:none;">
+                <li class="nav-item nav-left">
+                  <span class="nav-link">Welcome,
+                    <span class="js__first-name"></span>!</span>
+                </li>
+                <li class="nav-item nav-right">
+                  <span class="nav-link">
+                    <a class="menu-btn" href="#">Ride Hub
+                      <i class="fas fa-caret-right d-lg-none"></i>
+                    </a>
+                  </span>
+                </li>
+                <li class="nav-item text-secondary d-none d-lg-flex"> | </li>
+                <li class="nav-item nav-right d-none d-lg-flex">
+                  <span class="nav-link">
+                    <a class="js__log-out-link" href="#">Log Out
+                      <i class="fas fa-caret-right"></i>
+                    </a>
+                  </span>
+                </li>
+              </ul>
+              <!-- END LOGGED IN -->
+
+            </nav>
+          </div>
+          <nav class="primary-nav navbar navbar-expand-lg bg-black justify-content-between py-0">
+            <svg class="tri-top-left d-none d-lg-block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 42 64" fill='#4a0d66'>
+              <path d="M0,64,42,0H0Z" />
+            </svg>
+
+            <button class="navbar-toggler bg-black p-4 collapsed" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+              aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+              <img class="banner-logo float-left" src="assets/images/ride_logo_white.png" alt="Ride to End ALZ" height="80">
+              <i class="fas fa-bars text-white fa-2x"></i>
+              <i class="fas fa-times text-white float-right fa-2x"></i>
+            </button>
+            <div class="navbar-collapse collapse" id="navbarCollapse">
+              <div class="mobile-menu-header col-12 bg-primary text-white p-3 d-lg-none font-weight-bold">
+
+                <!-- BEGIN LOGGED IN -->
+                <div class="js__logged-in text-uppercase" style="display:none;">
+                  <em class="d-none d-lg-flex">Welcome,
+                    <span class="js__first-name"></span>
+                  </em>
+                  <br class="d-none d-lg-flex">
+                  <a class="menu-btn d-none d-lg-flex" href="#">Ride Hub</a>
+                  <span class="text-secondary d-none d-lg-flex">|</span>
+                  <a class="d-lg-none" href="#">Find a Participant</a>
+                  <br class="d-lg-none">
+                  <a class="js__log-out-link" href="#">Log Out
+                    <i class="fas fa-caret-right"></i>
+                  </a>
+                </div>
+                <!-- BEGIN LOGGED IN -->
+
+                <!-- BEGIN LOGGED OUT -->
+                <div class="js__logged-out text-uppercase">
+                  <a href="#">Find a Participant</a>
+                  <br>
+                  <a class="menu-btn" href="#">Log In
+                    <i class="fas fa-caret-right"></i>
+                  </a>
+                </div>
+                <!-- END LOGGED OUT -->
+
+              </div>
+              <ul class="navbar-nav ml-auto text-uppercase font-weight-bold hw-bar hw-bar-black">
+                <li class="event-location">
+                  <span class="nav-link">
+                    <i class="fas fa-map-pin"></i> [[E47:[[S334:fr_id]]:fr_info:1:event_location_city]],&nbsp;[[E47:[[S334:fr_id]]:fr_info:1:event_location_state]]
+                  </span>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="false">
+                    About
+                    <span class="d-sm-none float-right">
+                      <i class="fas fa-plus"></i>
+                      <i class="fas fa-minus"></i>
+                    </span>
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="aboutDropdown">
+                    <!-- <span class="pointer"></span> -->
+                    <a class="dropdown-item" href="#">About the Ride </a>
+                    <a class="dropdown-item" href="#">Fundraising</a>
+                    <a class="dropdown-item" href="#">Training</a>
+                    <a class="dropdown-item" href="#">Travel Planner</a>
+                    <a class="dropdown-item" href="#">Request More Information</a>
+                    <a class="dropdown-item" href="#">Team Up</a>
+                    <a class="dropdown-item" href="#">Crew and Volunteer</a>
+                    <a class="dropdown-item" href="#">Sponsors</a>
+                    <a class="dropdown-item" href="#">Contact Us</a>
+                  </div>
+                </li>
+
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="whyDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Why We Ride
+                    <span class="d-sm-none float-right">
+                      <i class="fas fa-plus"></i>
+                      <i class="fas fa-minus"></i>
+                    </span>
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="whyDropdown">
+                    <a class="dropdown-item" href="#">100% to Alzheimer's Research</a>
+                    <a class="dropdown-item" href="#">Your Fundraising Impact</a>
+                  </div>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">FAQ</a>
+                </li>
+                <li class="nav-item nav-btn d-lg-none">
+                  <a class="button btn-secondary btn-block" href="#">Donate</a>
+                </li>
+                <li class="nav-item nav-btn d-none d-lg-inline">
+                  <a class="button btn-white btn-block" href="#">Donate</a>
+                </li>
+                <li class="nav-item nav-btn">
+                  <a class="button btn-secondary btn-block" href="#" role="button" data-toggle="modal" data-target="#registerModal">Register
+                  </a>
+                </li>
+
+              </ul>
+            </div>
+          </nav>
+          <!-- dummy div for menu bottom border -->
+          <div class="hw-bar hw-bar-teal d-none d-lg-block"></div>
+
+        </div>
+
+        <div class="col-lg-2 order-lg-1 d-sm-flex align-items-center justify-xl-content-center">
+          <a class="navbar-brand m-3" href="#">
+            <img class="banner-logo" src="assets/images/ride_logo_white.png" alt="Ride to End ALZ" height="103">
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- END container -->
+  </header>
+
+  <main class="content-container" role="main">
+    <!--endRemoveIf(production)-->
+    <!-- BEGIN hero section -->
+    <div class="hero-header-container" style="background: url([[E47:[[S334:fr_id]]:fr_info:1:sponsor_3]]) center center no-repeat; background-size: cover;">
+      <div class="jumbotron text-center text-white">
+        <h1>
+          <span class="display-4">RIDE TO END ALZ</span>
+          <span class="display-3">[[E47:[[S334:fr_id]]:fr_info:1:event_location_city]],&nbsp;[[E47:[[S334:fr_id]]:fr_info:1:event_location_state]]</span>
+        </h1>
+        <p class="lead">[[E47:[[S334:fr_id]]:fr_info:1:event_date]]</p>
+        <div class="row d-flex justify-content-center">
+          <div class="col-md-3">
+              [[?xx::x[[S1:user_name]]x::
+              [[?x1x2x::x[[S42:0:status]]x::
+              <a class="button btn-secondary btn-lg btn-block" href="TRR/pg=utype&amp;fr_id=[[S334:fr_id]]" onClick="_gaq.push(['_trackEvent', 'ride greeting', 'click', 'banner-register']);">REGISTER</a>
+              ::]]
+            ::
+              [[?xx::x[[S48:0:part-type-id]]x::
+                <a class="button btn-secondary btn-lg btn-block" href="TRR/pg=utype&amp;fr_id=[[S334:fr_id]]" onClick="_gaq.push(['_trackEvent', 'ride greeting', 'click', 'banner-register']);">REGISTER</a>
+              ::
+                <a class="button btn-secondary btn-lg btn-block menu-btn" href="TRC/?pg=center&amp;fr_id=[[S334:fr_id]]"  onClick="_gaq.push(['_trackEvent', 'ride greeting', 'click', 'banner-ride-hub']);">RIDE HUB</a>
+              ]]
+            ]]
+          </div>
+          <div class="col-md-3">
+            [[?x2x3x::x[[S42:0:status]]x::
+            <a class="button btn-outline-light btn-lg btn-block" href="SPageServer/?pagename=ride_search&search_type=donate" role="button" onClick="_gaq.push(['_trackEvent', 'ride greeting', 'click', 'banner-donate']);">DONATE</a>
+            ::]]
+          </div>
+        </div>
+        <div class="hero-link-container row d-flex justify-content-center">
+            <div class="col-md-3">
+                [[?xx::x[[S1:user_name]]x::
+                <a href="#ride_details"  onClick="_gaq.push(['_trackEvent', 'ride greeting', 'click', 'banner-ride-details']);">Ride Details</a>
+                ::
+                  [[?xx::x[[S48:0:part-type-id]]x::
+                  <a href="#ride_details"  onClick="_gaq.push(['_trackEvent', 'ride greeting', 'click', 'banner-ride-details']);">Ride Details</a>
+                  ::
+                  <a href="#" data-toggle="modal" data-target="#registerModal" onClick="_gaq.push(['_trackEvent', 'ride greeting', 'click', 'banner-register']);">Register for a Different Ride</a>
+                  ]]
+                ]]
+            </div>
+        </div>
+      </div>
+    </div>
+    <!-- END hero section -->
+    <span class="horizontal-divider"></span>
+
+    <!-- BEGIN Progress section -->
+    <section id="event_progress" class="fundraiser-progress-container">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="progress-header">
+              <div class="fundraiser-raised text-primary">
+                <small>RAISED</small>
+                <span class="h2 amount-raised js__fundraiser-raised">[[E130:"[[E42:[[S334:fr_id]]:dollars]]" ".00" "" replaceall]]</span>
+              </div>
+              <div class="fundraiser-goal text-primary d-none d-sm-block">
+                <small>GOAL</small>
+                <span class="h2 amount-raised js__fundraiser-goal">[[E130:"[[E42:[[S334:fr_id]]:goal]]" ".00" "" replaceall]]</span>
+              </div>
+            </div>
+
+
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 progress-container">
+            <div class="progress-wrap">
+              <div class="progress">
+                <div class="progress-bar js__progress-bar" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                <span class="js__percent-raised percent-raised d-flex align-items-center justify-content-center" style="left:0%;">0%</span>
+              </div>
+              <span class="progress-marker" style="left:10%;" title="10%"></span>
+              <span class="progress-marker" style="left:20%;" title="20%"></span>
+              <span class="progress-marker" style="left:30%;" title="30%"></span>
+              <span class="progress-marker" style="left:40%;" title="40%"></span>
+              <span class="progress-marker" style="left:50%;" title="50%"></span>
+              <span class="progress-marker" style="left:60%;" title="60%"></span>
+              <span class="progress-marker" style="left:70%;" title="70%"></span>
+              <span class="progress-marker" style="left:80%;" title="80%"></span>
+              <span class="progress-marker" style="left:90%;" title="90%"></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="row justify-content-center mt-3">
+          <div class="col-md-12 fundraiser-stats text-primary text-center">
+            <div class="fundraiser-goal text-primary d-sm-none">
+              <small>GOAL</small>
+              <span class="h2 amount-raised js__fundraiser-goal">[[E130:"[[E42:[[S334:fr_id]]:goal]]" ".00" "" replaceall]]</span>
+            </div>
+            <hr class="bg-primary d-sm-none my-1">
+            <div class="days-left h2 font-weight-bold">
+                [[?x[[E130:[[S42:0:days-to-event]] 1 > ]]x::x1x::
+                [[E42:[[S334:fr_id]]:days-to-event]]
+                  <small class="text-uppercase d-block m-0">
+                  Days left until Ride</small>
+              ::
+                  [[?x[[E130:[[S42:0:days-to-event]] 0 >]]x::x1x::[[E42:[[S334:fr_id]]:days-to-event]]
+                  <small class="text-uppercase d-block m-0">
+                  Day left until Ride</small>
+                ::
+                  <!-- Ride has occurred  - show nothing -->
+                ]]
+              ]]
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- END Progress section -->
+
+    <!-- BEGIN Ride Details section -->
+    <section id="ride_details" class="ride-details-container bg-primary text-white text-center stripe-overlay">
+      <div class="container">
+        <h2 class="text-center">
+          Ride Details
+        </h2>
+        <div class="row justify-content-center mt-3">
+          <div class="col-md-4 col-lg-3">
+              <svg class="svg-clock" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 43.2 43.2" fill="#fff">
+                <g id="clock_icon" data-name="Layer 2">
+                  <g data-name="Layer 1">
+                    <path class="cls-1" d="M34.41 36.37A18.87 18.87 0 0 0 24.3 3.81V2.7a2.7 2.7 0 1 0-5.4 0v1.11A18.87 18.87 0 0 0 8.79 36.37L5 40.13a1.8 1.8 0 1 0 2.54 2.54l4.11-4.1a18.8 18.8 0 0 0 19.84 0l4.11 4.1a1.8 1.8 0 1 0 2.54-2.54zM21.6 38.79A16.29 16.29 0 1 1 37.89 22.5 16.31 16.31 0 0 1 21.6 38.79z"/>
+                    <path class="cls-1" d="M22.64 12.6a1 1 0 0 0-2.08 0l-.64 9.14-6.42.54a1.12 1.12 0 0 0-1 1 1.14 1.14 0 0 0 1 1.22l8.1.67a1.13 1.13 0 0 0 .26 0 1.66 1.66 0 0 0 1.54-1.78zM2.57 2.57c-3.1 3.11-3.44 7.79-.78 10.48L13.05 1.79C10.36-.87 5.68-.53 2.57 2.57zM40.63 2.57c-3.11-3.1-7.79-3.44-10.48-.78l11.26 11.26c2.66-2.69 2.32-7.37-.78-10.48z"/>
+                  </g>
+                </g>
+              </svg>
+            <p>
+              [[E130:"[[E47:[[S334:fr_id]]:fr_info:1:event_schedule]]" " | " "<br>" replaceall]]
+            </p>
+            <a class="button btn-secondary text-uppercase js__add-to-calendar" href="#" role="button" onClick="_gaq.push(['_trackEvent', 'ride greeting', 'click', 'details-add-calendar']);">Add to Calendar</a>
+            <!-- https://www.addevent.com/add-to-calendar-button -->
+<!-- BEGIN add to calendar -->
+[[U0:thisEventDate=[[E47:[[S334:fr_id]]:fr_info:1:sponsor_1]]]] [[U0:parsedEventDate=[[E130:"[[S80:thisEventDate]]" dup dup "/" lastindexof 1 + swap length substring]][[E130:"[[S80:thisEventDate]]" dup 0 swap "/" indexof substring]][[E130:"[[S80:thisEventDate]]" dup dup "/" indexof 1 + swap "/" lastindexof substring]]]]
+<!-- S80 thisEventDate: xx[[S80:thisEventDate]]xx -->
+<!-- S80 parsedEventDate: xx[[S80:parsedEventDate]]xx -->
+        <div class="calendar-container js__calendar-menu" style="display: none;">
+            <p><a rel="nofollow" class="text-white" target="_blank" href="http://www.google.com/calendar/event?action=TEMPLATE&amp;text=[[T1:[[S42:0:title]]]]&amp;dates=[[S80:parsedEventDate]]/[[S80:parsedEventDate]]&amp;details=Visit%20your%20Ride%20Hub%20for%20event%20schedule%20and%20more%20details%20at%20http%3A%2F%2Fwww.alz.org%2Fride.&amp;location=[[T1:[[E130:"[[E47:[[S334:fr_id]]:fr_info:1:event_schedule]]" " | " ", " replaceall]]]]&amp;trp=false&amp;sprop=&amp;sprop=name:">Google Calendar</a>
+                <br /> or
+                <br />
+                <a class="text-white" href="/site/PageServer?pagename=ride_ical&amp;fr_id=[[S42:0:fr-id]]&amp;pgwrap=n">Other Calendars</a></p>
+        </div>
+<!-- END add to calendar -->
+          </div>
+          <div class="col-md-4 col-lg-3">
+            <svg class="svg-location" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 29.58 43.2" fill="#fff">
+                <symbol id="USA" data-name="USA" viewBox="0 0 11.35 16.58">
+                  <path class="cls-1" d="M8.36,12.78l-.06.55c1.63.31,2.32.82,2.32,1.35,0,.78-1.81,1.34-4.94,1.34S.84,15.47.84,14.69c0-.52.59-1,2.22-1.33L3,12.78c-1.69.31-3,.91-3,1.78,0,1.31,2.93,2,5.68,2s5.67-.71,5.67-2C11.35,13.69,10,13.09,8.36,12.78ZM2.75,4.57a2.93,2.93,0,1,1,2.92,2.9A2.91,2.91,0,0,1,2.75,4.57Zm-2,.36c0,1.22,1.48,3.78,1.48,3.78l3.48,5.8L9,8.71s1.68-2.58,1.68-3.78a5,5,0,0,0-9.93,0Z"
+                  />
+                </symbol>
+              <g id="location_icon" data-name="Layer 2">
+                <g data-name="Layer 1">
+                  <use id="USA-3" data-name="USA" width="11.35" height="16.58" transform="scale(2.61)" xlink:href="#USA" />
+                </g>
+              </g>
+            </svg>
+            <p>
+                [[E130:"[[E47:[[S334:fr_id]]:fr_info:1:event_location]]" " | " "<br>" replaceall]]
+
+                <!-- 
+                [[E47:[[S334:fr_id]]:fr_info:1:event_location]]
+              <br> [[E47:[[S334:fr_id]]:fr_info:1:sponsor_4]]
+              <br> [[E47:[[S334:fr_id]]:fr_info:1:event_location_city]],&nbsp;[[E47:[[S334:fr_id]]:fr_info:1:event_location_state]] [[E47:[[S334:fr_id]]:fr_info:1:sponsor_5]]
+              -->
+            </p>
+
+            [[?xxnullx::x[[E47:[[S42:0:fr-id]]:fr_info:1:map_link]]x::::
+                        <a href="[[E47:[[S42:0:fr-id]]:fr_info:1:map_link]]" class="button btn-secondary text-uppercase" role="button" target="_blank" onClick="_gaq.push(['_trackEvent', 'ride greeting', 'click', 'details-map']);">Map it</a>
+                        ]]
+
+          </div>
+          <div class="col-md-4 col-lg-3">
+            <svg class="svg-contact" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 43.2 27.77" fill="#fff">
+              <g data-name="contact icon">
+                <path class="cls-1" d="M40.12 27.77h-4.63v-1.54a1.55 1.55 0 0 0 0-3.09H32.4a1.55 1.55 0 0 0 0 3.09v1.54H12.34v-1.54a1.55 1.55 0 0 0 0-3.09H9.26a1.55 1.55 0 1 0 0 3.09v1.54H3.08A3.09 3.09 0 0 1 0 24.68V3.08A3.08 3.08 0 0 1 3.08 0h37a3.08 3.08 0 0 1 3.12 3.08v21.6a3.09 3.09 0 0 1-3.08 3.09zM12.34 4.34C10.48 4.34 9 6.32 9 8.77s1.51 4.44 3.37 4.44 3.38-2 3.38-4.44-1.54-4.43-3.41-4.43zm5.39 10.6A12 12 0 0 0 14.5 14s-1.5 1.68-2.21 1.68S10.08 14 10.08 14a12.07 12.07 0 0 0-3.23.92c-.83.56-1.2 3.49-1.2 3.49H19s-.3-2.82-1.27-3.47zM37 6.17H23.15v1.54H37zm0 3.09H23.15v1.54H37zm0 3.08H23.15v1.54H37zm0 3.09H23.15V17H37z"
+                  data-name="Layer 1" />
+              </g>
+            </svg>
+            <p>
+                [[E47:[[S334:fr_id]]:fr_info:1:coordinator_name]]
+              <br> [[E47:[[S334:fr_id]]:fr_info:1:coordinator_phone]]
+              <br>
+              <a href="mailto:[[E47:[[S334:fr_id]]:fr_info:1:coordinator_email]]">[[E47:[[S334:fr_id]]:fr_info:1:coordinator_email]]</a>
+            </p>
+            <a class="button btn-secondary text-uppercase" href="TR/?fr_id=[[S42:0:fr-id]]&amp;pg=informational&amp;sid=25339" role="button" onClick="_gaq.push(['_trackEvent', 'ride greeting', 'click', 'details-event-info']);">More Event Info</a>
+          </div>
+          <div class="greeting-intro js__greeting-intro mt-4"></div>
+        </div>
+
+      </div>
+    </section>
+    <!-- END Ride Details section -->
+    <!-- BEGIN Search section -->
+    <section id="greeting_search" class="greeting-search-container">
+      <h2 class="text-center text-primary pb-3 pb-md-0 mb-md-4">Fundraising Leaderboard</h2>
+
+      <div class="container">
+        <div class="row search-row d-flex justify-content-center">
+          <div class="col-md-4 col-leaderboard participant-leaderboard">
+            <h3 class="h4">PARTICIPANTS</h3>
+            <ul class="list-group list-group-flush js__top-participants-list"></ul>
+            <form class="js__redirect-participant-search-form">
+              <h3 class="h4">SEARCH: NAME</h3>
+              <div class="d-flex flex-wrap flex-lg-nowrap">
+                <label class="sr-only" for="participantFirstName">First Name</label>
+                <input id="participantFirstName" type="text" class="col-md-5 form-control form-control-lg mb-2 mb-sm-0" style="height:60px;" placeholder="FIRST NAME">
+                <label class="sr-only" for="participantLastName">Last Name</label>
+                <div class="d-flex w-100">
+                <input id="participantLastName" type="text" class="col-md-5 last-name-input form-control form-control-lg flex-grow-1 search-last-name" placeholder="LAST NAME" >
+                <button type="submit" class="btn btn-secondary btn-lg" onClick="_gaq.push(['_trackEvent', 'ride greeting', 'click', 'find-participant']);">
+                  <span class="sr-only">Search</span>
+                  <i class="fas fa-search"></i>
+                </button>
+              </div>
+              </div>
+            </form>
+          </div>
+
+          <div class="col-md-4 col-leaderboard team-leaderboard">
+            <h3 class="h4">TEAMS</h3>
+            <ul class="list-group list-group-flush js__top-teams-list"></ul>
+            <form class="js__redirect-team-search-form">
+              <h3 class="h4">SEARCH: TEAMS</h3>
+              <div class="d-flex">
+                <label class="sr-only" for="teamName">Team Name</label>
+                <input type="text" class="col-md-9 col-lg-10 form-control form-control-lg mb-2" id="teamName" placeholder="TEAM NAME">
+                <button type="submit" class="btn btn-secondary btn-lg mb-2" onClick="_gaq.push(['_trackEvent', 'ride greeting', 'click', 'find-team']);">
+                  <span class="sr-only">Search</span>
+                  <i class="fas fa-search"></i>
+                </button>
+              </div>
+            </form>
+          </div>
+
+         
+          <div class="col-md-4 col-leaderboard company-leaderboard" [[?xx::x[[E36:top_10_companies_list,[[S334:fr_id]],0,0,LIST,SUM,5]]x::style="display:none;"::]]>
+            <h3 class="h4">COMPANIES</h3>
+            <ul class="list-group list-group-flush js__top-companies-list"></ul>
+            
+
+            <form class="js__redirect-company-search-form">
+              <h3 class="h4">SEARCH: COMPANIES</h3>
+              <div class="d-flex">
+                <label class="sr-only" for="companyName">Company Name</label>
+                <input type="text" class="col-md-9 col-lg-10 form-control form-control-lg mb-2" id="companyName" placeholder="COMPANY NAME">
+                <button type="submit" class="btn btn-secondary btn-lg mb-2" onClick="_gaq.push(['_trackEvent', 'ride greeting', 'click', 'find-company']);">
+                  <span class="sr-only">Search</span>
+                  <i class="fas fa-search"></i>
+                </button>
+              </div>
+            </form>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="js__default-company-roster" style="display:none;">
+          [[E42:[[S334:fr_id]]:top-companies:5]]
+      </div>
+
+    </section>
+    <!-- END Search section -->
+
+
+    <!--removeIf(production)-->
+ <!-- BEGIN How It Works section -->
+ <section id="how_it_works" class="how-it-works-container">
+    <h2 class="text-center text-primary">How It Works</h2>
+    <div class="bg-primary py-5">
+      <div class="container">
+        <!-- volunteer and rider cards -->
+        <div class="card-deck js__rider-cards">
+          <div class="card d-flex align-items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="85" height="85">
+              <image data-name="Icon Get Registered" width="85" height="85" xlink:href="data:img/png;base64,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"
+              />
+            </svg>
+
+
+
+            <div class="card-body">
+              <h3 class="card-title text-uppercase">1. Get Registered</h3>
+              <p class="card-text">Nullam lacinia eros placerat tempus volutpat. Ut quis nibh rutrum, posuere libero vitae, imperdiet dolor.
+                Maecenas rutrum tincidunt pulvinar. Fusce mattis est quis dui porttitor, in eleifend ligula ornare.</p>
+            </div>
+            <span class="diagonal-divider d-none d-lg-block"></span>
+          </div>
+          <div class="card d-flex align-items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="85" height="85">
+              <image data-name="Icon Get Fundraising" width="85" height="85" xlink:href="data:img/png;base64,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"
+              />
+            </svg>
+            <div class="card-body">
+              <h3 class="card-title text-uppercase">2. Get Fundraising</h3>
+              <p class="card-text">Nullam lacinia eros placerat tempus volutpat. Ut quis nibh rutrum, posuere libero vitae, imperdiet dolor.
+                Maecenas rutrum tincidunt pulvinar. Fusce mattis est quis dui porttitor, in eleifend ligula ornare.</p>
+            </div>
+            <span class="diagonal-divider d-none d-lg-block"></span>
+          </div>
+          <div class="card d-flex align-items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="85" height="85">
+              <image data-name="Icon Get Going" width="85" height="85" xlink:href="data:img/png;base64,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"
+              />
+            </svg>
+            <div class="card-body">
+              <h3 class="card-title text-uppercase">3. Get Going!</h3>
+              <p class="card-text">
+                Nullam lacinia eros placerat tempus volutpat. Ut quis nibh rutrum, posuere libero vitae, imperdiet dolor. Maecenas rutrum
+                tincidunt pulvinar. Fusce mattis est quis dui porttitor, in eleifend ligula ornare.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- crew cards -->
+        <div class="card-deck js__crew-cards" hidden>
+          <div class="card d-flex align-items-center">
+            <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt=""
+              width="140" height="140">
+            <div class="card-body">
+              <h3 class="card-title text-uppercase">1| CREW Get Registered</h3>
+              <p class="card-text">Earum nostrum quas, fugit aliquid tempore voluptatibus ad libero.</p>
+            </div>
+            <span class="diagonal-divider d-none d-lg-block"></span>
+          </div>
+          <div class="card d-flex align-items-center">
+            <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt=""
+              width="140" height="140">
+            <div class="card-body">
+              <h3 class="card-title text-uppercase">2| Get Fundraising</h3>
+              <p class="card-text">Facere laboriosam voluptas rerum labore, natus unde nobis perspiciatis consectetur.</p>
+            </div>
+            <span class="diagonal-divider d-none d-lg-block"></span>
+
+          </div>
+          <div class="card d-flex align-items-center">
+            <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt=""
+              width="140" height="140">
+            <div class="card-body">
+              <h3 class="card-title text-uppercase">3| Get Going!</h3>
+              <p class="card-text">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellendus, omnis impedit.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- volunteer cards -->
+        <div class="card-deck js__volunteer-cards" hidden>
+          <div class="card d-flex align-items-center">
+            <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt=""
+              width="140" height="140">
+            <div class="card-body">
+              <h3 class="card-title text-uppercase">1| VOLUNTEER Get Registered</h3>
+              <p class="card-text">Earum nostrum quas, fugit aliquid tempore voluptatibus ad libero.</p>
+            </div>
+            <span class="diagonal-divider d-none d-lg-block"></span>
+          </div>
+          <div class="card d-flex align-items-center">
+            <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt=""
+              width="140" height="140">
+            <div class="card-body">
+              <h3 class="card-title text-uppercase">2| Get Fundraising</h3>
+              <p class="card-text">Facere laboriosam voluptas rerum labore, natus unde nobis perspiciatis consectetur.</p>
+            </div>
+            <span class="diagonal-divider d-none d-lg-block"></span>
+          </div>
+          <div class="card d-flex align-items-center">
+            <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt=""
+              width="140" height="140">
+            <div class="card-body">
+              <h3 class="card-title text-uppercase">3| Get Going!</h3>
+              <p class="card-text">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellendus, omnis impedit.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row d-flex justify-content-center">
+        <div class="col-md-12 text-center py-4">
+          <p class="lead">
+            There are three ways you can be involved with our mission:
+          </p>
+        </div>
+      </div>
+
+      <nav class="nav nav-tabs nav-justified border-0" id="nav-tab" role="tablist">
+        <a class="nav-item nav-link text-uppercase d-flex align-items-center justify-content-center active" id="nav-rider-tab" data-toggle="tab"
+          href="#nav-rider" role="tab" aria-controls="nav-rider" aria-expanded="true">Rider</a>
+        <a class="nav-item nav-link text-uppercase d-flex align-items-center justify-content-center" id="nav-crew-tab" data-toggle="tab"
+          href="#nav-crew" role="tab" aria-controls="nav-crew" aria-expanded="false">Crew</a>
+        <a class="nav-item nav-link nav-item-volunteer text-uppercase d-flex align-items-center justify-content-center" id="nav-volunteer-tab"
+          data-toggle="tab" href="#nav-volunteer" role="tab" aria-controls="nav-volunteer" aria-expanded="false">Volunteer</a>
+      </nav>
+      <div class="tab-content text-center p-4" id="nav-tabContent">
+        <div class="tab-pane  active show" id="nav-rider" role="tabpanel" aria-labelledby="nav-rider-tab" aria-expanded="true">
+          <p>Et et consectetur ipsum labore excepteur est proident excepteur ad velit occaecat qui minim occaecat veniam.
+            Fugiat veniam incididunt anim aliqua enim pariatur veniam sunt est aute sit dolor anim. Velit non irure adipisicing
+          </p>
+          <p>
+            <a class="text-uppercase" href="">Learn More
+              <i class="fas fa-caret-right"></i>
+            </a>
+          </p>
+        </div>
+        <div class="tab-pane " id="nav-crew" role="tabpanel" aria-labelledby="nav-crew-tab" aria-expanded="false">
+          <p>
+            Commodo esse dolore fugiat sint velit ullamco magna consequat voluptate minim amet aliquip ipsum aute laboris nisi.</p>
+          <p>
+            <a class="text-uppercase" href="">Learn More
+              <i class="fas fa-caret-right"></i>
+            </a>
+          </p>
+        </div>
+        <div class="tab-pane " id="nav-volunteer" role="tabpanel" aria-labelledby="nav-volunteer-tab">
+          <p>Labore labore veniam irure irure ipsum pariatur mollit magna in cupidatat dolore magna irure esse tempor ad mollit.
+            Dolore commodo nulla minim amet ipsum officia consectetur amet ullamco voluptate nisi commodo ea sit eu</p>
+          <p class="font-italic">
+            <a class="text-uppercase" href="#">Learn More
+              <i class="fas fa-caret-right"></i>
+            </a>
+          </p>
+        </div>
+      </div>
+
+      <div class="row d-flex justify-content-center">
+        <div class="col-md-12 text-center py-2">
+          <p class="lead">
+            <i>Not sure? Get more information from one of our people:</i>
+          </p>
+        </div>
+      </div>
+
+      <div class="row d-flex justify-content-center mb-4">
+        <div class="col-lg-4 col-md-6 col-sm-8">
+          <a class="button btn-secondary btn-lg text-uppercase" href="#" role="button">Request More Info</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="our_research" class="our-research-container bg-primary text-white text-center">
+    <div class="container">
+      <h2 class="text-center">
+        <span class="headline-number d-md-inline-block pr-1">100
+          <span class="headline-symbol">%</span>
+        </span>
+        <span class="headline-text d-md-inline-block pl-1">Goes to
+          <br>Research</span>
+      </h2>
+      <div class="row">
+        <div class="col-md-12">
+          <p>
+            Vestibulum accumsan et tortor non varius. Morbi congue bibendum ex. Praesent urna urna, pellentesque non molestie nec, hendrerit
+            hendrerit metus. Vivamus fringillaorci lorem, sit amet tempor mauris pharetra vitae. Praesent ut urna tincidunt,
+            ultrices urna malesuada, luctus enim. Nam massa massa, fringilla nec accumsan.
+          </p>
+        </div>
+      </div>
+      <div class="row d-flex justify-content-center py-4">
+        <div class="col-md-6">
+          <a class="button btn-outline-light btn-lg text-uppercase" href="#">Find Out More</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="become_sponsor" class="become-sponsor-container text-center">
+    <div class="container national-sponsors-container has-national-sponsors">
+      <span class="h4">Special thanks to our</span>
+      <h2 class="text-primary">Corporate Sponsors</h2>
+      <div class="row mt-3">
+        <div class="col-md-4 d-flex align-items-center justify-content-center">
+          <img class="card-img" src="assets/images/sponsor_edward_jones.png" alt="Ride to End ALZ">
+        </div>
+        <div class="col-md-4 d-flex align-items-center justify-content-center">
+          <img class="card-img" src="assets/images/sponsor_bjs.png" alt="Ride to End ALZ">
+        </div>
+        <div class="col-md-4 d-flex align-items-center justify-content-center">
+          <img class="card-img" src="assets/images/sponsor_pharmacy.png" alt="Ride to End ALZ">
+        </div>
+      </div>
+
+    </div>
+
+    <!-- <div class="container no-sponsors">
+      <h2 class="text-primary">Become a Sponsor</h2>
+      <div class="row">
+        <div class="col-md-12 text-primary">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam eligendi corporis qui aut. Veniam neque, sint at nesciunt labore
+            saepe amet velit inventore magni libero quia quis debitis laboriosam vitae!
+          </p>
+          <p>
+            Ut excepturi, sed recusandae, ipsum sunt enim quos ipsam explicabo laudantium unde reiciendis, dignissimos delectus perferendis.
+            Sint.
+          </p>
+        </div>
+      </div>
+<div class="row d-flex justify-content-center my-4">
+        <div class="col-md-12">
+          <a class="button btn-secondary btn-lg text-uppercase" href="#" role="button">Become a <br class="d-sm-none">Corporate Sponsor</a>
+        </div>
+      </div>
+    </div> -->
+    <div class="container local-sponsors-container has-local-sponsors">
+    <span class="h4">With gratitude to our</span>
+    <h2 class="text-primary">Local Sponsors</h2>
+    <div class="row mt-3">
+        <div class="col-md-4 d-flex align-items-center justify-content-center">
+          <img class="card-img" src="assets/images/local_sponsor_oakmont.png" alt="Ride to End ALZ">
+        </div>
+        <div class="col-md-4 d-flex align-items-center justify-content-center">
+          <img class="card-img" src="assets/images/local_sponsor_p.png" alt="Ride to End ALZ">
+        </div>
+        <div class="col-md-4 d-flex align-items-center justify-content-center">
+          <img class="card-img" src="assets/images/local_sponsor_scvtv.png" alt="Ride to End ALZ">
+        </div>
+      </div>
+    <div class="row d-flex justify-content-center mt-5">
+      <div class="col-md-12">
+        <a class="button btn-secondary btn-lg text-uppercase" href="#" role="button">Become a
+          <br class="d-sm-none">Corporate Sponsor</a>
+      </div>
+    </div>
+  </div>
+  </section>
+
+
+
+
+  <!-- Modal -->
+  <div class="modal fade register-modal" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="registerModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content text-center">
+        <div class="modal-header">
+          <h5 class="modal-title text-primary m-auto pt-3" id="registerModalLabel">Choose a Location:</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true" class="text-primary">
+              <i class="fas fa-times"></i>
+            </span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="card-deck justify-content-center flex-column">
+            <div class="card text-center">
+              <a class="" href=#>
+                <div class="d-flex align-items-center justify-content-center">
+                  <h3 class="card-title">
+                    <span class="location-name h4">Austin</span>
+                    <span class="location-date h5">Jan 26
+                      <i class="fas fa-caret-right"></i>
+                    </span>
+                  </h3>
+                </div>
+              </a>
+            </div>
+            <div class="card text-center">
+              <a class="" href=#>
+                <div class="d-flex align-items-center justify-content-center">
+                  <h3 class="card-title">
+                    <span class="location-name h4">Minneapolis</span>
+                    <span class="location-date h5">Feb 10
+                      <i class="fas fa-caret-right"></i>
+                    </span>
+                  </h3>
+                </div>
+              </a>
+            </div>
+
+            <div class="card text-center">
+              <a class="" href=#>
+                <div class="d-flex align-items-center justify-content-center">
+                  <h3 class="card-title">
+                    <span class="location-name h4">Seattle</span>
+                    <span class="location-date h5">Mar 23
+                      <i class="fas fa-caret-right"></i>
+                    </span>
+                  </h3>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</main>
+
+  <span class="horizontal-divider"></span>
+
+
+
+
+    <!-- FOOTER -->
+    <footer class="pt-5 bg-primary">
+        <div class="container top-footer-container">
+          <div class="row">
+            <div class="col-12 text-center">
+              <a class="navbar-brand" href="#">
+                <img class="banner-logo" src="assets/images/ride_logo_white.png" alt="Ride to End ALZ" height="103">
+              </a>
+            </div>
+          </div>
+          <div class="row mt-3">
+            <div class="col-12 col-md text-center text-white primary-footer-links">
+              <a href="#">Register</a> |
+              <a href="#">Donate</a> |
+              <a href="#">Find a Participant</a>
+                <!-- BEGIN LOGGED IN -->
+              <span class="menu-btn js__logged-in" style="display:none;"> |
+                <a href="#">Visit Ride Hub</a>
+              </span>
+                <!-- END LOGGED IN -->
+  
+            </div>
+          </div>
+          <div class="row mt-3 text-white d-flex align-items-center justify-content-center">
+            <div class="col-3 col-sm-2 col-lg-1 d-flex align-items-center justify-content-center">
+              <a href="#" class="d-flex footer-social-icon align-items-center justify-content-center">
+                <span class="sr-only">Share on Facebook</span>
+                <i class="fab fa-facebook-f"></i>
+              </a>
+            </div>
+            <div class="col-3 col-sm-2 col-lg-1 d-flex align-items-center justify-content-center">
+              <a href="#" class="d-flex footer-social-icon align-items-center justify-content-center">
+                <span class="sr-only">Share on Twitter</span>
+                <i class="fab fa-twitter"></i>
+              </a>
+            </div>
+            <div class="col-3 col-sm-2 col-lg-1 d-flex align-items-center justify-content-center">
+              <a href="#" class="d-flex footer-social-icon align-items-center justify-content-center">
+                <span class="sr-only">Share on Instagram</span>
+                <i class="fab fa-instagram"></i>
+              </a>
+            </div>
+            <div class="col-3 col-sm-2 col-lg-1 d-flex align-items-center justify-content-center">
+              <a href="#" class="d-flex footer-social-icon align-items-center justify-content-center">
+                <span class="sr-only">Share on YouTube</span>
+                <i class="fab fa-youtube"></i>
+              </a>
+            </div>
+          </div>
+  
+          <div class="row text-center mt-3">
+            <div class="col">
+              <span class="ride-hashtag text-white">
+                <span class="text-secondary">#</span>RideToEndALZ</span>
+            </div>
+          </div>
+        </div>
+        <hr class="border border-darkpurple">
+        <!-- BEGIN footer links -->
+        <div class="container middle-footer-container mt-3 pt-3 pb-2">
+          <div class="row">
+            <div class="col-6 col-md-3">
+              <h2 class="h5">ABOUT</h2>
+              <ul class="list-unstyled text-small">
+                <li>
+                  <a class="link-text" href="#">About the Ride</a>
+                </li>
+                <li>
+                  <a class="link-text" href="#">Fundraising</a>
+                </li>
+                <li>
+                  <a class="link-text" href="#">Training</a>
+                </li>
+                <li>
+                  <a class="link-text" href="#">Travel Planner</a>
+                </li>
+              </ul>
+            </div>
+            <div class="col-6 col-md-3 order-2 order-md-1">
+              <ul class="list-unstyled text-small">
+                <li>
+                  <a class="link-text" href="#">Team Up</a>
+                </li>
+                <li>
+                  <a class="link-text" href="#">Volunteer & Crew</a>
+                </li>
+                <li>
+                  <a class="link-text" href="#">Sponsors</a>
+                </li>
+                <li>
+                  <a class="link-text" href="#">Request More Info</a>
+                </li>
+                <li>
+                  <a class="link-text" href="#">Contact Us</a>
+                </li>
+              </ul>
+            </div>
+            <div class="col-6 col-md-3 order-1 order-md-3">
+              <h2 class="h5">LOCATIONS</h2>
+              <ul class="list-unstyled text-small">
+                <li>
+                  <a class="link-text" href="#">Austin, TX</a>
+                </li>
+                <li>
+                  <a class="link-text" href="#">Minneapolis, MN</a>
+                </li>
+                <li>
+                  <a class="link-text" href="#">Seattle, WA</a>
+                </li>
+              </ul>
+            </div>
+            <div class="col-6 col-md-3 order-3 order-md-4">
+              <h2 class="h5">WHY WE RIDE</h2>
+              <ul class="list-unstyled text-small">
+                <li>
+                  <a class="link-text" href="#">100% to Research</a>
+                </li>
+                <li>
+                  <a class="link-text" href="#">Your Fundraising Impact</a>
+                </li>
+                <li>
+                  &nbsp;
+                </li>
+                <li>
+                  <a class="link-text" href="#">
+                    <strong>FAQ</strong>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- END footer links -->
+        <!-- BEGIN bottom footer -->
+        <div class="bottom-footer-container container-fluid text-center bg-darkpurple pt-4 pb-3">
+          <div class="row">
+            <div class="col-12 col-md text-white">
+              <img alt="Alzheimer's Association: the brains behind saving yours" src="assets/images/alz-logo-footer.png">
+              <p class="mt-4">1 (800) 272 3900
+                <br>Alzheimer's Association Home Office 225 N. Michigan Ave., Fl. 17, Chicago, IL 60601
+                <br>Alzheimer's Association is a not-for-profit 501(c)(3) organization.</p>
+              <p class="mt-1">Copyright &copy; 2018 Alzheimer's Association&reg;. All rights reserved.</p>
+            </div>
+          </div>
+        </div>
+        <!-- END bottom footer -->
+        <div class="utility-footer-container container">
+          <div class="row mt-3">
+            <div class="col-12 col-md text-center text-white">
+              <p>
+                <a href="http://www.alz.org/walk">ALZ.org</a> |
+                <a href="#">About ALZ</a> |
+                <a href="#">ALZ Blog</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+
+
+  <script src="assets/js/vendor/jquery-2.2.4.min.js"></script>
+  <script src="assets/js/vendor/popper.min.js"></script>
+  <script src="assets/js/vendor/bootstrap.min.js"></script>
+  <script src="assets/js/vendor/luminate-extend-1.8.1.js"></script>
+  <script src="assets/js/vendor/pushy.min.js"></script>
+  <script>
+    // document.getElementsByTagName('html')[0].setAttribute('lang', 'en');
+    luminateExtend({
+      apiKey: 'ALZADARDA',
+      path: {
+        nonsecure: 'http://act.alz.org/site/',
+        secure: 'https://act.alz.org/site/'
+      }
+    });
+
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/parsley.js/2.8.1/parsley.min.js"></script>
+  <script src="assets/js/main.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/holder/2.9.4/holder.min.js"></script>
+
+</body>
+
+</html>
+<!--endRemoveIf(production)-->
