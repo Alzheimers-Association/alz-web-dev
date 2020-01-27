@@ -1,0 +1,97 @@
+.pg_topparticipantlist {
+    #main_container {
+        width: 100%;
+        max-width: 600px;
+        margin: 0 auto;
+        float: none;
+    }
+    h2.cstmTitle {
+        text-align: center;
+        font-size: 1.5rem;
+    }
+    #title_container h2 {
+        text-align: center;
+    }
+    #top_participant_list_container {
+        background: transparent;
+        border: none;
+        .top-participant-list-row {
+            background: none;
+            border-radius: 0px;
+            margin-bottom: .5em;
+            padding: .5em 1em;
+            border: none;
+            border-bottom: 1px solid #eee;
+        }
+        a {
+            color: #8041bb;
+            &:hover {
+                /* text-decoration: underline; */
+                color: #501786;
+            }
+            &.participant-find-donate-link {
+                background: #359a8e;
+                color: white;
+                text-decoration: none;
+                border-radius: 0;
+                border: none;
+                &:hover {
+                    background: #1d8276;
+                }
+            }
+        }
+    }
+}
+
+.pg_teamlist {
+
+
+    #title_container {
+        text-align: center;
+    }
+    #team_list_page_header {
+        h2 {
+            text-align: center;
+            font-size: 1.5rem;
+        }    
+    }
+
+    .tr-page-main-content {
+        float: none;
+        margin: 0 auto;
+        width: 100%;
+        max-width: 600px;
+    }
+
+    .tr-page-container .side-bar {
+        display: none;
+    }
+
+    #top_team_list_container {
+        background: none;
+        border: none;
+        .team-list-row {
+            background: none;
+            border: none;
+            border-bottom: 1px solid #eee;
+            a {
+                color: #8041bb;
+                &:hover {
+                    /* text-decoration: underline; */
+                    color: #501786;
+                }
+            }
+            .team-list-one-button-container a {
+                background: #359a8e;
+                color: white;
+                text-decoration: none;
+                border-radius: 0;
+                border: none;
+                &:hover {
+                    background: #1d8276;
+                }
+            }
+        }
+    }
+}
+

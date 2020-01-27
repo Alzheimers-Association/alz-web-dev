@@ -128,6 +128,7 @@ div#team_find_search_results_container div.list-component-cell-column-join-link 
     @extend .btn-primary;
     
   }
+  font-weight: 500;
 }
 
 a.btn,
@@ -155,7 +156,8 @@ a.btn,
   }
   &.btn-lg {
     font-size: 1.6rem;
-    font-weight: bold;
+    font-weight: 500;
+    letter-spacing: 0.13rem;
   }
 }
 

@@ -6,6 +6,9 @@
     /* Namespace */
     /*************/
     window.cd = {};
+    $('a[data-toggle*=modal]').on('click', function (e) {
+      e.preventDefault();
+    });
 
     $('.menu-btn').on('click', function (e) {
       e.preventDefault();

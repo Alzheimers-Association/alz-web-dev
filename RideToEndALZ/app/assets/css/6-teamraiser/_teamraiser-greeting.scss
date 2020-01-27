@@ -3,23 +3,60 @@
   .tr-page-container {
     display:none;
   }
-  h2 {
+  .content-container h2 {
     font-weight:400;
+    font-size: 2.6rem;
+    letter-spacing: 0.2rem;
+  }
+  // hero container
+  .hero-header-container {
+    .button {
+      font-weight: 500;
+      line-height: 1.2em;
+    }
+    .lead {
+      font-style: normal;
+      margin: 0 0 2rem;
+      font-size: 1.8rem;
+    }
+    h1 .display-4 {
+      font-size: 2rem;
+    }
+    h1 { margin-bottom: 0; }
+  }
+  .modal .close {
+    position: absolute;
+    right: 1em;
+  }
+  .modal .modal-title {
+    padding-top: 0;
   }
   // Ride Details
   .ride-details-container {
-    padding-bottom: 3rem;
-    p{
-      font-size: 1.5rem;
-    }
-    a {
-      text-decoration: underline;
-      &:hover {
-        color:#fff; 
+    padding-bottom: 0rem;
+    .experience-highlights {
+      padding-top: 1rem;
+      padding-bottom: 3rem;
+      p{
+        font-size: 1.5rem;
+        margin-bottom: 0;
+        line-height: 1.4em;
       }
-      &.button {
-        text-decoration: none;
-        font-size: 1.15rem;
+      a {
+        font-size: 1.1rem;
+        text-decoration: none !important;
+        border-bottom: 2px solid #a586b3;
+        letter-spacing: 0.15rem;
+        &:hover {
+          color:#fff; 
+        }
+        &.button {
+          text-decoration: none;
+          font-size: 1.15rem;
+        }
+      }
+      h3 {
+        margin-top: .5em;
       }
     }
     svg {
@@ -34,6 +71,31 @@
     //   height:50px;
     // }
   } // Search Styles
+  .greeting-intro-container  {
+    background: white;
+    border-top: 6px solid #359a8e;
+  }
+  .greeting-intro  {
+    color: #490e66;
+    padding: 2em;
+    p {
+      margin-bottom: 1em;
+      text-align: left;
+    }
+    h3 {
+      font-weight: normal;
+      margin-top: 0;
+      text-transform: uppercase;
+      text-align: left;
+      font-size: 2.5rem;
+    }
+    h4 {
+      font-weight: normal;
+      text-align: left;
+      text-transform: uppercase;
+    }
+  } 
+
   .greeting-search-container {
     .h4 {
       color: $white;

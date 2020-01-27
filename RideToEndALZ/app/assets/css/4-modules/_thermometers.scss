@@ -4,9 +4,16 @@
     .h2 {
       font-weight: bold;
       color: $primary;
-      display:block;
-      font-size:3rem;
+      display:inline;
+      font-size:2.3rem;
       margin-bottom:0;
+      &.days-left {
+        font-size: 1.5rem;
+        small {
+          font-weight: 600;
+          font-style: normal;
+        }
+      }
     }
     .progress-header,
     .progress-wrap {
@@ -21,19 +28,33 @@
     }
  
     .progress-wrap {
-      border:2px solid $primary;
+      // border:2px solid $primary;
+      margin: .5em 0;
     }
     .progress {
       height: 69px;
       .progress-bar {
         height: 70px;
         border-bottom: 0;
-        background: radial-gradient(at top left, $primary, $secondary);
+        background: linear-gradient(to right, $primary, $secondary);
+        position: relative;
+        &:after {
+          content: '';
+          position: absolute;
+          height: 0;
+          width: 0;
+          border-width: 70px 40px 0px 0px;
+          border-color: transparent #e9ecef transparent transparent;
+          right: 0;
+          top: 0;
+          z-index: 99;
+          border-style: solid;
+        }
       }
     }
     .progress-marker {
-      width: 2px;
-      height: 5px;
+      width: 3px;
+      height: 7px;
       position: absolute;
       background: $primary;
       bottom: 0;
@@ -42,8 +63,8 @@
       color:$secondary;
       font-size:2rem;
       margin-left:1rem;
-      font-style:italic;
-      font-weight:bold;
+      font-style:normal;
+      font-weight:400;
       &.invert-percent-raised {
         margin-left:-90px;
         padding-right:10px;
@@ -72,7 +93,7 @@
   .fundraiser-progress-container {
 
     .progress-header {
-      margin-top:6rem;
+      margin-top:3rem;
     }
     .fundraiser-raised,
     .fundraiser-goal {
@@ -94,7 +115,9 @@
 .pg_entry {
   .fundraiser-progress-container {
     small {
-      font-size: 1.8rem;
+      font-size: 1.5rem;
+      margin: 0 .2em;
+      font-style: italic;
     }
     .fundraiser-raised {
       text-align:center;
@@ -116,7 +139,7 @@
 .pg_company {
   .fundraiser-progress-container {
     .progress-header {
-      margin-top: 4rem;
+      margin-top: 3rem;
     }
     small {
       color: $body-color;
@@ -166,7 +189,7 @@
 .pg_ridepc {
   .fundraiser-progress-container {
     .progress-header {
-      margin-top: 4rem;
+      margin-top: 3rem;
     }
     .percent-raised {
       font-size: 1.3rem;

@@ -18,6 +18,8 @@
   .card-body {
     font-size:1.4 rem;
     color: #212121;
+    padding-top: 0;
+    margin-left: 1rem;
   }
   .list-group-item {
     padding:0 1.25rem;
@@ -25,8 +27,9 @@
     &.faq-panel {
       margin: 0.25rem 0;
       border: 2px solid $primary;
-      &:last-child {
-      border: 2px solid $primary;
+      border-width: 2px 0 2px;
+      & + .faq-panel {
+        border-width: 0 0 2px;
       }
     }
   }

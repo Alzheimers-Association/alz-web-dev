@@ -3,13 +3,51 @@
     display: none;
   }
   .hero-header-container {
-    background: url('../../../images/content/pagebuilder/hero_landing_cyclist_45.jpg') center center no-repeat;
+    background: url("../images/hero_landing_cyclist.jpg") center center no-repeat;
     background-size: cover;
+  }
+  .fundraising-details-container {
+    background: url('../images/ALZ_Landing_faded_road_bg.png') center center no-repeat;
+    background-size: cover;
+
+  }
+}
+
+// SECTION: fundraising details
+.fundraising-details-container {
+  padding: 3em 0;
+  h1 {
+    color: #480d64;
+    font-size: 3em;
+  }
+
+  .lead {
+    font-size: 1.5em;
+    font-style: italic;
+    color: #4a0d66;
+    font-weight: 500;
+  }
+
+  .learn-more-links {
+    a {
+      font-size: 1.6em;
+      text-transform: uppercase;
+      text-decoration: none !important;
+      /* font-weight: lighter; */
+      color: #490e66;
+      border-bottom: 1px solid;
+      letter-spacing: .04em;
+    }
+    span {
+      font-size: 1.6em;
+      margin: 0 .5em;
+    }
   }
 }
 
 // SECTION: participant and team search
 .landing-search-container {
+  background-color: #2a7b72;
   h3 {
     font-size: 1.7rem;
     font-weight: bold;
@@ -35,9 +73,16 @@
 }
 
 // SECTION: How it Works
+section#how_it_works {
+  padding-top: 0;
+}
 .how-it-works-container {
   h2 {
     font-weight: 400;
+    color: white;
+  }
+  .how-steps-container {
+    background: linear-gradient(180deg, #4a0d66, #390a4e);
   }
   .diagonal-divider {
     &:before {
@@ -59,10 +104,15 @@
     a {
       color: #fff;
     }
+    @media screen and (max-width: 991px) {
+      width: 100%;
+      flex: none;
+    }
   }
   .card-title {
     font-size: 1.5rem;
-    font-weight: bold;
+    font-weight: lighter;
+    letter-spacing: 0.15rem;
   }
   .card-text {
     // white-space:pre-wrap;
@@ -92,7 +142,7 @@
 @include media-breakpoint-up(lg) {
   .how-it-works-container {
     .how-steps {
-      background-color: $primary;
+      // background-color: $primary;
     }
   }
 }
@@ -103,14 +153,21 @@
   position: relative;
   width: 100%;
   height: 100%;
-  background: linear-gradient(0deg, rgba(21, 62, 57, 0.5), rgba(21, 62, 57, 0.5)), url('../images/background_join_us.jpg');
+  background: linear-gradient(180deg, #4a0d66, #390a4e);
   background-size: cover;
+  padding-bottom: 0;
+  padding-top: 0;
   @include media-breakpoint-up(lg) {
-    padding-top: 4rem;
-    padding-bottom: 5rem;
+    // padding-top: 4rem;
+    // padding: 0;
   }
   h2 {
-    font-weight: 400
+    font-weight: lighter;
+    font-size: 2.5em;
+    letter-spacing: .18em;
+    padding: .5em 0;
+    background: linear-gradient(180deg,#4a0d66,#390a4e);
+    margin-bottom:0;
   }
   .card {
     text-align: center;
@@ -121,6 +178,7 @@
     a {
       color: #fff;
     }
+
   }
   .card-img {
     border-radius: 0;
@@ -128,36 +186,97 @@
   }
   .card-img-overlay {
     z-index: 20;
-    position: absolute;
+    position: static;
     width: 100%;
     height: 100%;
     transition: background-color .3s ease-in-out;
-    background-color: rgba($primary, .6);
+    // background-color: rgba($primary, .6);
+    min-height: 300px;
     &:hover {
-      background-color: rgba($primary, .8);
+      // background-color: rgba($primary, .8);
       cursor: pointer;
     }
   }
   .location-name {
     position: relative;
-    display: inline;
+    display: block;
     text-transform: uppercase;
     padding-bottom: 0.3rem;
-    font-size: 2rem;
-    &:after {
-      position: absolute;
-      left: 10%;
-      bottom: 0;
-      width: 80%;
-      height: 1px;
-      border-bottom: 2px solid $secondary;
-      content: "";
-    }
+    font-size: 2.6rem;
+    letter-spacing: 0.06em;
+    // &:after {
+    //   position: absolute;
+    //   left: 10%;
+    //   bottom: 0;
+    //   width: 80%;
+    //   height: 1px;
+    //   border-bottom: 2px solid $secondary;
+    //   content: "";
+    // }
   }
   .location-date {
-    display: block;
-    margin-top: 0.5rem;
+    display: inline-block;
+    // margin-top: 0.5rem;
     margin-bottom: 0;
+    background: $primary;
+    padding: .25em .75em;
+    transition: all ease .15s;
+  }
+  .diagonal-container {
+    background-image: url('https://secure2.convio.net/adarda/images/content/pagebuilder/ALZ_Landing_events_BG.png');
+    background-size: cover;
+    background-position: center;
+  }
+  .event-container {
+    a {
+      transition: all ease 0.3s;
+      padding: 0 .5em;
+      &:hover {
+        color: white;
+        text-decoration: none;
+        padding: 0;
+        .location-date {
+          // zoom: 1.1;
+          background-color: #310944;
+          &:after {
+            width: 100%;
+          }
+        }
+      }
+    }
+    .location-date {
+      position: relative;
+      &:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        background: white;
+        height: 2px;
+        width: 0;
+        transition: all ease .2s;
+      }
+    }
+    &:nth-of-type(odd) {
+      .location-date {
+        background-color: $primary;
+        &:after{
+          left: auto;
+          right: 0;
+        }
+      }
+      a:hover .location-date {
+        background-color: #310944;
+      }
+    }
+    &:nth-of-type(even) {
+      .location-date {
+        background-color: $secondary;
+      }
+      a:hover .location-date {
+        background-color: #2B7E76;
+      }
+    }
   }
   @include media-breakpoint-down(md) {
     .card {
@@ -204,6 +323,29 @@
     }
     .button {
       width: 100%;
+    }
+  }
+}
+#our_research {
+  .card {
+    @include media-breakpoint-down(lg) {
+      width: 100%;
+      flex: none;
+      margin: 1em auto;
+    }
+  }
+  .card-text {
+    color: #4a0d66;
+  }
+  .card-title {
+    color: #3b9a8e;
+    font-size: 3em;
+    line-height: 1em;
+    @include media-breakpoint-down(md) {
+      font-size: 2em;
+    }
+   .stat-num {
+      font-size: 1.5em;
     }
   }
 }

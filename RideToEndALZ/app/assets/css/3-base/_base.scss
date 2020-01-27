@@ -71,15 +71,15 @@ p {
     margin-bottom: 1.5rem;
   }
   h2 {
-    color: $secondary;
+    color: $primary;
     font-size: 2.25rem;
-    font-weight: bold;
+    font-weight: normal;
     margin-bottom: 1.2rem;
   }
   h3 {
     font-size: 1.625rem;
     color: $primary;
-    font-weight:bold;
+    font-weight:normal;
     &.text-grey {
       color: #686868;
     }
@@ -92,6 +92,33 @@ p {
   .btn,
   .button {
     text-transform: uppercase;
+  }
+  .figure-img {
+    margin-bottom: 0;
+  }
+  .figure-caption {
+    background: #dfdfdf;
+    padding: .5rem;
+    font-style: italic;
+  }
+  .callout-area {
+    padding: 2em;
+    color: white;
+    h1, h2, h3, h4, h5, p, a {
+      color: white;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+    &.primary-color {
+      background-color: $primary;
+    }
+    &.secondary-color {
+      background-color: $secondary;
+    }
+  }
+  p a:link {
+    color: $primary;
   }
   @include media-breakpoint-up(md) {
     p {
@@ -203,7 +230,8 @@ p {
 }
 
 .horizontal-divider {
-  background: url("https://act.alz.org/ride_alz/assets/images/divider.png");
+  // background: url("https://act.alz.org/ride_alz/assets/images/divider.png");
+  background: #359a8e;
   background-repeat: repeat, no-repeat;
   height: 10px;
   display: block;
