@@ -8477,7 +8477,7 @@ var photoEditor, dtContacts;
               $('.fbf-msg-new').addClass('hidden');
               $('.fbf-msg-created').removeClass('hidden');
               if(window.fbq) {
-                fbq('track', 'Walk_FBFundraiser');
+                fbq('track', 'RivALZ_FBFundraiser');
               }
             }
           }
