@@ -541,77 +541,43 @@
         });
 
     }
-
-    // #################
-    // PAGEBUILDER PAGES 
-    // #################
-    if ($('body').is('.pg_rivalz_homepage')) {
-      // home page scripts
-        //initialize map
-        var tiles = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-          maxZoom: 18,
-          attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Points &copy 2012 LINZ'
-        }),
-        latlng = L.latLng(39.36, -96.76);
-
-        var map = L.map('map', {center: latlng, zoom: 4, layers: [tiles], scrollWheelZoom: false});
-
-        //initial api request for accepting gifts and reg
-        luminateExtend.api.request({
-        api: 'TeamRaiser',
-        data: 'method=getTeamraisersByInfo&event_type=BvB&name='+escape('%%%')+'&list_page_size=500&list_filter_column=status&list_filter_text=2&list_sort_column=event_date',
-        callback: dropMarkers
-        });
-        //second api request for accepting gifts only
-        luminateExtend.api.request({
-        api: 'TeamRaiser',
-        data: 'method=getTeamraisersByInfo&event_type=BvB&name='+escape('%%%')+'&list_page_size=500&list_filter_column=status&list_filter_text=3&list_sort_column=event_date',
-        callback: dropMarkers
-        });
-
-        //stores all Markers on map for purposes of clearing overlay
-        var markersArray = [];
-        var activeWindow;
-        var myIcon = L.icon({
-        iconUrl: 'https://act.alz.org/images/content/pagebuilder/bvb_football_icon.png',
-        });
+    
 
         //callback function from API request - geocode locations + drop markers on map
         function dropMarkers(data){
 
-        //convert teamraisers in JSON response to array
-        var teamraisers = luminateExtend.utils.ensureArray(data.getTeamraisersResponse.teamraiser);
+          //convert teamraisers in JSON response to array
+          var teamraisers = luminateExtend.utils.ensureArray(data.getTeamraisersResponse.teamraiser);
 
 
-        if(!(typeof teamraisers[0] === 'undefined')){ //check for results
-          //remove all invalid locations from array
-          teamraisers = removeNullLocationsFrom(teamraisers);
-          
-        }
-        else{ //no results
-          return;
-        }
-        //geocode locations from results + drop markers on map
-        $.each(teamraisers, function(i, tr) {
-          var addr = '';
-          if (tr.location_name) {
-            addr += tr.location_name+',+';
+          if(!(typeof teamraisers[0] === 'undefined')){ //check for results
+            //remove all invalid locations from array
+            teamraisers = removeNullLocationsFrom(teamraisers);
+            
           }
-          addr += tr.city + ',+' + tr.state;
-          
-          if(tr.area == null || isNaN(tr.area.split(',')[0]) || isNaN(tr.area.split(',')[1])) return 'skip';
-          var content =  '<div class="markerInfo"><h4>' + tr.name + '</h4>'
-                + '<table><tr><td><strong>Date:&nbsp;</strong><td>' + luminateExtend.utils.simpleDateFormat(tr.event_date, 'MMM d, yyyy') + '</td></tr>'
-                + '<tr><td><strong>Location:&nbsp;</strong><td>' + (tr.location_name ? tr.location_name : "TBA") + '</td></tr></table>'
-                + '<span class="trlinks"><a href="' + tr.greeting_url + '">TeamRaiser Link</a> | '
-                + '<a href="http://map'+'s.goo'+'gle.com/?q=' + addr + '&ll=' + tr.area + '">Directions</a></span></div>';
-          var latLng = new L.latLng(Number(tr.area.split(',')[0]),Number(tr.area.split(',')[1]));
-          var marker = new L.Marker(latLng, {title: '', icon: myIcon, alt: tr.city + ', ' + tr.state});
-          marker.bindPopup(content);
-          markersArray.push(marker);
-        });
-        L.layerGroup(markersArray).addTo(map);
-
+          else{ //no results
+            return;
+          }
+          //geocode locations from results + drop markers on map
+          $.each(teamraisers, function(i, tr) {
+            var addr = '';
+            if (tr.location_name) {
+              addr += tr.location_name+',+';
+            }
+            addr += tr.city + ',+' + tr.state;
+            
+            if(tr.area == null || isNaN(tr.area.split(',')[0]) || isNaN(tr.area.split(',')[1])) return 'skip';
+            var content =  '<div class="markerInfo"><h4>' + tr.name + '</h4>'
+                  + '<table><tr><td><strong>Date:&nbsp;</strong><td>' + luminateExtend.utils.simpleDateFormat(tr.event_date, 'MMM d, yyyy') + '</td></tr>'
+                  + '<tr><td><strong>Location:&nbsp;</strong><td>' + (tr.location_name ? tr.location_name : "TBA") + '</td></tr></table>'
+                  + '<span class="trlinks"><a href="' + tr.greeting_url + '">TeamRaiser Link</a> | '
+                  + '<a href="http://map'+'s.goo'+'gle.com/?q=' + addr + '&ll=' + tr.area + '">Directions</a></span></div>';
+            var latLng = new L.latLng(Number(tr.area.split(',')[0]),Number(tr.area.split(',')[1]));
+            var marker = new L.Marker(latLng, {title: '', icon: myIcon, alt: tr.city + ', ' + tr.state});
+            marker.bindPopup(content);
+            markersArray.push(marker);
+          });
+          L.layerGroup(markersArray).addTo(map);
             
         }
 
@@ -658,18 +624,52 @@
             }
           }
         }
+
+    // #################
+    // PAGEBUILDER PAGES 
+    // #################
+    if ($('body').is('.pg_rivalz_homepage')) {
+      // home page scripts
+        //initialize map
+        var tiles = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+          maxZoom: 18,
+          attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Points &copy 2012 LINZ'
+        }),
+        latlng = L.latLng(39.36, -96.76);
+
+        var map = L.map('map', {center: latlng, zoom: 4, layers: [tiles], scrollWheelZoom: false});
+
+        //initial api request for accepting gifts and reg
+        luminateExtend.api.request({
+        api: 'TeamRaiser',
+        data: 'method=getTeamraisersByInfo&event_type=BvB&name='+escape('%%%')+'&list_page_size=500&list_filter_column=status&list_filter_text=2&list_sort_column=event_date',
+        callback: dropMarkers
+        });
+        //second api request for accepting gifts only
+        luminateExtend.api.request({
+        api: 'TeamRaiser',
+        data: 'method=getTeamraisersByInfo&event_type=BvB&name='+escape('%%%')+'&list_page_size=500&list_filter_column=status&list_filter_text=3&list_sort_column=event_date',
+        callback: dropMarkers
+        });
+
+        //stores all Markers on map for purposes of clearing overlay
+        var markersArray = [];
+        var activeWindow;
+        var myIcon = L.icon({
+        iconUrl: 'https://act.alz.org/images/content/pagebuilder/bvb_football_icon.png',
+        });
         
     
-            luminateExtend.api.request({
-              api: 'teamraiser', 
-              data: 'method=getTeamraisersByInfo&event_type=BvB&name='+escape('%%%')+'&list_page_size=500&list_sort_column=event_date',
-              callback: buildTeamRaisersByInfo
-            });
-            $('.flexslider').flexslider({
-              animation: "slide",
-              controlsContainer: ".flex-container",
-              controlNav: true
-            });
+        luminateExtend.api.request({
+          api: 'teamraiser', 
+          data: 'method=getTeamraisersByInfo&event_type=BvB&name='+escape('%%%')+'&list_page_size=500&list_sort_column=event_date',
+          callback: buildTeamRaisersByInfo
+        });
+        $('.flexslider').flexslider({
+          animation: "slide",
+          controlsContainer: ".flex-container",
+          controlNav: true
+        });
 
     }
 
@@ -996,56 +996,6 @@
                 iconUrl: '../images/content/pagebuilder/bvb_football_icon.png',
               });
           
-              //callback function from API request - geocode locations + drop markers on map
-              function dropMarkers(data){
-                
-                //convert teamraisers in JSON response to array
-                var teamraisers = luminateExtend.utils.ensureArray(data.getTeamraisersResponse.teamraiser);
-                
-                
-                if(!(typeof teamraisers[0] === 'undefined')){ //check for results
-                  //remove all invalid locations from array
-                  teamraisers = removeNullLocationsFrom(teamraisers);
-                  
-                }
-                else{ //no results
-                  return;
-                }
-                //geocode locations from results + drop markers on map
-                $.each(teamraisers, function(i, tr) {
-                  var addr = '';
-                  if (tr.location_name) {
-                    addr += tr.location_name+',+';
-                  }
-                  addr += tr.city + ',+' + tr.state;
-                  
-                  if(tr.area == null || isNaN(tr.area.split(',')[0]) || isNaN(tr.area.split(',')[1])) return 'skip';
-                  var content =  '<div class="markerInfo"><h4>' + tr.name + '</h4>'
-                        + '<table><tr><td><strong>Date:&nbsp;</strong><td>' + luminateExtend.utils.simpleDateFormat(tr.event_date, 'MMM d, yyyy') + '</td></tr>'
-                        + '<tr><td><strong>Location:&nbsp;</strong><td>' + (tr.location_name ? tr.location_name : "TBA") + '</td></tr></table>'
-                        + '<span class="trlinks"><a href="' + tr.greeting_url + '">TeamRaiser Link</a> | '
-                        + '<a href="http://map'+'s.goo'+'gle.com/?q=' + addr + '&ll=' + tr.area + '">Directions</a></span></div>';
-                      var latLng = new L.latLng(Number(tr.area.split(',')[0]),Number(tr.area.split(',')[1]));
-                      var marker = new L.Marker(latLng, {title: '', icon: myIcon, alt: tr.city + ', ' + tr.state});
-                      marker.bindPopup(content);
-                      markersArray.push(marker);
-                });
-                L.layerGroup(markersArray).addTo(map);
-          
-                    
-              }
-          
-                
-          
-              //removes all TeamRaiser API results with undefined or null locations, or invalid lat/long coordinates - i.e. can't be displayed on map
-              function removeNullLocationsFrom(array){
-                return $.grep(array, function(tr, i) {
-                  if(typeof tr.city === 'undefined' || typeof tr.state === 'undefined' || typeof tr.area === 'undefined') return false; 
-                  else if (tr.city == null || tr.state == null || tr.area == null) return false;
-                  else if ((tr.area.match(/[A-z]/g) != null) || (tr.area.match(/,/g) == null)) return false;
-                  else return true;
-                });
-              }
           
     }
 

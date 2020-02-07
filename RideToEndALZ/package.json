@@ -14,7 +14,7 @@
   },
   "devDependencies": {
     "babel-core": "^6.26.3",
-    "browser-sync": "^2.23.7",
+    "browser-sync": "^2.26.7",
     "del": "^3.0.0",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^4.1.0",
@@ -41,7 +41,7 @@
     "gulp-useref": "^3.1.5",
     "install": "^0.11.0",
     "lazypipe": "^1.0.1",
-    "npm": "^6.0.1",
+    "npm": "^6.13.7",
     "run-sequence": "^2.2.1"
   },
   "eslintConfig": {
@@ -58,6 +58,6 @@
     }
   },
   "dependencies": {
-    "node-sass": "^4.12.0"
+    "node-sass": "^4.13.1"
   }
 }

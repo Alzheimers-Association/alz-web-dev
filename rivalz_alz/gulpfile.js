@@ -47,7 +47,7 @@ gulp.task("scripts", ["concatScripts"], function () {
 	return gulp.src("app/assets/js/*.js")
 		// .pipe($.replace('<!TIMESTAMP!>', timestamp))
     .pipe(gulp.dest('dist/assets/js'))
-		.pipe($.uglify())
+		.pipe($.uglify().on('error',console.error))
 		.pipe($.rename({
       suffix: '.min'
     }))
@@ -126,7 +126,7 @@ gulp.task('html', ['styles', 'scripts'], function () {
       safe: true,
       autoprefixer: false
     })))
-    .pipe($.if(/\.html$/, $.replace('"assets/', '"../ride_alz/assets/')))
+    .pipe($.if(/\.html$/, $.replace('"assets/', '"../rivalz_alz/assets/')))
     .pipe($.if(/\.html$/, $.replace('<!TIMESTAMP!>', timestamp)))
     // .pipe($.if(/\.html$/, $.if('*.html', $.fileInclude({prefix: '@@', basepath: '@file'}))))
     .pipe($.removeCode({

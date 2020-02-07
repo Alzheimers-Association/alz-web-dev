@@ -7547,27 +7547,27 @@ var photoEditor, dtContacts;
               if(!isFiltered) {
                 adarda.trpc.ui.buildEmailAutoComplete();
               }
-
-              /* select filter and all contacts */
             }
 
- 
-            $('.email-contacts-table .table--loading-row').remove();
-            
-            if($('.email-contacts-table .table--row').length === 0) {
-              $('.email-contacts-table .table--no-results-row').removeClass('hidden');
-            } else {
-              $('.email-contacts-table .table--no-results-row').remove();
-            }
+            $.fn.dataTable.ext.search.push(
+              function( settings, data, dataIndex ) {
+                return !($(settings.aoData[dataIndex].nTr).hasClass('hidden'));
+              }
+            );       
 
             dtContacts = $('#email__contacts .email-contacts-table').DataTable({
               "order": [[ 1, "asc" ]],
               "destroy": true,
               "lengthMenu": [ [10, 25, 50, 100, -1], [10, 25, 50, 100, "All"] ],
-              "pageLength": -1
+              "pageLength": -1,
+              "language": {
+                "infoFiltered": ""
+              }
             });
-            // $tableData.find('.table--no-results-row, .table--loading-row, th:first-child, td:first-child').remove();
-
+            
+            if($('.email-contacts-table .table--row').length === 0) {
+              $('.email-contacts-table .table--no-results-row').removeClass('hidden');
+            }
 
             /* select filter and all contacts */
             if ($('#pc-email-view').hasClass('email_rpt_show_teammates')) {
