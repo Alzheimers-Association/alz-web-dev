@@ -4812,6 +4812,38 @@ var photoEditor, dtContacts;
     return Number(dollarAmountString.replace(/\$/g, '').replace(/,/g, '')) * 100;
   }, 
   
+  /* convert rich text to plain text */
+  richTextToPlainText = function(richText) {
+    var $tempElem;
+    $tempElem = jQuery('<div>' + richText + '</div>');
+    $tempElem.find('*').each(function(wildcardElemIndex, wildcardElem) {
+      return jQuery(wildcardElem).html(jQuery(wildcardElem).html().replace(/(?:\r\n|\r|\n)/g, ' '));
+    });
+    $tempElem.find('ul, ol').each(function(orderedListIndex, orderedList) {
+      return jQuery(orderedList).find('li').each(function(listItemIndex, listItem) {
+        var listItemAppend, listItemPrepend;
+        listItemPrepend = '* ';
+        listItemAppend = '';
+        if (jQuery(listItem).is('ol li')) {
+          listItemPrepend = (listItemIndex + 1) + '. ';
+        }
+        if (jQuery(listItem).next('li').length > 0) {
+          listItemAppend = '\n';
+        }
+        return jQuery(listItem).html(listItemPrepend + jQuery(listItem).html() + listItemAppend);
+      });
+    });
+    $tempElem.find('p, ul, ol').each(function(blockLevelElemIndex, blockLevelElem) {
+      var blockLevelElemAppend;
+      blockLevelElemAppend = '';
+      if (jQuery(blockLevelElem).next('*').length > 0) {
+        blockLevelElemAppend = '\n\n';
+      }
+      return jQuery(blockLevelElem).html(jQuery(blockLevelElem).html() + blockLevelElemAppend);
+    });
+    return jQuery.trim($tempElem.text());
+  }, 
+  
   /* set a text editor's content */
   setEditorContent = function(editor, editorContent) {
     var $editor = $(editor);
@@ -7515,27 +7547,27 @@ var photoEditor, dtContacts;
               if(!isFiltered) {
                 adarda.trpc.ui.buildEmailAutoComplete();
               }
-
-              /* select filter and all contacts */
             }
 
- 
-            $('.email-contacts-table .table--loading-row').remove();
-            
-            if($('.email-contacts-table .table--row').length === 0) {
-              $('.email-contacts-table .table--no-results-row').removeClass('hidden');
-            } else {
-              $('.email-contacts-table .table--no-results-row').remove();
-            }
+            $.fn.dataTable.ext.search.push(
+              function( settings, data, dataIndex ) {
+                return !($(settings.aoData[dataIndex].nTr).hasClass('hidden'));
+              }
+            );       
 
             dtContacts = $('#email__contacts .email-contacts-table').DataTable({
               "order": [[ 1, "asc" ]],
               "destroy": true,
               "lengthMenu": [ [10, 25, 50, 100, -1], [10, 25, 50, 100, "All"] ],
-              "pageLength": -1
+              "pageLength": -1,
+              "language": {
+                "infoFiltered": ""
+              }
             });
-            // $tableData.find('.table--no-results-row, .table--loading-row, th:first-child, td:first-child').remove();
-
+            
+            if($('.email-contacts-table .table--row').length === 0) {
+              $('.email-contacts-table .table--no-results-row').removeClass('hidden');
+            }
 
             /* select filter and all contacts */
             if ($('#pc-email-view').hasClass('email_rpt_show_teammates')) {
@@ -8247,9 +8279,89 @@ var photoEditor, dtContacts;
                   };
                   if (suggest) {
                     // In future use to confirm details with user  -  fbSuggestFundraiserConfig();
-                    adarda.trpc.ui.fbCreateFundraiser();
+                    adarda.trpc.api.teamraiser.getPersonalPageInfo({
+                      callback: {
+                        error: function(response) {
+                          var errorResponse = response.errorResponse, 
+                          errorCode = errorResponse.code, 
+                          errorMessage = errorResponse.message;
+                          $('.js__btn-fbf').each(function() {
+                            $(this).html($(this).data('original'));
+                          });
+                          $('#fbf-error-modal .fbf-error').html('An error occurred attempting to connect to Facebook. Please try again later. Error: ' + errorCode + ' - ' + errorMessage);
+                          $('#fbf-error-modal').modal('show');
+                          setTimeout(function() {
+                            $('#fbf-error-modal').modal('hide');
+                          }, 5000);
+                        }, 
+                        success: function(response) {
+                          var getPersonalPageResponse = response.getPersonalPageResponse;
+                          if(!getPersonalPageResponse) {
+                            $('.js__btn-fbf').each(function() {
+                              $(this).html($(this).data('original'));
+                            });
+                            $('#fbf-error-modal .fbf-error').html('An error occurred attempting to connect to Facebook. Please try again later.');
+                            $('#fbf-error-modal').modal('show');
+                            setTimeout(function() {
+                              $('#fbf-error-modal').modal('hide');
+                            }, 5000);
+                          }
+                          else {
+                            var fundraiserDescription = adarda.trpc.teamraiserConfig['tr' + adarda.trpc.frId].facebookDefaultDescription;
+                            if(getPersonalPageResponse.personalPage && getPersonalPageResponse.personalPage.richText) {
+                              fundraiserDescription = richTextToPlainText(getPersonalPageResponse.personalPage.richText);
+                            }
+                            adarda.trpc.ui.fbCreateFundraiser({
+                              userAccessToken: adarda.trpc.cons.profile.fb.accessToken, 
+                              fundraiserName: adarda.trpc.cons.profile.name.first.substring(0, 39) + ' is Riding to End Alzheimer\'s!', 
+                              fundraiserDescription: fundraiserDescription
+                            });
+                          }
+                        }
+                      }
+                    });
                   } else {
-                    adarda.trpc.ui.fbCreateFundraiser();
+                    adarda.trpc.api.teamraiser.getPersonalPageInfo({
+                      callback: {
+                        error: function(response) {
+                          var errorResponse = response.errorResponse, 
+                          errorCode = errorResponse.code, 
+                          errorMessage = errorResponse.message;
+                          $('.js__btn-fbf').each(function() {
+                            $(this).html($(this).data('original'));
+                          });
+                          $('#fbf-error-modal .fbf-error').html('An error occurred attempting to connect to Facebook. Please try again later. Error: ' + errorCode + ' - ' + errorMessage);
+                          $('#fbf-error-modal').modal('show');
+                          setTimeout(function() {
+                            $('#fbf-error-modal').modal('hide');
+                          }, 5000);
+                        }, 
+                        success: function(response) {
+                          var getPersonalPageResponse = response.getPersonalPageResponse;
+                          if(!getPersonalPageResponse) {
+                            $('.js__btn-fbf').each(function() {
+                              $(this).html($(this).data('original'));
+                            });
+                            $('#fbf-error-modal .fbf-error').html('An error occurred attempting to connect to Facebook. Please try again later.');
+                            $('#fbf-error-modal').modal('show');
+                            setTimeout(function() {
+                              $('#fbf-error-modal').modal('hide');
+                            }, 5000);
+                          }
+                          else {
+                            var fundraiserDescription = adarda.trpc.teamraiserConfig['tr' + adarda.trpc.frId].facebookDefaultDescription;
+                            if(getPersonalPageResponse.personalPage && getPersonalPageResponse.personalPage.richText) {
+                              fundraiserDescription = richTextToPlainText(getPersonalPageResponse.personalPage.richText);
+                            }
+                            adarda.trpc.ui.fbCreateFundraiser({
+                              userAccessToken: adarda.trpc.cons.profile.fb.accessToken, 
+                              fundraiserName: adarda.trpc.cons.profile.name.first.substring(0, 39) + ' is Riding to End Alzheimer\'s!', 
+                              fundraiserDescription: fundraiserDescription
+                            });
+                          }
+                        }
+                      }
+                    });
                   }
                   return false;
                 }
@@ -8284,131 +8396,118 @@ var photoEditor, dtContacts;
 
     /* get suggested fundraiser config */
     fbSuggestFundraiserConfig: function() {
-      var requestData={
-        charity_id: charity_id,
-        external_id: 'lotrp:'+adarda.trpc.frId+'-'+adarda.trpc.cons.profile.id
-      };
-
-      $.ajax({
-        url: 'https://facebookfundraiser.sky.blackbaud.com/suggest_fundraiser_config',
-        type: 'POST',
-        contentType: 'application/json; charset=utf-8',
-        data: JSON.stringify(requestData)
-      }).done(function(resp){
-          // TODO: Load suggestions into modal for verification
-        }).fail(function(e){
-          $('.js__btn-fbf').each(function(){
-            $(this).html($(this).data('original'));
-          });
-          $('#fbf-error-modal .fbf-error').html('An error occurred attempting to connect to Facebook. Please try again later. Error: ' + e.error.code + ' - ' + e.error.message);
-          $('#fbf-error-modal').modal('show');
-          setTimeout(function(){$('#fbf-error-modal').modal('hide');}, 5000);
-        });
-    },
-    /* create fundraiser */
-    fbCreateFundraiser: function() {
-      var requestData={
-        charity_id: charity_id,
-        external_id: 'lotrp:'+adarda.trpc.frId+'-'+adarda.trpc.cons.profile.id,
-        fundraiser_name: adarda.trpc.cons.profile.name.first.substring(0,39) + ' is Riding to End Alzheimer\'s!',
-        cover_photo: 1,
-        default_cover_photo: 'https://act.alz.org/images/content/pagebuilder/FacebookFundraiserCover_purplebike01.jpg',
-        default_goal_amount: '1600.00',
-        end_time: Math.round((new Date(adarda.trpc.teamraiser['tr'+adarda.trpc.frId].date).getTime()) / 1000 + 2592000),
-        facebook_user_id: adarda.trpc.cons.profile.fb.userId,
-        access_token: adarda.trpc.cons.profile.fb.accessToken
-      };
-
-      $.ajax({
-        url: 'https://facebookfundraiser.sky.blackbaud.com/create_fundraiser',
-        type: 'POST',
-        contentType: 'application/json; charset=utf-8',
-        data: JSON.stringify(requestData)
-      }).done(function(resp){
-          if (!resp.error) {
-            $('.fbf-link').attr('href','https://www.facebook.com/donate/'+resp.fundraiser.id);
-            $('.js__btn-fbf').attr('href','https://www.facebook.com/donate/'+resp.fundraiser.id).attr('target','_blank').html('GO TO FACEBOOK <i class="fas fa-chevron-right"></i>');
-            $('.fbf-msg-new').addClass('hidden');
-            $('.fbf-msg-created').removeClass('hidden');
-            adarda.trpc.ui.fbSyncDonations();
-            fbq('track', 'Walk_FBFundraiser');
-          } else {
-            $('.js__btn-fbf').each(function(){
+      adarda.trpc.api.teamraiser.getPersonalPageInfo({
+        callback: {
+          error: function(response) {
+            var errorResponse = response.errorResponse, 
+            errorCode = errorResponse.code, 
+            errorMessage = errorResponse.message;
+            $('.js__btn-fbf').each(function() {
               $(this).html($(this).data('original'));
             });
+            $('#fbf-error-modal .fbf-error').html('An error occurred attempting to connect to Facebook. Please try again later. Error: ' + errorCode + ' - ' + errorMessage);
+            $('#fbf-error-modal').modal('show');
+            setTimeout(function() {
+              $('#fbf-error-modal').modal('hide');
+            }, 5000);
+          }, 
+          success: function() {
+            // TODO: Load suggestions into modal for verification
           }
-        }).fail(function(e){
-          $('.js__btn-fbf').each(function(){
-            $(this).html($(this).data('original'));
-          });
-          $('#fbf-error-modal .fbf-error').html('An error occurred attempting to connect to Facebook. Please try again later. Error: ' + e.error.code + ' - ' + e.error.message);
-          $('#fbf-error-modal').modal('show');
-          setTimeout(function(){$('#fbf-error-modal').modal('hide');}, 5000);
-        });
+        }
+      });
     },
-    /* update fundraiser - currently only goal */
-    fbUpdateFundraiser: function() {
-      var requestData={
-        charity_id: charity_id,
-        external_id: 'lotrp:'+adarda.trpc.frId+'-'+adarda.trpc.cons.profile.id
-      };
-
-      $.ajax({
-        url: 'https://facebookfundraiser.sky.blackbaud.com/update_fundraiser',
-        type: 'POST',
-        contentType: 'application/json; charset=utf-8',
-        data: JSON.stringify(requestData)
-      }).done(function(resp){
-        }).fail(function(e){
-          $('#fbf-error-modal .fbf-error').html('An error occurred attempting to update Facebook. Please try again later. Error: ' + e.error.code + ' - ' + e.error.message);
-          $('#fbf-error-modal').modal('show');
-          setTimeout(function(){$('#fbf-error-modal').modal('hide');}, 5000);
-        });
-    },
-    /* sync donations across platforms */
-    fbSyncDonations: function() {
-      var requestData={
-        charity_id: charity_id,
-        external_id: 'lotrp:'+adarda.trpc.frId+'-'+adarda.trpc.cons.profile.id
-      };
-
-      $.ajax({
-        url: 'https://facebookfundraiser.sky.blackbaud.com/sync_donations',
-        type: 'POST',
-        contentType: 'application/json; charset=utf-8',
-        data: JSON.stringify(requestData)
-      }).done(function(resp){
-        }).fail(function(e){
-          $('#fbf-error-modal .fbf-error').html('An error occurred attempting to sync to Facebook. Please try again later. Error: ' + e.error.code + ' - ' + e.error.message);
-          $('#fbf-error-modal').modal('show');
-          setTimeout(function(){$('#fbf-error-modal').modal('hide');}, 5000);
-        });
-    },
-    /* sync donations across platforms */
-    fbConfirmStatus: function() {
-      var requestData={
-        charity_id: charity_id,
-        external_id: 'lotrp:'+adarda.trpc.frId+'-'+adarda.trpc.cons.profile.id
-      };
-
-      $.ajax({
-        url: 'https://facebookfundraiser.sky.blackbaud.com/confirm_fundraiser_status',
-        type: 'POST',
-        contentType: 'application/json; charset=utf-8',
-        data: JSON.stringify(requestData)
-      }).done(function(resp){
-          if(!resp.status || !resp.status.active) {
-            /* not active */
-            $('.js__btn-fbf').attr('href','').attr('target','').removeAttr('disabled').html('<span class="icon-facebook"></span> Connect Fundraiser to Facebook');
-          } else {
-            /* active */
-            $('.js__btn-fbf').removeAttr('disabled');
+    /* create fundraiser */
+    fbCreateFundraiser: function(options) {
+      var settings = $.extend({
+        frId: adarda.trpc.frId, /* required */
+        consId: adarda.trpc.cons.profile.id, /* required */
+        userAccessToken: '', /* required */
+        fundraiserName: adarda.trpc.teamraiserConfig['tr' + adarda.trpc.frId].facebookDefaultTitle, /* required */
+        fundraiserDescription: '' /* required */
+      }, options || {});
+      
+      luminateExtend.api({
+        api: 'teamraiser', 
+        data: 'method=createAndLinkFacebookFundraiser&fr_id=' + settings.frId + 
+              '&cons_id=' + settings.consId + 
+              '&user_access_token=' + settings.userAccessToken + 
+              '&name=' + settings.fundraiserName + 
+              '&description=' + settings.fundraiserDescription, 
+        requiresAuth: true, 
+        callback: {
+          error: function(response) {
+            var errorResponse = response.errorResponse, 
+            errorCode = errorResponse.code, 
+            errorMessage = errorResponse.message;
+            $('.js__btn-fbf').each(function() {
+              $(this).html($(this).data('original'));
+            });
+            $('#fbf-error-modal .fbf-error').html('An error occurred attempting to connect to Facebook. Please try again later. Error: ' + errorCode + ' - ' + errorMessage);
+            $('#fbf-error-modal').modal('show');
+            setTimeout(function() {
+              $('#fbf-error-modal').modal('hide');
+            }, 5000);
+          }, 
+          success: function(response) {
+            var createAndLinkFacebookFundraiserResponse = response.createAndLinkFacebookFundraiserResponse;
+            if(!createAndLinkFacebookFundraiserResponse || !createAndLinkFacebookFundraiserResponse.fundraiserId) {
+              $('.js__btn-fbf').each(function() {
+                $(this).html($(this).data('original'));
+              });
+              $('#fbf-error-modal .fbf-error').html('An error occurred attempting to connect to Facebook. Please try again later.');
+              $('#fbf-error-modal').modal('show');
+              setTimeout(function() {
+                $('#fbf-error-modal').modal('hide');
+              }, 5000);
+            }
+            else {
+              var fundraiserId = createAndLinkFacebookFundraiserResponse.fundraiserId;
+              $('.fbf-link').attr('href', 'https://www.facebook.com/donate/' + fundraiserId);
+              $('.js__btn-fbf').attr('href', 'https://www.facebook.com/donate/' + fundraiserId).attr('target', '_blank').html('GO TO FACEBOOK <i class="fas fa-chevron-right"></i>');
+              $('.fbf-msg-new').addClass('hidden');
+              $('.fbf-msg-created').removeClass('hidden');
+              if(window.fbq) {
+                fbq('track', 'Ride_FBFundraiser');
+              }
+            }
           }
-        }).fail(function(e){
-          $('#fbf-error-modal .fbf-error').html('An error occurred attempting to confirm status of Facebook Fundraiser. Please reload the page. Error: ' + e.error.code + ' - ' + e.error.message);
-          $('#fbf-error-modal').modal('show');
-          setTimeout(function(){$('#fbf-error-modal').modal('hide');}, 5000);
-        });
+        }
+      });
+    },
+    /* confirm fundraiser is still active on facebook */
+    fbConfirmStatus: function(options) {
+      var settings = $.extend({
+        frId: adarda.trpc.frId /* required */
+      }, options || {});
+      
+      luminateExtend.api({
+        api: 'teamraiser', 
+        data: 'method=confirmOrUnlinkFacebookFundraiser&fr_id=' + settings.frId, 
+        requiresAuth: true, 
+        callback: {
+          error: function(response) {
+            var errorResponse = response.errorResponse, 
+            errorCode = errorResponse.code, 
+            errorMessage = errorResponse.message;
+            $('#fbf-error-modal .fbf-error').html('An error occurred attempting to confirm status of Facebook Fundraiser. Please reload the page. Error: ' + errorCode + ' - ' + errorMessage);
+            $('#fbf-error-modal').modal('show');
+            setTimeout(function() {
+              $('#fbf-error-modal').modal('hide');
+            }, 5000);
+          }, 
+          success: function(response) {
+            var confirmOrUnlinkFacebookFundraiserResponse = response.confirmOrUnlinkFacebookFundraiserResponse;
+            if(confirmOrUnlinkFacebookFundraiserResponse && confirmOrUnlinkFacebookFundraiserResponse.active === 'false') {
+              /* not active */
+              $('.js__btn-fbf').attr('href', '').attr('target', '').removeAttr('disabled').html('<span class="icon-facebook"></span> Connect Fundraiser to Facebook');
+            } else {
+              /* active */
+              $('.js__btn-fbf').removeAttr('disabled');
+            }
+          }
+        }
+      });
     }
   };
   
@@ -9495,7 +9594,6 @@ $('.pc-navbar .navbar-collapse').collapse('hide');
           
           $('#dashboard-edit-goal-modal').modal('hide');
           //$('body').append('<img src="https://alzpv.see3labs.com/servlet/refreshParticipant?cons_id='+adarda.trpc.cons.profile.id+'&fr_id='+adarda.trpc.frId+'&event_id=1703&r=' + new Date().getTime() + '" alt="" class="pxlTrkr" style="position:absolute; width:1px; height:1px; />');
-          adarda.trpc.ui.fbUpdateFundraiser();
         }
       };
       
