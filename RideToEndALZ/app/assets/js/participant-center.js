@@ -8433,7 +8433,7 @@ var photoEditor, dtContacts;
               '&cons_id=' + settings.consId + 
               '&user_access_token=' + settings.userAccessToken + 
               '&name=' + settings.fundraiserName + 
-              '&description=' + settings.fundraiserDescription, 
+              '&description=' + encodeURIComponent(settings.fundraiserDescription), 
         requiresAuth: true, 
         callback: {
           error: function(response) {
