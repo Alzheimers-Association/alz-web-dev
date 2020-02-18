@@ -1101,7 +1101,7 @@
 
         // clean up default LO company roster markup
         $('.js__default-company-roster').html(function (i, html) {
-          return html.replace(/&nbsp;&nbsp;/g, '<div class="company-roster-row">').replace('<br>', '</div>');
+          return html.replace(/&nbsp;&nbsp;/g, '<div class="company-roster-row">').replace(/<br>/g, '</div>');
         });
 
         var topCompaniesData = [];
