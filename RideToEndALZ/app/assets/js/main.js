@@ -148,7 +148,7 @@
                   $('.js__has-rides').show();
                   var trId = this.id;
                   var eventName = this.name;
-                  var eventLocation = this.city + ', ' + this.state;
+                  var eventLocation = (trId == '13945' ? 'Virtual Challenge' : this.city + ', ' + this.state);
                   var teamPageUrl = (this.teamPageUrl ? this.teamPageUrl : null);
 
                   var eventDate = new Date(this.event_date);
