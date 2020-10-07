@@ -293,7 +293,24 @@
         <h1>
           <span class="display-4">RIDE TO END ALZ</span>
           <!-- <span class="display-3">[[E47:[[S334:fr_id]]:fr_info:1:event_location_city]],&nbsp;[[E47:[[S334:fr_id]]:fr_info:1:event_location_state]]</span> -->
-          <span class="display-3">[[E47:[[S334:fr_id]]:fr_info:1:event_title]]</span>
+          
+          <!--VIRTUAL COVID-19 EDIT FOR CO EVENT-->
+          [[?x13945x::x[[S334:fr_id]]x::
+
+          <!--VIRTUAL COPY-->
+          <span class="display-3">Virtual Challenge</span>
+        </h1>
+          <p class="lead">[[E47:[[S334:fr_id]]:fr_info:1:event_date]]</p>
+          <p class="lead">Registration is now closed, but you can still support a participant.</p>
+          <div class="row d-flex justify-content-center">
+            <div class="col-md-4 col-lg-3">
+              <a class="button btn-secondary btn-lg btn-block" href="SPageServer/?pagename=ride_search&search_type=donate&virtual=true" role="button" onClick="ga('send', 'event', 'ride greeting', 'click', 'banner-donate');">DONATE</a>
+            </div>
+          </div>
+          ::
+
+          <!--TX COPY-->
+        <span class="display-3">Fall Virtual Challenge</span>
         </h1>
         <p class="lead">[[E47:[[S334:fr_id]]:fr_info:1:event_date]]</p>
         <div class="row d-flex justify-content-center">
@@ -327,21 +344,26 @@
             <div class="col-md-6">
                 [[?xx::x[[S1:user_name]]x::
                   <!-- <a href="#ride_details"  onClick="ga('send', 'event', 'ride greeting', 'click', 'banner-ride-details');">Ride Details</a> -->
-                  <a class="" href="TR/?fr_id=[[S42:0:fr-id]]&amp;pg=informational&amp;sid=25339" role="button" onClick="ga('send', 'event', 'ride greeting', 'click', 'details-event-info');">Learn More About This Event</a>
+                  <a class="" href="TR/?fr_id=[[S42:0:fr-id]]&amp;pg=informational&amp;sid=25340" role="button" onClick="ga('send', 'event', 'ride greeting', 'click', 'details-event-info');">Learn More About This Event</a>
                 ::
                   [[?xx::x[[S48:0:part-type-id]]x::
                   <!-- <a href="#ride_details"  onClick="ga('send', 'event', 'ride greeting', 'click', 'banner-ride-details');">Ride Details</a> -->
-                  <a class="" href="TR/?fr_id=[[S42:0:fr-id]]&amp;pg=informational&amp;sid=25339" role="button" onClick="ga('send', 'event', 'ride greeting', 'click', 'details-event-info');">Learn More About This Event</a>
+                  <a class="" href="TR/?fr_id=[[S42:0:fr-id]]&amp;pg=informational&amp;sid=25340" role="button" onClick="ga('send', 'event', 'ride greeting', 'click', 'details-event-info');">Learn More About This Event</a>
                   ::
                   <a href="#" data-toggle="modal" data-target="#registerModal" onClick="ga('send', 'event', 'ride greeting', 'click', 'banner-register');">Register for a Different Ride</a>
                   ]]
                 ]]
             </div>
         </div>
+        ]]
+        
       </div>
     </div>
     <!-- END hero section -->
     <span class="horizontal-divider"></span>
+
+    <!--COVID 19 ANNOUNCEMENT-->
+    [[S51:reus_ride_2020_annoucement_entry]]
 
     <!-- BEGIN Progress section -->
     <section id="event_progress" class="fundraiser-progress-container">
@@ -411,14 +433,20 @@
           Your Experience
         </h2>
         <div class="row justify-content-center mt-3">
-          <div class="col-md-4">
+            <div class="col-md-4">
+              <a href="https://act.alz.org/site/TR/?fr_id=[[S334:fr_id]]&pg=informational&sid=27150" style="border-bottom: none!important;">
               <img src="../ride_alz/assets/images/2020_clock_icon.png" alt="clock icon" width="85" height="85"/>
-              <h3 class="text-center">RIDE WEEKEND SCHEDULE</h3>
+              </a>
+
+            <!--UPDATED VIRTUAL COPY-->
+            <h3 class="text-center">
+              TRAINING GOALS
+            </h3>
             <p>
-              [[E130:"[[E47:[[S334:fr_id]]:fr_info:1:event_schedule]]" " | " "<br>" replaceall]]
+              Determine how many miles you need to train!
             </p>
-            
-            <p><a href="#" data-toggle="modal" data-target="#scheduleModal">LEARN MORE</a></p>
+            <!--VIRTUAL COVID-19 EDIT FOR CO EVENT-->
+
             <!--<a class="button btn-secondary text-uppercase js__add-to-calendar" href="#" role="button" onClick="ga('send', 'event', 'ride greeting', 'click', 'details-add-calendar');">Add to Calendar</a>-->
             <!-- https://www.addevent.com/add-to-calendar-button -->
 <!-- BEGIN add to calendar -->
@@ -434,35 +462,36 @@
 <!-- END add to calendar -->
           </div>
           <div class="col-md-4">
-            <img src="../ride_alz/assets/images/2020_pin_icon.png" alt="map-pin icon" width="85" height="85"/>
-            <h3 class="text-center">ROUTES</h3>
-            <p>
-                [[E130:"[[E47:[[S334:fr_id]]:fr_info:1:event_location]]" " | " "<br>" replaceall]]
+            <a href="https://act.alz.org/site/TR/?fr_id=[[S334:fr_id]]&pg=informational&sid=25340" style="border-bottom: none!important;">
+            <img src="../ride_alz/assets/images/2020_pin_icon.png" alt="map-pin icon" width="85" height="85"/></a>
 
-                <!-- 
-                [[E47:[[S334:fr_id]]:fr_info:1:event_location]]
-              <br> [[E47:[[S334:fr_id]]:fr_info:1:sponsor_4]]
-              <br> [[E47:[[S334:fr_id]]:fr_info:1:event_location_city]],&nbsp;[[E47:[[S334:fr_id]]:fr_info:1:event_location_state]] [[E47:[[S334:fr_id]]:fr_info:1:sponsor_5]]
-              -->
+            <!--UPDATED VIRTUAL COPY-->
+            <h3 class="text-center">
+              INDOOR/OUTDOOR
+            </h3>
+            <p>
+              Choose how you will ride with us, together &ndash; yet apart
             </p>
+            <!--VIRTUAL COVID-19 EDIT FOR CO EVENT-->
             
-            <p><a href="#" data-toggle="modal" data-target="#routesModal">LEARN MORE</a></p>
 <!--
             [[?xxnullx::x[[E47:[[S42:0:fr-id]]:fr_info:1:map_link]]x::::
                         <a href="[[E47:[[S42:0:fr-id]]:fr_info:1:map_link]]" class="button btn-secondary text-uppercase" role="button" target="_blank" onClick="ga('send', 'event', 'ride greeting', 'click', 'details-map');">Map it</a>
                         ]]-->
-
           </div>
           <div class="col-md-4">
-              <img src="../ride_alz/assets/images/2020_party_icon.png" alt="party icon" width="85" height="85"/>
-              <h3 class="text-center">VIP RESEARCH DINNER</h3>
-              <p>
-                [[E47:[[S334:fr_id]]:fr_info:1:coordinator_name]]
-              <!-- <br>[[?xxnullx::x[[E47:[[S334:fr_id]]:fr_info:1:coordinator_phone]]x::::<a href="tel:[[E130:"[[E47:[[S334:fr_id]]:fr_info:1:coordinator_phone]]" "." "" replaceall "RIDE (" "" replaceall ")" "" replaceall]]">[[E47:[[S334:fr_id]]:fr_info:1:coordinator_phone]]</a>]]
-              <br>
-              <a href="mailto:[[E47:[[S334:fr_id]]:fr_info:1:coordinator_email]]">[[E47:[[S334:fr_id]]:fr_info:1:coordinator_email]]</a> -->
+            <a href="https://act.alz.org/site/TR/?fr_id=[[S334:fr_id]]&pg=informational&sid=27151" style="border-bottom: none!important;">
+              <img src="../ride_alz/assets/images/2020_party_icon.png" alt="party icon" width="85" height="85"/></a>
+
+            <!--UPDATED VIRTUAL COPY-->
+            <h3 class="text-center">
+              VIP VIRTUAL HAPPY HOUR
+            </h3>
+            <p>
+              Fundraisers will be invited to a special VIP Happy Hour
             </p>
-            <p><a href="#" data-toggle="modal" data-target="#dinnerModal">LEARN MORE</a></p>
+            <!--VIRTUAL COVID-19 EDIT FOR CO EVENT-->
+
           </div>
         </div>
         <!-- <div class="row justify-content-center mt-3">
@@ -473,7 +502,7 @@
       <div class="greeting-intro-container">
         <div class="row justify-content-center">
             [[?xyxy[[E47:[[S334:fr_id]]:fr_info:1:sponsor_2]]xyxy::xyxyxyxy::::
-              <div class="col-lg-6" style="background-image: url([[E47:[[S334:fr_id]]:fr_info:1:sponsor_2]]); background-size: cover; background-position:center;" />
+              <div class="col-lg-6" style="background-image: url([[E47:[[S334:fr_id]]:fr_info:1:sponsor_2]]); background-size: cover; background-position:right;" />
                 <img src="[[E47:[[S334:fr_id]]:fr_info:1:sponsor_2]]" style="visibility: hidden; width: 100%;" alt="happy riders"/> <!-- for mobile sizing -->
               </div>
             ]]
