@@ -294,7 +294,17 @@
         <div class="row">
           <div class="col-md-8 offset-md-2">
             <h1 class="text-center js__search-headline">Search</h1>
+            <!--VIRTUAL VERSION OF SEARCH-->
+            [[?xtruex::x[[S334:virtual]]x::
+            <p>Thanks for your support! There are two options to support the virtual ride:</p>
+              <ol>
+                <li>You can <a class="virtual-donation" href="https://act.alz.org/site/Donation2?df_id=44992&PROXY_ID=13946&PROXY_TYPE=21&FR_ID=13946">donate directly to our virtual event</a>, or</li>
+                <li>You can support your friends and family directly using the search tool below.  To find them you can search by name, team name or company name.</li>
+              </ol>
+            ::
+            <!--MAIN VERSION OF SEARCH-->
             <p>To make a donation, search for a participant to donate on behalf of. You can find participants by name, or search by their Team or Company name.</p>
+            ]]
           </div>
         </div>
 
@@ -384,10 +394,18 @@
           <div id="participant_results" class="results-table py-4 js__search-results-container" style="display:none;"></div>
         </div>
         <!-- END search results container -->
+        <!--VIRTUAL VERSION OF SEARCH-->
+        [[?xtruex::x[[S334:virtual]]x::
+        <div class="row d-flex justify-content-center virtual-button">
+          <div class="col-md-9">
+            <a class="btn btn-secondary btn-lg btn-block text-uppercase" href="Donation2?df_id=44992&PROXY_ID=13946&PROXY_TYPE=21&FR_ID=13946" role="button">I want to support the virtual event generally <i class="fa fa-caret-right" aria-hidden="true"></i></a>
+          </div>
+        </div>
+        ::]]
         <div class="row d-flex justify-content-center">
           <div class="col-md-12 text-center py-4">
             <p class="lead">
-              <i>Not finding what you're looking for?</i>
+              <i>Not finding who you're looking for?</i>
             </p>
           </div>
         </div>
@@ -401,8 +419,6 @@
       </div>
     </section>
     <!-- END Search section -->
-
-
 
     <!--removeIf(production)-->
   </main>
