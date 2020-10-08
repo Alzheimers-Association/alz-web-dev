@@ -307,118 +307,409 @@
   <main class="content-container" role="main">
    <!--endRemoveIf(production)-->
 
-        <!-- BEGIN hero section -->
-      <div class="hero-header-container">
-          <div class="jumbotron text-center text-white">
-            <h1>
-              <span class="display-4">GIVE US YOUR ALL</span>
-              <span class="display-3">AND WE WILL, TOO.</span>
-            </h1>
-            <p class="lead">100% of dollars raised for Ride to End ALZ support research efforts.</p>
-            <div class="row d-flex justify-content-center">
-              <div class="col-md-3">
-                <!-- <a class="button btn-secondary btn-lg btn-block" href="#" role="button" data-toggle="modal" data-target="#registerModal" onClick="ga('send', 'event', 'ride landing', 'click', 'banner-register');">REGISTER</a> -->
-                <a class="button btn-secondary btn-lg btn-block" href="SPageServer/?pagename=ride_survey" onClick="ga('send', 'event', 'ride landing', 'click', 'banner-register');">REGISTER</a>
-              </div>
-              <div class="col-md-3">
-                <a class="button btn-outline-light btn-lg btn-block" href="SPageServer/?pagename=ride_search&search_type=donate" role="button" onClick="ga('send', 'event', 'ride landing', 'click', 'banner-donate');">DONATE</a>
+   <style>
+
+    .banner-container {
+      color: #fff;
+      position: relative;
+      width: 100%;
+      height: 100%;
+      background-image: url(https://act.alz.org/ride_alz/assets/images/background_hero.png);
+      background-size: cover;
+      background-position: top;
+      padding-bottom: 0;
+      padding-top: 0;
+    }
+
+    .banner-divider {
+      background-image: url(https://act.alz.org/ride_alz/assets/images/banner_divider.png);
+      height: 8px;
+    }
+
+    .horizontal-divider {
+      display: none;
+    }
+
+    #banner a {
+      width: 280px!important;
+    }
+
+    .banner-container h1 {
+      font-size: 56px;
+      line-height: 56px;
+      margin-top: 175px;
+    }
+
+    .banner-container h1 span {
+      font-size: 80px;
+      line-height: 80px;
+    }
+
+    .banner-container p {
+      font-size: 28px;
+      font-style: italic;
+    }
+
+    .banner-container a.learn-more-links, .banner-container a.learn-more-links:hover {
+      color:#FFF;
+      font-size: 1.3em;
+      text-decoration: underline !important;
+      letter-spacing: .04em;
+  }
+
+  .join-container {
+      color: #FFF!important;
+      position: relative;
+      width: 100%;
+      height: 100%;
+      background-image: url(https://act.alz.org/ride_alz/assets/images/background_join.png);
+      background-size: cover;
+      background-position: center;
+      padding-bottom: 50px;
+      padding-top: 30px;
+  }
+
+  .join-container .card {
+      background-color: #4a0d66;
+      min-width: auto!important;
+      margin-top: 20px;
+      margin-bottom: 20px;
+  }
+
+  .join-container .card:hover {
+      background-color: transparent;
+      background-size: cover;
+      background-position: center;
+      border: none;
+      min-width: auto!important;
+      margin-top: 20px;
+      margin-bottom: 20px;
+  }
+
+  .join-container .card.card-one:hover {
+    background-image: url(https://act.alz.org/ride_alz/assets/images/ride_event_card_fall_virtual.png);
+  }
+
+  .join-container .card.card-two:hover {
+    background-image: url(https://act.alz.org/ride_alz/assets/images/ride_event_card_spring_virtual.png);
+  }
+
+  .join-container .card.card-three:hover {
+    background-image: url(https://act.alz.org/ride_alz/assets/images/ride_event_card_co.png);
+  }
+
+  .join-container .card.card-four:hover {
+    background-image: url(https://act.alz.org/ride_alz/assets/images/ride_event_card_tx.png);
+  }
+
+  .join-container .card-body {
+    width: 20rem;
+    height: 13rem;
+    margin: 0 auto;
+    padding: 0.5rem 0!important;
+  }
+
+  .join-container .card-hover {
+    display: none;
+  }
+
+  .join-container .card:hover .card-hover {
+      display: block;
+  }
+
+  .join-container .card:hover .card-static {
+      display: none;
+  }
+
+  .join-container h2 {
+    font-size: 56px;
+  }
+
+  .join-container .card-static .card-title {
+    font-size: 30px;
+    margin: 5px 0;
+    text-transform: uppercase;
+  }
+
+  .join-container .card-static .card-text {
+    font-size: 1.13rem;
+    line-height: 1.5rem;
+  }
+
+  .join-container .card-hover .card-title {
+    font-size: 22px;
+    text-transform: uppercase;
+    margin-top: 10px;
+  }
+
+  .join-container .card-hover .card-text {
+    font-size: 18px;
+    margin-top: 10px;
+  }
+
+  .join-container .card-static .join-border {
+    border: 1px solid #359a8e;
+    width: 125px;
+    margin: 10px auto;
+  }
+
+  .join-container .card-static.single-line div {
+    margin-top: 30px;
+  }
+
+  .join-container .card-static.single-line h5 {
+    margin-top: 20px;
+  }
+
+  #become_sponsor {
+    display: none;
+  }
+
+  @media (min-width:1200px) {
+    .card.text-center:last-of-type {
+      flex: 0 0 350px !important;
+    }
+  }
+
+  @media (max-width:600px) {
+    .banner-container h1 {
+      margin-top: 25px;
+    }
+    .banner-container h1 span {
+      font-size: 65px;
+      line-height: 65px;
+    }
+    .join-container .card {
+      margin: 20px auto;
+    }
+    .join-container .card-static .card-text {
+      padding: 0 5px;
+    }
+
+    .join-container .card-body {
+      margin: 10px auto;
+      padding: 0!important;
+    }
+  }
+
+  </style>
+    
+    <!--REDESIGN CONDITIONAL-->
+    [[?xtruex::x[[S334:redesign]]x::
+
+    <!-- BEGIN Join Us section -->
+    <section id="banner" class="banner-container text-center">
+      <div class="container-fluid pt-5 pb-5">
+        <h1 class="mb-4">A Ride to Fuel<br>
+        <span>Alzheimer's Research.</span>
+      </h1>
+        <p>Our riders are inspired by science and driven by determination to end this disease.</p>
+        <div class="d-flex justify-content-center py-4">
+          <a class="button btn-outline-primary btn-lg text-uppercase mr-2" href="#" role="button" data-toggle="modal" data-target="#registerModal" onclick="ga('send', 'event', 'homepage banner', 'click', 'banner-register');">Register</a>
+          <a class="button btn-outline-light btn-lg text-uppercase ml-2" href="SPageServer/?pagename=ride_search&amp;search_type=donate" onclick="ga('send', 'event', 'homepage banner', 'click', 'banner-donate');">Donate</a>
+       </div>
+       <a href="SPageServer/?pagename=ride_about" onclick="ga('send', 'event', 'ride landing', 'click', 'banner-learn-more');" class="learn-more-links">Learn More</a>
+      </div>
+    </section>
+    <div class="banner-divider"></div>
+    <!-- END Join Us section -->
+
+    <!--COVID 19 ANNOUNCEMENT-->
+    [[S51:reus_ride_2020_annoucement]]
+
+    <section id="join" class="join-container text-center purple-container text-white stripe-overlay">
+      <div class="container">
+        <h2 class="text-center">Join us all over the country</h2>
+          <div class="card-deck">
+            <div class="card card-one text-center">
+              <div class="card-body">
+                <div class="card-static">
+                  <h5 class="card-title">Fall Virtual Challenge</h5>
+                  <div class="join-border"></div>
+                  <p class="card-text">A route near you! | Oct 11, 2020</p>
+                  <a href="#" role="button" data-toggle="modal" data-target="#registerModal" onclick="ga('send', 'event', 'event card', 'click', 'event-card-register');"><img class="event-card-btn" src="../ride_alz/assets/images/event_card_reg_button.png"></a>
+                </div>
+                <div class="card-hover" data-toggle="modal" data-target="#registerModal">
+                  <h5 class="card-title">Fall Virtual Challenge</h5>
+                  <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+                </div>
               </div>
             </div>
-            <div class="hero-link-container row d-flex justify-content-center">
-              <div class="col-md-5">
-                  <a href="SPageServer/?pagename=ride_about" onClick="ga('send', 'event', 'ride landing', 'click', 'banner-learn-more');">Learn More</a>
-                <!-- <a href="SSurvey?ACTION_REQUIRED=URI_ACTION_USER_REQUESTS&SURVEY_ID=58025&autologin=true" onClick="ga('send', 'event', 'ride landing', 'click', 'banner-learn-more');"><i class="far fa-clock fa-lg"></i>Learn More at Our Webinar on 1/24</a> -->
+            <div class="card card-two text-center">
+              <div class="card-body">
+                <div class="card-static">
+                  <h5 class="card-title">Spring Virtual Challenge</h5>
+                  <div class="join-border"></div>
+                  <p class="card-text">A route near you! | Apr 18, 2020</p>
+                  <a href="#" role="button" data-toggle="modal" data-target="#registerModal" onclick="ga('send', 'event', 'event card', 'click', 'event-card-register');"><img class="event-card-btn" src="../ride_alz/assets/images/event_card_reg_button.png"></a>
+                </div>
+                <div class="card-hover" data-toggle="modal" data-target="#registerModal">
+                  <h5 class="card-title">Spring Virtual Challenge</h5>
+                  <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+                </div>
               </div>
+            </div>
+            <div class="card card-three text-center">
+              <div class="card-body">
+                <div class="card-static single-line">
+                  <h5 class="card-title">Colorado</h5>
+                  <div class="join-border"></div>
+                  <p class="card-text">Fort Collins, CO | Jun 13, 2021</p>
+                  <a href="#" role="button" data-toggle="modal" data-target="#registerModal" onclick="ga('send', 'event', 'event card', 'click', 'event-card-register');"><img class="event-card-btn" src="../ride_alz/assets/images/event_card_reg_button.png"></a>
+                </div>
+                <div class="card-hover" data-toggle="modal" data-target="#registerModal">
+                  <h5 class="card-title">Colardo</h5>
+                  <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+                </div>
+              </div>
+            </div>
+            <div class="card card-four text-center">
+              <div class="card-body">
+                <div class="card-static single-line">
+                  <h5 class="card-title">Texas</h5>
+                  <div class="join-border"></div>
+                  <p class="card-text">Wimberly, TX | Oct 10, 2021</p>
+                  <a href="#" role="button" data-toggle="modal" data-target="#registerModal" onclick="ga('send', 'event', 'event card', 'click', 'event-card-register');"><img class="event-card-btn" src="../ride_alz/assets/images/event_card_reg_button.png"></a>
+                </div>
+                <div class="card-hover" data-toggle="modal" data-target="#registerModal">
+                  <h5 class="card-title">Texas</h5>
+                  <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+                </div>
+              </div>
+            </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TODO - uncomment and update images below when national sponsors are added -->
+    <section id="become_sponsor" class="become-sponsor-container text-center">
+      <div class="container has-sponsors">
+        <span class="h4">Special thanks to our</span>
+        <h2 class="text-primary">National Sponsors</h2>
+        <div class="row mt-3">
+          <div class="col-md-4 d-flex align-items-center justify-content-center">
+            <img class="card-img" src="../ride_alz/assets/images/sponsor_edward_jones.png" alt="Ride to End ALZ">
+          </div>
+          <div class="col-md-4 d-flex align-items-center justify-content-center">
+            <img class="card-img" src="../ride_alz/assets/images/sponsor_bjs.png" alt="Ride to End ALZ">
+          </div>
+          <div class="col-md-4 d-flex align-items-center justify-content-center">
+            <img class="card-img" src="../ride_alz/assets/images/sponsor_pharmacy.png" alt="Ride to End ALZ">
+          </div>
+        </div>
+        <div class="row d-flex justify-content-center my-4">
+            <div class="col-md-12">
+              <a class="button btn-secondary btn-lg text-uppercase" href="[[?[[?x26x27x::x[[S4]]x::T::]][[?xx::x[[S334:fr_id]]x::::T]][[?xx::x[[S334:FR_ID]]x::::T]]::T::TR?fr_id=[[S80:evID]]&amp;pg=informational&amp;sid=25335::SPageServer/?pagename=ride_sponsors]]" role="button" onClick="ga('send', 'event', 'ride landing', 'click', 'sponsors');">Become a <br class="d-sm-none">Corporate Sponsor</a>
+            </div>
+        </div>
+      </div>
+      </section>
+
+    ::
+    
+    <!-- BEGIN Join Us section -->
+    <section id="join_us" class="join-us-container text-center">
+        <h2>
+          <!-- <span class="d-lg-none">JOIN US</span>
+          <span class="d-none d-lg-inline-block">SELECT YOUR RIDE</span> -->
+          CHOOSE YOUR RIDE
+        </h2>
+        <div class="container-fluid">
+            [[S51:reus_ride_2018_join_us]]
+        </div>
+      </section>
+      <!-- END Join Us section -->
+
+      <!--COVID 19 ANNOUNCEMENT-->
+      [[S51:reus_ride_2020_annoucement]]
+
+      <!-- BEGIN fundraising details section -->
+      <div class="fundraising-details-container">
+        <div class="container">
+          <div class="row justify-content-center text-center">
+            <div class="col-md-11">
+              [[S51:reus_ride_2020_landing_infosection]]
             </div>
           </div>
         </div>
+      </div>
 
-        <!-- END hero section -->
-        <span class="horizontal-divider"></span>
+      <!-- END fundraising section -->
+      <!-- <span class="horizontal-divider"></span> -->
+  ]]
 
- <!-- BEGIN Join Us section -->
- <section id="what_is_ride" class="what-is-ride-container text-center">
+<!-- BEGIN what is ride  section -->
+  <!-- <section id="what_is_ride" class="what-is-ride-container text-center">
     <div class="container">
       <div class="row">
         <div class="col-10 offset-1">
-           <h2 class="h3">
-               Ride to End ALZ is much more than a bike ride.
-           </h2>
-           <p>
-             The Alzheimer's Association Ride to End ALZ is a fully supported, one-day fundraising event to directly impact the pace and momentum behind the fight to end Alzheimer's disease. Choose from multiple route options that challenge you to go the distance.
-           </p>
+          <h2 class="h3">
+              Ride to End ALZ is much more than a bike ride.
+          </h2>
+          <p>
+            The Alzheimer's Association Ride to End ALZ is a fully supported, one-day fundraising event to directly impact the pace and momentum behind the fight to end Alzheimer's disease. Choose from multiple route options that challenge you to go the distance.
+          </p>
         </div>
       </div>
       <div class="row">
-         <div class="col-10 offset-1">
+        <div class="col-10 offset-1">
             <h2 class="h3">
                 Right now, there is no shortage of ideas in Alzheimer's research &mdash; only dollars. But you can help change that.
             </h2>
             <p>
-               Inspired by science and driven by a determination to end this disease, participants in Ride to End ALZ raise funds and awareness to advance research toward the first survivor of Alzheimer's. Join us.
+              Inspired by science and driven by a determination to end this disease, participants in Ride to End ALZ raise funds and awareness to advance research toward the first survivor of Alzheimer's. Join us.
             </p>
-         </div>
-       </div>
-    </div>
-
-
-
-  </section>
-  <!-- END Join Us section -->
-
-    <!-- BEGIN Join Us section -->
-    <section id="join_us" class="join-us-container text-center">
-      <h2>
-          <span class="d-lg-none">JOIN US</span>
-        <span class="d-none d-lg-inline-block">SELECT YOUR RIDE</span>
-      </h2>
-      <div class="container mt-5">
-        <div class="card-deck justify-content-center">
-            [[S51:reus_ride_2018_join_us]]
         </div>
       </div>
-    </section>
-    <!-- END Join Us section -->
+    </div>
+  </section> -->
+<!-- END what is ride section -->
 
-    <!-- BEGIN Search section -->
-    <section id="landing_search" class="landing-search-container text-center bg-secondary text-white stripe-overlay">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-5 offset-md-2 search-participant-container">
-            <h3>FIND A PARTICIPANT</h3>
-            <form class="js__redirect-participant-search-form">
-                <div class="d-flex flex-wrap flex-md-nowrap">
-                  <label class="sr-only" for="participantFirstName">First Name</label>
-                  <input id="participantFirstName" type="text" class="col-md-5 form-control form-control-lg mr-lg-1" placeholder="FIRST NAME" style="height:60px;">
-                  <label class="sr-only" for="participantLastName">Last Name</label>
-                  <div class="d-flex w-100">
-                  <input id="participantLastName" type="text" class="col-md-5 form-control form-control-lg ml-lg-1 search-last-name flex-grow-1" placeholder="LAST NAME">
-                  <button type="submit" class="btn btn-lg btn-primary search-participant-button" onClick="ga('send', 'event', 'ride landing', 'click', 'find-participant');">
-                    <span class="sr-only">Search</span>
-                    <i class="fas fa-search"></i>
-                  </button>
-                </div>
-                </div>
-              </form>
-          </div>
+  
 
-          <div class="col-md-4 search-team-container">
-            <h3>FIND A TEAM</h3>
-            <form class="js__redirect-team-search-form">
-              <div class="d-flex">
-                <label class="sr-only" for="teamName">Team Name</label>
-                <input type="text" class="form-control form-control-lg mb-2" id="teamName" placeholder="TEAM NAME">
-                <button type="submit" class="btn btn-lg btn-primary mb-2" onClick="ga('send', 'event', 'ride landing', 'click', 'find-team');">
+  <!-- BEGIN Search section -->
+  <section id="landing_search" class="landing-search-container text-center text-white stripe-overlay">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-5 offset-md-2 search-participant-container">
+          <h3>FIND A PARTICIPANT</h3>
+          <form class="js__redirect-participant-search-form">
+              <div class="d-flex flex-wrap flex-md-nowrap">
+                <label class="sr-only" for="participantFirstName">First Name</label>
+                <input id="participantFirstName" type="text" class="col-md-5 form-control form-control-lg mr-lg-1" placeholder="FIRST NAME" style="height:60px;">
+                <label class="sr-only" for="participantLastName">Last Name</label>
+                <div class="d-flex w-100">
+                <input id="participantLastName" type="text" class="col-md-5 form-control form-control-lg ml-lg-1 search-last-name flex-grow-1" placeholder="LAST NAME">
+                <button type="submit" class="btn btn-lg btn-primary search-participant-button" onClick="ga('send', 'event', 'ride landing', 'click', 'find-participant');">
                   <span class="sr-only">Search</span>
                   <i class="fas fa-search"></i>
                 </button>
               </div>
+              </div>
             </form>
-          </div>
+        </div>
+
+        <div class="col-md-4 search-team-container">
+          <h3>FIND A TEAM</h3>
+          <form class="js__redirect-team-search-form">
+            <div class="d-flex">
+              <label class="sr-only" for="teamName">Team Name</label>
+              <input type="text" class="form-control form-control-lg mb-2" id="teamName" placeholder="TEAM NAME">
+              <button type="submit" class="btn btn-lg btn-primary mb-2" onClick="ga('send', 'event', 'ride landing', 'click', 'find-team');">
+                <span class="sr-only">Search</span>
+                <i class="fas fa-search"></i>
+              </button>
+            </div>
+          </form>
         </div>
       </div>
-    </section>
-    <!-- END Search section -->
+    </div>
+  </section>
+  <!-- END Search section -->
+
+
+
+  
 
 <!--removeIf(production)-->
     <!-- BEGIN How It Works section -->
