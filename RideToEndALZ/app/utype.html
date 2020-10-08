@@ -300,7 +300,7 @@
         <div class="row">
           <div class="col-md-8 offset-md-2 text-center">
             <h1 class="tr-headline text-primary">
-             Have you participated in an Alzheimer's Association event before?</h1>
+              Have you participated in an Alzheimer's Association event before?</h1>
           </div>
         </div>
 
@@ -308,7 +308,7 @@
             <div class="col-md-3">
                 <a class="button btn-secondary btn-lg btn-block js__past-participant mt-3 mt-md-0" href="#">YES</a>
             </div>
-         <div class="col-md-3">
+          <div class="col-md-3">
             <!-- <a class="button btn-secondary btn-lg btn-block js__new-participant" href="#">NO</a> -->
 
             [[?xx::x[[S80:joinTeamID]]x::
@@ -316,132 +316,115 @@
             ::
             <a class="button btn-secondary btn-lg btn-block mt-3 mt-md-0" href="TRR/?pg=ptype&amp;fr_id=[[S80:evID]]&amp;fr_tjoin=[[S80:joinTeamID]]">NO</a>
             ]]
-          
 
-
-         </div>
           </div>
         </div>
+      </div>
+    </div>
+
+    <div class="reg-login js__reg-login-container" style="display:none;">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 offset-md-2">
+            <h1 class="tr-headline text-center text-primary">
+              Welcome Back!</h1>
+              <p>
+                Log in below with your existing Alzheimer's Association account to register for this year's <strong>Ride to End ALZ</strong> event. <a href="#" class="text-primary js__reg-show-retrieve-login" onClick="ga('send', 'event', 'registration', 'click', 'login-help-bottom');">Forgot your username or password?</a>
+              </p>
+          </div>
         </div>
-
-        <div class="reg-login js__reg-login-container" style="display:none;">
-            <div class="container">
-              <div class="row">
-                <div class="col-md-8 offset-md-2">
-                  <h1 class="tr-headline text-center text-primary">
-                   Welcome Back!</h1>
-                   <p>
-                      Log in below with your existing Alzheimer's Association account to register for this year's <strong>Ride to End ALZ</strong> event. <a href="#" class="text-primary js__reg-show-retrieve-login" onClick="ga('send', 'event', 'registration', 'click', 'login-help-bottom');">Forgot your username or password?</a>
-                   </p>
-                </div>
+  
+        <div class="row my-3">
+          <div class="col-md-4 col-sm-6 offset-md-4 offset-sm-3">
+            <div class="js__login-error-container alert alert-danger" style="display:none;" role="alert">
+              <span class="" aria-hidden="true"></span>
+              <span class="sr-only">Error:</span>
+              <i class="fas fa-exclamation-triangle" aria-hidden="true"></i>
+              <span class="js__login-error-message"></span>
+            </div>
+            <div class="js__retrieve-login-success-container alert alert-success" role="alert" style="display:none;">
+              <span class="" aria-hidden="true"></span>
+              <i class="fas fa-check"></i>
+              <span class="js__retrieve-login-success-message"></span>
+            </div>
+            <form class="js__reg-login-form">
+              <div class="form-group">
+                <label class="" for="regLoginUsername">USERNAME:</label>
+                <input type="text" name="user_name" id="regLoginUsername" class="form-control" aria-describedby="regLoginUsernameHelpBlock"
+                  data-parsley-trigger="change" data-parsley-minlength="5" data-parsley-maxlength="60" data-parsley-minlength-message="Your username must be at least 5 characters long."
+                  data-parsley-maxlength-message="Your username must be at fewer than 60 characters long." data-parsley-required-message="Username is required"
+                  data-parsley-required="true" required>
               </div>
-      
-              <div class="row my-3">
-                  <div class="col-md-4 col-sm-6 offset-md-4 offset-sm-3">
-                          <div class="js__login-error-container alert alert-danger" style="display:none;" role="alert">
-                            <span class="" aria-hidden="true"></span>
-                            <span class="sr-only">Error:</span>
-                            <i class="fas fa-exclamation-triangle" aria-hidden="true"></i>
-                            <span class="js__login-error-message"></span>
-                          </div>
-                          <div class="js__retrieve-login-success-container alert alert-success" role="alert" style="display:none;">
-                              <span class="" aria-hidden="true"></span>
-                              <i class="fas fa-check"></i>
-                              <span class="js__retrieve-login-success-message"></span>
-                            </div>
-                          <form class="js__reg-login-form">
-                            <div class="form-group">
-                              <label class="" for="regLoginUsername">USERNAME:</label>
-                              <input type="text" name="user_name" id="regLoginUsername" class="form-control" aria-describedby="regLoginUsernameHelpBlock"
-                                data-parsley-trigger="change" data-parsley-minlength="5" data-parsley-maxlength="60" data-parsley-minlength-message="Your username must be at least 5 characters long."
-                                data-parsley-maxlength-message="Your username must be at fewer than 60 characters long." data-parsley-required-message="Username is required"
-                                data-parsley-required="true" required>
-                            </div>
-                            <div class="form-group">
-                              <label class="" for="regLoginPassword">PASSWORD:</label>
-                              <input type="password" name="user_password" id="regLoginPassword" class="form-control" aria-describedby="regLoginPasswordHelpBlock"
-                                data-parsley-trigger="change" data-parsley-minlength="5" data-parsley-maxlength="20" data-parsley-minlength-message="Your password must be at least 5 characters long."
-                                data-parsley-maxlength-message="Your password must be at fewer than 20 characters long." data-parsley-required-message="Password is required"
-                                data-parsley-required="true" required>
-                            </div>
-                            <div class="form-check form-group">
-                                <input type="checkbox" name="remember_me" id="regRememberMe" class="form-check-input" >
-                                <label class="form-check-label"  for="regRememberMe">Remember Me</label>
-                              </div>
-                            <button type="submit" class="button btn-secondary btn-block">LOG IN</button>
-                          </form>
-                        <div class="text-center my-4">
-                            <a href="#" class="js__go-back text-secondary font-weight-bold" onClick="ga('send', 'event', 'registration', 'click', 'login-go-back');">GO BACK</a>
-                        </div>
-
-                  </div>
-             
-                </div>
-
-                <div class="row">
-                    <div class="col-md-6 offset-md-3">
-                <p class="small">
-                    <a href="#" class="text-secondary font-weight-strong js__reg-show-retrieve-login">Forgot Username or Password? </a><br>
-                    Click the link above to have your username or password emailed to you. If you continue to have problems logging in, please contact Ride staff at <a href="tel:8332397433">833-239-RIDE (7433)</a> or <a href="mailto:ride@alz.org" class="text-secondary" onClick="ga('send', 'event', 'registration', 'click', 'login-help-email');">ride@alz.org</a>. 
-                 </p>
+              <div class="form-group">
+                <label class="" for="regLoginPassword">PASSWORD:</label>
+                <input type="password" name="user_password" id="regLoginPassword" class="form-control" aria-describedby="regLoginPasswordHelpBlock"
+                  data-parsley-trigger="change" data-parsley-minlength="5" data-parsley-maxlength="20" data-parsley-minlength-message="Your password must be at least 5 characters long."
+                  data-parsley-maxlength-message="Your password must be at fewer than 20 characters long." data-parsley-required-message="Password is required"
+                  data-parsley-required="true" required>
+              </div>
+              <div class="form-check form-group">
+                <input type="checkbox" name="remember_me" id="regRememberMe" class="form-check-input" >
+                <label class="form-check-label"  for="regRememberMe">Remember Me</label>
+              </div>
+              <button type="submit" class="button btn-secondary btn-block">LOG IN</button>
+            </form>
+              <div class="text-center my-4">
+                  <a href="#" class="js__go-back text-secondary font-weight-bold" onClick="ga('send', 'event', 'registration', 'click', 'login-go-back');">GO BACK</a>
               </div>
             </div>
-
           </div>
+          <div class="row">
+            <div class="col-md-6 offset-md-3">
+              <p class="small">
+                <a href="#" class="text-secondary font-weight-strong js__reg-show-retrieve-login">Forgot Username or Password? </a><br>
+              Click the link above to have your username or password emailed to you. If you continue to have problems logging in, please contact Ride staff at <a href="tel:8332397433">833-239-RIDE (7433)</a> or <a href="mailto:ride@alz.org" class="text-secondary" onClick="ga('send', 'event', 'registration', 'click', 'login-help-email');">ride@alz.org</a>. 
+              </p>
+            </div>
+          </div>
+        </div>
+        </div>
+        <div class="reg-retrieve-login js__reg-retrieve-login-container" style="display:none;">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-8 offset-md-2 text-center">
+                <h1 class="tr-headline text-primary">
+                    Log In Help</h1>
+                  <p>Submit the form below to have your login information emailed to you.</p>
               </div>
-
-
-
-              <div class="reg-retrieve-login js__reg-retrieve-login-container" style="display:none;">
-                  <div class="container">
-                    <div class="row">
-                      <div class="col-md-8 offset-md-2 text-center">
-                        <h1 class="tr-headline text-primary">
-                            Log In Help</h1>
-                         <p>Submit the form below to have your login information emailed to you.</p>
-                      </div>
-                    </div>
+            </div>
+            <div class="row my-3">
+              <div class="col-md-4 col-sm-6 offset-md-4 offset-sm-3">
+                <div class="js__retrieve-login-error-container alert alert-danger" style="display:none;" role="alert">
+                    <span class="" aria-hidden="true"></span>
+                    <span class="sr-only">Error:</span>
+                    <i class="fas fa-exclamation-triangle" aria-hidden="true"></i>
+                    <span class="js__retrieve-login-error-message"></span>
+                </div>
             
-                    <div class="row my-3">
-                        <div class="col-md-4 col-sm-6 offset-md-4 offset-sm-3">
-                            <div class="js__retrieve-login-error-container alert alert-danger" style="display:none;" role="alert">
-                                <span class="" aria-hidden="true"></span>
-                                <span class="sr-only">Error:</span>
-                                <i class="fas fa-exclamation-triangle" aria-hidden="true"></i>
-                                <span class="js__retrieve-login-error-message"></span>
-                              </div>
-                        
-                              <form id="regRetrieveLoginForm" class="js__reg-retrieve-login-form" autocomplete="off">
-                                <div class="">
-                                  <div class="form-group">
-                                    <span class="field-required"></span>
-                                    <label for="regRetrieveLoginEmail">EMAIL ADDRESS:</label>
-                                    <input type="email" name="email" id="regRetrieveLoginEmail" class="form-control" data-parsley-required-message="Email address is required"
-                                      data-parsley-required="true" data-parsley-trigger="keyup" required>
-                                  </div>
-                        
-                                  <div class="form-group text-center">
-                                    <button class="button btn-secondary btn-block" name="regRetrieveLoginBtn" value="Retrieve Login" type="submit">SEND LOGIN</button>
-                                  </div>
-                                </div>
-                              
-                              </form>
-                              <div class="text-center my-4">
-                                  <a href="#" class="js__reg-show-login text-secondary font-weight-bold">RETURN TO LOG IN</a>
-                              </div>
-      
-                        </div>
-                   
+                  <form id="regRetrieveLoginForm" class="js__reg-retrieve-login-form" autocomplete="off">
+                    <div class="">
+                      <div class="form-group">
+                        <span class="field-required"></span>
+                        <label for="regRetrieveLoginEmail">EMAIL ADDRESS:</label>
+                        <input type="email" name="email" id="regRetrieveLoginEmail" class="form-control" data-parsley-required-message="Email address is required"
+                          data-parsley-required="true" data-parsley-trigger="keyup" required>
                       </div>
-      
-                  
-      
+            
+                      <div class="form-group text-center">
+                        <button class="button btn-secondary btn-block" name="regRetrieveLoginBtn" value="Retrieve Login" type="submit">SEND LOGIN</button>
+                      </div>
+                    </div>          
+                  </form>
+                <div class="text-center my-4">
+                    <a href="#" class="js__reg-show-login text-secondary font-weight-bold">RETURN TO LOG IN</a>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
 
     <!-- END Utype Registration Bottom -->
-
-
+  
     <!--removeIf(production)-->
 
     <!-- Modal -->
