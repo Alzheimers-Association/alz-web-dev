@@ -279,7 +279,7 @@
       showStartTeam();
 
       $('.section-header-text').text('Start a Team');
-      $('#team_find_section_body').before('<div class="reg-text mt-3 col-md-8 offset-md-2"><p>Note: Each Rider on the Team is individually responsible for meeting their individual fundraising minimum based on the <a href="SPageServer/?pagename=ride_fundraising_packages" class="text-primary" style="text-decoration:underline;">fundraising package</a> they selected at time of registration.</p></div>');
+      // $('#team_find_section_body').before('<div class="reg-text mt-3 col-md-8 offset-md-2"><p>Note: Each Rider on the Team is individually responsible for meeting their individual fundraising minimum based on the <a href="SPageServer/?pagename=ride_fundraising_packages" class="text-primary" style="text-decoration:underline;">fundraising package</a> they selected at time of registration.</p></div>');
       $('#company_label_container').text("Group/Company (optional)");
 
 
