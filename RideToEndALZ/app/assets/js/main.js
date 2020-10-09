@@ -1540,3 +1540,12 @@
 
   });
 })(jQuery);
+
+var reg_event_id = $("body").data("fr-id"); 
+(reg_event_id = "13946")  
+    ? jQuery(document).ready(function () {  
+          $(".registration-header a").html('<a href="https://act.alz.org/site/TR?fr_id=13946&pg=entry">Fall Virtual Challenge</a>');  
+      })  
+    : jQuery(document).ready(function () {  
+          $(".registration-header a").html('<a href="https://act.alz.org/site/TR?fr_id=13946&pg=entry">Spring Virtual Challenge</a>');  
+      });
