@@ -43,3 +43,136 @@
 	}
 
 }
+
+@media (max-width:767.98px) {
+  .hero-header-container h1 .display-3 {
+      display: block
+  }
+}
+
+/* .app_id_23:not(.pg_ridepc) .tab-content,
+.app_id_26:not(.pg_ridepc) .tab-content {
+  background-color: #359a8e;
+  font-style: italic;
+  color: #fff
+}
+
+.app_id_23:not(.pg_ridepc) .tab-content p,
+.app_id_26:not(.pg_ridepc) .tab-content p {
+  font-size: 1.6rem;
+  line-height: 1.8rem
+}
+
+.app_id_23:not(.pg_ridepc) .tab-content a,
+.app_id_26:not(.pg_ridepc) .tab-content a {
+  color: #fff;
+  text-decoration: underline
+} */
+
+
+.mobile-caret svg {
+  margin-left: 7px !important;
+  margin-bottom: 2px !important;
+}
+
+@media only screen and (max-width:991px) {
+  .mobile-caret svg {
+      display: none;
+  }
+}
+
+/*IS THIS NEW CODE? */
+
+/*faq.scss*/
+
+.pg_ride_faq .btn.faq-title,
+.pg_ride_faq .teal-radio-container label.faq-title,
+.teal-radio-container .pg_ride_faq label.faq-title {
+  color: #4a0d66;
+  text-transform: uppercase;
+  font-size: 1.75rem;
+  font-weight: 400;
+  white-space: normal;
+  text-align: left;
+}
+
+/*landing.scss*/
+
+.faq-container .collapsed .fa-minus-square,
+.pg_ride_homepage .interior-header {
+  display: none;
+}
+
+@media (max-width:991.98px) {
+  .landing-search-container .search-participant-container,
+  .landing-search-container .search-team-container {
+      margin-bottom: 3rem;
+  }
+  .landing-search-container h3 {
+      margin-bottom: 1rem;
+  }
+  .landing-search-container .btn,
+  .landing-search-container .form-control,
+  .landing-search-container .pg_natl_co_parts div.list-component-container #filter_text,
+  .landing-search-container .pg_natl_co_teams div.list-component-container #filter_text,
+  .landing-search-container .teal-radio-container label,
+  .pg_natl_co_parts div.list-component-container .landing-search-container #filter_text,
+  .pg_natl_co_teams div.list-component-container .landing-search-container #filter_text,
+  .teal-radio-container .landing-search-container label {
+      margin-bottom: .5rem;
+  }
+}
+
+.our-research-button {
+  margin-top: 30px;
+}
+
+.our-research-button a {
+  width: 280px !important;
+}
+
+/*teamraiser-greeting.scss*/
+
+.js__top-companies-list .list-group-item,
+.js__top-participants-list .list-group-item,
+.js__top-teams-list .list-group-item {
+  white-space: nowrap;
+  overflow: hidden;
+  Text-overflow: ellipsis;
+}
+
+/*survey.scss*/
+
+.pg_ride_survey_2020 .content>form {
+  display: none;
+}
+.pg_ride_survey_2020 label {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+.responsive-survey .hidden {
+  display: none !important;
+}
+
+/*unkown.scss*/
+
+#team_find_section_container .reg-text p {
+  display: none !important;
+}
+
+.virtual-donation {
+  text-decoration: underline !important;
+  color: #4a0d66 !important;
+}
+
+.virtual-button a {
+  white-space: normal !important;
+  background-color: #4a0d66 !important;
+  border-color: #4a0d66 !important;
+}
+
+.virtual-button {
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
