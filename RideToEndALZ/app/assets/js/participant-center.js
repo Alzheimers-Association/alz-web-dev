@@ -5,6 +5,7 @@
   /* Global */
   /* ****** */
 
+  console.log('script is running')
 
   window.adarda = {
     formatMoney: function(amountInCents) {
@@ -8759,6 +8760,12 @@ START CUSTOM BOUNDLESS FUNDRAISING LIGHTBOX FUNCTION (***DO NOT EDIT***)
 END CUSTOM BOUNDLESS FUNDRAISING LIGHTBOX FUNCTION (***DO NOT EDIT***)
 ------------------------------------------------------------------------*/
 
+//CREATING LIGHTBOX TO DISPLAY AFTER PARTICIPANT HAS REGISTERED FOR WEEKEND EVENT VIA QUICK REG
+setTimeout(function() {
+  if($('#pc-lightbox-quickreg').length > 0) {
+    walk.dialogOverlayOpen('#pc-lightbox-quickreg')
+  }
+}, 1e3);
 
     // TODO - set cookie indicating that one visit has occurred
     document.cookie = 'pcVisits=1; expires=' + new Date(new Date().getTime() + 31536000000).toUTCString() + '; path=/';
