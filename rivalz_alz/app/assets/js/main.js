@@ -506,7 +506,7 @@
           //do nothing
         }
     }
-    if (!$('body').is('.pg_rivalzpc')) {
+    if (!$('body').is('.pg_rivalzpc, .pg_entry, .pg_team')) {
 
       $('a[href*="#"]')
         // Remove links that don't actually link to anything
