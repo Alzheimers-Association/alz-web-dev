@@ -8793,13 +8793,23 @@ END CUSTOM BOUNDLESS FUNDRAISING LIGHTBOX FUNCTION (***DO NOT EDIT***)
   }
 
   if(document.cookie.indexOf('pcVisits=1') > 0 && $('.js__registration-thank-you-dialog').length === 0) {
-    walk.dialogOverlayOpen('#update-your-page-dialog');
+    var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+    userAgent.match(/iPad/i) || userAgent.match(/iPhone/i) || userAgent.match(/iPod/i) ? walk.dialogOverlayOpen('#welcome-dialog-mobile-apple') : userAgent.match(/Android/i) ? walk.dialogOverlayOpen('#welcome-dialog-mobile-android') : walk.dialogOverlayOpen('#welcome-dialog');
     deleteCookie('pcVisits');
+    document.cookie = 'pcAppPromotion=1; expires=' + new Date(new Date().getTime() + 604800000).toUTCString() + '; path=/';
   }
 
   if($('#pc-container').data('daystoevent') === 30) {
     walk.dialogOverlayOpen('#fundraising-progress-dialog');
+  } else if(document.cookie.indexOf('pcAppPromotion=1') > 0 && $('.js__registration-thank-you-dialog').length === 0) {
+    console.log('cookie still running');
+  } else if($('.js__registration-thank-you-dialog').length === 0) {
+    console.log('cookie is expired')
+    var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+    userAgent.match(/iPad/i) || userAgent.match(/iPhone/i) || userAgent.match(/iPod/i) ? walk.dialogOverlayOpen('#app-promotion-dialog-mobile-apple') : userAgent.match(/Android/i) ? walk.dialogOverlayOpen('#app-promotion-dialog-mobile-android') : walk.dialogOverlayOpen('#app-promotion-dialog');
+    document.cookie = 'pcAppPromotion=1; expires=' + new Date(new Date().getTime() + 604800000).toUTCString() + '; path=/';
   }
+
   /* init text editors */
   $('.jquery-text-editor').jqte({
     indent: false, 
