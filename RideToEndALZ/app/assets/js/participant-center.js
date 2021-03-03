@@ -5,6 +5,7 @@
   /* Global */
   /* ****** */
 
+
   console.log('script is running')
 
   window.adarda = {
@@ -12369,6 +12370,13 @@ $('.js__cancel-reg-update-btn').on('click', function(e){
       }
     });
   });
+
+  var urlParams = new URLSearchParams(window.location.search); //get all parameters
+  var weekendPcModal = urlParams.get('weekendPcModal'); //extract the foo parameter - this will return NULL if foo isn't a parameter
+
+  if(weekendPcModal == 'true') {
+    $('.weekend-getaway_reg_btn').click();
+  }
 
 
 })(jQuery);
