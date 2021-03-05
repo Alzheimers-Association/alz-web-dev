@@ -943,7 +943,7 @@
         });
 
         if(isCaptain) {
-          $('#team-captain-link .js__link-placeholder').html('<a href="https://act.alz.org/site/TR/?px=' + consId + '&pg=personal&fr_id=' + cd.evID + '">' + consName + '</a>');
+          $('#team-captain-link .js__link-placeholder').append('<a href="https://act.alz.org/site/TR/?px=' + consId + '&pg=personal&fr_id=' + cd.evID + '">' + consName + '</a> ');
           $('#team-captain-link').show();
         }
 
