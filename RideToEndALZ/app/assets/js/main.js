@@ -149,7 +149,7 @@
                   var trId = this.id;
                   var eventName = this.name;
                   var eventLocation = (this.city + ', ' + this.state);
-                  if (this.city = 'virtual'){
+                  if (trId == "14926" || trId == "14984"){
                     eventLocation = "";
                   }
                   var teamPageUrl = (this.teamPageUrl ? this.teamPageUrl : null);
@@ -237,7 +237,7 @@
               var eventLocation = teamraisers[0].city + ', ' + teamraisers[0].state;
               if (teamraisers[0].city = 'virtual'){
                 eventLocation = "";
-              }
+              } 
               var teamPageUrl = (teamraisers[0].teamPageUrl ? teamraisers[0].teamPageUrl : null);
               var eventDate = new Date(teamraisers[0].event_date);
               var daysToEvent = Math.floor((eventDate - currentDate) / (24 * 60 * 60 * 1000)) + 1;
