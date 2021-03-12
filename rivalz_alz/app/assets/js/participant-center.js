@@ -3025,11 +3025,11 @@
       			}, 1000, 'swing');
           }
 		    }
-        // $(this).find('.thermometer__percentage').animateNumber({
-        //   number: percentage,
-        //   easing: 'swing',
-        //   numberStep: $.animateNumber.numberStepFactories.append('%')
-        // }, 1500);
+         $(this).find('.thermometer__percentage').animateNumber({
+           number: percentage,
+           easing: 'swing',
+           numberStep: $.animateNumber.numberStepFactories.append('%')
+         }, 1500);
       });
     }, 
     
