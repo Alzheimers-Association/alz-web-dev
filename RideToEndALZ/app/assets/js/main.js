@@ -374,7 +374,7 @@
               // redirect to utype page to allow TR to auto redirect to tfind page
 
               if ($('main').data('join-team-id')) {
-                window.location = luminateExtend.global.path.secure + 'TRR/?pg=ptype&fr_id=' + cd.evID + '&skip_login_page=true&fr_tjoin=' + $('main').data('join-team-id') + '&s_regType=joinTeam';
+                window.location = luminateExtend.global.path.secure + 'TRR/?pg=tfind&fr_id=' + cd.evID + '&skip_login_page=true&fr_tjoin=' + $('main').data('join-team-id') + '&s_regType=joinTeam';
               } else {
                 window.location = window.location.href + '&s_regType=';
               }
