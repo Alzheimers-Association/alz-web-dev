@@ -285,8 +285,13 @@
     <!--endRemoveIf(production)-->
  
 
-
-    
+[[?x13945x14926x::x[[S334:fr_id]]::
+  <!-- virtual events -->
+  [[U0:virtual=true]]
+::
+  [[U0:virtual=]]
+]]
+      
     <!-- BEGIN hero section -->
     <div class="hero-header-container" style="background: url([[E47:[[S334:fr_id]]:fr_info:1:sponsor_3]]) center center no-repeat; background-size: cover;">
       <div class="jumbotron text-center text-white">
@@ -294,68 +299,61 @@
           <span class="display-4">RIDE TO END ALZ</span>
           <!-- <span class="display-3">[[E47:[[S334:fr_id]]:fr_info:1:event_location_city]],&nbsp;[[E47:[[S334:fr_id]]:fr_info:1:event_location_state]]</span> -->
           
-          <!--VIRTUAL COVID-19 EDIT FOR CO EVENT-->
-          [[?x13945x::x[[S334:fr_id]]x::
-
-          <!--VIRTUAL COPY-->
-          <span class="display-3">Virtual Challenge</span>
-        </h1>
+          <span class="display-3">[[E47:[[S334:fr_id]]:fr_info:1:event_title]]</span>
+          </h1>
           <p class="lead">[[E47:[[S334:fr_id]]:fr_info:1:event_date]]</p>
-          <p class="lead">Registration is now closed, but you can still support a participant.</p>
-          <div class="row d-flex justify-content-center">
-            <div class="col-md-4 col-lg-3">
-              <a class="button btn-secondary btn-lg btn-block" href="SPageServer/?pagename=ride_search&search_type=donate&virtual=true" role="button" onClick="ga('send', 'event', 'ride greeting', 'click', 'banner-donate');">DONATE</a>
-            </div>
-          </div>
-          ::
-
-          <!--TX COPY-->
-        <span class="display-3">Fall Virtual Challenge</span>
-        </h1>
-        <p class="lead">[[E47:[[S334:fr_id]]:fr_info:1:event_date]]</p>
-        <div class="row d-flex justify-content-center">
-              [[?xx::x[[S1:user_name]]x::
-              [[?x1x2x::x[[S42:0:status]]x::
-          <div class="col-md-4 col-lg-3">
-              <a class="button btn-secondary btn-lg btn-block" href="TRR/?pg=utype&amp;fr_id=[[S334:fr_id]]" onClick="ga('send', 'event', 'ride greeting', 'click', 'banner-register');">REGISTER NOW</a>
-          </div>
-
-              ::]]
-            ::
+          [[?x1x2x::x[[S42:0:status]]x::
+            <!-- [accepting registrations] -->
+            
+            <div class="row d-flex justify-content-center">
               [[?xx::x[[S48:0:part-type-id]]x::
-          <div class="col-md-4 col-lg-3">
-                <a class="button btn-secondary btn-lg btn-block" href="TRR/?pg=utype&amp;fr_id=[[S334:fr_id]]" onClick="ga('send', 'event', 'ride greeting', 'click', 'banner-register');">REGISTER NOW</a>
-          </div>
+                <!-- [not registered] -->
+                <div class="col-md-4 col-lg-3">
+                    <a class="button btn-secondary btn-lg btn-block" href="TRR/?pg=utype&amp;fr_id=[[S334:fr_id]]" onClick="ga('send', 'event', 'ride greeting', 'click', 'banner-register');">REGISTER NOW</a>
+                </div>
 
               ::
-          <div class="col-md-4 col-lg-3">
-                <a class="button btn-secondary btn-lg btn-block menu-btn" href="TRC/?pg=center&amp;fr_id=[[S334:fr_id]]"  onClick="ga('send', 'event', 'ride greeting', 'click', 'banner-ride-hub');">RIDE HUB</a>
-          </div>
-
+                <!-- [registered] -->
+                <div class="col-md-4 col-lg-3">
+                      <a class="button btn-secondary btn-lg btn-block menu-btn" href="TRC/?pg=center&amp;fr_id=[[S334:fr_id]]"  onClick="ga('send', 'event', 'ride greeting', 'click', 'banner-ride-hub');">RIDE HUB</a>
+                </div>
               ]]
-            ]]
-            [[?x2x3x::x[[S42:0:status]]x::
-          <div class="col-md-4 col-lg-3">
-            <a class="button btn-outline-light btn-lg btn-block" href="SPageServer/?pagename=ride_search&search_type=donate" role="button" onClick="ga('send', 'event', 'ride greeting', 'click', 'banner-donate');">DONATE</a>
-          </div>
-            ::]]
-        </div>
-        <div class="hero-link-container row d-flex justify-content-center">
-            <div class="col-md-6">
-                [[?xx::x[[S1:user_name]]x::
-                  <!-- <a href="#ride_details"  onClick="ga('send', 'event', 'ride greeting', 'click', 'banner-ride-details');">Ride Details</a> -->
-                  <a class="" href="TR/?fr_id=[[S42:0:fr-id]]&amp;pg=informational&amp;sid=25340" role="button" onClick="ga('send', 'event', 'ride greeting', 'click', 'details-event-info');">Learn More About This Event</a>
-                ::
-                  [[?xx::x[[S48:0:part-type-id]]x::
-                  <!-- <a href="#ride_details"  onClick="ga('send', 'event', 'ride greeting', 'click', 'banner-ride-details');">Ride Details</a> -->
-                  <a class="" href="TR/?fr_id=[[S42:0:fr-id]]&amp;pg=informational&amp;sid=25340" role="button" onClick="ga('send', 'event', 'ride greeting', 'click', 'details-event-info');">Learn More About This Event</a>
-                  ::
-                  <a href="#" data-toggle="modal" data-target="#registerModal" onClick="ga('send', 'event', 'ride greeting', 'click', 'banner-register');">Register for a Different Ride</a>
-                  ]]
-                ]]
+              [[?x2x::x[[S42:0:status]]x::
+                <!-- [accepting reg & gifts] -->
+                <div class="col-md-4 col-lg-3">
+                  <a class="button btn-outline-light btn-lg btn-block" href="SPageServer/?pagename=ride_search&search_type=donate[[?x[[S80:virtual]]x::xx::::&virtual=[[S80:virtual]]]]" role="button" onClick="ga('send', 'event', 'ride greeting', 'click', 'banner-donate');">DONATE</a>
+                </div>
+              ::
+                <!--[not accepting gifts]-->
+              ]]
+                      
             </div>
-        </div>
-        ]]
+            <div class="hero-link-container row d-flex justify-content-center">
+              <div class="col-md-6">
+                  [[?xx::x[[S48:0:part-type-id]]x::
+                  <!-- [not registered] -->
+                    <!-- <a href="#ride_details"  onClick="ga('send', 'event', 'ride greeting', 'click', 'banner-ride-details');">Ride Details</a> -->
+                    <a class="" href="TR/?fr_id=[[S42:0:fr-id]]&amp;pg=informational&amp;sid=25340" role="button" onClick="ga('send', 'event', 'ride greeting', 'click', 'details-event-info');">Learn More About This Event</a>
+                  ::
+                    <!-- [registered] -->
+                    <a href="#" data-toggle="modal" data-target="#registerModal" onClick="ga('send', 'event', 'ride greeting', 'click', 'banner-register');">Register for a Different Ride</a>
+                  ]]
+              </div>
+            </div>
+          ::
+            <!-- [not accepting registrations] -->
+            [[?x3x::x[[S42:0:status]]x::
+              <!-- [accepting gifts, reg closed] -->
+              <p class="lead">Registration is now closed, but you can still support a participant.</p>
+              <div class="row d-flex justify-content-center">
+                <div class="col-md-4 col-lg-3">
+                  <a class="button btn-secondary btn-lg btn-block" href="SPageServer/?pagename=ride_search&search_type=donate[[?x[[S80:virtual]]x::xx::::&virtual=[[S80:virtual]]]]" role="button" onClick="ga('send', 'event', 'ride greeting', 'click', 'banner-donate');">DONATE</a>
+                </div>
+              </div>
+            ::]]
+          ]]
+  
+
         
       </div>
     </div>
@@ -434,17 +432,18 @@
         </h2>
         <div class="row justify-content-center mt-3">
             <div class="col-md-4">
-              <a href="https://act.alz.org/site/TR/?fr_id=[[S334:fr_id]]&pg=informational&sid=27150" style="border-bottom: none!important;">
+              <a href="https://act.alz.org/site/TR/?fr_id=[[S334:fr_id]]&pg=informational&sid=25338" >
               <img src="../ride_alz/assets/images/2020_clock_icon.png" alt="clock icon" width="85" height="85"/>
-              </a>
+              
 
             <!--UPDATED VIRTUAL COPY-->
             <h3 class="text-center">
-              TRAINING GOALS
+              TRAINING
             </h3>
             <p>
               Determine how many miles you need to train!
             </p>
+          </a>
             <!--VIRTUAL COVID-19 EDIT FOR CO EVENT-->
 
             <!--<a class="button btn-secondary text-uppercase js__add-to-calendar" href="#" role="button" onClick="ga('send', 'event', 'ride greeting', 'click', 'details-add-calendar');">Add to Calendar</a>-->
@@ -462,16 +461,17 @@
 <!-- END add to calendar -->
           </div>
           <div class="col-md-4">
-            <a href="https://act.alz.org/site/TR/?fr_id=[[S334:fr_id]]&pg=informational&sid=25340" style="border-bottom: none!important;">
-            <img src="../ride_alz/assets/images/2020_pin_icon.png" alt="map-pin icon" width="85" height="85"/></a>
+            <a href="https://act.alz.org/site/TR/?fr_id=[[S334:fr_id]]&pg=informational&sid=25340" >
+            <img src="../ride_alz/assets/images/2020_pin_icon.png" alt="map-pin icon" width="85" height="85"/>
 
             <!--UPDATED VIRTUAL COPY-->
             <h3 class="text-center">
-              INDOOR/OUTDOOR
+              ABOUT THIS RIDE
             </h3>
             <p>
               Choose how you will ride with us, together &ndash; yet apart
             </p>
+          </a>
             <!--VIRTUAL COVID-19 EDIT FOR CO EVENT-->
             
 <!--
@@ -480,16 +480,17 @@
                         ]]-->
           </div>
           <div class="col-md-4">
-            <a href="https://act.alz.org/site/TR/?fr_id=[[S334:fr_id]]&pg=informational&sid=27151" style="border-bottom: none!important;">
-              <img src="../ride_alz/assets/images/2020_party_icon.png" alt="party icon" width="85" height="85"/></a>
+            <a href="https://act.alz.org/site/TR/?fr_id=[[S334:fr_id]]&pg=informational&sid=27151" >
+              <img src="../ride_alz/assets/images/2020_party_icon.png" alt="party icon" width="85" height="85"/>
 
             <!--UPDATED VIRTUAL COPY-->
             <h3 class="text-center">
-              VIP VIRTUAL HAPPY HOUR
+              FUNDRAISING
             </h3>
             <p>
-              Fundraisers will be invited to a special VIP Happy Hour
+              Go the extra mile to earn your Ride to End ALZ jersey.
             </p>
+          </a>
             <!--VIRTUAL COVID-19 EDIT FOR CO EVENT-->
 
           </div>
@@ -502,7 +503,7 @@
       <div class="greeting-intro-container">
         <div class="row justify-content-center">
             [[?xyxy[[E47:[[S334:fr_id]]:fr_info:1:sponsor_2]]xyxy::xyxyxyxy::::
-              <div class="col-lg-6" style="background-image: url([[E47:[[S334:fr_id]]:fr_info:1:sponsor_2]]); background-size: cover; background-position:right;" />
+              <div class="col-lg-6" style="background-image: url([[E47:[[S334:fr_id]]:fr_info:1:sponsor_2]]); background-size: cover; background-position:center;" />
                 <img src="[[E47:[[S334:fr_id]]:fr_info:1:sponsor_2]]" style="visibility: hidden; width: 100%;" alt="happy riders"/> <!-- for mobile sizing -->
               </div>
             ]]
@@ -555,7 +556,7 @@
             </form>
           </div>
 
-         
+          
           <div class="col-md-4 col-leaderboard company-leaderboard" [[?xx::x[[E36:top_10_companies_list,[[S334:fr_id]],0,0,LIST,SUM,5]]x::style="display:none;"::]]>
             <h3 class="h4">COMPANIES</h3>
             <ul class="list-group list-group-flush js__top-companies-list"></ul>
@@ -585,7 +586,27 @@
     <!-- END Search section -->
 
 
-    <!--removeIf(production)-->
+    <style>
+      .pg_entry .ride-details-container .experience-highlights a {
+          display: block;
+          padding: 1em;
+          border-bottom: 5px solid transparent;
+      }
+      .pg_entry .ride-details-container .experience-highlights a:hover {
+          /* background: linear-gradient(125deg, rgba(0,0,0,.1) 20%, transparent 20%, transparent 30%, rgba(0,0,0,.1) 30%, rgba(0,0,0,.1) 33%, transparent 33%); */
+          background-color: rgba(255,255,255,.1);
+          box-shadow: 3px 3px 26px rgba(255,255,255,.05) inset;
+          border-bottom: 5px solid #4eb9ac;
+      }
+      @media (max-width: 991.98px) {
+        .pg_entry .greeting-search-container .col-leaderboard {
+          padding-bottom: 1em;
+        }
+      }
+    </style>
+
+
+<!--removeIf(production)-->
  <!-- BEGIN How It Works section -->
  <section id="how_it_works" class="how-it-works-container">
     <h2 class="text-center text-primary">How It Works</h2>
