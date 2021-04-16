@@ -428,9 +428,45 @@
     <section id="ride_details" class="ride-details-container bg-primary text-white text-center stripe-overlay">
       <div class="container experience-highlights">
         <h2 class="text-center">
-          Your Experience
+          [[?x14926x::x[[S334:fr_id]]x::Share Your Ride::Your Experience]]
         </h2>
         <div class="row justify-content-center mt-3">
+            [[?x14926x::x[[S334:fr_id]]x::
+            <div class="col-12">
+              <p>Share your photos from your ride on social media and spread the word about the Ride to End ALZ!
+                Don't forget to add the hashtag <strong>#Ride2EndALZ</strong> too!</p>
+              <style>
+                .mosaic-container {
+                  position: relative;
+                  overflow: hidden;
+                }
+                @media screen and (orientation:portrait) {
+                  .mosaic-container {
+                    padding-top: 133.33%;
+                  }
+                }
+                @media screen and (orientation:landscape) {
+                  .mosaic-container {
+                    padding-top: 56.25%;
+                  }
+                }
+                
+                .mosaic-iframe {
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                  width: 100%;
+                  height: 100%;
+                  max-height: 95vh;
+                  border: 0;
+                }
+              </style>
+              <div class="mosaic-container mt-3">
+                <iframe class="mosaic-iframe" src="https://virtualmosaic.com/ride2endalz2021"
+                  allow="autoplay;camera *;encrypted-media" allowusermedia allowfullscreen></iframe>
+              </div>
+            </div>
+            ::
             <div class="col-md-4">
               <a href="https://act.alz.org/site/TR/?fr_id=[[S334:fr_id]]&pg=informational&sid=25338" >
               <img src="../ride_alz/assets/images/2020_clock_icon.png" alt="clock icon" width="85" height="85"/>
@@ -493,13 +529,36 @@
           </a>
             <!--VIRTUAL COVID-19 EDIT FOR CO EVENT-->
 
-          </div>
+          </div>]]
         </div>
         <!-- <div class="row justify-content-center mt-3">
           <a class="button btn-secondary text-uppercase" href="TR/?fr_id=[[S42:0:fr-id]]&amp;pg=informational&amp;sid=25339" role="button" onClick="ga('send', 'event', 'ride greeting', 'click', 'details-event-info');">More Event Info</a>
         </div> -->
 
       </div>
+      [[?x14926x::x[[S334:fr_id]]x::
+      <div class="greeting-search-container">
+        <div class="container experience-highlights pt-5">
+          <h2 class="text-center text-primary pb-3 pb-md-0 mb-md-1">
+            Watch the Livestream
+          </h2>
+          <div class="row justify-content-center mt-1">
+            <div class="col-12">
+              <p class="text-primary">The Ride to End ALZ Spring Challenge will be livestreamed 8:00a.m. - 9:30a.m. CST.</p>
+              <div id="fb-root"></div>
+              <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v10.0&appId=45062702490&autoLogAppEvents=1" nonce="3WwonGe3"></script>
+              <div class="fb-post mt-3" data-href="https://www.facebook.com/actionalz/posts/10160907173789447" data-width="500"
+                data-show-text="true"><blockquote cite="https://www.facebook.com/actionalz/posts/10160907173789447" 
+                class="fb-xfbml-parse-ignore"><p>Watch the Alzheimer’s Association Ride to End ALZ Spring Virtual Challenge live!
+                  From the opening ceremony to the...</p>Posted by
+                  <a href="https://www.facebook.com/actionalz/">Alzheimer&#039;s Association</a>
+                  on&nbsp;<a href="https://www.facebook.com/actionalz/posts/10160907173789447">Monday, April 12,
+                  2021</a></blockquote></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      ::]]
       <div class="greeting-intro-container">
         <div class="row justify-content-center">
             [[?xyxy[[E47:[[S334:fr_id]]:fr_info:1:sponsor_2]]xyxy::xyxyxyxy::::
